@@ -37,29 +37,7 @@ paths:
             tags:
                 - Endpoints
             security: []
-    /users:
-        post:
-            summary: Create
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-            security: []
+    /v1/users:
         get:
             summary: Read
             description: ''
@@ -89,9 +67,9 @@ paths:
             tags:
                 - Endpoints
             security: []
-        put:
-            summary: Update
-            description: ''
+        post:
+            summary: 'Criar usuário'
+            description: 'Cria um usuário.'
             parameters:
                 -
                     in: header
@@ -109,9 +87,78 @@ paths:
                         type: string
             responses: {  }
             tags:
-                - Endpoints
+                - Usuarios
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Token do usuário'
+                                    example: b71175dd5644180d4bce21d1790bb0cf-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                id:
+                                    type: integer
+                                    description: 'ID do usuário'
+                                    example: 1
+                            required:
+                                - api_token
+                                - id
             security: []
-    '/users/{id}':
+        put:
+            summary: 'Atualizar usuario'
+            description: 'Atualiza os dados de um usuário'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"name\": \"Ronierison Sena\"\n     \"email\": \"teste@teste.com\"\n     [...]\n}"
+                404:
+                    description: '404, user not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'usuário não encontrado.'
+                                properties:
+                                    message: { type: string, example: 'usuário não encontrado.' }
+            tags:
+                - Usuarios
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                id:
+                                    type: integer
+                                    description: 'ID do usuário'
+                                    example: 19
+                            required:
+                                - id
+    '/v1/users/{id}':
         delete:
             summary: Delete
             description: ''
@@ -139,14 +186,14 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: dolores
+                example: aut
                 required: true
                 schema:
                     type: string
-    /login:
+    /v1/login:
         post:
-            summary: "Login - Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da senha+id\ne salva no campo api_token por 48hrs"
-            description: ''
+            summary: Login
+            description: "Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da data concatenando com o ID do usuário\ne salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN"
             parameters:
                 -
                     in: header
@@ -162,7 +209,32 @@ paths:
                     example: application/json
                     schema:
                         type: string
-            responses: {  }
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: string
             tags:
-                - Endpoints
+                - Usuarios
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                login:
+                                    type: string
+                                    description: 'Email do usuário'
+                                    example: praesentium
+                                password:
+                                    type: string
+                                    description: 'Senha do usuário'
+                                    example: excepturi
+                            required:
+                                - login
+                                - password
             security: []

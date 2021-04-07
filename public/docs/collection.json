@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Lumen",
-        "_postman_id": "2cad6f6d-22b7-429e-9600-8f299292b471",
+        "_postman_id": "8acdb2dd-dad5-427b-b430-32fdb28868d7",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -49,74 +49,16 @@
                     "response": []
                 },
                 {
-                    "name": "Create",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "users",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/users"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
                     "name": "Read",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "users",
+                            "path": "v1\/users",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/users"
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users"
                         },
                         "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "users",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/users"
-                        },
-                        "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -141,14 +83,14 @@
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "users\/:id",
+                            "path": "v1\/users\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/users\/:id",
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolores",
+                                    "value": "aut",
                                     "description": ""
                                 }
                             ]
@@ -171,16 +113,22 @@
                         }
                     },
                     "response": []
-                },
+                }
+            ]
+        },
+        {
+            "name": "Usuarios",
+            "description": "",
+            "item": [
                 {
-                    "name": "Login - Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da senha+id\ne salva no campo api_token por 48hrs",
+                    "name": "Criar usu\u00e1rio",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "login",
+                            "path": "v1\/users",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/login"
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users"
                         },
                         "method": "POST",
                         "header": [
@@ -193,8 +141,72 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
-                        "description": "",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b71175dd5644180d4bce21d1790bb0cf-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 1\n}"
+                        },
+                        "description": "Cria um usu\u00e1rio.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Atualizar usuario",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/users",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 19\n}"
+                        },
+                        "description": "Atualiza os dados de um usu\u00e1rio"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/login",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"login\": \"praesentium\",\n    \"password\": \"excepturi\"\n}"
+                        },
+                        "description": "Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da data concatenando com o ID do usu\u00e1rio\ne salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN",
                         "auth": {
                             "type": "noauth"
                         }

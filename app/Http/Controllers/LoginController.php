@@ -21,9 +21,17 @@ class LoginController extends Controller
     }
 
     /**
-     * Login - Faz o login do usuario
-     * Se email e senha coincidirem, gera um md5 da senha+id
-     * e salva no campo api_token por 48hrs
+     * Login
+     * 
+     * Faz o login do usuario
+     * Se email e senha coincidirem, gera um md5 da data concatenando com o ID do usuário
+     * e salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN
+     * 
+     * @group Usuarios
+     * @bodyParam login string required Email do usuário
+     * @bodyParam password string required Senha do usuário
+     * 
+     * @response string
      */
     public function login(Request $request)
     {
@@ -40,7 +48,7 @@ class LoginController extends Controller
 
         if ($user && Hash::check($request->input('password'), $user->password)) {
             // Cria o token
-            $token = md5(now()) . '-' . md5($user->id);
+            $token = md5(Carbon::now()) . '-' . md5($user->id);
             $user->api_token = $token;
             $user->save();
 
@@ -51,7 +59,7 @@ class LoginController extends Controller
 
             return $token;
         } else {
-            return response('Unauthorized.', 401);
+            return response(['message' => 'Usuário e/ou senha incorretos.'], 401);
         }
     }
 }

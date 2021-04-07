@@ -23,9 +23,9 @@ $router->get('/', function () use ($router) {
  * 
  * @TODO Mudar para arquivo proprio
  */
-$router->post('/users', ['uses' => 'UserController@create']);
-$router->get('/users', ['middleware' => 'auth', 'uses' => 'UserController@getAll']);
-$router->put('/users', ['middleware' => 'auth', 'uses' => 'UserController@update']);
-$router->delete('/users/{id}', ['middleware' => 'auth', 'uses' => 'UserController@delete']);
+$router->post('/v1/users', ['uses' => 'UserController@create']);
+$router->get('/v1/users', ['middleware' => 'auth', 'uses' => 'UserController@getAll']);
+$router->put('/v1/users', ['middleware' => 'auth', 'uses' => 'UserController@update']);
+$router->delete('/v1/users/{id}', ['middleware' => 'auth', 'uses' => 'UserController@delete']);
 // login
-$router->post('/login', ['uses' => 'LoginController@login']);
+$router->post('/v1/login', ['uses' => 'LoginController@login']);
