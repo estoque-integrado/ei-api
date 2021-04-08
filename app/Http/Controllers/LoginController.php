@@ -44,22 +44,26 @@ class LoginController extends Controller
             []
         );
 
-        $user = User::where('email', $request->input('email'))->first();
+        try {
+            $user = User::where('email', $request->input('email'))->first();
 
-        if ($user && Hash::check($request->input('password'), $user->password)) {
-            // Cria o token
-            $token = md5(Carbon::now()) . '-' . md5($user->id);
-            $user->api_token = $token;
-            $user->save();
+            if ($user && Hash::check($request->input('password'), $user->password)) {
+                // Cria o token
+                $token = md5(Carbon::now()) . '-' . md5($user->id);
+                $user->api_token = $token;
+                $user->save();
 
-            // Adicionar um JOB para limpar o token após 24h
-            $job = (new UserJob($user))->delay(Carbon::now()->addHours(config('TIME_TO_RESET_TOKEN', 24)));
+                // Adicionar um JOB para limpar o token após 24h
+                $job = (new UserJob($user))->delay(Carbon::now()->addHours(config('TIME_TO_RESET_TOKEN', 24)));
 
-            $this->dispatch($job);
+                $this->dispatch($job);
 
-            return $token;
-        } else {
-            return response(['message' => 'Usuário e/ou senha incorretos.'], 401);
+                return $token;
+            } else {
+                return response(['message' => 'Usuário e/ou senha incorretos.'], 401);
+            }
+        } catch (\Exception $e) {
+            return response(['message' => $e->getMessage()], 422);
         }
     }
 }

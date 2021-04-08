@@ -10,11 +10,157 @@
     ],
     "info": {
         "name": "API estoqueintegrado.com",
-        "_postman_id": "63c529d5-0254-427f-b0c9-40c4e9c68265",
+        "_postman_id": "4cf8403a-ad58-4679-8944-fe4496b8e70f",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "1 - Usuarios",
+            "description": "",
+            "item": [
+                {
+                    "name": "Criar usu\u00e1rio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/users",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"name\": \"autem\",\n    \"cpf\": \"non\",\n    \"email\": \"impedit\",\n    \"password\": \"dicta\",\n    \"celular\": \"molestiae\"\n}"
+                        },
+                        "description": "Cria um usu\u00e1rio."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Atualizar usuario",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/users\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "10",
+                                    "description": "ID do usu\u00e1rio"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Atualiza os dados de um usu\u00e1rio"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detalhes usuario.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/users\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "10",
+                                    "description": "ID da Usuario"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Retorna os detalhes do Usuario."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deletar usuario",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/users\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "laborum",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 2\n}"
+                        },
+                        "description": "Deletar um usu\u00e1rio"
+                    },
+                    "response": []
+                }
+            ]
+        },
         {
             "name": "Empresas",
             "description": "",
@@ -42,7 +188,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"user_id\": 10,\n    \"nome\": \"provident\",\n    \"website\": \"totam\",\n    \"razao_social\": \"ea\",\n    \"cnpj\": \"saepe\",\n    \"telefone\": \"impedit\",\n    \"celular\": \"cumque\",\n    \"email\": \"officiis\",\n    \"logo\": \"consequatur\",\n    \"icone\": \"dolores\",\n    \"matriz\": false,\n    \"modo_catalogo\": true\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"user_id\": 14,\n    \"nome\": \"in\",\n    \"website\": \"consectetur\",\n    \"razao_social\": \"et\",\n    \"cnpj\": \"provident\",\n    \"telefone\": \"repellat\",\n    \"celular\": \"quasi\",\n    \"email\": \"aut\",\n    \"logo\": \"velit\",\n    \"icone\": \"enim\",\n    \"matriz\": false,\n    \"modo_catalogo\": false\n}"
                         },
                         "description": "Cria uma nova empresa."
                     },
@@ -71,7 +217,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 20\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 15\n}"
                         },
                         "description": "Retorna a lista de empresas que o usu\u00e1rio est\u00e1 associado."
                     },
@@ -90,7 +236,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "14",
+                                    "value": "17",
                                     "description": "ID do usuario proprietario da empresa"
                                 }
                             ]
@@ -127,7 +273,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "19",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -164,7 +310,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "19",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -215,11 +361,11 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": ""
                     },
                     "response": []
                 },
@@ -244,11 +390,11 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": ""
                     },
                     "response": []
                 }
@@ -258,149 +404,6 @@
             "name": "Usuarios",
             "description": "",
             "item": [
-                {
-                    "name": "Criar usu\u00e1rio",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "v1\/users",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"name\": \"aut\",\n    \"cpf\": \"odit\",\n    \"email\": \"ea\",\n    \"password\": \"nihil\",\n    \"celular\": \"voluptatem\"\n}"
-                        },
-                        "description": "Cria um usu\u00e1rio.",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Atualizar usuario",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "v1\/users\/:id",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "17",
-                                    "description": "ID do usu\u00e1rio"
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
-                        },
-                        "description": "Atualiza os dados de um usu\u00e1rio"
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Detalhes usuario.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "v1\/users\/:id",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "9",
-                                    "description": "ID da Usuario"
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
-                        },
-                        "description": "Retorna os detalhes do Usuario."
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Deletar usuario",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "v1\/users\/:id",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "maxime",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 7\n}"
-                        },
-                        "description": "Deletar um usu\u00e1rio"
-                    },
-                    "response": []
-                },
                 {
                     "name": "Login",
                     "request": {
@@ -424,12 +427,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"login\": \"in\",\n    \"password\": \"adipisci\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"login\": \"dolorem\",\n    \"password\": \"nulla\"\n}"
                         },
-                        "description": "Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da data concatenando com o ID do usu\u00e1rio\ne salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": "Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da data concatenando com o ID do usu\u00e1rio\ne salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN"
                     },
                     "response": []
                 }

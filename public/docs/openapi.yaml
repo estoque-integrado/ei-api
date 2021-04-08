@@ -7,6 +7,280 @@ servers:
     -
         url: 'http://localhost'
 paths:
+    /v1/users:
+        post:
+            summary: 'Criar usuário'
+            description: 'Cria um usuário.'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\":1,\n     \"name\": \"Nome usuario\",\n     \"email\": \"teste@estoqueintegrado.com\"\n     [...]\n}"
+            tags:
+                - '1 - Usuarios'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                name:
+                                    type: string
+                                    description: 'Nome do usuário'
+                                    example: autem
+                                cpf:
+                                    type: string
+                                    description: 'Cpf com ou sem formatação Ex: 111.111.111-11'
+                                    example: non
+                                email:
+                                    type: string
+                                    description: 'Email do usuário Ex: teste@estoqueintegrado.com'
+                                    example: impedit
+                                password:
+                                    type: string
+                                    description: 'Senha do usuário'
+                                    example: dicta
+                                celular:
+                                    type: string
+                                    description: 'Celular do usuário'
+                                    example: molestiae
+                            required:
+                                - api_token
+                                - name
+                                - cpf
+                                - email
+        get:
+            summary: Read
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: Unauthorized.
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+    '/v1/users/{id}':
+        put:
+            summary: 'Atualizar usuario'
+            description: 'Atualiza os dados de um usuário'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"name\": \"Ronierison Sena\"\n     \"email\": \"teste@teste.com\"\n     [...]\n}"
+                404:
+                    description: '404, user not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'usuário não encontrado.'
+                                properties:
+                                    message: { type: string, example: 'usuário não encontrado.' }
+            tags:
+                - '1 - Usuarios'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        get:
+            summary: 'Detalhes usuario.'
+            description: 'Retorna os detalhes do Usuario.'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n{\n     \"id\":1,\n     \"nome\":\"Nome do usuario\",\n     \"email\":\"usuario@estoqueintegrado.com\",\n     [...]"
+                404:
+                    description: '404, user not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'usuário não encontrado.'
+                                properties:
+                                    message: { type: string, example: 'usuário não encontrado.' }
+            tags:
+                - '1 - Usuarios'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        delete:
+            summary: 'Deletar usuario'
+            description: 'Deletar um usuário'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"name\": \"Ronierison Sena\"\n     \"email\": \"teste@teste.com\"\n     [...]\n}"
+                404:
+                    description: '404, user not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'usuário não encontrado.'
+                                properties:
+                                    message: { type: string, example: 'usuário não encontrado.' }
+            tags:
+                - '1 - Usuarios'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                id:
+                                    type: integer
+                                    description: 'ID do usuário'
+                                    example: 2
+                            required:
+                                - api_token
+                                - id
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'ID do usuário'
+                example: 10
+                required: true
+                schema:
+                    type: integer
     /v1/companies:
         post:
             summary: 'Criar empresa.'
@@ -50,43 +324,43 @@ paths:
                                 user_id:
                                     type: integer
                                     description: 'ID do usuario proprietario da empresa'
-                                    example: 10
+                                    example: 14
                                 nome:
                                     type: string
                                     description: 'Nome fantasia da empresa'
-                                    example: provident
+                                    example: in
                                 website:
                                     type: string
                                     description: 'URL customizada da empresa Ex: minhaloja.estoqueintegrado.com|minhaloja.com.br'
-                                    example: totam
+                                    example: consectetur
                                 razao_social:
                                     type: string
                                     description: 'Razão social da empresa'
-                                    example: ea
+                                    example: et
                                 cnpj:
                                     type: string
                                     description: 'CNPJ da empresa com ou sem formatação'
-                                    example: saepe
+                                    example: provident
                                 telefone:
                                     type: string
                                     description: 'Telefone da empresa'
-                                    example: impedit
+                                    example: repellat
                                 celular:
                                     type: string
                                     description: 'Celular da empresa'
-                                    example: cumque
+                                    example: quasi
                                 email:
                                     type: string
                                     description: 'Email da empresa'
-                                    example: officiis
+                                    example: aut
                                 logo:
                                     type: string
                                     description: 'Path do caminho da logo salva'
-                                    example: consequatur
+                                    example: velit
                                 icone:
                                     type: string
                                     description: 'Path do ícone da empresa'
-                                    example: dolores
+                                    example: enim
                                 matriz:
                                     type: boolean
                                     description: 'Se essa empresa é matriz(1) ou filial (0)'
@@ -94,7 +368,7 @@ paths:
                                 modo_catalogo:
                                     type: boolean
                                     description: 'Exibir banners na loja. 1 = sim, 0 = não. Default 0'
-                                    example: true
+                                    example: false
                             required:
                                 - api_token
                                 - user_id
@@ -143,7 +417,7 @@ paths:
                                 id:
                                     type: integer
                                     description: 'ID do usuario'
-                                    example: 20
+                                    example: 15
                             required:
                                 - api_token
                                 - id
@@ -279,7 +553,7 @@ paths:
                 in: path
                 name: id
                 description: 'ID do usuario proprietario da empresa'
-                example: 14
+                example: 17
                 required: true
                 schema:
                     type: integer
@@ -312,136 +586,6 @@ paths:
                                 example: 'Lumen (8.2.3) (Laravel Components ^8.0)'
             tags:
                 - Endpoints
-            security: []
-    /v1/users:
-        get:
-            summary: Read
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                401:
-                    description: ''
-                    content:
-                        text/plain:
-                            schema:
-                                type: string
-                                example: Unauthorized.
-            tags:
-                - Endpoints
-            security: []
-        post:
-            summary: 'Criar usuário'
-            description: 'Cria um usuário.'
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: '200, success'
-                    content:
-                        text/plain:
-                            schema:
-                                type: string
-                                example: "{\n     \"id\":1,\n     \"name\": \"Nome usuario\",\n     \"email\": \"teste@estoqueintegrado.com\"\n     [...]\n}"
-            tags:
-                - Usuarios
-            requestBody:
-                required: true
-                content:
-                    application/json:
-                        schema:
-                            type: object
-                            properties:
-                                name:
-                                    type: string
-                                    description: 'Nome do usuário'
-                                    example: aut
-                                cpf:
-                                    type: string
-                                    description: 'Cpf com ou sem formatação Ex: 111.111.111-11'
-                                    example: odit
-                                email:
-                                    type: string
-                                    description: 'Email do usuário Ex: teste@estoqueintegrado.com'
-                                    example: ea
-                                password:
-                                    type: string
-                                    description: 'Senha do usuário'
-                                    example: nihil
-                                celular:
-                                    type: string
-                                    description: 'Celular do usuário'
-                                    example: voluptatem
-                            required:
-                                - name
-                                - cpf
-                                - email
-            security: []
-    '/v1/users/{id}':
-        put:
-            summary: 'Atualizar usuario'
-            description: 'Atualiza os dados de um usuário'
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: '200, success'
-                    content:
-                        text/plain:
-                            schema:
-                                type: string
-                                example: "{\n     \"id\": 1,\n     \"name\": \"Ronierison Sena\"\n     \"email\": \"teste@teste.com\"\n     [...]\n}"
-                404:
-                    description: '404, user not found'
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: 'usuário não encontrado.'
-                                properties:
-                                    message: { type: string, example: 'usuário não encontrado.' }
-            tags:
-                - Usuarios
             requestBody:
                 required: true
                 content:
@@ -455,122 +599,6 @@ paths:
                                     example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
                             required:
                                 - api_token
-        get:
-            summary: 'Detalhes usuario.'
-            description: 'Retorna os detalhes do Usuario.'
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: '200'
-                    content:
-                        text/plain:
-                            schema:
-                                type: string
-                                example: "{\n{\n     \"id\":1,\n     \"nome\":\"Nome do usuario\",\n     \"email\":\"usuario@estoqueintegrado.com\",\n     [...]"
-                404:
-                    description: '404, user not found'
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: 'usuário não encontrado.'
-                                properties:
-                                    message: { type: string, example: 'usuário não encontrado.' }
-            tags:
-                - Usuarios
-            requestBody:
-                required: true
-                content:
-                    application/json:
-                        schema:
-                            type: object
-                            properties:
-                                api_token:
-                                    type: string
-                                    description: 'Authentication key.'
-                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
-                            required:
-                                - api_token
-        delete:
-            summary: 'Deletar usuario'
-            description: 'Deletar um usuário'
-            parameters:
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: '200, success'
-                    content:
-                        text/plain:
-                            schema:
-                                type: string
-                                example: "{\n     \"id\": 1,\n     \"name\": \"Ronierison Sena\"\n     \"email\": \"teste@teste.com\"\n     [...]\n}"
-                404:
-                    description: '404, user not found'
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: 'usuário não encontrado.'
-                                properties:
-                                    message: { type: string, example: 'usuário não encontrado.' }
-            tags:
-                - Usuarios
-            requestBody:
-                required: true
-                content:
-                    application/json:
-                        schema:
-                            type: object
-                            properties:
-                                api_token:
-                                    type: string
-                                    description: 'Authentication key.'
-                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
-                                id:
-                                    type: integer
-                                    description: 'ID do usuário'
-                                    example: 7
-                            required:
-                                - api_token
-                                - id
-        parameters:
-            -
-                in: path
-                name: id
-                description: 'ID do usuário'
-                example: 17
-                required: true
-                schema:
-                    type: integer
     /v1/login:
         post:
             summary: Login
@@ -607,18 +635,22 @@ paths:
                         schema:
                             type: object
                             properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
                                 login:
                                     type: string
                                     description: 'Email do usuário'
-                                    example: in
+                                    example: dolorem
                                 password:
                                     type: string
                                     description: 'Senha do usuário'
-                                    example: adipisci
+                                    example: nulla
                             required:
+                                - api_token
                                 - login
                                 - password
-            security: []
 components:
     securitySchemes:
         default: []

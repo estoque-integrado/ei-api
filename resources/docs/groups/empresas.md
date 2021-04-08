@@ -14,7 +14,7 @@ curl -X POST \
     "http://localhost/v1/companies" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","user_id":10,"nome":"provident","website":"totam","razao_social":"ea","cnpj":"saepe","telefone":"impedit","celular":"cumque","email":"officiis","logo":"consequatur","icone":"dolores","matriz":false,"modo_catalogo":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","user_id":14,"nome":"in","website":"consectetur","razao_social":"et","cnpj":"provident","telefone":"repellat","celular":"quasi","email":"aut","logo":"velit","icone":"enim","matriz":false,"modo_catalogo":false}'
 
 ```
 
@@ -30,18 +30,18 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "user_id": 10,
-    "nome": "provident",
-    "website": "totam",
-    "razao_social": "ea",
-    "cnpj": "saepe",
-    "telefone": "impedit",
-    "celular": "cumque",
-    "email": "officiis",
-    "logo": "consequatur",
-    "icone": "dolores",
+    "user_id": 14,
+    "nome": "in",
+    "website": "consectetur",
+    "razao_social": "et",
+    "cnpj": "provident",
+    "telefone": "repellat",
+    "celular": "quasi",
+    "email": "aut",
+    "logo": "velit",
+    "icone": "enim",
     "matriz": false,
-    "modo_catalogo": true
+    "modo_catalogo": false
 }
 
 fetch(url, {
@@ -62,18 +62,18 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'user_id' => 10,
-            'nome' => 'provident',
-            'website' => 'totam',
-            'razao_social' => 'ea',
-            'cnpj' => 'saepe',
-            'telefone' => 'impedit',
-            'celular' => 'cumque',
-            'email' => 'officiis',
-            'logo' => 'consequatur',
-            'icone' => 'dolores',
+            'user_id' => 14,
+            'nome' => 'in',
+            'website' => 'consectetur',
+            'razao_social' => 'et',
+            'cnpj' => 'provident',
+            'telefone' => 'repellat',
+            'celular' => 'quasi',
+            'email' => 'aut',
+            'logo' => 'velit',
+            'icone' => 'enim',
             'matriz' => false,
-            'modo_catalogo' => true,
+            'modo_catalogo' => false,
         ],
     ]
 );
@@ -197,7 +197,7 @@ curl -X GET \
     -G "http://localhost/v1/my-companies" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":20}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":15}'
 
 ```
 
@@ -213,7 +213,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "id": 20
+    "id": 15
 }
 
 fetch(url, {
@@ -234,7 +234,7 @@ $response = $client->get(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'id' => 20,
+            'id' => 15,
         ],
     ]
 );
@@ -305,7 +305,7 @@ Usa softDeletes()
 
 ```bash
 curl -X PUT \
-    "http://localhost/v1/companies/14" \
+    "http://localhost/v1/companies/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -314,7 +314,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/companies/14"
+    "http://localhost/v1/companies/17"
 );
 
 let headers = {
@@ -337,7 +337,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'http://localhost/v1/companies/14',
+    'http://localhost/v1/companies/17',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -409,7 +409,7 @@ Retorna os detalhes da empresa.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/v1/companies/7" \
+    -G "http://localhost/v1/companies/19" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -418,7 +418,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/companies/7"
+    "http://localhost/v1/companies/19"
 );
 
 let headers = {
@@ -441,7 +441,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'http://localhost/v1/companies/7',
+    'http://localhost/v1/companies/19',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -514,7 +514,7 @@ Usa softDeletes()
 
 ```bash
 curl -X DELETE \
-    "http://localhost/v1/companies/5" \
+    "http://localhost/v1/companies/19" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -523,7 +523,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/companies/5"
+    "http://localhost/v1/companies/19"
 );
 
 let headers = {
@@ -546,7 +546,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'http://localhost/v1/companies/5',
+    'http://localhost/v1/companies/19',
     [
         'headers' => [
             'Accept' => 'application/json',
