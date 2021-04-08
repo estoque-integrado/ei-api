@@ -13,7 +13,7 @@ curl -X POST \
     "http://localhost/v1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b71175dd5644180d4bce21d1790bb0cf-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":1}'
+    -d '{"name":"aut","cpf":"odit","email":"ea","password":"nihil","celular":"voluptatem"}'
 
 ```
 
@@ -28,8 +28,11 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b71175dd5644180d4bce21d1790bb0cf-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "id": 1
+    "name": "aut",
+    "cpf": "odit",
+    "email": "ea",
+    "password": "nihil",
+    "celular": "voluptatem"
 }
 
 fetch(url, {
@@ -49,8 +52,11 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'api_token' => 'b71175dd5644180d4bce21d1790bb0cf-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'id' => 1,
+            'name' => 'aut',
+            'cpf' => 'odit',
+            'email' => 'ea',
+            'password' => 'nihil',
+            'celular' => 'voluptatem',
         ],
     ]
 );
@@ -59,6 +65,17 @@ print_r(json_decode((string) $body));
 ```
 
 
+> Example response (200, success):
+
+```json
+
+{
+     "id":1,
+     "name": "Nome usuario",
+     "email": "teste@estoqueintegrado.com"
+     [...]
+}
+```
 <div id="execution-results-POSTv1-users" hidden>
     <blockquote>Received response<span id="execution-response-status-POSTv1-users"></span>:</blockquote>
     <pre class="json"><code id="execution-response-content-POSTv1-users"></code></pre>
@@ -80,15 +97,30 @@ print_r(json_decode((string) $body));
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>api_token</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="api_token" data-endpoint="POSTv1-users" data-component="body" required  hidden>
+<b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="name" data-endpoint="POSTv1-users" data-component="body" required  hidden>
 <br>
-Token do usuário</p>
+Nome do usuário</p>
 <p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="id" data-endpoint="POSTv1-users" data-component="body" required  hidden>
+<b><code>cpf</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="cpf" data-endpoint="POSTv1-users" data-component="body" required  hidden>
 <br>
-ID do usuário</p>
+Cpf com ou sem formatação Ex: 111.111.111-11</p>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="email" data-endpoint="POSTv1-users" data-component="body" required  hidden>
+<br>
+Email do usuário Ex: teste@estoqueintegrado.com</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="password" data-endpoint="POSTv1-users" data-component="body"  hidden>
+<br>
+Senha do usuário</p>
+<p>
+<b><code>celular</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="celular" data-endpoint="POSTv1-users" data-component="body"  hidden>
+<br>
+Celular do usuário</p>
 
 </form>
 
@@ -103,16 +135,16 @@ Atualiza os dados de um usuário
 
 ```bash
 curl -X PUT \
-    "http://localhost/v1/users" \
+    "http://localhost/v1/users/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":19}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/users"
+    "http://localhost/v1/users/17"
 );
 
 let headers = {
@@ -121,7 +153,7 @@ let headers = {
 };
 
 let body = {
-    "id": 19
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
 }
 
 fetch(url, {
@@ -135,13 +167,13 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'http://localhost/v1/users',
+    'http://localhost/v1/users/17',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
-            'id' => 19,
+            'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
         ],
     ]
 );
@@ -168,29 +200,262 @@ print_r(json_decode((string) $body));
     "message": "usuário não encontrado."
 }
 ```
-<div id="execution-results-PUTv1-users" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTv1-users"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTv1-users"></code></pre>
+<div id="execution-results-PUTv1-users--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTv1-users--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTv1-users--id-"></code></pre>
 </div>
-<div id="execution-error-PUTv1-users" hidden>
+<div id="execution-error-PUTv1-users--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTv1-users"></code></pre>
+    <pre><code id="execution-error-message-PUTv1-users--id-"></code></pre>
 </div>
-<form id="form-PUTv1-users" data-method="PUT" data-path="v1/users" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTv1-users', this);">
+<form id="form-PUTv1-users--id-" data-method="PUT" data-path="v1/users/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTv1-users--id-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTv1-users" onclick="tryItOut('PUTv1-users');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTv1-users" onclick="cancelTryOut('PUTv1-users');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTv1-users" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTv1-users--id-" onclick="tryItOut('PUTv1-users--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTv1-users--id-" onclick="cancelTryOut('PUTv1-users--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTv1-users--id-" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-darkblue">PUT</small>
- <b><code>v1/users</code></b>
+ <b><code>v1/users/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="id" data-endpoint="PUTv1-users--id-" data-component="url" required  hidden>
+<br>
+ID do usuário</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>api_token</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="api_token" data-endpoint="PUTv1-users--id-" data-component="body" required  hidden>
+<br>
+Authentication key.</p>
+
+</form>
+
+
+## Detalhes usuario.
+
+<small class="badge badge-darkred">requires authentication</small>
+
+Retorna os detalhes do Usuario.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/v1/users/9" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/v1/users/9"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+}
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response => response.json());
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    'http://localhost/v1/users/9',
+    [
+        'headers' => [
+            'Accept' => 'application/json',
+        ],
+        'json' => [
+            'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (200):
+
+```json
+
+{
+{
+     "id":1,
+     "nome":"Nome do usuario",
+     "email":"usuario@estoqueintegrado.com",
+     [...]
+```
+> Example response (404, user not found):
+
+```json
+{
+    "message": "usuário não encontrado."
+}
+```
+<div id="execution-results-GETv1-users--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETv1-users--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETv1-users--id-"></code></pre>
+</div>
+<div id="execution-error-GETv1-users--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETv1-users--id-"></code></pre>
+</div>
+<form id="form-GETv1-users--id-" data-method="GET" data-path="v1/users/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETv1-users--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETv1-users--id-" onclick="tryItOut('GETv1-users--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETv1-users--id-" onclick="cancelTryOut('GETv1-users--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETv1-users--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>v1/users/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="id" data-endpoint="GETv1-users--id-" data-component="url" required  hidden>
+<br>
+ID da Usuario</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>api_token</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="api_token" data-endpoint="GETv1-users--id-" data-component="body" required  hidden>
+<br>
+Authentication key.</p>
+
+</form>
+
+
+## Deletar usuario
+
+<small class="badge badge-darkred">requires authentication</small>
+
+Deletar um usuário
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/v1/users/maxime" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":7}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/v1/users/maxime"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "id": 7
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response => response.json());
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->delete(
+    'http://localhost/v1/users/maxime',
+    [
+        'headers' => [
+            'Accept' => 'application/json',
+        ],
+        'json' => [
+            'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'id' => 7,
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (200, success):
+
+```json
+
+{
+     "id": 1,
+     "name": "Ronierison Sena"
+     "email": "teste@teste.com"
+     [...]
+}
+```
+> Example response (404, user not found):
+
+```json
+{
+    "message": "usuário não encontrado."
+}
+```
+<div id="execution-results-DELETEv1-users--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEv1-users--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEv1-users--id-"></code></pre>
+</div>
+<div id="execution-error-DELETEv1-users--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEv1-users--id-"></code></pre>
+</div>
+<form id="form-DELETEv1-users--id-" data-method="DELETE" data-path="v1/users/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEv1-users--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEv1-users--id-" onclick="tryItOut('DELETEv1-users--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEv1-users--id-" onclick="cancelTryOut('DELETEv1-users--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEv1-users--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-red">DELETE</small>
+ <b><code>v1/users/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="DELETEv1-users--id-" data-component="url" required  hidden>
+<br>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
+<b><code>api_token</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="api_token" data-endpoint="DELETEv1-users--id-" data-component="body" required  hidden>
+<br>
+Authentication key.</p>
+<p>
 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="id" data-endpoint="PUTv1-users" data-component="body" required  hidden>
+<input type="number" name="id" data-endpoint="DELETEv1-users--id-" data-component="body" required  hidden>
 <br>
 ID do usuário</p>
 
@@ -211,7 +476,7 @@ curl -X POST \
     "http://localhost/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"login":"praesentium","password":"excepturi"}'
+    -d '{"login":"in","password":"adipisci"}'
 
 ```
 
@@ -226,8 +491,8 @@ let headers = {
 };
 
 let body = {
-    "login": "praesentium",
-    "password": "excepturi"
+    "login": "in",
+    "password": "adipisci"
 }
 
 fetch(url, {
@@ -247,8 +512,8 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'login' => 'praesentium',
-            'password' => 'excepturi',
+            'login' => 'in',
+            'password' => 'adipisci',
         ],
     ]
 );

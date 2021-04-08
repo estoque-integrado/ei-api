@@ -1,12 +1,288 @@
 openapi: 3.0.3
 info:
-    title: Lumen
+    title: 'API estoqueintegrado.com'
     description: ''
     version: 1.0.0
 servers:
     -
         url: 'http://localhost'
 paths:
+    /v1/companies:
+        post:
+            summary: 'Criar empresa.'
+            description: 'Cria uma nova empresa.'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\":1,\n     \"nome\":\"Nome da empresa\",\n     \"website\":\"Domínio da empresa\",\n     [...]\n}"
+            tags:
+                - Empresas
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                user_id:
+                                    type: integer
+                                    description: 'ID do usuario proprietario da empresa'
+                                    example: 10
+                                nome:
+                                    type: string
+                                    description: 'Nome fantasia da empresa'
+                                    example: provident
+                                website:
+                                    type: string
+                                    description: 'URL customizada da empresa Ex: minhaloja.estoqueintegrado.com|minhaloja.com.br'
+                                    example: totam
+                                razao_social:
+                                    type: string
+                                    description: 'Razão social da empresa'
+                                    example: ea
+                                cnpj:
+                                    type: string
+                                    description: 'CNPJ da empresa com ou sem formatação'
+                                    example: saepe
+                                telefone:
+                                    type: string
+                                    description: 'Telefone da empresa'
+                                    example: impedit
+                                celular:
+                                    type: string
+                                    description: 'Celular da empresa'
+                                    example: cumque
+                                email:
+                                    type: string
+                                    description: 'Email da empresa'
+                                    example: officiis
+                                logo:
+                                    type: string
+                                    description: 'Path do caminho da logo salva'
+                                    example: consequatur
+                                icone:
+                                    type: string
+                                    description: 'Path do ícone da empresa'
+                                    example: dolores
+                                matriz:
+                                    type: boolean
+                                    description: 'Se essa empresa é matriz(1) ou filial (0)'
+                                    example: false
+                                modo_catalogo:
+                                    type: boolean
+                                    description: 'Exibir banners na loja. 1 = sim, 0 = não. Default 0'
+                                    example: true
+                            required:
+                                - api_token
+                                - user_id
+                                - nome
+                                - cnpj
+    /v1/my-companies:
+        get:
+            summary: 'Lista de empresas do usuario.'
+            description: 'Retorna a lista de empresas que o usuário está associado.'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "[{\n     \"id\":1,\n     \"nome\":\"Nome da empresa\",\n     \"website\":\"Domínio da empresa\",\n     [...]\n},\n{\n     \"id\":2,\n     \"nome\":\"Nome da empresa\",\n     \"website\":\"Domínio da empresa\",\n     [...]\n}]"
+            tags:
+                - Empresas
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                id:
+                                    type: integer
+                                    description: 'ID do usuario'
+                                    example: 20
+                            required:
+                                - api_token
+                                - id
+    '/v1/companies/{id}':
+        put:
+            summary: 'Atualizar empresa.'
+            description: "Atualiza dados da empresa.\nUsa softDeletes()"
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n\n     \"id\":1,\n     \"nome\":\"Nome da empresa\",\n     \"website\":\"Domínio da empresa\",\n     [...]\n}"
+            tags:
+                - Empresas
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        get:
+            summary: 'Detalhes empresa.'
+            description: 'Retorna os detalhes da empresa.'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n{\n     \"id\":1,\n     \"nome\":\"Nome da empresa\",\n     \"website\":\"Domínio da empresa\",\n     [...]\n}"
+            tags:
+                - Empresas
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        delete:
+            summary: 'Deletar empresa.'
+            description: "Deleta a empresa.\nUsa softDeletes()"
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Empresa deletada!'
+                                properties:
+                                    message: { type: string, example: 'Empresa deletada!' }
+            tags:
+                - Empresas
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'ID do usuario proprietario da empresa'
+                example: 14
+                required: true
+                schema:
+                    type: integer
     /:
         get:
             summary: ''
@@ -85,7 +361,14 @@ paths:
                     example: application/json
                     schema:
                         type: string
-            responses: {  }
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\":1,\n     \"name\": \"Nome usuario\",\n     \"email\": \"teste@estoqueintegrado.com\"\n     [...]\n}"
             tags:
                 - Usuarios
             requestBody:
@@ -95,18 +378,32 @@ paths:
                         schema:
                             type: object
                             properties:
-                                api_token:
+                                name:
                                     type: string
-                                    description: 'Token do usuário'
-                                    example: b71175dd5644180d4bce21d1790bb0cf-eccbc87e4b5ce2fe28308fd9f2a7baf3
-                                id:
-                                    type: integer
-                                    description: 'ID do usuário'
-                                    example: 1
+                                    description: 'Nome do usuário'
+                                    example: aut
+                                cpf:
+                                    type: string
+                                    description: 'Cpf com ou sem formatação Ex: 111.111.111-11'
+                                    example: odit
+                                email:
+                                    type: string
+                                    description: 'Email do usuário Ex: teste@estoqueintegrado.com'
+                                    example: ea
+                                password:
+                                    type: string
+                                    description: 'Senha do usuário'
+                                    example: nihil
+                                celular:
+                                    type: string
+                                    description: 'Celular do usuário'
+                                    example: voluptatem
                             required:
-                                - api_token
-                                - id
+                                - name
+                                - cpf
+                                - email
             security: []
+    '/v1/users/{id}':
         put:
             summary: 'Atualizar usuario'
             description: 'Atualiza os dados de um usuário'
@@ -152,16 +449,15 @@ paths:
                         schema:
                             type: object
                             properties:
-                                id:
-                                    type: integer
-                                    description: 'ID do usuário'
-                                    example: 19
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
                             required:
-                                - id
-    '/v1/users/{id}':
-        delete:
-            summary: Delete
-            description: ''
+                                - api_token
+        get:
+            summary: 'Detalhes usuario.'
+            description: 'Retorna os detalhes do Usuario.'
             parameters:
                 -
                     in: header
@@ -177,19 +473,104 @@ paths:
                     example: application/json
                     schema:
                         type: string
-            responses: {  }
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n{\n     \"id\":1,\n     \"nome\":\"Nome do usuario\",\n     \"email\":\"usuario@estoqueintegrado.com\",\n     [...]"
+                404:
+                    description: '404, user not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'usuário não encontrado.'
+                                properties:
+                                    message: { type: string, example: 'usuário não encontrado.' }
             tags:
-                - Endpoints
-            security: []
+                - Usuarios
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        delete:
+            summary: 'Deletar usuario'
+            description: 'Deletar um usuário'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"name\": \"Ronierison Sena\"\n     \"email\": \"teste@teste.com\"\n     [...]\n}"
+                404:
+                    description: '404, user not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'usuário não encontrado.'
+                                properties:
+                                    message: { type: string, example: 'usuário não encontrado.' }
+            tags:
+                - Usuarios
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                id:
+                                    type: integer
+                                    description: 'ID do usuário'
+                                    example: 7
+                            required:
+                                - api_token
+                                - id
         parameters:
             -
                 in: path
                 name: id
-                description: ''
-                example: aut
+                description: 'ID do usuário'
+                example: 17
                 required: true
                 schema:
-                    type: string
+                    type: integer
     /v1/login:
         post:
             summary: Login
@@ -229,12 +610,18 @@ paths:
                                 login:
                                     type: string
                                     description: 'Email do usuário'
-                                    example: praesentium
+                                    example: in
                                 password:
                                     type: string
                                     description: 'Senha do usuário'
-                                    example: excepturi
+                                    example: adipisci
                             required:
                                 - login
                                 - password
             security: []
+components:
+    securitySchemes:
+        default: []
+security:
+    -
+        default: []

@@ -8,7 +8,6 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
-use Illuminate\Validation\Rule;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
@@ -47,15 +46,46 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'password',
     ];
 
+    /**
+     * Retorna os IDS das empresas onde o usuário seja o PROPRIETÁRIO
+     *
+     * @return Array
+     */
+    public function getIdsMyOwnCompanies()
+    {
+        return Empresa::where('user_id', $this->id)
+            ->pluck('id')->toArray();
+    }
+
+
+    /**
+     * Retorna os IDS das empresas que o usuário administra
+     *
+     * @return Array
+     */
+    public function getIdsMyCompanies()
+    {
+        return Empresa::where('user_id', $this->id)->orWhereHas('usuarios', function ($query) {
+            $query->where('user_id', $this->id);
+        })->pluck('id')->toArray();
+    }
+
+    /**
+     * Verifica se o usuário é admin
+     */
+    public function isAdmin()
+    {
+        return $this->tipo_usuario_id == 1;
+    }
 
     /**
      * Retorna as regras de validação
-     * 
+     *
      * @return Array
      */
     public static function getValidationRules($userId = null)
     {
-        
+
         $dados = [
             'name' => 'required|string|max:200',
             'email' => array('required', 'email', "unique:users,email,{$userId},id"),
@@ -69,7 +99,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     /**
      * Mensagens de validação
-     * 
+     *
      * @return Array
      */
     public static function getValidationMessages()

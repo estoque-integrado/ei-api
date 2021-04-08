@@ -9,12 +9,187 @@
         }
     ],
     "info": {
-        "name": "Lumen",
-        "_postman_id": "8acdb2dd-dad5-427b-b430-32fdb28868d7",
+        "name": "API estoqueintegrado.com",
+        "_postman_id": "63c529d5-0254-427f-b0c9-40c4e9c68265",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Empresas",
+            "description": "",
+            "item": [
+                {
+                    "name": "Criar empresa.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/companies",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/companies"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"user_id\": 10,\n    \"nome\": \"provident\",\n    \"website\": \"totam\",\n    \"razao_social\": \"ea\",\n    \"cnpj\": \"saepe\",\n    \"telefone\": \"impedit\",\n    \"celular\": \"cumque\",\n    \"email\": \"officiis\",\n    \"logo\": \"consequatur\",\n    \"icone\": \"dolores\",\n    \"matriz\": false,\n    \"modo_catalogo\": true\n}"
+                        },
+                        "description": "Cria uma nova empresa."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Lista de empresas do usuario.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/my-companies",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/my-companies"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 20\n}"
+                        },
+                        "description": "Retorna a lista de empresas que o usu\u00e1rio est\u00e1 associado."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Atualizar empresa.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/companies\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/companies\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "14",
+                                    "description": "ID do usuario proprietario da empresa"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Atualiza dados da empresa.\nUsa softDeletes()"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detalhes empresa.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/companies\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/companies\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "7",
+                                    "description": "ID da empresa"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Retorna os detalhes da empresa."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deletar empresa.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/companies\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/companies\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "5",
+                                    "description": "ID da empresa"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Deleta a empresa.\nUsa softDeletes()"
+                    },
+                    "response": []
+                }
+            ]
+        },
         {
             "name": "Endpoints",
             "description": "",
@@ -76,43 +251,6 @@
                         }
                     },
                     "response": []
-                },
-                {
-                    "name": "Delete",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "v1\/users\/:id",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "aut",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 }
             ]
         },
@@ -143,7 +281,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b71175dd5644180d4bce21d1790bb0cf-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 1\n}"
+                            "raw": "{\n    \"name\": \"aut\",\n    \"cpf\": \"odit\",\n    \"email\": \"ea\",\n    \"password\": \"nihil\",\n    \"celular\": \"voluptatem\"\n}"
                         },
                         "description": "Cria um usu\u00e1rio.",
                         "auth": {
@@ -158,9 +296,17 @@
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "v1\/users",
+                            "path": "v1\/users\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users"
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "17",
+                                    "description": "ID do usu\u00e1rio"
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
@@ -175,9 +321,83 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"id\": 19\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
                         },
                         "description": "Atualiza os dados de um usu\u00e1rio"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detalhes usuario.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/users\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "ID da Usuario"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Retorna os detalhes do Usuario."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deletar usuario",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/users\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "maxime",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 7\n}"
+                        },
+                        "description": "Deletar um usu\u00e1rio"
                     },
                     "response": []
                 },
@@ -204,7 +424,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"login\": \"praesentium\",\n    \"password\": \"excepturi\"\n}"
+                            "raw": "{\n    \"login\": \"in\",\n    \"password\": \"adipisci\"\n}"
                         },
                         "description": "Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da data concatenando com o ID do usu\u00e1rio\ne salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN",
                         "auth": {
@@ -217,6 +437,18 @@
         }
     ],
     "auth": {
-        "type": "noauth"
+        "type": "apikey",
+        "apikey": [
+            {
+                "key": "in",
+                "value": "body",
+                "type": "string"
+            },
+            {
+                "key": "key",
+                "value": "api_token",
+                "type": "string"
+            }
+        ]
     }
 }
