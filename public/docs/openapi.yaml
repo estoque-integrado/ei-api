@@ -256,9 +256,9 @@ paths:
                             schema:
                                 type: object
                                 example:
-                                    message: 'Empresa deletada!'
+                                    message: 'Company deletada!'
                                 properties:
-                                    message: { type: string, example: 'Empresa deletada!' }
+                                    message: { type: string, example: 'Company deletada!' }
             tags:
                 - Empresas
             requestBody:
@@ -310,9 +310,9 @@ paths:
                             schema:
                                 type: object
                                 example:
-                                    message: 'Empresa não encontrada!'
+                                    message: 'Company não encontrada!'
                                 properties:
-                                    message: { type: string, example: 'Empresa não encontrada!' }
+                                    message: { type: string, example: 'Company não encontrada!' }
             tags:
                 - Endpoints
             requestBody:
@@ -418,7 +418,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n     \"id\": 1,\n     \"nome\":\"Nome da empresa\"\n     \"email\":\"email@estoqueintegrado.com\",\n     [...]\n     \"products\": [\n         {\n             \"id\": 1,\n             \"nome\":\"Produto 1\"\n             \"sku\":\"CAMISAM_2021\",\n             [...]\n         },\n         {\n             \"id\": 2,\n             \"nome\":\"Produto 2\"\n             \"sku\":\"BLUSAP321\",\n         }\n     ],\n     \"cart\": [\n         {\n             \"id\": 1,\n             \"produto_id\":12\n             \"empresa_id\":99,\n             \"quantidade\":2,\n             [...]\n         }\n     ]\n}"
+                                example: "{\n     \"id\": 1,\n     \"nome\":\"Nome da empresa\"\n     \"email\":\"email@estoqueintegrado.com\",\n     [...]\n     \"products\": [\n         {\n             \"id\": 1,\n             \"nome\":\"Product 1\"\n             \"sku\":\"CAMISAM_2021\",\n             [...]\n         },\n         {\n             \"id\": 2,\n             \"nome\":\"Product 2\"\n             \"sku\":\"BLUSAP321\",\n         }\n     ],\n     \"cart\": [\n         {\n             \"id\": 1,\n             \"produto_id\":12\n             \"empresa_id\":99,\n             \"quantidade\":2,\n             [...]\n         }\n     ]\n}"
             tags:
                 - Site
             security: []

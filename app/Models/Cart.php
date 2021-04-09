@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Model do Carrinho
+ * Model do Cart
  */
-class Carrinho extends Model
+class Cart extends Model
 {
     /**
      * FUNÇÔES EXISTENTES:
@@ -27,7 +27,7 @@ class Carrinho extends Model
 
     public function product()
     {
-        return $this->belongsTo('App\Models\Produto');
+        return $this->belongsTo('App\Models\Product');
     }
 
     public function size()

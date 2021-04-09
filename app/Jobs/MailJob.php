@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Models\Empresa;
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,7 +16,7 @@ class MailJob extends Job
     private $user;
 
     /**
-     * @var Empresa
+     * @var Company
      */
     private $empresa;
     /**
@@ -27,10 +27,10 @@ class MailJob extends Job
     /**
      * MailJob constructor.
      * @param User $user
-     * @param Empresa $empresa
+     * @param Company $empresa
      * @param STRING $viewTemplate
      */
-    public function __construct(User $user, Empresa $empresa, $viewTemplate = null)
+    public function __construct(User $user, Company $empresa, $viewTemplate = null)
     {
         Log::debug("Adicionando Job");
 

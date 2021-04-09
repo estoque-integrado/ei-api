@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Carrinho;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -37,13 +37,13 @@ class SiteController extends Controller
      *      "products": [
      *          {
      *              "id": 1,
-     *              "nome":"Produto 1",
+     *              "nome":"Product 1",
      *              "sku":"CAMISAM_2021",
      *              [...]
      *          },
      *          {
      *              "id": 2,
-     *              "nome":"Produto 2",
+     *              "nome":"Product 2",
      *              "sku":"BLUSAP321",
      *          }
      *      ],
@@ -68,7 +68,7 @@ class SiteController extends Controller
         // Verifica se existe usuário logado, se existir, verifica se esse tem itens no carrinho
         $loggedUser = Auth::user();
         if ($loggedUser) {
-            $cart = Carrinho::where(['user_id' => $loggedUser->id, 'empresa_id' => $company->id])->get();
+            $cart = Cart::where(['user_id' => $loggedUser->id, 'empresa_id' => $company->id])->get();
             $company->cart = $cart;
         }
 

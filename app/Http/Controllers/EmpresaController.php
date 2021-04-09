@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Empresa;
+use App\Models\Company;
 
 
 use Carbon\Carbon;
@@ -56,8 +56,8 @@ class EmpresaController extends Controller
     {
         $this->validate(
             $request,
-            Empresa::getValidationRules(),
-            Empresa::getMessageRules()
+            Company::getValidationRules(),
+            Company::getMessageRules()
         );
 
         try {
@@ -75,12 +75,12 @@ class EmpresaController extends Controller
             $inputs['celular'] = $this->formatarTelefone($inputs['celular'] ?? null, true);
             $inputs['modo_catalogo'] = $inputs['modo_catalogo'] ?? 1;
 
-            $empresa = Empresa::create($inputs);
+            $company = Company::create($inputs);
 
             // Cria o JOB para enviar o email posteriormente
-//            $this->createJobSendMail($empresa->user, $empresa, 'emails.cadastroUsuario');
+//            $this->createJobSendMail($company->user, $company, 'emails.cadastroUsuario');
 
-            return $empresa;
+            return $company;
         } catch (\Exception $e) {
             return response(['message' => $e->getMessage()], 422);
         }
@@ -114,7 +114,7 @@ class EmpresaController extends Controller
      */
     public function getMyCompanies(Request $request)
     {
-        return Empresa::where('user_id', $request->input('id'))->get();
+        return Company::where('user_id', $request->input('id'))->get();
     }
 
 
@@ -141,14 +141,14 @@ class EmpresaController extends Controller
         try {
 
             if (!$this->userCanEditCompany($id))
-                return response(['message' => 'Empresa não pertence ao usuário!'], 403);
+                return response(['message' => 'Company não pertence ao usuário!'], 403);
 
-            $empresa = Empresa::find($id);
+            $company = Company::find($id);
 
-            if (!$empresa)
-                return response(['message' => 'Empresa não encontrada!'], 403);
+            if (!$company)
+                return response(['message' => 'Company não encontrada!'], 403);
 
-            return $empresa;
+            return $company;
         } catch (\Exception $e) {
             return response(['message' => $e->getMessage()], 422);
         }
@@ -178,15 +178,15 @@ class EmpresaController extends Controller
     {
         try {
             if (!$this->userCanEditCompany($id))
-                return response(['message' => 'Empresa não pertence ao usuário!'], 403);
+                return response(['message' => 'Company não pertence ao usuário!'], 403);
 
             $inputs = $request->except('api_token', 'user_id');
             $inputs['cnpj'] = $this->formatarCnpj($inputs['cnpj'], true);
             $inputs['telefone'] = $this->formatarTelefone($inputs['telefone'], true);
 
-            Empresa::where('id', $id)->update($inputs);
+            Company::where('id', $id)->update($inputs);
 
-            return Empresa::find($id);
+            return Company::find($id);
         } catch (\Exception $e) {
             return response(['message' => $e->getMessage()], 422);
         }
@@ -205,17 +205,17 @@ class EmpresaController extends Controller
      * @authenticated
      *
      * @response {
-     *      "message":"Empresa deletada!"
+     *      "message":"Company deletada!"
      * }
      */
     public function delete(Request $request, $id)
     {
         try {
             if (!$this->userCanEditCompany($id))
-                return response(['message' => 'Empresa não pertence ao usuário!'], 403);
+                return response(['message' => 'Company não pertence ao usuário!'], 403);
 
-            $empresa = Empresa::find($id);
-            $empresa->delete();
+            $company = Company::find($id);
+            $company->delete();
 
         } catch (\Exception $e) {
             return response(['message' => $e->getMessage()], 422);

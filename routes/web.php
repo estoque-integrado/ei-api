@@ -41,7 +41,7 @@ $router->post('/v1/login', ['as' => 'login', 'uses' => 'LoginController@login'])
 
 
 /**
- * Routers da Empresa
+ * Routers da Company
  * @TODO Mudar para arquivo proprio
  */
 $router->post('/v1/companies', ['as' => 'createCompany', 'middleware' => ['auth', 'setEmpresa'], 'uses' => 'EmpresaController@create']);

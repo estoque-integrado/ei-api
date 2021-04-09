@@ -63,13 +63,13 @@ print_r(json_decode((string) $body));
      "products": [
          {
              "id": 1,
-             "nome":"Produto 1"
+             "nome":"Product 1"
              "sku":"CAMISAM_2021",
              [...]
          },
          {
              "id": 2,
-             "nome":"Produto 2"
+             "nome":"Product 2"
              "sku":"BLUSAP321",
          }
      ],

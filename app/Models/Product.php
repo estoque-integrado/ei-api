@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Classe Produto
+ * Classe Product
  */
-class Produto extends Model
+class Product extends Model
 {
     use SoftDeletes;
+
+    protected $table = 'produtos';
 
     protected $fillable = [
         'empresa_id',
@@ -357,7 +359,7 @@ class Produto extends Model
      */
     public function empresa()
     {
-        return $this->belongsTo('App\Models\Empresa');
+        return $this->belongsTo('App\Models\Company');
     }
 
     public function imagens()

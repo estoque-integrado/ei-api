@@ -53,7 +53,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     public function getIdsMyOwnCompanies()
     {
-        return Empresa::where('user_id', $this->id)
+        return Company::where('user_id', $this->id)
             ->pluck('id')->toArray();
     }
 
@@ -65,7 +65,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     public function getIdsMyCompanies()
     {
-        return Empresa::where('user_id', $this->id)->orWhereHas('usuarios', function ($query) {
+        return Company::where('user_id', $this->id)->orWhereHas('usuarios', function ($query) {
             $query->where('user_id', $this->id);
         })->pluck('id')->toArray();
     }

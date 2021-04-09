@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 
-class Empresa extends Model
+class Company extends Model
 {
     use SoftDeletes;
+
+    protected $table = 'empresas';
 
     protected $fillable = [
         'nome',
@@ -56,7 +58,7 @@ class Empresa extends Model
             'ativo' => $active
         ];
 
-        $products = Produto::where($data);
+        $products = Product::where($data);
 
         if ($showDeletedProducts) $products->withTrashed();
 
@@ -193,13 +195,13 @@ class Empresa extends Model
     // Produtos
     public function products()
     {
-        return $this->hasMany('App\Models\Produto')->where('ativo', true)->orderBy('nome');
+        return $this->hasMany('App\Models\Product')->where('ativo', true)->orderBy('nome');
     }
 
     // Produtos incluindo produtos removidos
     public function productsWithDeleted()
     {
-        return $this->hasMany('App\Models\Produto')
+        return $this->hasMany('App\Models\Product')
             ->where('ativo', true)->orderBy('nome')->withTrashed();
     }
 

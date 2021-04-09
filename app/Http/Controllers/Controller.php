@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\MailJob;
-use App\Models\Empresa;
+use App\Models\Company;
 use App\Models\User;
 use Carbon\Carbon;
 use Laravel\Lumen\Routing\Controller as BaseController;
@@ -14,11 +14,11 @@ class Controller extends BaseController
 
     /**
      * @param User $user
-     * @param Empresa $empresa
+     * @param Company $empresa
      * @param string $viewTemplate
      * @param int $delay
      */
-    public function createJobSendMail(User $user, Empresa $empresa, $viewTemplate = '', $delay = 10)
+    public function createJobSendMail(User $user, Company $empresa, $viewTemplate = '', $delay = 10)
     {
         // Cria o JOB para enviar o email posteriormente
         $job = (new MailJob($empresa->user, $empresa, $viewTemplate))

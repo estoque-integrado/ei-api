@@ -565,7 +565,7 @@ print_r(json_decode((string) $body));
 
 ```json
 {
-    "message": "Empresa deletada!"
+    "message": "Company deletada!"
 }
 ```
 <div id="execution-results-DELETEv1-companies--id-" hidden>
