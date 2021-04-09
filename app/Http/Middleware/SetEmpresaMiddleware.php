@@ -21,7 +21,12 @@ class SetEmpresaMiddleware
 
         $company = Empresa::where('slug', $slug)->first();
 
-        if (!$company) return response(['message' => 'Empresa não encontrada!'], 404);
+        if (!$company) {
+            $website = preg_replace('/^http(s)?\:\/\/([a-zA-Z0-9\-\_\.]{1,})\/?(.*)?/', '$2', url());
+            $company = Empresa::where('website', $website)->first();
+        }
+
+        return response(['message' => 'Empresa não encontrada!'], 404);
 
         $request->company = $company;
 

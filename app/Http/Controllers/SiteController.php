@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Empresa;
-use App\Models\Produto;
 use App\Models\Carrinho;
 use Illuminate\Http\Request;
 
@@ -22,7 +20,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Index loja
+     * Index da loja
      *
      * <aside>Retorna a loja de acordo com o domínio ou subdominio. <br>
      * Retorna dados, produtos, carrinho (se houver usuario logado) <br>
@@ -33,36 +31,39 @@ class SiteController extends Controller
      * @unauthenticated
      * @response {
      *      "id": 1,
-     *      "nome":"Nome da empresa"
+     *      "nome":"Nome da empresa",
      *      "email":"email@estoqueintegrado.com",
      *      [...]
      *      "products": [
      *          {
      *              "id": 1,
-     *              "nome":"Produto 1"
+     *              "nome":"Produto 1",
      *              "sku":"CAMISAM_2021",
      *              [...]
      *          },
      *          {
      *              "id": 2,
-     *              "nome":"Produto 2"
+     *              "nome":"Produto 2",
      *              "sku":"BLUSAP321",
      *          }
      *      ],
      *      "cart": [
      *          {
      *              "id": 1,
-     *              "produto_id":12
+     *              "produto_id":12,
      *              "empresa_id":99,
      *              "quantidade":2,
      *              [...]
-     *          }
+     *          },
+     *          [...]
      *      ]
      * }
      */
     public function index(Request $request)
     {
         $company = $request->company;
+        $company->products = $company->getValidProducts();
+//        $company->banners;
 
         // Verifica se existe usuário logado, se existir, verifica se esse tem itens no carrinho
         $loggedUser = Auth::user();

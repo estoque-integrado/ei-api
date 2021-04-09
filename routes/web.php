@@ -12,7 +12,17 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-//$router->get('/', ['as' => 'index', 'middleware' => 'UserController@create']);
+
+/**
+ * ATENÇÂO!
+ *
+ * Todas as rodas devem ter como middleware -> setEmpresa
+ * Esse middleware busca a empresa na URL, pelo slug ou website
+ * e compartilha em todos os controllers a empresa em $request->empresa
+ * sem esse middleware a empresa não será reconhecida
+ */
+
+// Home da Loja
 $router->get('/', ['as' => 'index', 'middleware' => 'setEmpresa', 'uses' => 'SiteController@index']);
 
 

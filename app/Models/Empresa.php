@@ -43,6 +43,31 @@ class Empresa extends Model
 
 
     /**
+     * Retorna todos os produtos válidos da empresa
+     *
+     * @param bool $active
+     * @param bool $showDeletedProducts
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function getValidProducts($active = true, $showDeletedProducts = false, $stockBiggerZero = true)
+    {
+        $data = [
+            'empresa_id' => $this->id,
+            'ativo' => $active
+        ];
+
+        $products = Produto::where($data);
+
+        if ($showDeletedProducts) $products->withTrashed();
+
+        if ($stockBiggerZero) {
+
+        }
+
+        return $products->get();
+    }
+
+    /**
      * Regra de validação do cadastro de empresa
      *
      * @return array
@@ -108,23 +133,46 @@ class Empresa extends Model
         return asset('images/logo-estoque-integrado@4x.png');
     }
 
-    public function getPagina($slug, $campo, $default = '')
+    /**
+     * @param null $posicao
+     * @param null $visibilidade
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function banners($posicao = null, $visibilidade = null)
     {
-        if (!$slug || !$campo) {
-            return null;
+        $query = [];
+
+        if ($posicao) {
+            $query[] = ['posicao', $posicao];
         }
 
-        $pagina = $this->paginas
-            ->where('slug', $slug)
-            ->where('empresa_id', $this->id)
-            ->first();
-
-        if ($pagina) {
-            return $campo === 'imagem' ? asset('storage/' . $pagina->{$campo}) : $pagina->{$campo};
+        if ($visibilidade) {
+            $query[] = ['visibilidade', $visibilidade];
         }
 
-        return $default;
+        // Somente banners ativos
+        $query[] = ['ativo', true];
+
+        return $this->hasMany('App\Models\Banner')->where($query);
     }
+
+//    public function getPagina($slug, $campo, $default = '')
+//    {
+//        if (!$slug || !$campo) {
+//            return null;
+//        }
+//
+//        $pagina = $this->paginas
+//            ->where('slug', $slug)
+//            ->where('empresa_id', $this->id)
+//            ->first();
+//
+//        if ($pagina) {
+//            return $campo === 'imagem' ? asset('storage/' . $pagina->{$campo}) : $pagina->{$campo};
+//        }
+//
+//        return $default;
+//    }
 
     // ===== RELAÇÔES
     public function proprietario()
@@ -195,58 +243,41 @@ class Empresa extends Model
     }
 
     // Blog
-    public function posts()
-    {
-        return $this->hasMany('App\Models\Blog\Post');
-    }
+//    public function posts()
+//    {
+//        return $this->hasMany('App\Models\Blog\Post');
+//    }
 
     // Categorias
-    public function categoriasBlog()
-    {
-        return $this->hasMany('App\Models\Blog\CategoriaBlog');
-    }
+//    public function categoriasBlog()
+//    {
+//        return $this->hasMany('App\Models\Blog\CategoriaBlog');
+//    }
 
     public function endereco()
     {
         return $this->hasOne('App\Models\Endereco');
     }
 
-    public function descontos()
-    {
-        return $this->hasMany('App\Models\Desconto');
-    }
-
-    public function banners($posicao = null, $visibilidade = null)
-    {
-        $query = [];
-
-        if ($posicao) {
-            $query[] = ['posicao', $posicao];
-        }
-
-        if ($visibilidade) {
-            $query[] = ['visibilidade', $visibilidade];
-        }
-
-        // Somente banners ativos
-        $query[] = ['ativo', true];
-
-        return $this->hasMany('App\Models\Banner')->where($query);
-    }
-
-    public function paginas()
-    {
-        return $this->hasMany('App\Models\Pagina');
-    }
-
-    public function transportadoras()
-    {
-        return $this->hasMany('App\Models\Transportadora');
-    }
+//    public function descontos()
+//    {
+//        return $this->hasMany('App\Models\Desconto');
+//    }
 
 
-    public function pagamentos()
-    {
-        return $this->hasMany('App\Models\Pagamento');
-    }
+//    public function paginas()
+//    {
+//        return $this->hasMany('App\Models\Pagina');
+//    }
+//
+//    public function transportadoras()
+//    {
+//        return $this->hasMany('App\Models\Transportadora');
+//    }
+//
+//
+//    public function pagamentos()
+//    {
+//        return $this->hasMany('App\Models\Pagamento');
+//    }
 }
