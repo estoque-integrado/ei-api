@@ -26,7 +26,7 @@ class UserController extends Controller
      *
      * Cria um usuário.
      *
-     * @group 1 - Usuarios
+     * @group Usuarios
      * @bodyParam name string required Nome do usuário
      * @bodyParam cpf string required Cpf com ou sem formatação Ex: 111.111.111-11
      * @bodyParam email string required Email do usuário Ex: teste@estoqueintegrado.com
@@ -91,7 +91,7 @@ class UserController extends Controller
      *
      * @urlParam id integer required ID da Usuario
      *
-     * @group 1 - Usuarios
+     * @group Usuarios
      * @authenticated
      *
      * @response {
@@ -128,7 +128,7 @@ class UserController extends Controller
      * Atualiza os dados de um usuário
      *
      * @urlParam id integer required ID do usuário
-     * @group 1 - Usuarios
+     * @group Usuarios
      * @authenticated
      *
      * @response scenario=success {
@@ -170,7 +170,7 @@ class UserController extends Controller
      * Deletar um usuário
      *
      * @bodyParam id integer required ID do usuário
-     * @group 1 - Usuarios
+     * @group Usuarios
      * @authenticated
      *
      * @response scenario=success {

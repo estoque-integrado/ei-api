@@ -137,19 +137,26 @@ class Empresa extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function usuarios()
+    public function users()
     {
         return $this->belongsToMany('App\Models\User', 'empresa_user', 'empresa_id', 'user_id');
     }
 
     // Produtos
-    public function produtos($ativo = true)
+    public function products()
     {
         return $this->hasMany('App\Models\Produto')->where('ativo', true)->orderBy('nome');
     }
 
+    // Produtos incluindo produtos removidos
+    public function productsWithDeleted()
+    {
+        return $this->hasMany('App\Models\Produto')
+            ->where('ativo', true)->orderBy('nome')->withTrashed();
+    }
+
     // Categorias
-    public function categorias()
+    public function categories()
     {
         return $this->hasMany('App\Models\Categoria')
             ->where('ativo', true)
@@ -158,10 +165,10 @@ class Empresa extends Model
     }
 
     // Subategorias
-    public function subcategorias()
-    {
-        return $this->hasMany('App\Models\Subcategoria')->where('ativo', true)->orderBy('nome');
-    }
+//    public function subcategorias()
+//    {
+//        return $this->hasMany('App\Models\Subcategoria')->where('ativo', true)->orderBy('nome');
+//    }
 
     // Tamanhos
     public function tamanhos()

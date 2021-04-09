@@ -81,12 +81,13 @@ $app->alias('mailer', Illuminate\Contracts\Mail\MailQueue::class);
 |
 */
 
-// $app->middleware([
-//     App\Http\Middleware\ExampleMiddleware::class
-// ]);
+ $app->middleware([
+     App\Http\Middleware\SetEmpresaMiddleware::class
+ ]);
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
+    'setEmpresa' => App\Http\Middleware\SetEmpresaMiddleware::class,
 ]);
 
 /*

@@ -22,15 +22,15 @@ class LoginController extends Controller
 
     /**
      * Login
-     * 
+     *
      * Faz o login do usuario
      * Se email e senha coincidirem, gera um md5 da data concatenando com o ID do usuário
      * e salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN
-     * 
+     *
      * @group Usuarios
      * @bodyParam login string required Email do usuário
      * @bodyParam password string required Senha do usuário
-     * 
+     *
      * @response string
      */
     public function login(Request $request)
@@ -54,9 +54,8 @@ class LoginController extends Controller
                 $user->save();
 
                 // Adicionar um JOB para limpar o token após 24h
-                $job = (new UserJob($user))->delay(Carbon::now()->addHours(config('TIME_TO_RESET_TOKEN', 24)));
-
-                $this->dispatch($job);
+//                $job = (new UserJob($user))->delay(Carbon::now()->addHours(config('TIME_TO_RESET_TOKEN', 24)));
+//                $this->dispatch($job);
 
                 return $token;
             } else {
