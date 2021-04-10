@@ -45,6 +45,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password',
     ];
+    /**
+     * @var mixed
+     */
+    private $tipo_usuario_id;
 
     /**
      * Retorna os IDS das empresas onde o usuário seja o PROPRIETÁRIO
@@ -65,13 +69,15 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     public function getIdsMyCompanies()
     {
-        return Company::where('user_id', $this->id)->orWhereHas('usuarios', function ($query) {
+        return Company::where('user_id', $this->id)->orWhereHas('users', function ($query) {
             $query->where('user_id', $this->id);
         })->pluck('id')->toArray();
     }
 
     /**
      * Verifica se o usuário é admin
+     *
+     * @return boolean
      */
     public function isAdmin()
     {

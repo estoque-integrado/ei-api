@@ -10,11 +10,239 @@
     ],
     "info": {
         "name": "API estoqueintegrado.com",
-        "_postman_id": "5284cb7f-a87d-4ab5-b284-9d29f01b95b5",
+        "_postman_id": "bf01e9c9-7e0f-4dac-9c16-68389a9bfafa",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Categorias",
+            "description": "",
+            "item": [
+                {
+                    "name": "Criar categoria",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/categories",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/categories"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "api_token",
+                                    "value": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "empresa_id",
+                                    "value": 20,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nome",
+                                    "value": "aliquam",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "slug",
+                                    "value": "qui",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "descricao",
+                                    "value": "ut",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "ativo",
+                                    "value": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "slug_auto",
+                                    "value": false,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "imagem",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "miniatura",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "Cria uma categoria"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Atualizar Categoria",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/categories\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15",
+                                    "description": "ID da categoria"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "api_token",
+                                    "value": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nome",
+                                    "value": "error",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "slug",
+                                    "value": "veritatis",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "descricao",
+                                    "value": "qui",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "ativo",
+                                    "value": true,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "imagem",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "miniatura",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "Atualiza os dados da categoria"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detalhes Categoria",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/categories\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "13",
+                                    "description": "ID da categoria"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Retorna os detalhes da categoria"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deletar Categoria",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/categories\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "18",
+                                    "description": "ID da categoria"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Deleta a categoria"
+                    },
+                    "response": []
+                }
+            ]
+        },
         {
             "name": "Empresas",
             "description": "",
@@ -42,7 +270,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"user_id\": 1,\n    \"nome\": \"perspiciatis\",\n    \"website\": \"sunt\",\n    \"razao_social\": \"est\",\n    \"cnpj\": \"nemo\",\n    \"telefone\": \"in\",\n    \"celular\": \"ex\",\n    \"email\": \"expedita\",\n    \"logo\": \"consequatur\",\n    \"icone\": \"sit\",\n    \"matriz\": true,\n    \"modo_catalogo\": true\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"user_id\": 5,\n    \"nome\": \"repudiandae\",\n    \"website\": \"veniam\",\n    \"razao_social\": \"provident\",\n    \"cnpj\": \"qui\",\n    \"telefone\": \"alias\",\n    \"celular\": \"velit\",\n    \"email\": \"illum\",\n    \"logo\": \"architecto\",\n    \"icone\": \"doloremque\",\n    \"matriz\": true,\n    \"modo_catalogo\": true\n}"
                         },
                         "description": "Cria uma nova empresa."
                     },
@@ -71,7 +299,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 16\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 10\n}"
                         },
                         "description": "Retorna a lista de empresas que o usu\u00e1rio est\u00e1 associado."
                     },
@@ -90,7 +318,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "11",
                                     "description": "ID do usuario proprietario da empresa"
                                 }
                             ]
@@ -127,7 +355,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "2",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -164,7 +392,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "19",
+                                    "value": "4",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -226,11 +454,157 @@
             ]
         },
         {
+            "name": "Produtos",
+            "description": "",
+            "item": [
+                {
+                    "name": "Criar produto",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/products",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/products"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 3,\n    \"categoria_id\": 15,\n    \"nome\": \"iure\",\n    \"imagens\": \"dolores\",\n    \"slug\": \"dicta\",\n    \"sku\": \"quaerat\",\n    \"descricao_curta\": \"sint\",\n    \"descricao_completa\": \"delectus\",\n    \"preco_custo\": 0.2588,\n    \"preco_venda\": 0.235871,\n    \"preco_promocional\": 77.3106,\n    \"peso\": 6,\n    \"altura\": 15,\n    \"largura\": 17,\n    \"diametro\": 13,\n    \"comprimento\": 5,\n    \"titulo_seo\": \"qui\",\n    \"tags_seo\": \"earum\",\n    \"descricao_seo\": \"sed\",\n    \"ativo\": false,\n    \"destaque\": true,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": false\n}"
+                        },
+                        "description": "Cria um produto"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Atualizar produto",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/products\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "doloribus",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"categoria_id\": 11,\n    \"nome\": \"voluptas\",\n    \"imagens\": \"sit\",\n    \"slug\": \"eius\",\n    \"sku\": \"consequatur\",\n    \"descricao_curta\": \"voluptate\",\n    \"descricao_completa\": \"quo\",\n    \"preco_custo\": 58.092834,\n    \"preco_venda\": 796.307,\n    \"preco_promocional\": 160.92,\n    \"peso\": 3,\n    \"altura\": 1,\n    \"largura\": 13,\n    \"diametro\": 14,\n    \"comprimento\": 9,\n    \"titulo_seo\": \"adipisci\",\n    \"tags_seo\": \"quas\",\n    \"descricao_seo\": \"eum\",\n    \"ativo\": true,\n    \"destaque\": true,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": true\n}"
+                        },
+                        "description": "Atualiza os dados de um produto"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detalhes do produto",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/products\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "10",
+                                    "description": "ID do produto"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Retorna os detalhes de um produto",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deletar Produto",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/products\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/v1\/products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "14",
+                                    "description": "ID do produto"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Deleta um produto com softDeletes"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
             "name": "Site",
             "description": "",
             "item": [
                 {
-                    "name": "Index loja",
+                    "name": "Index da loja",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -287,7 +661,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"name\": \"assumenda\",\n    \"cpf\": \"incidunt\",\n    \"email\": \"minima\",\n    \"password\": \"ab\",\n    \"celular\": \"vero\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"name\": \"exercitationem\",\n    \"cpf\": \"inventore\",\n    \"email\": \"maiores\",\n    \"password\": \"et\",\n    \"celular\": \"magnam\"\n}"
                         },
                         "description": "Cria um usu\u00e1rio."
                     },
@@ -306,7 +680,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "15",
                                     "description": "ID do usu\u00e1rio"
                                 }
                             ]
@@ -343,7 +717,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "4",
                                     "description": "ID da Usuario"
                                 }
                             ]
@@ -380,7 +754,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "accusantium",
+                                    "value": "veritatis",
                                     "description": ""
                                 }
                             ]
@@ -398,7 +772,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 4\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 11\n}"
                         },
                         "description": "Deletar um usu\u00e1rio"
                     },
@@ -427,7 +801,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"login\": \"et\",\n    \"password\": \"assumenda\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"login\": \"vel\",\n    \"password\": \"nam\"\n}"
                         },
                         "description": "Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da data concatenando com o ID do usu\u00e1rio\ne salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN"
                     },

@@ -9,9 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Cart extends Model
 {
-    /**
-     * FUNÇÔES EXISTENTES:
-     */
 
     protected $table = 'carrinho';
 

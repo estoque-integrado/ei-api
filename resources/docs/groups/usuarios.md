@@ -14,7 +14,7 @@ curl -X POST \
     "http://localhost/v1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","name":"assumenda","cpf":"incidunt","email":"minima","password":"ab","celular":"vero"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","name":"exercitationem","cpf":"inventore","email":"maiores","password":"et","celular":"magnam"}'
 
 ```
 
@@ -30,11 +30,11 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "name": "assumenda",
-    "cpf": "incidunt",
-    "email": "minima",
-    "password": "ab",
-    "celular": "vero"
+    "name": "exercitationem",
+    "cpf": "inventore",
+    "email": "maiores",
+    "password": "et",
+    "celular": "magnam"
 }
 
 fetch(url, {
@@ -55,11 +55,11 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'name' => 'assumenda',
-            'cpf' => 'incidunt',
-            'email' => 'minima',
-            'password' => 'ab',
-            'celular' => 'vero',
+            'name' => 'exercitationem',
+            'cpf' => 'inventore',
+            'email' => 'maiores',
+            'password' => 'et',
+            'celular' => 'magnam',
         ],
     ]
 );
@@ -143,7 +143,7 @@ Atualiza os dados de um usuário
 
 ```bash
 curl -X PUT \
-    "http://localhost/v1/users/17" \
+    "http://localhost/v1/users/15" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -152,7 +152,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/users/17"
+    "http://localhost/v1/users/15"
 );
 
 let headers = {
@@ -175,7 +175,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'http://localhost/v1/users/17',
+    'http://localhost/v1/users/15',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -253,7 +253,7 @@ Retorna os detalhes do Usuario.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/v1/users/7" \
+    -G "http://localhost/v1/users/4" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -262,7 +262,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/users/7"
+    "http://localhost/v1/users/4"
 );
 
 let headers = {
@@ -285,7 +285,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'http://localhost/v1/users/7',
+    'http://localhost/v1/users/4',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -363,16 +363,16 @@ Deletar um usuário
 
 ```bash
 curl -X DELETE \
-    "http://localhost/v1/users/accusantium" \
+    "http://localhost/v1/users/veritatis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":4}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":11}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/users/accusantium"
+    "http://localhost/v1/users/veritatis"
 );
 
 let headers = {
@@ -382,7 +382,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "id": 4
+    "id": 11
 }
 
 fetch(url, {
@@ -396,14 +396,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'http://localhost/v1/users/accusantium',
+    'http://localhost/v1/users/veritatis',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'id' => 4,
+            'id' => 11,
         ],
     ]
 );
@@ -485,7 +485,7 @@ curl -X POST \
     "http://localhost/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","login":"et","password":"assumenda"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","login":"vel","password":"nam"}'
 
 ```
 
@@ -501,8 +501,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "login": "et",
-    "password": "assumenda"
+    "login": "vel",
+    "password": "nam"
 }
 
 fetch(url, {
@@ -523,8 +523,8 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'login' => 'et',
-            'password' => 'assumenda',
+            'login' => 'vel',
+            'password' => 'nam',
         ],
     ]
 );

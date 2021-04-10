@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Jobs\UserJob;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
@@ -59,6 +60,8 @@ class LoginController extends Controller
 
                 return $token;
             } else {
+                Log::alert("EI#LOG-> Tentativa de login email: {$request->input('email')} IP: ". $request->ip());
+
                 return response(['message' => 'Usuário e/ou senha incorretos.'], 401);
             }
         } catch (\Exception $e) {

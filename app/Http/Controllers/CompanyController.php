@@ -11,7 +11,7 @@ use Carbon\Carbon;
 use Auth;
 use Illuminate\Validation\ValidationException;
 
-class EmpresaController extends Controller
+class CompanyController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -141,12 +141,12 @@ class EmpresaController extends Controller
         try {
 
             if (!$this->userCanEditCompany($id))
-                return response(['message' => 'Company não pertence ao usuário!'], 403);
+                return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
             $company = Company::find($id);
 
             if (!$company)
-                return response(['message' => 'Company não encontrada!'], 403);
+                return response(['message' => 'Empresa não encontrada!'], 404);
 
             return $company;
         } catch (\Exception $e) {

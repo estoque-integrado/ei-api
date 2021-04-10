@@ -6,7 +6,7 @@ use Closure;
 
 use App\Models\Company;
 
-class SetEmpresaMiddleware
+class SetCompanyMiddleware
 {
     /**
      * Handle an incoming request.

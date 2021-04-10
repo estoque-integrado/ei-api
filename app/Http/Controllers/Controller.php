@@ -6,6 +6,7 @@ use App\Jobs\MailJob;
 use App\Models\Company;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Laravel\Lumen\Routing\Controller as BaseController;
 use Auth;
 
@@ -73,5 +74,69 @@ class Controller extends BaseController
         }
 
         return true;
+    }
+
+
+    /**
+     * Cria slugs
+     * Se $model != null, instancia o model, e busca na tabela
+     * do mesmo por slug igual, se achar, concatena +1
+     */
+    public function slugify($string, $model = null)
+    {
+        $string = $this->removerAcentos($string, true);
+        $slug = strtolower($string);
+        $slugTemp = $slug;
+
+        if ($model) {
+            $model = new $model();
+
+            $i = 1;
+            // Caso slug exista, vai somando o numero 1 ao final, ate achar um slug válido
+            while($model->where('slug', $slugTemp)->first() != null) {
+                $slugTemp = $slug . $i;
+                $i++;
+            }
+            $slug = $slugTemp;
+        }
+
+        return $slug;
+
+    }
+
+    /**
+     * Remove acentos e espaços em branco desnecessários
+     *
+     * @param String $string
+     * @return String
+     */
+    public function removerAcentos($string, $substiturEspacoPorTraco = false)
+    {
+        $string = trim($string);
+
+        $string = preg_replace(
+            array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/", "/(ç)/", "/(Ç)/"),
+            explode(" ","a A e E i I o O u U n N c C"),
+            $string
+        );
+
+        if ($substiturEspacoPorTraco) {
+            $string = preg_replace('/\s/', '-', $string);
+        }
+
+        return $string;
+    }
+
+    /**
+     * Formatar valor
+     */
+    public function formatarValor($valor, $ptBR = true)
+    {
+        $valor = preg_replace('/\D/', '', $valor);
+        $formatoEn = preg_replace('/(\d{1,})(\d{2})/', '$1.$2', $valor);
+
+        return $ptBR ?
+            number_format($valor, 2, ',', '.') :
+            $formatoEn;
     }
 }

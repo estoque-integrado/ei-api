@@ -66,7 +66,7 @@ class UserController extends Controller
             $user = User::create($inputs);
 
             // Cria o JOB para enviar o email posteriormente
-            //        $this->createJobSendMail($empresa->user, $empresa, 'emails.cadastroUsuario');
+//            $this->createJobSendMail($empresa->user, $empresa, 'emails.cadastroUsuario');
 
             return json_encode($user);
         } catch (\Exception $e) {

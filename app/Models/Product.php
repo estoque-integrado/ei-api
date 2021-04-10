@@ -22,7 +22,6 @@ class Product extends Model
         'nome',
         'slug',
         'sku',
-        'tamanho',
         'descricao_curta',
         'descricao_completa',
         // 'estoque',
@@ -40,12 +39,10 @@ class Product extends Model
         'titulo_seo',
         'descricao_seo',
         'tags_seo',
-        //destaque
+        //produto destaque
         'destaque',
         'status',
         'ativo',
-        'preco_variavel',
-        'urlImagem',
         'variacao_preco_cor',
         'variacao_preco_tamanho',
     ];
@@ -54,18 +51,71 @@ class Product extends Model
 
 //    protected $with = ['imagens', 'cores', 'tamanhos'];
 
-    public function getStoreAttribute()
+
+    /**
+     * Regras de validação do produto
+     */
+    public static function getValidationRules($id = null)
     {
-        return array(
-            'slug' => $this->empresa->slug,
-        );
+        return [
+            'empresa_id' => 'required|integer|min:1|exists:empresas,id',
+            'categoria_id' => 'required|integer|min:1|exists:categorias,id',
+            'nome' => 'required|string|max:191',
+            'slug' => array('required_if:slug_auto,false,id,null', "unique:produtos,slug,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
+            'sku' => array('required', "unique:produtos,sku,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
+            'descricao_curta' => 'string|max:191',
+            'descricao_completa' => 'string',
+            'preco_custo' => 'numeric',
+            'preco_venda' => 'required|numeric',
+            'peso' => 'numeric',
+            'altura' => 'numeric',
+            'largura' => 'numeric',
+            'diametro' => 'numeric',
+            'comprimento' => 'numeric',
+            'titulo_seo' => 'string',
+            'descricao_seo' => 'string',
+            'tags_seo' => 'string',
+            'destaque' => 'boolean',
+            'status' => 'boolean',
+            'ativo' => 'boolean',
+        ];
     }
 
+
+    /**
+     * Mensagens de validação do produto
+     */
+    public static function getValidationMessages()
+    {
+        return [
+            'required' => 'O campo :attribute é obrigatório!',
+            'max' => 'O campo :attribute deve conter no máximo 191 caracteres!',
+            'integer' => 'O campo :attribute deve ser um numero!',
+            'string' => 'O campo :attribute deve ser do tipo string!',
+            'boolean' => 'O campo :attribute deve ser do tipo boolean!',
+            'numeric' => 'O campo :attribute deve ser um numero com 2 casas decimais!',
+            'empresa_id.exists' => 'A Empresa deve estar cadastrada e ativa no banco de dados!',
+            'categoria_id.exists' => 'A Categoria deve estar cadastrada e ativa no banco de dados!',
+            'unique' => 'O campo :attribute ja existe no banco de dados!',
+            'regex' => 'O :attribute não pode conter caracteres especiais, exceto "-" e "_"!',
+        ];
+    }
+
+    /**
+     * Retorna a URL do produto
+     *
+     * @return string
+     */
     public function getUrl()
     {
         return $this->empresa->urlPadrao . '/produto/' . $this->slug;
     }
 
+    /**
+     * Envia o produto pelo Whatsapp da empresa
+     *
+     * @return string
+     */
     public function getWhatsappUrl()
     {
         $phone = '55' . $this->empresa->getCelular();
@@ -74,18 +124,16 @@ class Product extends Model
         return "https://api.whatsapp.com/send?phone=$phone&text=$text";
     }
 
+    /**
+     * Retorna a imagem de destaque do produto
+     *
+     * @return mixed
+     */
     public function getImagemDestaqueAttribute()
     {
         return $this->imagemDestaqueOrRandom();
     }
 
-    public function getValorAttribute()
-    {
-        // Se tem variação, busca preço de acordo com o tamanho escolhido
-
-
-        return (float)$this->getValorComDesconto(false);
-    }
 
     public function imagemDestaqueOrRandom()
     {
@@ -108,7 +156,7 @@ class Product extends Model
      *
      */
     /**
-     * Retorna somente os tamanhos que tenha pelo menos 1 variação cadastrada
+     * Retorna somente os tamanhos que tenham pelo menos 1 variação cadastrada
      * pois se não tem variação, não existe um preço
      */
     public function tamanhosQueTenhamVariacoes()
@@ -132,72 +180,72 @@ class Product extends Model
          * TODO
          * Melhorar essa função
          */
-        $temDesconto = session()->has('modelCupomDesconto');
-        $valor = $this->preco_promocional > 0 ? $this->preco_promocional : $this->preco_venda;
-
-        // Verifica se existe algum desconto tipo "GERAL" (TODOS OS PRODUTOS)
-        $descontoGeral = Desconto::where(
-            [
-                ['empresa_id', $this->empresa_id],
-                ['tipo_desconto', 'geral'],
-                ['data_inicio', '<=', Carbon::now()],
-                ['data_fim', '>=', Carbon::now()],
-            ]
-        )->first();
-
-        // vereifica se o preço tem variação
-        if ($this->variacao_preco_cor || $this->variacao_preco_tamanho) {
-            // Buscar o menor valor
-            $valor = $this->variacao->min('valor_venda');
-            $valorSemDesconto = $valor < 0 ? 0 : $valor;
-
-            if ($descontoGeral) {
-                // Verifica se é desconto em % ou em R$
-                if ($descontoGeral->percentual) {
-                    $valorReal = $valorSemDesconto - (($valorSemDesconto * $descontoGeral->valor) / 100);
-                    $valorReal = $valorReal < 0 ? 0 : $valorReal;
-                    return $formatoPtBr ? number_format($valorReal, 2, ',', '.') : $valorReal;
-                } else {
-                    $valorReal = $valorSemDesconto - $descontoGeral->valor;
-                    $valorReal = $valorReal < 0 ? 0 : $valorReal;
-                    return $formatoPtBr ? number_format($valorReal, 2, ',', '.') : $valorReal;
-                }
-            } else {
-                return $formatoPtBr ? number_format($valor, 2, ',', '.') : $valor;
-            }
-
-        }
-
-        if ($descontoGeral) {
-            // Verifica se é desconto em % ou em R$
-            if ($descontoGeral->percentual) {
-                $valorReal = $valor - (($valor * $descontoGeral->valor) / 100);
-                $valorReal = $valorReal < 0 ? 0 : $valorReal;
-                return $formatoPtBr ? number_format($valorReal, 2, ',', '.') : $valorReal;
-            } else {
-                $valorReal = $valor - $descontoGeral->valor;
-                $valorReal = $valorReal < 0 ? 0 : $valorReal;
-                return $formatoPtBr ? number_format($valorReal, 2, ',', '.') : $valorReal;
-            }
-        }
-
-        if ($temDesconto) {
-            $desconto = session()->get('modelCupomDesconto');
-
-            if ($desconto->percentual) {
-                $valor = $this->preco_venda - ($this->preco_venda * ($desconto->valor / 100));
-            } else {
-                $valor = $this->preco_venda - $desconto->valor;
-            }
-        }
-
-        // Verifica se está em valor promocional
-        if ($this->preco_promocional && $this->preco_promocional != 0 && $this->preco_promocional < $valor) {
-            return $formatoPtBr ? number_format($this->preco_promocional, 2, ',', '.') : $this->preco_promocional;
-        } else {
-            $valor = $valor < 0 ? 0 : $valor;
-            return $formatoPtBr ? number_format($valor, 2, ',', '.') : $valor;
-        }
+//        $temDesconto = session()->has('modelCupomDesconto');
+//        $valor = $this->preco_promocional > 0 ? $this->preco_promocional : $this->preco_venda;
+//
+//        // Verifica se existe algum desconto tipo "GERAL" (TODOS OS PRODUTOS)
+//        $descontoGeral = Desconto::where(
+//            [
+//                ['empresa_id', $this->empresa_id],
+//                ['tipo_desconto', 'geral'],
+//                ['data_inicio', '<=', Carbon::now()],
+//                ['data_fim', '>=', Carbon::now()],
+//            ]
+//        )->first();
+//
+//        // vereifica se o preço tem variação
+//        if ($this->variacao_preco_cor || $this->variacao_preco_tamanho) {
+//            // Buscar o menor valor
+//            $valor = $this->variacao->min('valor_venda');
+//            $valorSemDesconto = $valor < 0 ? 0 : $valor;
+//
+//            if ($descontoGeral) {
+//                // Verifica se é desconto em % ou em R$
+//                if ($descontoGeral->percentual) {
+//                    $valorReal = $valorSemDesconto - (($valorSemDesconto * $descontoGeral->valor) / 100);
+//                    $valorReal = $valorReal < 0 ? 0 : $valorReal;
+//                    return $formatoPtBr ? number_format($valorReal, 2, ',', '.') : $valorReal;
+//                } else {
+//                    $valorReal = $valorSemDesconto - $descontoGeral->valor;
+//                    $valorReal = $valorReal < 0 ? 0 : $valorReal;
+//                    return $formatoPtBr ? number_format($valorReal, 2, ',', '.') : $valorReal;
+//                }
+//            } else {
+//                return $formatoPtBr ? number_format($valor, 2, ',', '.') : $valor;
+//            }
+//
+//        }
+//
+//        if ($descontoGeral) {
+//            // Verifica se é desconto em % ou em R$
+//            if ($descontoGeral->percentual) {
+//                $valorReal = $valor - (($valor * $descontoGeral->valor) / 100);
+//                $valorReal = $valorReal < 0 ? 0 : $valorReal;
+//                return $formatoPtBr ? number_format($valorReal, 2, ',', '.') : $valorReal;
+//            } else {
+//                $valorReal = $valor - $descontoGeral->valor;
+//                $valorReal = $valorReal < 0 ? 0 : $valorReal;
+//                return $formatoPtBr ? number_format($valorReal, 2, ',', '.') : $valorReal;
+//            }
+//        }
+//
+//        if ($temDesconto) {
+//            $desconto = session()->get('modelCupomDesconto');
+//
+//            if ($desconto->percentual) {
+//                $valor = $this->preco_venda - ($this->preco_venda * ($desconto->valor / 100));
+//            } else {
+//                $valor = $this->preco_venda - $desconto->valor;
+//            }
+//        }
+//
+//        // Verifica se está em valor promocional
+//        if ($this->preco_promocional && $this->preco_promocional != 0 && $this->preco_promocional < $valor) {
+//            return $formatoPtBr ? number_format($this->preco_promocional, 2, ',', '.') : $this->preco_promocional;
+//        } else {
+//            $valor = $valor < 0 ? 0 : $valor;
+//            return $formatoPtBr ? number_format($valor, 2, ',', '.') : $valor;
+//        }
     }
 
     public function getValorSemDesconto()
@@ -212,7 +260,12 @@ class Product extends Model
         return number_format($this->preco_venda, 2, ',', '.');
     }
 
-    public function getStringValor()
+    /**
+     * Retorna o valor do produto com R$
+     *
+     * @return string
+     */
+    public function getValorString()
     {
         $string = '';
 
@@ -226,29 +279,25 @@ class Product extends Model
         return $string;
     }
 
-    public function getValorVenda()
-    {
-        return 'R$ ' . $this->getValorComDesconto();
-    }
 
     /**
      * Verifica se um produto tem desconto
      */
-    public function temDesconto()
+    public function hasDiscount()
     {
-        $desconto = session()->has('modelCupomDesconto');
-
-        if ($this->variacao_preco_cor || $this->variacao_preco_tamanho) {
-            $variacao = $this->variacao->where('valor_venda', $this->variacao->min('valor_venda'))->first();
-
-            if (!$variacao) {
-                return $this->preco_venda;
-            }
-
-            return $desconto || ($variacao->preco_promocional != 0 && $variacao->preco_promocional);
-        } else {
-            return $desconto || ($this->preco_promocional != 0 && $this->preco_promocional);
-        }
+//        $desconto = session()->has('modelCupomDesconto');
+//
+//        if ($this->variacao_preco_cor || $this->variacao_preco_tamanho) {
+//            $variacao = $this->variacao->where('valor_venda', $this->variacao->min('valor_venda'))->first();
+//
+//            if (!$variacao) {
+//                return $this->preco_venda;
+//            }
+//
+//            return $desconto || ($variacao->preco_promocional != 0 && $variacao->preco_promocional);
+//        } else {
+//            return $desconto || ($this->preco_promocional != 0 && $this->preco_promocional);
+//        }
     }
 
     /**
@@ -259,13 +308,13 @@ class Product extends Model
      */
     public function getTotalEstoque()
     {
-        $total = 0;
-
-        foreach ($this->estoque as $estoque) {
-            $total += $estoque->quantidade;
-        }
-
-        return $total;
+//        $total = 0;
+//
+//        foreach ($this->estoque as $estoque) {
+//            $total += $estoque->quantidade;
+//        }
+//
+//        return $total;
     }
 
     /**
@@ -328,8 +377,9 @@ class Product extends Model
     /**
      * Retorna um array de IDS com todos os tamanhos que tem
      * pelo menos 1 variação cadastrada, pois se não tem variação não tem preço
+     *
      */
-    public function getArrayTamanhosId(): array
+    public function getArrayTamanhosId()
     {
         $tamanhosID = [];
 
@@ -345,49 +395,39 @@ class Product extends Model
     }
 
     /**
-     * Verifica se o preço do produto é variável por tamanho e cor
-     *
-     * @return Boolean
-     */
-    public function precoVariavel()
-    {
-        return $this->preco_variavel ? true : false;
-    }
-
-    /**
      * Relações
      */
-    public function empresa()
+    public function company()
     {
         return $this->belongsTo('App\Models\Company');
     }
 
-    public function imagens()
+    public function images()
     {
-        return $this->hasMany('App\Models\Imagem');
+        return $this->hasMany('App\Models\Image');
     }
 
-    public function categoria()
+    public function category()
     {
         return $this->belongsTo('App\Models\Categoria');
     }
 
-    public function subcategorias()
-    {
-        return $this->belongsToMany('App\Models\Subcategoria');
-    }
+//    public function subcategorias()
+//    {
+//        return $this->belongsToMany('App\Models\Subcategoria');
+//    }
 
-    public function tamanhos()
+    public function sizes()
     {
         return $this->belongsToMany('App\Models\Tamanho', 'produto_tamanhos');
     }
 
-    public function cores()
+    public function colors()
     {
         return $this->belongsToMany('App\Models\Cor', 'produto_cor');
     }
 
-    public function estoque($tamanhoID = null, $corID = null)
+    public function stock($tamanhoID = null, $corID = null)
     {
         $dados = [];
 
