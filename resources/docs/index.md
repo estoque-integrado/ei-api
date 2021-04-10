@@ -30,12 +30,12 @@ Api estoqueintegrado.com 😎
 
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 <script>
-    var baseUrl = "http://localhost";
+    var baseUrl = "https://api.estoqueintegrado.com.br";
 </script>
 <script src="js/tryitout-2.5.3.js"></script>
 
 > Base URL
 
 ```yaml
-http://localhost
+https://api.estoqueintegrado.com.br
 ```

@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "localhost"
+            "value": "api.estoqueintegrado.com.br"
         }
     ],
     "info": {
         "name": "API estoqueintegrado.com",
-        "_postman_id": "bf01e9c9-7e0f-4dac-9c16-68389a9bfafa",
+        "_postman_id": "4b6ed12a-0bc2-45f6-90c3-e861a594cdc0",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -23,11 +23,11 @@
                     "name": "Criar categoria",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/categories",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/categories"
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/categories"
                         },
                         "method": "POST",
                         "header": [
@@ -50,32 +50,32 @@
                                 },
                                 {
                                     "key": "empresa_id",
-                                    "value": 20,
+                                    "value": 17,
                                     "type": "text"
                                 },
                                 {
                                     "key": "nome",
-                                    "value": "aliquam",
+                                    "value": "a",
                                     "type": "text"
                                 },
                                 {
                                     "key": "slug",
-                                    "value": "qui",
+                                    "value": "sed",
                                     "type": "text"
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "ut",
+                                    "value": "aspernatur",
                                     "type": "text"
                                 },
                                 {
                                     "key": "ativo",
-                                    "value": false,
+                                    "value": true,
                                     "type": "text"
                                 },
                                 {
                                     "key": "slug_auto",
-                                    "value": false,
+                                    "value": true,
                                     "type": "text"
                                 },
                                 {
@@ -98,16 +98,16 @@
                     "name": "Atualizar Categoria",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/categories\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/categories\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/categories\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "17",
                                     "description": "ID da categoria"
                                 }
                             ]
@@ -133,17 +133,17 @@
                                 },
                                 {
                                     "key": "nome",
-                                    "value": "error",
+                                    "value": "consequatur",
                                     "type": "text"
                                 },
                                 {
                                     "key": "slug",
-                                    "value": "veritatis",
+                                    "value": "aut",
                                     "type": "text"
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "qui",
+                                    "value": "sapiente",
                                     "type": "text"
                                 },
                                 {
@@ -171,16 +171,16 @@
                     "name": "Detalhes Categoria",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/categories\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/categories\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/categories\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "15",
                                     "description": "ID da categoria"
                                 }
                             ]
@@ -208,16 +208,16 @@
                     "name": "Deletar Categoria",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/categories\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/categories\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/categories\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "9",
                                     "description": "ID da categoria"
                                 }
                             ]
@@ -251,11 +251,11 @@
                     "name": "Criar empresa.",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/companies",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/companies"
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/companies"
                         },
                         "method": "POST",
                         "header": [
@@ -270,7 +270,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"user_id\": 5,\n    \"nome\": \"repudiandae\",\n    \"website\": \"veniam\",\n    \"razao_social\": \"provident\",\n    \"cnpj\": \"qui\",\n    \"telefone\": \"alias\",\n    \"celular\": \"velit\",\n    \"email\": \"illum\",\n    \"logo\": \"architecto\",\n    \"icone\": \"doloremque\",\n    \"matriz\": true,\n    \"modo_catalogo\": true\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"user_id\": 9,\n    \"nome\": \"delectus\",\n    \"website\": \"dolore\",\n    \"razao_social\": \"voluptates\",\n    \"cnpj\": \"quaerat\",\n    \"telefone\": \"minus\",\n    \"celular\": \"excepturi\",\n    \"email\": \"tenetur\",\n    \"logo\": \"quod\",\n    \"icone\": \"tenetur\",\n    \"matriz\": true,\n    \"modo_catalogo\": false\n}"
                         },
                         "description": "Cria uma nova empresa."
                     },
@@ -280,11 +280,11 @@
                     "name": "Lista de empresas do usuario.",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/my-companies",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/my-companies"
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/my-companies"
                         },
                         "method": "GET",
                         "header": [
@@ -309,16 +309,16 @@
                     "name": "Atualizar empresa.",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/companies\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/companies\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/companies\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "12",
                                     "description": "ID do usuario proprietario da empresa"
                                 }
                             ]
@@ -346,16 +346,16 @@
                     "name": "Detalhes empresa.",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/companies\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/companies\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/companies\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "15",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -383,16 +383,16 @@
                     "name": "Deletar empresa.",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/companies\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/companies\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/companies\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "10",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -426,11 +426,11 @@
                     "name": "Read",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/users",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users"
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/users"
                         },
                         "method": "GET",
                         "header": [
@@ -461,11 +461,11 @@
                     "name": "Criar produto",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/products",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/products"
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/products"
                         },
                         "method": "POST",
                         "header": [
@@ -480,7 +480,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 3,\n    \"categoria_id\": 15,\n    \"nome\": \"iure\",\n    \"imagens\": \"dolores\",\n    \"slug\": \"dicta\",\n    \"sku\": \"quaerat\",\n    \"descricao_curta\": \"sint\",\n    \"descricao_completa\": \"delectus\",\n    \"preco_custo\": 0.2588,\n    \"preco_venda\": 0.235871,\n    \"preco_promocional\": 77.3106,\n    \"peso\": 6,\n    \"altura\": 15,\n    \"largura\": 17,\n    \"diametro\": 13,\n    \"comprimento\": 5,\n    \"titulo_seo\": \"qui\",\n    \"tags_seo\": \"earum\",\n    \"descricao_seo\": \"sed\",\n    \"ativo\": false,\n    \"destaque\": true,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": false\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 14,\n    \"categoria_id\": 3,\n    \"nome\": \"voluptatem\",\n    \"imagens\": \"minus\",\n    \"slug\": \"non\",\n    \"sku\": \"neque\",\n    \"descricao_curta\": \"voluptas\",\n    \"descricao_completa\": \"autem\",\n    \"preco_custo\": 246376603.19508252,\n    \"preco_venda\": 714,\n    \"preco_promocional\": 74025243.3,\n    \"peso\": 12,\n    \"altura\": 13,\n    \"largura\": 7,\n    \"diametro\": 19,\n    \"comprimento\": 19,\n    \"titulo_seo\": \"qui\",\n    \"tags_seo\": \"numquam\",\n    \"descricao_seo\": \"aut\",\n    \"ativo\": false,\n    \"destaque\": true,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": false\n}"
                         },
                         "description": "Cria um produto"
                     },
@@ -490,16 +490,16 @@
                     "name": "Atualizar produto",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/products\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/products\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/products\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "doloribus",
+                                    "value": "et",
                                     "description": ""
                                 }
                             ]
@@ -517,7 +517,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"categoria_id\": 11,\n    \"nome\": \"voluptas\",\n    \"imagens\": \"sit\",\n    \"slug\": \"eius\",\n    \"sku\": \"consequatur\",\n    \"descricao_curta\": \"voluptate\",\n    \"descricao_completa\": \"quo\",\n    \"preco_custo\": 58.092834,\n    \"preco_venda\": 796.307,\n    \"preco_promocional\": 160.92,\n    \"peso\": 3,\n    \"altura\": 1,\n    \"largura\": 13,\n    \"diametro\": 14,\n    \"comprimento\": 9,\n    \"titulo_seo\": \"adipisci\",\n    \"tags_seo\": \"quas\",\n    \"descricao_seo\": \"eum\",\n    \"ativo\": true,\n    \"destaque\": true,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": true\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"categoria_id\": 7,\n    \"nome\": \"ea\",\n    \"imagens\": \"cumque\",\n    \"slug\": \"delectus\",\n    \"sku\": \"architecto\",\n    \"descricao_curta\": \"qui\",\n    \"descricao_completa\": \"animi\",\n    \"preco_custo\": 6.03715603,\n    \"preco_venda\": 4709157.432779,\n    \"preco_promocional\": 422.869,\n    \"peso\": 2,\n    \"altura\": 20,\n    \"largura\": 19,\n    \"diametro\": 15,\n    \"comprimento\": 1,\n    \"titulo_seo\": \"voluptas\",\n    \"tags_seo\": \"maxime\",\n    \"descricao_seo\": \"dolorem\",\n    \"ativo\": true,\n    \"destaque\": false,\n    \"variacao_preco_cor\": true,\n    \"variacao_preco_tamanho\": false\n}"
                         },
                         "description": "Atualiza os dados de um produto"
                     },
@@ -527,16 +527,16 @@
                     "name": "Detalhes do produto",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/products\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/products\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/products\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "17",
                                     "description": "ID do produto"
                                 }
                             ]
@@ -564,16 +564,16 @@
                     "name": "Deletar Produto",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/products\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/products\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/products\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "14",
+                                    "value": "18",
                                     "description": "ID do produto"
                                 }
                             ]
@@ -607,11 +607,11 @@
                     "name": "Index da loja",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "\/",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/\/"
+                            "raw": "https:\/\/{{baseUrl}}\/\/"
                         },
                         "method": "GET",
                         "header": [
@@ -642,11 +642,11 @@
                     "name": "Criar usu\u00e1rio",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/users",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users"
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/users"
                         },
                         "method": "POST",
                         "header": [
@@ -661,7 +661,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"name\": \"exercitationem\",\n    \"cpf\": \"inventore\",\n    \"email\": \"maiores\",\n    \"password\": \"et\",\n    \"celular\": \"magnam\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"name\": \"omnis\",\n    \"cpf\": \"eum\",\n    \"email\": \"ea\",\n    \"password\": \"nesciunt\",\n    \"celular\": \"omnis\"\n}"
                         },
                         "description": "Cria um usu\u00e1rio."
                     },
@@ -671,16 +671,16 @@
                     "name": "Atualizar usuario",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/users\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/users\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "12",
                                     "description": "ID do usu\u00e1rio"
                                 }
                             ]
@@ -708,16 +708,16 @@
                     "name": "Detalhes usuario.",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/users\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/users\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "4",
+                                    "value": "11",
                                     "description": "ID da Usuario"
                                 }
                             ]
@@ -745,16 +745,16 @@
                     "name": "Deletar usuario",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/users\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/users\/:id",
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/users\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "veritatis",
+                                    "value": "aliquid",
                                     "description": ""
                                 }
                             ]
@@ -772,7 +772,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 11\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 14\n}"
                         },
                         "description": "Deletar um usu\u00e1rio"
                     },
@@ -782,11 +782,11 @@
                     "name": "Login",
                     "request": {
                         "url": {
-                            "protocol": "http",
+                            "protocol": "https",
                             "host": "{{baseUrl}}",
                             "path": "v1\/login",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/v1\/login"
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/login"
                         },
                         "method": "POST",
                         "header": [
@@ -801,7 +801,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"login\": \"vel\",\n    \"password\": \"nam\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"login\": \"qui\",\n    \"password\": \"et\"\n}"
                         },
                         "description": "Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da data concatenando com o ID do usu\u00e1rio\ne salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN"
                     },

@@ -11,16 +11,16 @@ Cria um produto
 
 ```bash
 curl -X POST \
-    "http://localhost/v1/products" \
+    "https://api.estoqueintegrado.com.br/v1/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":3,"categoria_id":15,"nome":"iure","imagens":"dolores","slug":"dicta","sku":"quaerat","descricao_curta":"sint","descricao_completa":"delectus","preco_custo":0.2588,"preco_venda":0.235871,"preco_promocional":77.3106,"peso":6,"altura":15,"largura":17,"diametro":13,"comprimento":5,"titulo_seo":"qui","tags_seo":"earum","descricao_seo":"sed","ativo":false,"destaque":true,"variacao_preco_cor":false,"variacao_preco_tamanho":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":14,"categoria_id":3,"nome":"voluptatem","imagens":"minus","slug":"non","sku":"neque","descricao_curta":"voluptas","descricao_completa":"autem","preco_custo":246376603.19508252,"preco_venda":714,"preco_promocional":74025243.3,"peso":12,"altura":13,"largura":7,"diametro":19,"comprimento":19,"titulo_seo":"qui","tags_seo":"numquam","descricao_seo":"aut","ativo":false,"destaque":true,"variacao_preco_cor":false,"variacao_preco_tamanho":false}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/products"
+    "https://api.estoqueintegrado.com.br/v1/products"
 );
 
 let headers = {
@@ -30,25 +30,25 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 3,
-    "categoria_id": 15,
-    "nome": "iure",
-    "imagens": "dolores",
-    "slug": "dicta",
-    "sku": "quaerat",
-    "descricao_curta": "sint",
-    "descricao_completa": "delectus",
-    "preco_custo": 0.2588,
-    "preco_venda": 0.235871,
-    "preco_promocional": 77.3106,
-    "peso": 6,
-    "altura": 15,
-    "largura": 17,
-    "diametro": 13,
-    "comprimento": 5,
+    "empresa_id": 14,
+    "categoria_id": 3,
+    "nome": "voluptatem",
+    "imagens": "minus",
+    "slug": "non",
+    "sku": "neque",
+    "descricao_curta": "voluptas",
+    "descricao_completa": "autem",
+    "preco_custo": 246376603.19508252,
+    "preco_venda": 714,
+    "preco_promocional": 74025243.3,
+    "peso": 12,
+    "altura": 13,
+    "largura": 7,
+    "diametro": 19,
+    "comprimento": 19,
     "titulo_seo": "qui",
-    "tags_seo": "earum",
-    "descricao_seo": "sed",
+    "tags_seo": "numquam",
+    "descricao_seo": "aut",
     "ativo": false,
     "destaque": true,
     "variacao_preco_cor": false,
@@ -66,32 +66,32 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->post(
-    'http://localhost/v1/products',
+    'https://api.estoqueintegrado.com.br/v1/products',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 3,
-            'categoria_id' => 15,
-            'nome' => 'iure',
-            'imagens' => 'dolores',
-            'slug' => 'dicta',
-            'sku' => 'quaerat',
-            'descricao_curta' => 'sint',
-            'descricao_completa' => 'delectus',
-            'preco_custo' => 0.2588,
-            'preco_venda' => 0.235871,
-            'preco_promocional' => 77.3106,
-            'peso' => 6,
-            'altura' => 15,
-            'largura' => 17,
-            'diametro' => 13,
-            'comprimento' => 5,
+            'empresa_id' => 14,
+            'categoria_id' => 3,
+            'nome' => 'voluptatem',
+            'imagens' => 'minus',
+            'slug' => 'non',
+            'sku' => 'neque',
+            'descricao_curta' => 'voluptas',
+            'descricao_completa' => 'autem',
+            'preco_custo' => 246376603.19508252,
+            'preco_venda' => 714.0,
+            'preco_promocional' => 74025243.3,
+            'peso' => 12,
+            'altura' => 13,
+            'largura' => 7,
+            'diametro' => 19,
+            'comprimento' => 19,
             'titulo_seo' => 'qui',
-            'tags_seo' => 'earum',
-            'descricao_seo' => 'sed',
+            'tags_seo' => 'numquam',
+            'descricao_seo' => 'aut',
             'ativo' => false,
             'destaque' => true,
             'variacao_preco_cor' => false,
@@ -274,16 +274,16 @@ Atualiza os dados de um produto
 
 ```bash
 curl -X PUT \
-    "http://localhost/v1/products/doloribus" \
+    "https://api.estoqueintegrado.com.br/v1/products/et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","categoria_id":11,"nome":"voluptas","imagens":"sit","slug":"eius","sku":"consequatur","descricao_curta":"voluptate","descricao_completa":"quo","preco_custo":58.092834,"preco_venda":796.307,"preco_promocional":160.92,"peso":3,"altura":1,"largura":13,"diametro":14,"comprimento":9,"titulo_seo":"adipisci","tags_seo":"quas","descricao_seo":"eum","ativo":true,"destaque":true,"variacao_preco_cor":false,"variacao_preco_tamanho":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","categoria_id":7,"nome":"ea","imagens":"cumque","slug":"delectus","sku":"architecto","descricao_curta":"qui","descricao_completa":"animi","preco_custo":6.03715603,"preco_venda":4709157.432779,"preco_promocional":422.869,"peso":2,"altura":20,"largura":19,"diametro":15,"comprimento":1,"titulo_seo":"voluptas","tags_seo":"maxime","descricao_seo":"dolorem","ativo":true,"destaque":false,"variacao_preco_cor":true,"variacao_preco_tamanho":false}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/products/doloribus"
+    "https://api.estoqueintegrado.com.br/v1/products/et"
 );
 
 let headers = {
@@ -293,28 +293,28 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "categoria_id": 11,
-    "nome": "voluptas",
-    "imagens": "sit",
-    "slug": "eius",
-    "sku": "consequatur",
-    "descricao_curta": "voluptate",
-    "descricao_completa": "quo",
-    "preco_custo": 58.092834,
-    "preco_venda": 796.307,
-    "preco_promocional": 160.92,
-    "peso": 3,
-    "altura": 1,
-    "largura": 13,
-    "diametro": 14,
-    "comprimento": 9,
-    "titulo_seo": "adipisci",
-    "tags_seo": "quas",
-    "descricao_seo": "eum",
+    "categoria_id": 7,
+    "nome": "ea",
+    "imagens": "cumque",
+    "slug": "delectus",
+    "sku": "architecto",
+    "descricao_curta": "qui",
+    "descricao_completa": "animi",
+    "preco_custo": 6.03715603,
+    "preco_venda": 4709157.432779,
+    "preco_promocional": 422.869,
+    "peso": 2,
+    "altura": 20,
+    "largura": 19,
+    "diametro": 15,
+    "comprimento": 1,
+    "titulo_seo": "voluptas",
+    "tags_seo": "maxime",
+    "descricao_seo": "dolorem",
     "ativo": true,
-    "destaque": true,
-    "variacao_preco_cor": false,
-    "variacao_preco_tamanho": true
+    "destaque": false,
+    "variacao_preco_cor": true,
+    "variacao_preco_tamanho": false
 }
 
 fetch(url, {
@@ -328,35 +328,35 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'http://localhost/v1/products/doloribus',
+    'https://api.estoqueintegrado.com.br/v1/products/et',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'categoria_id' => 11,
-            'nome' => 'voluptas',
-            'imagens' => 'sit',
-            'slug' => 'eius',
-            'sku' => 'consequatur',
-            'descricao_curta' => 'voluptate',
-            'descricao_completa' => 'quo',
-            'preco_custo' => 58.092834,
-            'preco_venda' => 796.307,
-            'preco_promocional' => 160.92,
-            'peso' => 3,
-            'altura' => 1,
-            'largura' => 13,
-            'diametro' => 14,
-            'comprimento' => 9,
-            'titulo_seo' => 'adipisci',
-            'tags_seo' => 'quas',
-            'descricao_seo' => 'eum',
+            'categoria_id' => 7,
+            'nome' => 'ea',
+            'imagens' => 'cumque',
+            'slug' => 'delectus',
+            'sku' => 'architecto',
+            'descricao_curta' => 'qui',
+            'descricao_completa' => 'animi',
+            'preco_custo' => 6.03715603,
+            'preco_venda' => 4709157.432779,
+            'preco_promocional' => 422.869,
+            'peso' => 2,
+            'altura' => 20,
+            'largura' => 19,
+            'diametro' => 15,
+            'comprimento' => 1,
+            'titulo_seo' => 'voluptas',
+            'tags_seo' => 'maxime',
+            'descricao_seo' => 'dolorem',
             'ativo' => true,
-            'destaque' => true,
-            'variacao_preco_cor' => false,
-            'variacao_preco_tamanho' => true,
+            'destaque' => false,
+            'variacao_preco_cor' => true,
+            'variacao_preco_tamanho' => false,
         ],
     ]
 );
@@ -535,14 +535,14 @@ Retorna os detalhes de um produto
 
 ```bash
 curl -X GET \
-    -G "http://localhost/v1/products/10" \
+    -G "https://api.estoqueintegrado.com.br/v1/products/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/products/10"
+    "https://api.estoqueintegrado.com.br/v1/products/17"
 );
 
 let headers = {
@@ -561,7 +561,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'http://localhost/v1/products/10',
+    'https://api.estoqueintegrado.com.br/v1/products/17',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -618,7 +618,7 @@ Deleta um produto com softDeletes
 
 ```bash
 curl -X DELETE \
-    "http://localhost/v1/products/14" \
+    "https://api.estoqueintegrado.com.br/v1/products/18" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -627,7 +627,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "http://localhost/v1/products/14"
+    "https://api.estoqueintegrado.com.br/v1/products/18"
 );
 
 let headers = {
@@ -650,7 +650,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'http://localhost/v1/products/14',
+    'https://api.estoqueintegrado.com.br/v1/products/18',
     [
         'headers' => [
             'Accept' => 'application/json',

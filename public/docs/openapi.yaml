@@ -5,7 +5,7 @@ info:
     version: 1.0.0
 servers:
     -
-        url: 'http://localhost'
+        url: 'https://api.estoqueintegrado.com.br'
 paths:
     /v1/categories:
         post:
@@ -50,19 +50,19 @@ paths:
                                 empresa_id:
                                     type: integer
                                     description: 'ID da empresa proprietária do produto'
-                                    example: 20
+                                    example: 17
                                 nome:
                                     type: string
                                     description: 'Nome da categoria'
-                                    example: aliquam
+                                    example: a
                                 slug:
                                     type: string
                                     description: "Slug do produto.\n<br>Caracteres permitidos: número, texto, \"-\", \"_\" <br><i><small>Ex: casa-e-jardim | casa_e_jardim</small></i>"
-                                    example: qui
+                                    example: sed
                                 descricao:
                                     type: string
                                     description: 'Descrição da categoria'
-                                    example: ut
+                                    example: aspernatur
                                 imagem:
                                     type: string
                                     format: binary
@@ -74,11 +74,11 @@ paths:
                                 ativo:
                                     type: boolean
                                     description: 'Status do produto <br><i><small>Ativo = 1, Desativado = 0. Default 1</small></i>'
-                                    example: false
+                                    example: true
                                 slug_auto:
                                     type: boolean
                                     description: 'Criar slug automaticamente; <br><i><small>Sim = 1, Não = 0</small></i>'
-                                    example: false
+                                    example: true
                             required:
                                 - api_token
                                 - empresa_id
@@ -127,15 +127,15 @@ paths:
                                 nome:
                                     type: string
                                     description: 'Nome da categoria Ex: "Nome da categoria"'
-                                    example: error
+                                    example: consequatur
                                 slug:
                                     type: string
                                     description: 'Slug do produto Ex: calca_preta_jean'
-                                    example: veritatis
+                                    example: aut
                                 descricao:
                                     type: string
                                     description: 'Descrição da categoria'
-                                    example: qui
+                                    example: sapiente
                                 imagem:
                                     type: string
                                     format: binary
@@ -238,7 +238,7 @@ paths:
                 in: path
                 name: id
                 description: 'ID da categoria'
-                example: 15
+                example: 17
                 required: true
                 schema:
                     type: integer
@@ -285,43 +285,43 @@ paths:
                                 user_id:
                                     type: integer
                                     description: 'ID do usuario proprietario da empresa'
-                                    example: 5
+                                    example: 9
                                 nome:
                                     type: string
                                     description: 'Nome fantasia da empresa'
-                                    example: repudiandae
+                                    example: delectus
                                 website:
                                     type: string
                                     description: 'URL customizada da empresa Ex: minhaloja.estoqueintegrado.com|minhaloja.com.br'
-                                    example: veniam
+                                    example: dolore
                                 razao_social:
                                     type: string
                                     description: 'Razão social da empresa'
-                                    example: provident
+                                    example: voluptates
                                 cnpj:
                                     type: string
                                     description: 'CNPJ da empresa com ou sem formatação'
-                                    example: qui
+                                    example: quaerat
                                 telefone:
                                     type: string
                                     description: 'Telefone da empresa'
-                                    example: alias
+                                    example: minus
                                 celular:
                                     type: string
                                     description: 'Celular da empresa'
-                                    example: velit
+                                    example: excepturi
                                 email:
                                     type: string
                                     description: 'Email da empresa'
-                                    example: illum
+                                    example: tenetur
                                 logo:
                                     type: string
                                     description: 'Path do caminho da logo salva'
-                                    example: architecto
+                                    example: quod
                                 icone:
                                     type: string
                                     description: 'Path do ícone da empresa'
-                                    example: doloremque
+                                    example: tenetur
                                 matriz:
                                     type: boolean
                                     description: 'Se essa empresa é matriz(1) ou filial (0)'
@@ -329,7 +329,7 @@ paths:
                                 modo_catalogo:
                                     type: boolean
                                     description: 'Exibir banners na loja. 1 = sim, 0 = não. Default 0'
-                                    example: true
+                                    example: false
                             required:
                                 - api_token
                                 - user_id
@@ -514,7 +514,7 @@ paths:
                 in: path
                 name: id
                 description: 'ID do usuario proprietario da empresa'
-                example: 11
+                example: 12
                 required: true
                 schema:
                     type: integer
@@ -605,23 +605,23 @@ paths:
                                 name:
                                     type: string
                                     description: 'Nome do usuário'
-                                    example: exercitationem
+                                    example: omnis
                                 cpf:
                                     type: string
                                     description: 'Cpf com ou sem formatação Ex: 111.111.111-11'
-                                    example: inventore
+                                    example: eum
                                 email:
                                     type: string
                                     description: 'Email do usuário Ex: teste@estoqueintegrado.com'
-                                    example: maiores
+                                    example: ea
                                 password:
                                     type: string
                                     description: 'Senha do usuário'
-                                    example: et
+                                    example: nesciunt
                                 celular:
                                     type: string
                                     description: 'Celular do usuário'
-                                    example: magnam
+                                    example: omnis
                             required:
                                 - api_token
                                 - name
@@ -670,67 +670,67 @@ paths:
                                 empresa_id:
                                     type: integer
                                     description: 'ID da empresa proprietária do produto'
-                                    example: 3
+                                    example: 14
                                 categoria_id:
                                     type: integer
                                     description: 'ID da categoria cadastrada e ativa do produto'
-                                    example: 15
+                                    example: 3
                                 nome:
                                     type: string
                                     description: 'Nome do produto'
-                                    example: iure
+                                    example: voluptatem
                                 imagens:
                                     type: array
                                     description: 'Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small>'
-                                    example: dolores
+                                    example: minus
                                 slug:
                                     type: string
                                     description: 'Slug do produto <br><i><small>Ex: calca_preta_jeans</i></small>'
-                                    example: dicta
+                                    example: non
                                 sku:
                                     type: string
                                     description: 'Sku do produto <br><i><small>Ex: CAMPM20211013</i></small>'
-                                    example: quaerat
+                                    example: neque
                                 descricao_curta:
                                     type: string
                                     description: 'Descrição simples do produto'
-                                    example: sint
+                                    example: voluptas
                                 descricao_completa:
                                     type: string
                                     description: 'Descrição detalhada do produto'
-                                    example: delectus
+                                    example: autem
                                 preco_custo:
                                     type: number
                                     description: 'Preço de custo do produto <br><i><small>Ex: 80.00</i></small>'
-                                    example: 0.2588
+                                    example: 246376603.19508
                                 preco_venda:
                                     type: number
                                     description: 'Preço de venda do produto <br><i><small>Ex: 120.00</i></small>'
-                                    example: 0.235871
+                                    example: !!float 714
                                 preco_promocional:
                                     type: number
                                     description: 'Preço promocional do produto <br><i><small>Ex: 99.90</i></small>'
-                                    example: 77.3106
+                                    example: 74025243.3
                                 peso:
                                     type: integer
                                     description: 'Peso do produto em Gramas <br><i><small>Ex: 100</i></small>'
-                                    example: 6
+                                    example: 12
                                 altura:
                                     type: integer
                                     description: 'Altura do produto em Cm <br><i><small>Ex: 80</i></small>'
-                                    example: 15
+                                    example: 13
                                 largura:
                                     type: integer
                                     description: 'Largura do produto em Cm <br><i><small>Ex: 50</i></small>'
-                                    example: 17
+                                    example: 7
                                 diametro:
                                     type: integer
                                     description: 'Diametro do produto'
-                                    example: 13
+                                    example: 19
                                 comprimento:
                                     type: integer
                                     description: 'Comprimento do produto'
-                                    example: 5
+                                    example: 19
                                 titulo_seo:
                                     type: string
                                     description: 'Titiulo SEO do produto'
@@ -738,11 +738,11 @@ paths:
                                 tags_seo:
                                     type: string
                                     description: 'Tags SEO do produto'
-                                    example: earum
+                                    example: numquam
                                 descricao_seo:
                                     type: string
                                     description: 'Descrição SEO do produto'
-                                    example: sed
+                                    example: aut
                                 ativo:
                                     type: boolean
                                     description: 'Status do produto <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>'
@@ -810,75 +810,75 @@ paths:
                                 categoria_id:
                                     type: integer
                                     description: 'ID da categoria cadastrada e ativa do produto'
-                                    example: 11
+                                    example: 7
                                 nome:
                                     type: string
                                     description: 'Nome do produto'
-                                    example: voluptas
+                                    example: ea
                                 imagens:
                                     type: array
                                     description: 'Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small>'
-                                    example: sit
+                                    example: cumque
                                 slug:
                                     type: string
                                     description: 'Slug do produto <br><i><small>Ex: calca_preta_jeans</i></small>'
-                                    example: eius
+                                    example: delectus
                                 sku:
                                     type: string
                                     description: 'Sku do produto <br><i><small>Ex: CAMPM20211013</i></small>'
-                                    example: consequatur
+                                    example: architecto
                                 descricao_curta:
                                     type: string
                                     description: 'Descrição simples do produto'
-                                    example: voluptate
+                                    example: qui
                                 descricao_completa:
                                     type: string
                                     description: 'Descrição detalhada do produto'
-                                    example: quo
+                                    example: animi
                                 preco_custo:
                                     type: number
                                     description: 'Preço de custo do produto <br><i><small>Ex: 80.00</i></small>'
-                                    example: 58.092834
+                                    example: 6.03715603
                                 preco_venda:
                                     type: number
                                     description: 'Preço de venda do produto <br><i><small>Ex: 120.00</i></small>'
-                                    example: 796.307
+                                    example: 4709157.432779
                                 preco_promocional:
                                     type: number
                                     description: 'Preço promocional do produto <br><i><small>Ex: 99.90</i></small>'
-                                    example: 160.92
+                                    example: 422.869
                                 peso:
                                     type: integer
                                     description: 'Peso do produto em Gramas <br><i><small>Ex: 100</i></small>'
-                                    example: 3
+                                    example: 2
                                 altura:
                                     type: integer
                                     description: 'Altura do produto em Cm <br><i><small>Ex: 80</i></small>'
-                                    example: 1
+                                    example: 20
                                 largura:
                                     type: integer
                                     description: 'Largura do produto em Cm <br><i><small>Ex: 50</i></small>'
-                                    example: 13
+                                    example: 19
                                 diametro:
                                     type: integer
                                     description: 'Diametro do produto'
-                                    example: 14
+                                    example: 15
                                 comprimento:
                                     type: integer
                                     description: 'Comprimento do produto'
-                                    example: 9
+                                    example: 1
                                 titulo_seo:
                                     type: string
                                     description: 'Titiulo SEO do produto'
-                                    example: adipisci
+                                    example: voluptas
                                 tags_seo:
                                     type: string
                                     description: 'Tags SEO do produto'
-                                    example: quas
+                                    example: maxime
                                 descricao_seo:
                                     type: string
                                     description: 'Descrição SEO do produto'
-                                    example: eum
+                                    example: dolorem
                                 ativo:
                                     type: boolean
                                     description: 'Status do produto <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>'
@@ -886,15 +886,15 @@ paths:
                                 destaque:
                                     type: boolean
                                     description: 'Se o produto é destaque. <i><small>Default 0</i></small>'
-                                    example: true
+                                    example: false
                                 variacao_preco_cor:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com a cor. Default 0'
-                                    example: false
+                                    example: true
                                 variacao_preco_tamanho:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com o tamanho. Default 0'
-                                    example: true
+                                    example: false
                             required:
                                 - api_token
                                 - categoria_id
@@ -973,7 +973,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: doloribus
+                example: et
                 required: true
                 schema:
                     type: string
@@ -1162,7 +1162,7 @@ paths:
                                 id:
                                     type: integer
                                     description: 'ID do usuário'
-                                    example: 11
+                                    example: 14
                             required:
                                 - api_token
                                 - id
@@ -1171,7 +1171,7 @@ paths:
                 in: path
                 name: id
                 description: 'ID do usuário'
-                example: 15
+                example: 12
                 required: true
                 schema:
                     type: integer
@@ -1218,11 +1218,11 @@ paths:
                                 login:
                                     type: string
                                     description: 'Email do usuário'
-                                    example: vel
+                                    example: qui
                                 password:
                                     type: string
                                     description: 'Senha do usuário'
-                                    example: nam
+                                    example: et
                             required:
                                 - api_token
                                 - login
