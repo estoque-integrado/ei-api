@@ -70,3 +70,34 @@ $router->post('/v1/products', ['as' => 'createProduct', 'middleware' => ['auth',
 $router->put('/v1/products/{id}', ['as' => 'updateProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@update']);
 $router->get('/v1/products/{id}', ['as' => 'viewProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@view']);
 $router->delete('/v1/products/{id}', ['as' => 'deleteProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@delete']);
+
+/**
+ * Routers do endereço
+ * @TODO Mudar para arquivo proprio
+ */
+$router->post('/v1/address', ['as' => 'createAddress', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'AddressController@create']);
+//$router->get('/v1/my-address', ['as' => 'myAddress', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'AddressController@getMyCompanies']);
+$router->put('/v1/address/{id}', ['as' => 'updateAddress', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'AddressController@update']);
+$router->get('/v1/address/{id}', ['as' => 'viewAddress', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'AddressController@view']);
+$router->delete('/v1/address/{id}', ['as' => 'deleteAddress', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'AddressController@delete']);
+
+/**
+ * Routers do Cores
+ * @TODO Mudar para arquivo proprio
+ */
+$router->post('/v1/colors', ['as' => 'createColor', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ColorController@create']);
+//$router->get('/v1/my-colors', ['as' => 'myColor', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ColorController@getMyCompanies']);
+$router->put('/v1/colors/{id}', ['as' => 'updateColor', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ColorController@update']);
+$router->get('/v1/colors/{id}', ['as' => 'viewColor', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ColorController@view']);
+$router->delete('/v1/colors/{id}', ['as' => 'deleteColor', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ColorController@delete']);
+
+/**
+ * Routers do Tamanhos
+ * @TODO Mudar para arquivo proprio
+ */
+$router->post('/v1/sizes', ['as' => 'createSize', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SizeController@create']);
+//$router->get('/v1/my-sizes', ['as' => 'mySize', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SizeController@getMyCompanies']);
+$router->put('/v1/sizes/{id}', ['as' => 'updateSize', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SizeController@update']);
+$router->get('/v1/sizes/{id}', ['as' => 'viewSize', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SizeController@view']);
+$router->delete('/v1/sizes/{id}', ['as' => 'deleteSize', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SizeController@delete']);
+

@@ -50,19 +50,19 @@ paths:
                                 empresa_id:
                                     type: integer
                                     description: 'ID da empresa proprietária do produto'
-                                    example: 17
+                                    example: 8
                                 nome:
                                     type: string
                                     description: 'Nome da categoria'
-                                    example: a
+                                    example: occaecati
                                 slug:
                                     type: string
                                     description: "Slug do produto.\n<br>Caracteres permitidos: número, texto, \"-\", \"_\" <br><i><small>Ex: casa-e-jardim | casa_e_jardim</small></i>"
-                                    example: sed
+                                    example: deserunt
                                 descricao:
                                     type: string
                                     description: 'Descrição da categoria'
-                                    example: aspernatur
+                                    example: officia
                                 imagem:
                                     type: string
                                     format: binary
@@ -74,11 +74,11 @@ paths:
                                 ativo:
                                     type: boolean
                                     description: 'Status do produto <br><i><small>Ativo = 1, Desativado = 0. Default 1</small></i>'
-                                    example: true
+                                    example: false
                                 slug_auto:
                                     type: boolean
                                     description: 'Criar slug automaticamente; <br><i><small>Sim = 1, Não = 0</small></i>'
-                                    example: true
+                                    example: false
                             required:
                                 - api_token
                                 - empresa_id
@@ -126,16 +126,16 @@ paths:
                                     example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
                                 nome:
                                     type: string
-                                    description: 'Nome da categoria Ex: "Nome da categoria"'
-                                    example: consequatur
+                                    description: 'Nome da categoria'
+                                    example: cupiditate
                                 slug:
                                     type: string
-                                    description: 'Slug do produto Ex: calca_preta_jean'
-                                    example: aut
+                                    description: 'Slug do produto <br><i><small>Ex: calca_preta_jean</i></small>'
+                                    example: totam
                                 descricao:
                                     type: string
                                     description: 'Descrição da categoria'
-                                    example: sapiente
+                                    example: consectetur
                                 imagem:
                                     type: string
                                     format: binary
@@ -146,7 +146,7 @@ paths:
                                     description: 'Miniatura da imagem da categoria'
                                 ativo:
                                     type: boolean
-                                    description: 'Status do produto Ativo = 1, Desativado = 0. Default 1'
+                                    description: 'Status da categoria <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>'
                                     example: true
                             required:
                                 - api_token
@@ -238,10 +238,215 @@ paths:
                 in: path
                 name: id
                 description: 'ID da categoria'
-                example: 17
+                example: 16
                 required: true
                 schema:
                     type: integer
+    /v1/colors:
+        post:
+            summary: 'Criar Cor'
+            description: 'Cria uma cor'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"nome\": \"Preto\",\n     \"hex\": #000000,\n}"
+            tags:
+                - Cores
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                empresa_id:
+                                    type: integer
+                                    description: 'ID da empresa'
+                                    example: 2
+                                nome:
+                                    type: string
+                                    description: 'Nome do tamanho <small>Ex: 50ml|P|300g</small>'
+                                    example: et
+                                hex:
+                                    type: string
+                                    description: 'Hexadecimal da cor Ex: #000000'
+                                    example: non
+                            required:
+                                - api_token
+                                - empresa_id
+                                - nome
+                                - hex
+    '/v1/colors/{id}':
+        put:
+            summary: 'Atualizar Cor'
+            description: 'Atualiza os dados da cor'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"nome\": \"Preto\",\n     \"hex\": #000000,\n}"
+            tags:
+                - Cores
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                empresa_id:
+                                    type: integer
+                                    description: 'ID da empresa'
+                                    example: 13
+                                nome:
+                                    type: string
+                                    description: 'Nome do tamanho <small>Ex: 50ml|P|300g</small>'
+                                    example: odit
+                                hex:
+                                    type: string
+                                    description: 'Hexadecimal da cor Ex: #000000'
+                                    example: qui
+                            required:
+                                - api_token
+                                - empresa_id
+                                - nome
+                                - hex
+        get:
+            summary: 'Detalhes Cor'
+            description: 'Retorna os detalhes da Cor'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"nome\": \"Preto\",\n     \"empresa_id\": 322,\n}"
+            tags:
+                - Cores
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        delete:
+            summary: 'Deletar Cor'
+            description: 'Deleta uma cor'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"message\": \"Cor deletada!\",\n}"
+            tags:
+                - Cores
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: dolorem
+                required: true
+                schema:
+                    type: string
     /v1/companies:
         post:
             summary: 'Criar empresa.'
@@ -285,43 +490,43 @@ paths:
                                 user_id:
                                     type: integer
                                     description: 'ID do usuario proprietario da empresa'
-                                    example: 9
+                                    example: 11
                                 nome:
                                     type: string
                                     description: 'Nome fantasia da empresa'
-                                    example: delectus
+                                    example: illum
                                 website:
                                     type: string
                                     description: 'URL customizada da empresa Ex: minhaloja.estoqueintegrado.com|minhaloja.com.br'
-                                    example: dolore
+                                    example: error
                                 razao_social:
                                     type: string
                                     description: 'Razão social da empresa'
-                                    example: voluptates
+                                    example: iure
                                 cnpj:
                                     type: string
                                     description: 'CNPJ da empresa com ou sem formatação'
-                                    example: quaerat
+                                    example: et
                                 telefone:
                                     type: string
                                     description: 'Telefone da empresa'
-                                    example: minus
+                                    example: voluptatem
                                 celular:
                                     type: string
                                     description: 'Celular da empresa'
-                                    example: excepturi
+                                    example: nemo
                                 email:
                                     type: string
                                     description: 'Email da empresa'
-                                    example: tenetur
+                                    example: magnam
                                 logo:
                                     type: string
                                     description: 'Path do caminho da logo salva'
-                                    example: quod
+                                    example: aperiam
                                 icone:
                                     type: string
                                     description: 'Path do ícone da empresa'
-                                    example: tenetur
+                                    example: cumque
                                 matriz:
                                     type: boolean
                                     description: 'Se essa empresa é matriz(1) ou filial (0)'
@@ -378,7 +583,7 @@ paths:
                                 id:
                                     type: integer
                                     description: 'ID do usuario'
-                                    example: 10
+                                    example: 18
                             required:
                                 - api_token
                                 - id
@@ -514,7 +719,276 @@ paths:
                 in: path
                 name: id
                 description: 'ID do usuario proprietario da empresa'
-                example: 12
+                example: 15
+                required: true
+                schema:
+                    type: integer
+    /v1/address:
+        post:
+            summary: 'Criar Endereço'
+            description: 'Cria uma Endereço'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"rua\": \"Nome da rua\",\n     \"numero\": 322,\n     \"bairro\": \"bairro\"\n     [...]\n}"
+            tags:
+                - Endereço
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                empresa_id:
+                                    type: integer
+                                    description: 'ID da empresa'
+                                    example: 7
+                                user_id:
+                                    type: integer
+                                    description: 'ID do usuário'
+                                    example: 12
+                                rua:
+                                    type: string
+                                    description: 'Nome da rua'
+                                    example: molestiae
+                                numero:
+                                    type: integer
+                                    description: 'Numero do endereço'
+                                    example: 12
+                                bairro:
+                                    type: string
+                                    description: 'Nome do bairro'
+                                    example: adipisci
+                                complemento:
+                                    type: string
+                                    description: Complemento
+                                    example: maiores
+                                cidade:
+                                    type: string
+                                    description: 'Nome da cidade'
+                                    example: consequatur
+                                uf:
+                                    type: string
+                                    description: 'Sigla do estado <small>Ex: MG</small>'
+                                    example: tempore
+                                pais:
+                                    type: string
+                                    description: País
+                                    example: nam
+                                cep:
+                                    type: string
+                                    description: 'Cep da rua'
+                                    example: dolor
+                                padrao:
+                                    type: booelan
+                                    description: 'Se o endereço é o padrão'
+                                    example: sint
+                                ativo:
+                                    type: booelan
+                                    description: 'Se o endereço está ativo ou não. <small>Default: 1</small>'
+                                    example: ea
+                            required:
+                                - api_token
+                                - empresa_id
+                                - user_id
+                                - rua
+                                - numero
+    '/v1/address/{id}':
+        put:
+            summary: 'Atualizar Endereço'
+            description: 'Atualiza os dados do endereço'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"rua\": \"Nome da rua\",\n     \"numero\": 322,\n     \"bairro\": \"bairro\"\n     [...]\n}"
+            tags:
+                - Endereço
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                rua:
+                                    type: string
+                                    description: 'Nome da rua'
+                                    example: minus
+                                numero:
+                                    type: integer
+                                    description: 'Numero do endereço'
+                                    example: 1
+                                bairro:
+                                    type: string
+                                    description: 'Nome do bairro'
+                                    example: unde
+                                complemento:
+                                    type: string
+                                    description: Complemento
+                                    example: officia
+                                cidade:
+                                    type: string
+                                    description: 'Nome da cidade'
+                                    example: nihil
+                                uf:
+                                    type: string
+                                    description: 'Sigla do estado <small>Ex: MG</small>'
+                                    example: soluta
+                                pais:
+                                    type: string
+                                    description: País
+                                    example: autem
+                                cep:
+                                    type: string
+                                    description: 'Cep da rua'
+                                    example: quis
+                                padrao:
+                                    type: booelan
+                                    description: 'Se o endereço é o padrão'
+                                    example: fuga
+                                ativo:
+                                    type: booelan
+                                    description: 'Se o endereço está ativo ou não. <small>Default: 1</small> * @param Request $request'
+                                    example: eius
+                            required:
+                                - api_token
+                                - rua
+                                - numero
+        get:
+            summary: 'Detalhes Endereço'
+            description: 'Retorna os detalhes do endereço'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"rua\": \"Nome da rua\",\n     \"numero\": 322,\n     \"bairro\": \"bairro\"\n     [...]\n}"
+            tags:
+                - Endereço
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        delete:
+            summary: 'Deletar Endereço'
+            description: 'Deleta o endereço'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"message\": \"Endereço deletado!\",\n}"
+            tags:
+                - Endereço
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'ID da endereço'
+                example: 19
                 required: true
                 schema:
                     type: integer
@@ -605,23 +1079,23 @@ paths:
                                 name:
                                     type: string
                                     description: 'Nome do usuário'
-                                    example: omnis
+                                    example: modi
                                 cpf:
                                     type: string
                                     description: 'Cpf com ou sem formatação Ex: 111.111.111-11'
-                                    example: eum
+                                    example: rem
                                 email:
                                     type: string
                                     description: 'Email do usuário Ex: teste@estoqueintegrado.com'
-                                    example: ea
+                                    example: necessitatibus
                                 password:
                                     type: string
                                     description: 'Senha do usuário'
-                                    example: nesciunt
+                                    example: aperiam
                                 celular:
                                     type: string
                                     description: 'Celular do usuário'
-                                    example: omnis
+                                    example: optio
                             required:
                                 - api_token
                                 - name
@@ -670,87 +1144,87 @@ paths:
                                 empresa_id:
                                     type: integer
                                     description: 'ID da empresa proprietária do produto'
-                                    example: 14
+                                    example: 4
                                 categoria_id:
                                     type: integer
                                     description: 'ID da categoria cadastrada e ativa do produto'
-                                    example: 3
+                                    example: 15
                                 nome:
                                     type: string
                                     description: 'Nome do produto'
-                                    example: voluptatem
+                                    example: dolor
                                 imagens:
                                     type: array
                                     description: 'Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small>'
-                                    example: minus
+                                    example: ut
                                 slug:
                                     type: string
                                     description: 'Slug do produto <br><i><small>Ex: calca_preta_jeans</i></small>'
-                                    example: non
+                                    example: quaerat
                                 sku:
                                     type: string
                                     description: 'Sku do produto <br><i><small>Ex: CAMPM20211013</i></small>'
-                                    example: neque
+                                    example: et
                                 descricao_curta:
                                     type: string
                                     description: 'Descrição simples do produto'
-                                    example: voluptas
+                                    example: rerum
                                 descricao_completa:
                                     type: string
                                     description: 'Descrição detalhada do produto'
-                                    example: autem
+                                    example: quasi
                                 preco_custo:
                                     type: number
                                     description: 'Preço de custo do produto <br><i><small>Ex: 80.00</i></small>'
-                                    example: 246376603.19508
+                                    example: 55273.770904
                                 preco_venda:
                                     type: number
                                     description: 'Preço de venda do produto <br><i><small>Ex: 120.00</i></small>'
-                                    example: !!float 714
+                                    example: 2359865.430377
                                 preco_promocional:
                                     type: number
                                     description: 'Preço promocional do produto <br><i><small>Ex: 99.90</i></small>'
-                                    example: 74025243.3
+                                    example: !!float 18102823
                                 peso:
                                     type: integer
                                     description: 'Peso do produto em Gramas <br><i><small>Ex: 100</i></small>'
-                                    example: 12
+                                    example: 15
                                 altura:
                                     type: integer
                                     description: 'Altura do produto em Cm <br><i><small>Ex: 80</i></small>'
-                                    example: 13
+                                    example: 11
                                 largura:
                                     type: integer
                                     description: 'Largura do produto em Cm <br><i><small>Ex: 50</i></small>'
-                                    example: 7
+                                    example: 19
                                 diametro:
                                     type: integer
                                     description: 'Diametro do produto'
-                                    example: 19
+                                    example: 4
                                 comprimento:
                                     type: integer
                                     description: 'Comprimento do produto'
-                                    example: 19
+                                    example: 8
                                 titulo_seo:
                                     type: string
                                     description: 'Titiulo SEO do produto'
-                                    example: qui
+                                    example: inventore
                                 tags_seo:
                                     type: string
                                     description: 'Tags SEO do produto'
-                                    example: numquam
+                                    example: voluptas
                                 descricao_seo:
                                     type: string
                                     description: 'Descrição SEO do produto'
-                                    example: aut
+                                    example: in
                                 ativo:
                                     type: boolean
                                     description: 'Status do produto <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>'
-                                    example: false
+                                    example: true
                                 destaque:
                                     type: boolean
                                     description: 'Se o produto é destaque. <i><small>Default 0</i></small>'
-                                    example: true
+                                    example: false
                                 variacao_preco_cor:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com a cor. Default 0'
@@ -758,7 +1232,7 @@ paths:
                                 variacao_preco_tamanho:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com o tamanho. Default 0'
-                                    example: false
+                                    example: true
                             required:
                                 - api_token
                                 - empresa_id
@@ -810,55 +1284,55 @@ paths:
                                 categoria_id:
                                     type: integer
                                     description: 'ID da categoria cadastrada e ativa do produto'
-                                    example: 7
+                                    example: 2
                                 nome:
                                     type: string
                                     description: 'Nome do produto'
-                                    example: ea
+                                    example: voluptatem
                                 imagens:
                                     type: array
                                     description: 'Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small>'
-                                    example: cumque
+                                    example: neque
                                 slug:
                                     type: string
                                     description: 'Slug do produto <br><i><small>Ex: calca_preta_jeans</i></small>'
-                                    example: delectus
+                                    example: sed
                                 sku:
                                     type: string
                                     description: 'Sku do produto <br><i><small>Ex: CAMPM20211013</i></small>'
-                                    example: architecto
+                                    example: amet
                                 descricao_curta:
                                     type: string
                                     description: 'Descrição simples do produto'
-                                    example: qui
+                                    example: sunt
                                 descricao_completa:
                                     type: string
                                     description: 'Descrição detalhada do produto'
-                                    example: animi
+                                    example: deleniti
                                 preco_custo:
                                     type: number
                                     description: 'Preço de custo do produto <br><i><small>Ex: 80.00</i></small>'
-                                    example: 6.03715603
+                                    example: 200.292517
                                 preco_venda:
                                     type: number
                                     description: 'Preço de venda do produto <br><i><small>Ex: 120.00</i></small>'
-                                    example: 4709157.432779
+                                    example: 26611719.286984
                                 preco_promocional:
                                     type: number
                                     description: 'Preço promocional do produto <br><i><small>Ex: 99.90</i></small>'
-                                    example: 422.869
+                                    example: 54373447.92
                                 peso:
                                     type: integer
                                     description: 'Peso do produto em Gramas <br><i><small>Ex: 100</i></small>'
-                                    example: 2
+                                    example: 11
                                 altura:
                                     type: integer
                                     description: 'Altura do produto em Cm <br><i><small>Ex: 80</i></small>'
-                                    example: 20
+                                    example: 18
                                 largura:
                                     type: integer
                                     description: 'Largura do produto em Cm <br><i><small>Ex: 50</i></small>'
-                                    example: 19
+                                    example: 18
                                 diametro:
                                     type: integer
                                     description: 'Diametro do produto'
@@ -870,19 +1344,19 @@ paths:
                                 titulo_seo:
                                     type: string
                                     description: 'Titiulo SEO do produto'
-                                    example: voluptas
+                                    example: nam
                                 tags_seo:
                                     type: string
                                     description: 'Tags SEO do produto'
-                                    example: maxime
+                                    example: temporibus
                                 descricao_seo:
                                     type: string
                                     description: 'Descrição SEO do produto'
-                                    example: dolorem
+                                    example: nulla
                                 ativo:
                                     type: boolean
                                     description: 'Status do produto <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>'
-                                    example: true
+                                    example: false
                                 destaque:
                                     type: boolean
                                     description: 'Se o produto é destaque. <i><small>Default 0</i></small>'
@@ -890,11 +1364,11 @@ paths:
                                 variacao_preco_cor:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com a cor. Default 0'
-                                    example: true
+                                    example: false
                                 variacao_preco_tamanho:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com o tamanho. Default 0'
-                                    example: false
+                                    example: true
                             required:
                                 - api_token
                                 - categoria_id
@@ -973,7 +1447,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: et
+                example: inventore
                 required: true
                 schema:
                     type: string
@@ -1007,6 +1481,201 @@ paths:
             tags:
                 - Site
             security: []
+    /v1/sizes:
+        post:
+            summary: 'Criar Tamanho'
+            description: 'Cria um tamanho'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"nome\": \"P\",\n     \"empresa_id\": 322,\n}"
+            tags:
+                - Tamanhos
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                empresa_id:
+                                    type: integer
+                                    description: 'ID da empresa'
+                                    example: 7
+                                nome:
+                                    type: string
+                                    description: 'Nome do tamanho <small>Ex: 50ml|P|300g</small>'
+                                    example: et
+                            required:
+                                - api_token
+                                - empresa_id
+                                - nome
+    '/v1/sizes/{id}':
+        put:
+            summary: 'Atualizar Tamanho'
+            description: 'Atualiza os dados do tamanho'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"nome\": \"P\",\n     \"empresa_id\": 322,\n}"
+            tags:
+                - Tamanhos
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                empresa_id:
+                                    type: integer
+                                    description: 'ID do tamanho'
+                                    example: 12
+                                nome:
+                                    type: string
+                                    description: 'Nome do tamanho <small>Ex: 50ml|P|300g</small>'
+                                    example: corrupti
+                            required:
+                                - api_token
+                                - empresa_id
+                                - nome
+        get:
+            summary: 'Detalhes Tamanho'
+            description: 'Retorna os detalhes do Tamanho'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\": 1,\n     \"nome\": \"P\",\n     \"empresa_id\": 322,\n}"
+            tags:
+                - Tamanhos
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        delete:
+            summary: 'Deletar Tamanho'
+            description: 'Deleta um tamanho'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"message\": \"Tamanho deletado!\",\n}"
+            tags:
+                - Tamanhos
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                            required:
+                                - api_token
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'ID do tamanho'
+                example: 13
+                required: true
+                schema:
+                    type: integer
     '/v1/users/{id}':
         put:
             summary: 'Atualizar usuario'
@@ -1162,7 +1831,7 @@ paths:
                                 id:
                                     type: integer
                                     description: 'ID do usuário'
-                                    example: 14
+                                    example: 7
                             required:
                                 - api_token
                                 - id
@@ -1171,7 +1840,7 @@ paths:
                 in: path
                 name: id
                 description: 'ID do usuário'
-                example: 12
+                example: 2
                 required: true
                 schema:
                     type: integer
@@ -1218,11 +1887,11 @@ paths:
                                 login:
                                     type: string
                                     description: 'Email do usuário'
-                                    example: qui
+                                    example: sunt
                                 password:
                                     type: string
                                     description: 'Senha do usuário'
-                                    example: et
+                                    example: illum
                             required:
                                 - api_token
                                 - login

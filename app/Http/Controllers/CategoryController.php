@@ -118,12 +118,12 @@ class CategoryController extends Controller
      *
      * @group Categorias
      * @urlParam id integer required ID da categoria
-     * @bodyParam nome string required Nome da categoria Ex: "Nome da categoria"
-     * @bodyParam slug string Slug do produto Ex: calca_preta_jean
+     * @bodyParam nome string required Nome da categoria
+     * @bodyParam slug string Slug do produto <br><i><small>Ex: calca_preta_jean</i></small>
      * @bodyParam descricao string Descrição da categoria
      * @bodyParam imagem file Imagem da categoria
      * @bodyParam miniatura file Miniatura da imagem da categoria
-     * @bodyParam ativo boolean Status do produto Ativo = 1, Desativado = 0. Default 1
+     * @bodyParam ativo boolean Status da categoria <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>
      * @param Request $request
      *
      * @response {

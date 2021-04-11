@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "API estoqueintegrado.com",
-        "_postman_id": "4b6ed12a-0bc2-45f6-90c3-e861a594cdc0",
+        "_postman_id": "935858b8-e07a-4890-966e-c1c46dd9000b",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -50,32 +50,32 @@
                                 },
                                 {
                                     "key": "empresa_id",
-                                    "value": 17,
+                                    "value": 8,
                                     "type": "text"
                                 },
                                 {
                                     "key": "nome",
-                                    "value": "a",
+                                    "value": "occaecati",
                                     "type": "text"
                                 },
                                 {
                                     "key": "slug",
-                                    "value": "sed",
+                                    "value": "deserunt",
                                     "type": "text"
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "aspernatur",
+                                    "value": "officia",
                                     "type": "text"
                                 },
                                 {
                                     "key": "ativo",
-                                    "value": true,
+                                    "value": false,
                                     "type": "text"
                                 },
                                 {
                                     "key": "slug_auto",
-                                    "value": true,
+                                    "value": false,
                                     "type": "text"
                                 },
                                 {
@@ -107,7 +107,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "16",
                                     "description": "ID da categoria"
                                 }
                             ]
@@ -133,17 +133,17 @@
                                 },
                                 {
                                     "key": "nome",
-                                    "value": "consequatur",
+                                    "value": "cupiditate",
                                     "type": "text"
                                 },
                                 {
                                     "key": "slug",
-                                    "value": "aut",
+                                    "value": "totam",
                                     "type": "text"
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "sapiente",
+                                    "value": "consectetur",
                                     "type": "text"
                                 },
                                 {
@@ -180,7 +180,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "9",
                                     "description": "ID da categoria"
                                 }
                             ]
@@ -244,6 +244,152 @@
             ]
         },
         {
+            "name": "Cores",
+            "description": "",
+            "item": [
+                {
+                    "name": "Criar Cor",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/colors",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/colors"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 2,\n    \"nome\": \"et\",\n    \"hex\": \"non\"\n}"
+                        },
+                        "description": "Cria uma cor"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Atualizar Cor",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/colors\/:id",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/colors\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "dolorem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 13,\n    \"nome\": \"odit\",\n    \"hex\": \"qui\"\n}"
+                        },
+                        "description": "Atualiza os dados da cor"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detalhes Cor",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/colors\/:id",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/colors\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "ID da cor"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Retorna os detalhes da Cor"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deletar Cor",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/colors\/:id",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/colors\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "12",
+                                    "description": "ID da Cor"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Deleta uma cor"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
             "name": "Empresas",
             "description": "",
             "item": [
@@ -270,7 +416,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"user_id\": 9,\n    \"nome\": \"delectus\",\n    \"website\": \"dolore\",\n    \"razao_social\": \"voluptates\",\n    \"cnpj\": \"quaerat\",\n    \"telefone\": \"minus\",\n    \"celular\": \"excepturi\",\n    \"email\": \"tenetur\",\n    \"logo\": \"quod\",\n    \"icone\": \"tenetur\",\n    \"matriz\": true,\n    \"modo_catalogo\": false\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"user_id\": 11,\n    \"nome\": \"illum\",\n    \"website\": \"error\",\n    \"razao_social\": \"iure\",\n    \"cnpj\": \"et\",\n    \"telefone\": \"voluptatem\",\n    \"celular\": \"nemo\",\n    \"email\": \"magnam\",\n    \"logo\": \"aperiam\",\n    \"icone\": \"cumque\",\n    \"matriz\": true,\n    \"modo_catalogo\": false\n}"
                         },
                         "description": "Cria uma nova empresa."
                     },
@@ -299,7 +445,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 10\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 18\n}"
                         },
                         "description": "Retorna a lista de empresas que o usu\u00e1rio est\u00e1 associado."
                     },
@@ -318,7 +464,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "15",
                                     "description": "ID do usuario proprietario da empresa"
                                 }
                             ]
@@ -355,7 +501,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "19",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -392,7 +538,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "9",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -413,6 +559,152 @@
                             "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
                         },
                         "description": "Deleta a empresa.\nUsa softDeletes()"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Endere\u00e7o",
+            "description": "",
+            "item": [
+                {
+                    "name": "Criar Endere\u00e7o",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/address",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/address"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 7,\n    \"user_id\": 12,\n    \"rua\": \"molestiae\",\n    \"numero\": 12,\n    \"bairro\": \"adipisci\",\n    \"complemento\": \"maiores\",\n    \"cidade\": \"consequatur\",\n    \"uf\": \"tempore\",\n    \"pais\": \"nam\",\n    \"cep\": \"dolor\",\n    \"padrao\": \"sint\",\n    \"ativo\": \"ea\"\n}"
+                        },
+                        "description": "Cria uma Endere\u00e7o"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Atualizar Endere\u00e7o",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/address\/:id",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/address\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "19",
+                                    "description": "ID da endere\u00e7o"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"rua\": \"minus\",\n    \"numero\": 1,\n    \"bairro\": \"unde\",\n    \"complemento\": \"officia\",\n    \"cidade\": \"nihil\",\n    \"uf\": \"soluta\",\n    \"pais\": \"autem\",\n    \"cep\": \"quis\",\n    \"padrao\": \"fuga\",\n    \"ativo\": \"eius\"\n}"
+                        },
+                        "description": "Atualiza os dados do endere\u00e7o"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detalhes Endere\u00e7o",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/address\/:id",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/address\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "ID do endere\u00e7o"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Retorna os detalhes do endere\u00e7o"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deletar Endere\u00e7o",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/address\/:id",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/address\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "11",
+                                    "description": "ID do endere\u00e7o"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Deleta o endere\u00e7o"
                     },
                     "response": []
                 }
@@ -480,7 +772,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 14,\n    \"categoria_id\": 3,\n    \"nome\": \"voluptatem\",\n    \"imagens\": \"minus\",\n    \"slug\": \"non\",\n    \"sku\": \"neque\",\n    \"descricao_curta\": \"voluptas\",\n    \"descricao_completa\": \"autem\",\n    \"preco_custo\": 246376603.19508252,\n    \"preco_venda\": 714,\n    \"preco_promocional\": 74025243.3,\n    \"peso\": 12,\n    \"altura\": 13,\n    \"largura\": 7,\n    \"diametro\": 19,\n    \"comprimento\": 19,\n    \"titulo_seo\": \"qui\",\n    \"tags_seo\": \"numquam\",\n    \"descricao_seo\": \"aut\",\n    \"ativo\": false,\n    \"destaque\": true,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": false\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 4,\n    \"categoria_id\": 15,\n    \"nome\": \"dolor\",\n    \"imagens\": \"ut\",\n    \"slug\": \"quaerat\",\n    \"sku\": \"et\",\n    \"descricao_curta\": \"rerum\",\n    \"descricao_completa\": \"quasi\",\n    \"preco_custo\": 55273.770904,\n    \"preco_venda\": 2359865.4303769623,\n    \"preco_promocional\": 18102823,\n    \"peso\": 15,\n    \"altura\": 11,\n    \"largura\": 19,\n    \"diametro\": 4,\n    \"comprimento\": 8,\n    \"titulo_seo\": \"inventore\",\n    \"tags_seo\": \"voluptas\",\n    \"descricao_seo\": \"in\",\n    \"ativo\": true,\n    \"destaque\": false,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": true\n}"
                         },
                         "description": "Cria um produto"
                     },
@@ -499,7 +791,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "inventore",
                                     "description": ""
                                 }
                             ]
@@ -517,7 +809,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"categoria_id\": 7,\n    \"nome\": \"ea\",\n    \"imagens\": \"cumque\",\n    \"slug\": \"delectus\",\n    \"sku\": \"architecto\",\n    \"descricao_curta\": \"qui\",\n    \"descricao_completa\": \"animi\",\n    \"preco_custo\": 6.03715603,\n    \"preco_venda\": 4709157.432779,\n    \"preco_promocional\": 422.869,\n    \"peso\": 2,\n    \"altura\": 20,\n    \"largura\": 19,\n    \"diametro\": 15,\n    \"comprimento\": 1,\n    \"titulo_seo\": \"voluptas\",\n    \"tags_seo\": \"maxime\",\n    \"descricao_seo\": \"dolorem\",\n    \"ativo\": true,\n    \"destaque\": false,\n    \"variacao_preco_cor\": true,\n    \"variacao_preco_tamanho\": false\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"categoria_id\": 2,\n    \"nome\": \"voluptatem\",\n    \"imagens\": \"neque\",\n    \"slug\": \"sed\",\n    \"sku\": \"amet\",\n    \"descricao_curta\": \"sunt\",\n    \"descricao_completa\": \"deleniti\",\n    \"preco_custo\": 200.292517,\n    \"preco_venda\": 26611719.286984075,\n    \"preco_promocional\": 54373447.92,\n    \"peso\": 11,\n    \"altura\": 18,\n    \"largura\": 18,\n    \"diametro\": 15,\n    \"comprimento\": 1,\n    \"titulo_seo\": \"nam\",\n    \"tags_seo\": \"temporibus\",\n    \"descricao_seo\": \"nulla\",\n    \"ativo\": false,\n    \"destaque\": false,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": true\n}"
                         },
                         "description": "Atualiza os dados de um produto"
                     },
@@ -536,7 +828,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "14",
                                     "description": "ID do produto"
                                 }
                             ]
@@ -573,7 +865,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "3",
                                     "description": "ID do produto"
                                 }
                             ]
@@ -635,6 +927,152 @@
             ]
         },
         {
+            "name": "Tamanhos",
+            "description": "",
+            "item": [
+                {
+                    "name": "Criar Tamanho",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/sizes",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/sizes"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 7,\n    \"nome\": \"et\"\n}"
+                        },
+                        "description": "Cria um tamanho"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Atualizar Tamanho",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/sizes\/:id",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/sizes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "13",
+                                    "description": "ID do tamanho"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"empresa_id\": 12,\n    \"nome\": \"corrupti\"\n}"
+                        },
+                        "description": "Atualiza os dados do tamanho"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detalhes Tamanho",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/sizes\/:id",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/sizes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "7",
+                                    "description": "ID do Tamanho"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Retorna os detalhes do Tamanho"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deletar Tamanho",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/sizes\/:id",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/sizes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "10",
+                                    "description": "ID do tamanho"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\"\n}"
+                        },
+                        "description": "Deleta um tamanho"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
             "name": "Usuarios",
             "description": "",
             "item": [
@@ -661,7 +1099,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"name\": \"omnis\",\n    \"cpf\": \"eum\",\n    \"email\": \"ea\",\n    \"password\": \"nesciunt\",\n    \"celular\": \"omnis\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"name\": \"modi\",\n    \"cpf\": \"rem\",\n    \"email\": \"necessitatibus\",\n    \"password\": \"aperiam\",\n    \"celular\": \"optio\"\n}"
                         },
                         "description": "Cria um usu\u00e1rio."
                     },
@@ -680,7 +1118,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "2",
                                     "description": "ID do usu\u00e1rio"
                                 }
                             ]
@@ -717,7 +1155,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "4",
                                     "description": "ID da Usuario"
                                 }
                             ]
@@ -754,7 +1192,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aliquid",
+                                    "value": "et",
                                     "description": ""
                                 }
                             ]
@@ -772,7 +1210,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 14\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 7\n}"
                         },
                         "description": "Deletar um usu\u00e1rio"
                     },
@@ -801,7 +1239,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"login\": \"qui\",\n    \"password\": \"et\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"login\": \"sunt\",\n    \"password\": \"illum\"\n}"
                         },
                         "description": "Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da data concatenando com o ID do usu\u00e1rio\ne salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN"
                     },

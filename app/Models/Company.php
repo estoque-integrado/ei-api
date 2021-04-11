@@ -258,7 +258,7 @@ class Company extends Model
 
     public function endereco()
     {
-        return $this->hasOne('App\Models\Endereco');
+        return $this->hasOne('App\Models\Address');
     }
 
 //    public function descontos()

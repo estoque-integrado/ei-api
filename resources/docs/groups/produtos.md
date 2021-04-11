@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":14,"categoria_id":3,"nome":"voluptatem","imagens":"minus","slug":"non","sku":"neque","descricao_curta":"voluptas","descricao_completa":"autem","preco_custo":246376603.19508252,"preco_venda":714,"preco_promocional":74025243.3,"peso":12,"altura":13,"largura":7,"diametro":19,"comprimento":19,"titulo_seo":"qui","tags_seo":"numquam","descricao_seo":"aut","ativo":false,"destaque":true,"variacao_preco_cor":false,"variacao_preco_tamanho":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":4,"categoria_id":15,"nome":"dolor","imagens":"ut","slug":"quaerat","sku":"et","descricao_curta":"rerum","descricao_completa":"quasi","preco_custo":55273.770904,"preco_venda":2359865.4303769623,"preco_promocional":18102823,"peso":15,"altura":11,"largura":19,"diametro":4,"comprimento":8,"titulo_seo":"inventore","tags_seo":"voluptas","descricao_seo":"in","ativo":true,"destaque":false,"variacao_preco_cor":false,"variacao_preco_tamanho":true}'
 
 ```
 
@@ -30,29 +30,29 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 14,
-    "categoria_id": 3,
-    "nome": "voluptatem",
-    "imagens": "minus",
-    "slug": "non",
-    "sku": "neque",
-    "descricao_curta": "voluptas",
-    "descricao_completa": "autem",
-    "preco_custo": 246376603.19508252,
-    "preco_venda": 714,
-    "preco_promocional": 74025243.3,
-    "peso": 12,
-    "altura": 13,
-    "largura": 7,
-    "diametro": 19,
-    "comprimento": 19,
-    "titulo_seo": "qui",
-    "tags_seo": "numquam",
-    "descricao_seo": "aut",
-    "ativo": false,
-    "destaque": true,
+    "empresa_id": 4,
+    "categoria_id": 15,
+    "nome": "dolor",
+    "imagens": "ut",
+    "slug": "quaerat",
+    "sku": "et",
+    "descricao_curta": "rerum",
+    "descricao_completa": "quasi",
+    "preco_custo": 55273.770904,
+    "preco_venda": 2359865.4303769623,
+    "preco_promocional": 18102823,
+    "peso": 15,
+    "altura": 11,
+    "largura": 19,
+    "diametro": 4,
+    "comprimento": 8,
+    "titulo_seo": "inventore",
+    "tags_seo": "voluptas",
+    "descricao_seo": "in",
+    "ativo": true,
+    "destaque": false,
     "variacao_preco_cor": false,
-    "variacao_preco_tamanho": false
+    "variacao_preco_tamanho": true
 }
 
 fetch(url, {
@@ -73,29 +73,29 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 14,
-            'categoria_id' => 3,
-            'nome' => 'voluptatem',
-            'imagens' => 'minus',
-            'slug' => 'non',
-            'sku' => 'neque',
-            'descricao_curta' => 'voluptas',
-            'descricao_completa' => 'autem',
-            'preco_custo' => 246376603.19508252,
-            'preco_venda' => 714.0,
-            'preco_promocional' => 74025243.3,
-            'peso' => 12,
-            'altura' => 13,
-            'largura' => 7,
-            'diametro' => 19,
-            'comprimento' => 19,
-            'titulo_seo' => 'qui',
-            'tags_seo' => 'numquam',
-            'descricao_seo' => 'aut',
-            'ativo' => false,
-            'destaque' => true,
+            'empresa_id' => 4,
+            'categoria_id' => 15,
+            'nome' => 'dolor',
+            'imagens' => 'ut',
+            'slug' => 'quaerat',
+            'sku' => 'et',
+            'descricao_curta' => 'rerum',
+            'descricao_completa' => 'quasi',
+            'preco_custo' => 55273.770904,
+            'preco_venda' => 2359865.4303769623,
+            'preco_promocional' => 18102823.0,
+            'peso' => 15,
+            'altura' => 11,
+            'largura' => 19,
+            'diametro' => 4,
+            'comprimento' => 8,
+            'titulo_seo' => 'inventore',
+            'tags_seo' => 'voluptas',
+            'descricao_seo' => 'in',
+            'ativo' => true,
+            'destaque' => false,
             'variacao_preco_cor' => false,
-            'variacao_preco_tamanho' => false,
+            'variacao_preco_tamanho' => true,
         ],
     ]
 );
@@ -274,16 +274,16 @@ Atualiza os dados de um produto
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/products/et" \
+    "https://api.estoqueintegrado.com.br/v1/products/inventore" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","categoria_id":7,"nome":"ea","imagens":"cumque","slug":"delectus","sku":"architecto","descricao_curta":"qui","descricao_completa":"animi","preco_custo":6.03715603,"preco_venda":4709157.432779,"preco_promocional":422.869,"peso":2,"altura":20,"largura":19,"diametro":15,"comprimento":1,"titulo_seo":"voluptas","tags_seo":"maxime","descricao_seo":"dolorem","ativo":true,"destaque":false,"variacao_preco_cor":true,"variacao_preco_tamanho":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","categoria_id":2,"nome":"voluptatem","imagens":"neque","slug":"sed","sku":"amet","descricao_curta":"sunt","descricao_completa":"deleniti","preco_custo":200.292517,"preco_venda":26611719.286984075,"preco_promocional":54373447.92,"peso":11,"altura":18,"largura":18,"diametro":15,"comprimento":1,"titulo_seo":"nam","tags_seo":"temporibus","descricao_seo":"nulla","ativo":false,"destaque":false,"variacao_preco_cor":false,"variacao_preco_tamanho":true}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/et"
+    "https://api.estoqueintegrado.com.br/v1/products/inventore"
 );
 
 let headers = {
@@ -293,28 +293,28 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "categoria_id": 7,
-    "nome": "ea",
-    "imagens": "cumque",
-    "slug": "delectus",
-    "sku": "architecto",
-    "descricao_curta": "qui",
-    "descricao_completa": "animi",
-    "preco_custo": 6.03715603,
-    "preco_venda": 4709157.432779,
-    "preco_promocional": 422.869,
-    "peso": 2,
-    "altura": 20,
-    "largura": 19,
+    "categoria_id": 2,
+    "nome": "voluptatem",
+    "imagens": "neque",
+    "slug": "sed",
+    "sku": "amet",
+    "descricao_curta": "sunt",
+    "descricao_completa": "deleniti",
+    "preco_custo": 200.292517,
+    "preco_venda": 26611719.286984075,
+    "preco_promocional": 54373447.92,
+    "peso": 11,
+    "altura": 18,
+    "largura": 18,
     "diametro": 15,
     "comprimento": 1,
-    "titulo_seo": "voluptas",
-    "tags_seo": "maxime",
-    "descricao_seo": "dolorem",
-    "ativo": true,
+    "titulo_seo": "nam",
+    "tags_seo": "temporibus",
+    "descricao_seo": "nulla",
+    "ativo": false,
     "destaque": false,
-    "variacao_preco_cor": true,
-    "variacao_preco_tamanho": false
+    "variacao_preco_cor": false,
+    "variacao_preco_tamanho": true
 }
 
 fetch(url, {
@@ -328,35 +328,35 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/products/et',
+    'https://api.estoqueintegrado.com.br/v1/products/inventore',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'categoria_id' => 7,
-            'nome' => 'ea',
-            'imagens' => 'cumque',
-            'slug' => 'delectus',
-            'sku' => 'architecto',
-            'descricao_curta' => 'qui',
-            'descricao_completa' => 'animi',
-            'preco_custo' => 6.03715603,
-            'preco_venda' => 4709157.432779,
-            'preco_promocional' => 422.869,
-            'peso' => 2,
-            'altura' => 20,
-            'largura' => 19,
+            'categoria_id' => 2,
+            'nome' => 'voluptatem',
+            'imagens' => 'neque',
+            'slug' => 'sed',
+            'sku' => 'amet',
+            'descricao_curta' => 'sunt',
+            'descricao_completa' => 'deleniti',
+            'preco_custo' => 200.292517,
+            'preco_venda' => 26611719.286984075,
+            'preco_promocional' => 54373447.92,
+            'peso' => 11,
+            'altura' => 18,
+            'largura' => 18,
             'diametro' => 15,
             'comprimento' => 1,
-            'titulo_seo' => 'voluptas',
-            'tags_seo' => 'maxime',
-            'descricao_seo' => 'dolorem',
-            'ativo' => true,
+            'titulo_seo' => 'nam',
+            'tags_seo' => 'temporibus',
+            'descricao_seo' => 'nulla',
+            'ativo' => false,
             'destaque' => false,
-            'variacao_preco_cor' => true,
-            'variacao_preco_tamanho' => false,
+            'variacao_preco_cor' => false,
+            'variacao_preco_tamanho' => true,
         ],
     ]
 );
@@ -535,14 +535,14 @@ Retorna os detalhes de um produto
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/products/17" \
+    -G "https://api.estoqueintegrado.com.br/v1/products/14" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/17"
+    "https://api.estoqueintegrado.com.br/v1/products/14"
 );
 
 let headers = {
@@ -561,7 +561,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/products/17',
+    'https://api.estoqueintegrado.com.br/v1/products/14',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -618,7 +618,7 @@ Deleta um produto com softDeletes
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/products/18" \
+    "https://api.estoqueintegrado.com.br/v1/products/3" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -627,7 +627,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/18"
+    "https://api.estoqueintegrado.com.br/v1/products/3"
 );
 
 let headers = {
@@ -650,7 +650,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/products/18',
+    'https://api.estoqueintegrado.com.br/v1/products/3',
     [
         'headers' => [
             'Accept' => 'application/json',
