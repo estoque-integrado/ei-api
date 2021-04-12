@@ -103,7 +103,7 @@ class SiteController extends Controller
             ];
             $data[$isId ? 'id' : 'slug'] = $idOrSlug;
 
-            $product = Product::where($data)->first();
+            $product = Product::where($data)->with('colors', 'sizes', 'images')->first();
 
             if (!$product)
                 return response(['message' => 'Produto não encontrado!'], 404);
