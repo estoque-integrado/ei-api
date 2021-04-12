@@ -83,7 +83,7 @@ class SiteController extends Controller
     /**
      * Detalhes do produto
      *
-     * Retorna os detalhes de um produto
+     * Retorna um array com 1 único produto
      *
      * @urlParam idOrSlug integer|string required ID ou slug do produto
      * @bodyParam dominio string required Dominio da empresa <br>
@@ -108,7 +108,7 @@ class SiteController extends Controller
             if (!$product)
                 return response(['message' => 'Produto não encontrado!'], 404);
 
-            $request->company->product = $product;
+            $request->company->product = [$product];
 
 
             return $request->company;
