@@ -108,16 +108,24 @@ class ProductController extends Controller
      *
      * @group Produtos
      * @unauthenticated
-     * @urlParam id integer required ID do produto
+     * @urlParam idOrSlug integer|string required ID ou slug do produto
      * @param Request $request
      */
-    public function view(Request $request, $id)
+    public function view(Request $request, $idOrSlug)
     {
         try {
 //            if (!$this->userCanEditCompany($id))
 //                return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
-            $product = Product::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
+            $isId = preg_match('/^(\d{1,})$/i', $idOrSlug) ? true : false;
+
+            $data = [
+                'empresa_id' => $request->company->id
+            ];
+
+            $data[$isId ? 'id' : 'slug'] = $idOrSlug;
+
+            $product = Product::where($data)->first();
 
             if (!$product)
                 return response(['message' => 'Produto não encontrado!'], 404);
