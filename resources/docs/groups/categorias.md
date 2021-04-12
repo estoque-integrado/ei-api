@@ -16,12 +16,12 @@ curl -X POST \
     -H "Accept: application/json" \
     -F "api_token=b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3" \
     -F "empresa_id=15" \
-    -F "nome=qui" \
-    -F "slug=perspiciatis" \
-    -F "descricao=enim" \
+    -F "nome=rerum" \
+    -F "slug=nihil" \
+    -F "descricao=labore" \
     -F "ativo=" \
     -F "slug_auto=" \
-    -F "imagem=@/tmp/phpb2E6W8"     -F "miniatura=@/tmp/phpqrwEVJ" 
+    -F "imagem=@/tmp/phpoJ3NzU"     -F "miniatura=@/tmp/phpiLPCN0" 
 ```
 
 ```javascript
@@ -37,9 +37,9 @@ let headers = {
 const body = new FormData();
 body.append('api_token', 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3');
 body.append('empresa_id', '15');
-body.append('nome', 'qui');
-body.append('slug', 'perspiciatis');
-body.append('descricao', 'enim');
+body.append('nome', 'rerum');
+body.append('slug', 'nihil');
+body.append('descricao', 'labore');
 body.append('ativo', '');
 body.append('slug_auto', '');
 body.append('imagem', document.querySelector('input[name="imagem"]').files[0]);
@@ -72,15 +72,15 @@ $response = $client->post(
             ],
             [
                 'name' => 'nome',
-                'contents' => 'qui'
+                'contents' => 'rerum'
             ],
             [
                 'name' => 'slug',
-                'contents' => 'perspiciatis'
+                'contents' => 'nihil'
             ],
             [
                 'name' => 'descricao',
-                'contents' => 'enim'
+                'contents' => 'labore'
             ],
             [
                 'name' => 'ativo',
@@ -92,11 +92,11 @@ $response = $client->post(
             ],
             [
                 'name' => 'imagem',
-                'contents' => fopen('/tmp/phpb2E6W8', 'r')
+                'contents' => fopen('/tmp/phpoJ3NzU', 'r')
             ],
             [
                 'name' => 'miniatura',
-                'contents' => fopen('/tmp/phpqrwEVJ', 'r')
+                'contents' => fopen('/tmp/phpiLPCN0', 'r')
             ],
         ],
     ]
@@ -200,20 +200,20 @@ Atualiza os dados da categoria
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/categories/13" \
+    "https://api.estoqueintegrado.com.br/v1/categories/2" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
     -F "api_token=b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3" \
-    -F "nome=repudiandae" \
-    -F "slug=minus" \
-    -F "descricao=sunt" \
+    -F "nome=eos" \
+    -F "slug=iste" \
+    -F "descricao=laboriosam" \
     -F "ativo=" \
-    -F "imagem=@/tmp/phpCeBuUk"     -F "miniatura=@/tmp/phpGtHlTV" 
+    -F "imagem=@/tmp/phpCzcK16"     -F "miniatura=@/tmp/phpiULSfd" 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/categories/13"
+    "https://api.estoqueintegrado.com.br/v1/categories/2"
 );
 
 let headers = {
@@ -223,9 +223,9 @@ let headers = {
 
 const body = new FormData();
 body.append('api_token', 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3');
-body.append('nome', 'repudiandae');
-body.append('slug', 'minus');
-body.append('descricao', 'sunt');
+body.append('nome', 'eos');
+body.append('slug', 'iste');
+body.append('descricao', 'laboriosam');
 body.append('ativo', '');
 body.append('imagem', document.querySelector('input[name="imagem"]').files[0]);
 body.append('miniatura', document.querySelector('input[name="miniatura"]').files[0]);
@@ -241,7 +241,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/categories/13',
+    'https://api.estoqueintegrado.com.br/v1/categories/2',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -253,15 +253,15 @@ $response = $client->put(
             ],
             [
                 'name' => 'nome',
-                'contents' => 'repudiandae'
+                'contents' => 'eos'
             ],
             [
                 'name' => 'slug',
-                'contents' => 'minus'
+                'contents' => 'iste'
             ],
             [
                 'name' => 'descricao',
-                'contents' => 'sunt'
+                'contents' => 'laboriosam'
             ],
             [
                 'name' => 'ativo',
@@ -269,11 +269,11 @@ $response = $client->put(
             ],
             [
                 'name' => 'imagem',
-                'contents' => fopen('/tmp/phpCeBuUk', 'r')
+                'contents' => fopen('/tmp/phpCzcK16', 'r')
             ],
             [
                 'name' => 'miniatura',
-                'contents' => fopen('/tmp/phpGtHlTV', 'r')
+                'contents' => fopen('/tmp/phpiULSfd', 'r')
             ],
         ],
     ]
@@ -371,7 +371,7 @@ Retorna os detalhes da categoria
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/categories/17" \
+    -G "https://api.estoqueintegrado.com.br/v1/categories/16" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -380,7 +380,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/categories/17"
+    "https://api.estoqueintegrado.com.br/v1/categories/16"
 );
 
 let headers = {
@@ -403,7 +403,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/categories/17',
+    'https://api.estoqueintegrado.com.br/v1/categories/16',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -475,7 +475,7 @@ Deleta a categoria
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/categories/1" \
+    "https://api.estoqueintegrado.com.br/v1/categories/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -484,7 +484,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/categories/1"
+    "https://api.estoqueintegrado.com.br/v1/categories/17"
 );
 
 let headers = {
@@ -507,7 +507,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/categories/1',
+    'https://api.estoqueintegrado.com.br/v1/categories/17',
     [
         'headers' => [
             'Accept' => 'application/json',

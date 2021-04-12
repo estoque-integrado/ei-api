@@ -58,7 +58,7 @@ print_r(json_decode((string) $body));
 ```
 
 
-> Example response (404):
+> Example response (400):
 
 ```json
 {

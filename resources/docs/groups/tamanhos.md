@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/sizes" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":18,"nome":"qui"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":18,"nome":"reiciendis"}'
 
 ```
 
@@ -31,7 +31,7 @@ let headers = {
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
     "empresa_id": 18,
-    "nome": "qui"
+    "nome": "reiciendis"
 }
 
 fetch(url, {
@@ -53,7 +53,7 @@ $response = $client->post(
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
             'empresa_id' => 18,
-            'nome' => 'qui',
+            'nome' => 'reiciendis',
         ],
     ]
 );
@@ -121,16 +121,16 @@ Atualiza os dados do tamanho
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/sizes/18" \
+    "https://api.estoqueintegrado.com.br/v1/sizes/20" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":8,"nome":"incidunt"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":16,"nome":"magni"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/18"
+    "https://api.estoqueintegrado.com.br/v1/sizes/20"
 );
 
 let headers = {
@@ -140,8 +140,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 8,
-    "nome": "incidunt"
+    "empresa_id": 16,
+    "nome": "magni"
 }
 
 fetch(url, {
@@ -155,15 +155,15 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/sizes/18',
+    'https://api.estoqueintegrado.com.br/v1/sizes/20',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 8,
-            'nome' => 'incidunt',
+            'empresa_id' => 16,
+            'nome' => 'magni',
         ],
     ]
 );
@@ -237,7 +237,7 @@ Retorna os detalhes do Tamanho
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/sizes/3" \
+    -G "https://api.estoqueintegrado.com.br/v1/sizes/14" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -246,7 +246,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/3"
+    "https://api.estoqueintegrado.com.br/v1/sizes/14"
 );
 
 let headers = {
@@ -269,7 +269,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/sizes/3',
+    'https://api.estoqueintegrado.com.br/v1/sizes/14',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -339,7 +339,7 @@ Deleta um tamanho
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/sizes/11" \
+    "https://api.estoqueintegrado.com.br/v1/sizes/2" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -348,7 +348,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/11"
+    "https://api.estoqueintegrado.com.br/v1/sizes/2"
 );
 
 let headers = {
@@ -371,7 +371,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/sizes/11',
+    'https://api.estoqueintegrado.com.br/v1/sizes/2',
     [
         'headers' => [
             'Accept' => 'application/json',

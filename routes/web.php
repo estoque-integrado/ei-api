@@ -24,6 +24,7 @@
 
 // Home da Loja
 $router->get('/', ['as' => 'index', 'middleware' => 'SetCompany', 'uses' => 'SiteController@index']);
+$router->get('/v1/product/{idOrSlug}', ['as' => 'index', 'middleware' => 'SetCompany', 'uses' => 'SiteController@viewProduct']);
 
 
 /**

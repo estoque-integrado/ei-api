@@ -78,12 +78,12 @@
     -H "Accept: application/json" \
     -F "api_token=b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3" \
     -F "empresa_id=15" \
-    -F "nome=qui" \
-    -F "slug=perspiciatis" \
-    -F "descricao=enim" \
+    -F "nome=rerum" \
+    -F "slug=nihil" \
+    -F "descricao=labore" \
     -F "ativo=" \
     -F "slug_auto=" \
-    -F "imagem=@/tmp/phpb2E6W8"     -F "miniatura=@/tmp/phpqrwEVJ" </code></pre>
+    -F "imagem=@/tmp/phpoJ3NzU"     -F "miniatura=@/tmp/phpiLPCN0" </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/v1/categories"
 );
@@ -96,9 +96,9 @@ let headers = {
 const body = new FormData();
 body.append('api_token', 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3');
 body.append('empresa_id', '15');
-body.append('nome', 'qui');
-body.append('slug', 'perspiciatis');
-body.append('descricao', 'enim');
+body.append('nome', 'rerum');
+body.append('slug', 'nihil');
+body.append('descricao', 'labore');
 body.append('ativo', '');
 body.append('slug_auto', '');
 body.append('imagem', document.querySelector('input[name="imagem"]').files[0]);
@@ -128,15 +128,15 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'nome',
-                'contents' =&gt; 'qui'
+                'contents' =&gt; 'rerum'
             ],
             [
                 'name' =&gt; 'slug',
-                'contents' =&gt; 'perspiciatis'
+                'contents' =&gt; 'nihil'
             ],
             [
                 'name' =&gt; 'descricao',
-                'contents' =&gt; 'enim'
+                'contents' =&gt; 'labore'
             ],
             [
                 'name' =&gt; 'ativo',
@@ -148,11 +148,11 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'imagem',
-                'contents' =&gt; fopen('/tmp/phpb2E6W8', 'r')
+                'contents' =&gt; fopen('/tmp/phpoJ3NzU', 'r')
             ],
             [
                 'name' =&gt; 'miniatura',
-                'contents' =&gt; fopen('/tmp/phpqrwEVJ', 'r')
+                'contents' =&gt; fopen('/tmp/phpiLPCN0', 'r')
             ],
         ],
     ]
@@ -247,17 +247,17 @@ Criar slug automaticamente; <br><i><small>Sim = 1, Não = 0</small></i></p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/categories/13" \
+    "https://api.estoqueintegrado.com.br/v1/categories/2" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
     -F "api_token=b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3" \
-    -F "nome=repudiandae" \
-    -F "slug=minus" \
-    -F "descricao=sunt" \
+    -F "nome=eos" \
+    -F "slug=iste" \
+    -F "descricao=laboriosam" \
     -F "ativo=" \
-    -F "imagem=@/tmp/phpCeBuUk"     -F "miniatura=@/tmp/phpGtHlTV" </code></pre>
+    -F "imagem=@/tmp/phpCzcK16"     -F "miniatura=@/tmp/phpiULSfd" </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/categories/13"
+    "https://api.estoqueintegrado.com.br/v1/categories/2"
 );
 
 let headers = {
@@ -267,9 +267,9 @@ let headers = {
 
 const body = new FormData();
 body.append('api_token', 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3');
-body.append('nome', 'repudiandae');
-body.append('slug', 'minus');
-body.append('descricao', 'sunt');
+body.append('nome', 'eos');
+body.append('slug', 'iste');
+body.append('descricao', 'laboriosam');
 body.append('ativo', '');
 body.append('imagem', document.querySelector('input[name="imagem"]').files[0]);
 body.append('miniatura', document.querySelector('input[name="miniatura"]').files[0]);
@@ -282,7 +282,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://api.estoqueintegrado.com.br/v1/categories/13',
+    'https://api.estoqueintegrado.com.br/v1/categories/2',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -294,15 +294,15 @@ $response = $client-&gt;put(
             ],
             [
                 'name' =&gt; 'nome',
-                'contents' =&gt; 'repudiandae'
+                'contents' =&gt; 'eos'
             ],
             [
                 'name' =&gt; 'slug',
-                'contents' =&gt; 'minus'
+                'contents' =&gt; 'iste'
             ],
             [
                 'name' =&gt; 'descricao',
-                'contents' =&gt; 'sunt'
+                'contents' =&gt; 'laboriosam'
             ],
             [
                 'name' =&gt; 'ativo',
@@ -310,11 +310,11 @@ $response = $client-&gt;put(
             ],
             [
                 'name' =&gt; 'imagem',
-                'contents' =&gt; fopen('/tmp/phpCeBuUk', 'r')
+                'contents' =&gt; fopen('/tmp/phpCzcK16', 'r')
             ],
             [
                 'name' =&gt; 'miniatura',
-                'contents' =&gt; fopen('/tmp/phpGtHlTV', 'r')
+                'contents' =&gt; fopen('/tmp/phpiULSfd', 'r')
             ],
         ],
     ]
@@ -403,13 +403,13 @@ Status da categoria <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></smal
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/categories/17" \
+    -G "https://api.estoqueintegrado.com.br/v1/categories/16" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/categories/17"
+    "https://api.estoqueintegrado.com.br/v1/categories/16"
 );
 
 let headers = {
@@ -429,7 +429,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://api.estoqueintegrado.com.br/v1/categories/17',
+    'https://api.estoqueintegrado.com.br/v1/categories/16',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -492,13 +492,13 @@ Authentication key.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/categories/1" \
+    "https://api.estoqueintegrado.com.br/v1/categories/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/categories/1"
+    "https://api.estoqueintegrado.com.br/v1/categories/17"
 );
 
 let headers = {
@@ -518,7 +518,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://api.estoqueintegrado.com.br/v1/categories/1',
+    'https://api.estoqueintegrado.com.br/v1/categories/17',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -580,7 +580,7 @@ Authentication key.</p>
     "https://api.estoqueintegrado.com.br/v1/colors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":5,"nome":"et","hex":"fugit"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":5,"nome":"minus","hex":"consequatur"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/v1/colors"
@@ -594,8 +594,8 @@ let headers = {
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
     "empresa_id": 5,
-    "nome": "et",
-    "hex": "fugit"
+    "nome": "minus",
+    "hex": "consequatur"
 }
 
 fetch(url, {
@@ -614,8 +614,8 @@ $response = $client-&gt;post(
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
             'empresa_id' =&gt; 5,
-            'nome' =&gt; 'et',
-            'hex' =&gt; 'fugit',
+            'nome' =&gt; 'minus',
+            'hex' =&gt; 'consequatur',
         ],
     ]
 );
@@ -679,13 +679,13 @@ Hexadecimal da cor Ex: #000000</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/colors/et" \
+    "https://api.estoqueintegrado.com.br/v1/colors/dolores" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":1,"nome":"quibusdam","hex":"molestias"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":12,"nome":"itaque","hex":"est"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/et"
+    "https://api.estoqueintegrado.com.br/v1/colors/dolores"
 );
 
 let headers = {
@@ -695,9 +695,9 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 1,
-    "nome": "quibusdam",
-    "hex": "molestias"
+    "empresa_id": 12,
+    "nome": "itaque",
+    "hex": "est"
 }
 
 fetch(url, {
@@ -708,16 +708,16 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://api.estoqueintegrado.com.br/v1/colors/et',
+    'https://api.estoqueintegrado.com.br/v1/colors/dolores',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' =&gt; 1,
-            'nome' =&gt; 'quibusdam',
-            'hex' =&gt; 'molestias',
+            'empresa_id' =&gt; 12,
+            'nome' =&gt; 'itaque',
+            'hex' =&gt; 'est',
         ],
     ]
 );
@@ -787,13 +787,13 @@ Hexadecimal da cor Ex: #000000</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/colors/6" \
+    -G "https://api.estoqueintegrado.com.br/v1/colors/15" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/6"
+    "https://api.estoqueintegrado.com.br/v1/colors/15"
 );
 
 let headers = {
@@ -813,7 +813,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://api.estoqueintegrado.com.br/v1/colors/6',
+    'https://api.estoqueintegrado.com.br/v1/colors/15',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -874,13 +874,13 @@ Authentication key.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/colors/7" \
+    "https://api.estoqueintegrado.com.br/v1/colors/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/7"
+    "https://api.estoqueintegrado.com.br/v1/colors/17"
 );
 
 let headers = {
@@ -900,7 +900,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://api.estoqueintegrado.com.br/v1/colors/7',
+    'https://api.estoqueintegrado.com.br/v1/colors/17',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -962,7 +962,7 @@ Authentication key.</p>
     "https://api.estoqueintegrado.com.br/v1/companies" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","user_id":7,"nome":"et","website":"est","razao_social":"iste","cnpj":"harum","telefone":"ea","celular":"autem","email":"expedita","logo":"veritatis","icone":"qui","matriz":false,"modo_catalogo":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","user_id":20,"nome":"eius","website":"minus","razao_social":"recusandae","cnpj":"rerum","telefone":"itaque","celular":"exercitationem","email":"dolor","logo":"quo","icone":"molestias","matriz":true,"modo_catalogo":false}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/v1/companies"
@@ -975,18 +975,18 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "user_id": 7,
-    "nome": "et",
-    "website": "est",
-    "razao_social": "iste",
-    "cnpj": "harum",
-    "telefone": "ea",
-    "celular": "autem",
-    "email": "expedita",
-    "logo": "veritatis",
-    "icone": "qui",
-    "matriz": false,
-    "modo_catalogo": true
+    "user_id": 20,
+    "nome": "eius",
+    "website": "minus",
+    "razao_social": "recusandae",
+    "cnpj": "rerum",
+    "telefone": "itaque",
+    "celular": "exercitationem",
+    "email": "dolor",
+    "logo": "quo",
+    "icone": "molestias",
+    "matriz": true,
+    "modo_catalogo": false
 }
 
 fetch(url, {
@@ -1004,18 +1004,18 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'user_id' =&gt; 7,
-            'nome' =&gt; 'et',
-            'website' =&gt; 'est',
-            'razao_social' =&gt; 'iste',
-            'cnpj' =&gt; 'harum',
-            'telefone' =&gt; 'ea',
-            'celular' =&gt; 'autem',
-            'email' =&gt; 'expedita',
-            'logo' =&gt; 'veritatis',
-            'icone' =&gt; 'qui',
-            'matriz' =&gt; false,
-            'modo_catalogo' =&gt; true,
+            'user_id' =&gt; 20,
+            'nome' =&gt; 'eius',
+            'website' =&gt; 'minus',
+            'razao_social' =&gt; 'recusandae',
+            'cnpj' =&gt; 'rerum',
+            'telefone' =&gt; 'itaque',
+            'celular' =&gt; 'exercitationem',
+            'email' =&gt; 'dolor',
+            'logo' =&gt; 'quo',
+            'icone' =&gt; 'molestias',
+            'matriz' =&gt; true,
+            'modo_catalogo' =&gt; false,
         ],
     ]
 );
@@ -1130,7 +1130,7 @@ Exibir banners na loja. 1 = sim, 0 = não. Default 0</p>
     -G "https://api.estoqueintegrado.com.br/v1/my-companies" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":20}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":18}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/v1/my-companies"
@@ -1143,7 +1143,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "id": 20
+    "id": 18
 }
 
 fetch(url, {
@@ -1161,7 +1161,7 @@ $response = $client-&gt;get(
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'id' =&gt; 20,
+            'id' =&gt; 18,
         ],
     ]
 );
@@ -1223,13 +1223,13 @@ Usa softDeletes()</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/companies/18" \
+    "https://api.estoqueintegrado.com.br/v1/companies/13" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/companies/18"
+    "https://api.estoqueintegrado.com.br/v1/companies/13"
 );
 
 let headers = {
@@ -1249,7 +1249,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://api.estoqueintegrado.com.br/v1/companies/18',
+    'https://api.estoqueintegrado.com.br/v1/companies/13',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -1312,13 +1312,13 @@ Authentication key.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/companies/12" \
+    -G "https://api.estoqueintegrado.com.br/v1/companies/9" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/companies/12"
+    "https://api.estoqueintegrado.com.br/v1/companies/9"
 );
 
 let headers = {
@@ -1338,7 +1338,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://api.estoqueintegrado.com.br/v1/companies/12',
+    'https://api.estoqueintegrado.com.br/v1/companies/9',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -1402,13 +1402,13 @@ Usa softDeletes()</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/companies/6" \
+    "https://api.estoqueintegrado.com.br/v1/companies/18" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/companies/6"
+    "https://api.estoqueintegrado.com.br/v1/companies/18"
 );
 
 let headers = {
@@ -1428,7 +1428,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://api.estoqueintegrado.com.br/v1/companies/6',
+    'https://api.estoqueintegrado.com.br/v1/companies/18',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -1489,7 +1489,7 @@ Authentication key.</p>
     "https://api.estoqueintegrado.com.br/v1/address" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":10,"user_id":6,"rua":"ea","numero":6,"bairro":"fuga","complemento":"voluptatem","cidade":"magnam","uf":"quia","pais":"qui","cep":"molestias","padrao":false,"ativo":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":9,"user_id":11,"rua":"tempora","numero":18,"bairro":"ratione","complemento":"ut","cidade":"est","uf":"rerum","pais":"velit","cep":"sed","padrao":true,"ativo":false}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/v1/address"
@@ -1502,18 +1502,18 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 10,
-    "user_id": 6,
-    "rua": "ea",
-    "numero": 6,
-    "bairro": "fuga",
-    "complemento": "voluptatem",
-    "cidade": "magnam",
-    "uf": "quia",
-    "pais": "qui",
-    "cep": "molestias",
-    "padrao": false,
-    "ativo": true
+    "empresa_id": 9,
+    "user_id": 11,
+    "rua": "tempora",
+    "numero": 18,
+    "bairro": "ratione",
+    "complemento": "ut",
+    "cidade": "est",
+    "uf": "rerum",
+    "pais": "velit",
+    "cep": "sed",
+    "padrao": true,
+    "ativo": false
 }
 
 fetch(url, {
@@ -1531,18 +1531,18 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' =&gt; 10,
-            'user_id' =&gt; 6,
-            'rua' =&gt; 'ea',
-            'numero' =&gt; 6,
-            'bairro' =&gt; 'fuga',
-            'complemento' =&gt; 'voluptatem',
-            'cidade' =&gt; 'magnam',
-            'uf' =&gt; 'quia',
-            'pais' =&gt; 'qui',
-            'cep' =&gt; 'molestias',
-            'padrao' =&gt; false,
-            'ativo' =&gt; true,
+            'empresa_id' =&gt; 9,
+            'user_id' =&gt; 11,
+            'rua' =&gt; 'tempora',
+            'numero' =&gt; 18,
+            'bairro' =&gt; 'ratione',
+            'complemento' =&gt; 'ut',
+            'cidade' =&gt; 'est',
+            'uf' =&gt; 'rerum',
+            'pais' =&gt; 'velit',
+            'cep' =&gt; 'sed',
+            'padrao' =&gt; true,
+            'ativo' =&gt; false,
         ],
     ]
 );
@@ -1655,13 +1655,13 @@ Se o endereço está ativo ou não. <small>Default: 1</small></p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/address/13" \
+    "https://api.estoqueintegrado.com.br/v1/address/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","rua":"inventore","numero":6,"bairro":"saepe","complemento":"laudantium","cidade":"dolorum","uf":"quasi","pais":"cum","cep":"culpa","padrao":true,"ativo":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","rua":"laudantium","numero":13,"bairro":"eum","complemento":"et","cidade":"voluptatibus","uf":"consequuntur","pais":"molestiae","cep":"architecto","padrao":true,"ativo":true}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/address/13"
+    "https://api.estoqueintegrado.com.br/v1/address/17"
 );
 
 let headers = {
@@ -1671,16 +1671,16 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "rua": "inventore",
-    "numero": 6,
-    "bairro": "saepe",
-    "complemento": "laudantium",
-    "cidade": "dolorum",
-    "uf": "quasi",
-    "pais": "cum",
-    "cep": "culpa",
+    "rua": "laudantium",
+    "numero": 13,
+    "bairro": "eum",
+    "complemento": "et",
+    "cidade": "voluptatibus",
+    "uf": "consequuntur",
+    "pais": "molestiae",
+    "cep": "architecto",
     "padrao": true,
-    "ativo": false
+    "ativo": true
 }
 
 fetch(url, {
@@ -1691,23 +1691,23 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://api.estoqueintegrado.com.br/v1/address/13',
+    'https://api.estoqueintegrado.com.br/v1/address/17',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'rua' =&gt; 'inventore',
-            'numero' =&gt; 6,
-            'bairro' =&gt; 'saepe',
-            'complemento' =&gt; 'laudantium',
-            'cidade' =&gt; 'dolorum',
-            'uf' =&gt; 'quasi',
-            'pais' =&gt; 'cum',
-            'cep' =&gt; 'culpa',
+            'rua' =&gt; 'laudantium',
+            'numero' =&gt; 13,
+            'bairro' =&gt; 'eum',
+            'complemento' =&gt; 'et',
+            'cidade' =&gt; 'voluptatibus',
+            'uf' =&gt; 'consequuntur',
+            'pais' =&gt; 'molestiae',
+            'cep' =&gt; 'architecto',
             'padrao' =&gt; true,
-            'ativo' =&gt; false,
+            'ativo' =&gt; true,
         ],
     ]
 );
@@ -1816,13 +1816,13 @@ Se o endereço está ativo ou não. <small>Default: 1</small> * @param Request $
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/address/18" \
+    -G "https://api.estoqueintegrado.com.br/v1/address/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/address/18"
+    "https://api.estoqueintegrado.com.br/v1/address/17"
 );
 
 let headers = {
@@ -1842,7 +1842,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://api.estoqueintegrado.com.br/v1/address/18',
+    'https://api.estoqueintegrado.com.br/v1/address/17',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -1905,13 +1905,13 @@ Authentication key.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/address/19" \
+    "https://api.estoqueintegrado.com.br/v1/address/14" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/address/19"
+    "https://api.estoqueintegrado.com.br/v1/address/14"
 );
 
 let headers = {
@@ -1931,7 +1931,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://api.estoqueintegrado.com.br/v1/address/19',
+    'https://api.estoqueintegrado.com.br/v1/address/14',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -2028,7 +2028,7 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (404):</p>
+<p>Example response (400):</p>
 </blockquote>
 <pre><code class="language-json">{
     "message": "É necessário informar o domínio!"
@@ -2070,7 +2070,7 @@ Authentication key.</p>
     "https://api.estoqueintegrado.com.br/v1/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":18,"categoria_id":8,"nome":"harum","imagens":"quasi","slug":"at","sku":"magni","descricao_curta":"velit","descricao_completa":"consectetur","preco_custo":1022050.46,"preco_venda":4642,"preco_promocional":41248758.42,"peso":19,"altura":14,"largura":16,"diametro":7,"comprimento":1,"titulo_seo":"tenetur","tags_seo":"repellat","descricao_seo":"nostrum","ativo":false,"destaque":false,"variacao_preco_cor":true,"variacao_preco_tamanho":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"culpa","categoria_id":12,"nome":"aut","imagens":"vero","slug":"et","sku":"et","descricao_curta":"deleniti","descricao_completa":"ducimus","preco_custo":3305.2628,"preco_venda":1170.145194,"preco_promocional":522597006,"peso":5,"altura":8,"largura":2,"diametro":11,"comprimento":19,"titulo_seo":"sapiente","tags_seo":"in","descricao_seo":"ullam","ativo":true,"destaque":true,"variacao_preco_cor":false,"variacao_preco_tamanho":true}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/v1/products"
@@ -2083,29 +2083,29 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 18,
-    "categoria_id": 8,
-    "nome": "harum",
-    "imagens": "quasi",
-    "slug": "at",
-    "sku": "magni",
-    "descricao_curta": "velit",
-    "descricao_completa": "consectetur",
-    "preco_custo": 1022050.46,
-    "preco_venda": 4642,
-    "preco_promocional": 41248758.42,
-    "peso": 19,
-    "altura": 14,
-    "largura": 16,
-    "diametro": 7,
-    "comprimento": 1,
-    "titulo_seo": "tenetur",
-    "tags_seo": "repellat",
-    "descricao_seo": "nostrum",
-    "ativo": false,
-    "destaque": false,
-    "variacao_preco_cor": true,
-    "variacao_preco_tamanho": false
+    "dominio": "culpa",
+    "categoria_id": 12,
+    "nome": "aut",
+    "imagens": "vero",
+    "slug": "et",
+    "sku": "et",
+    "descricao_curta": "deleniti",
+    "descricao_completa": "ducimus",
+    "preco_custo": 3305.2628,
+    "preco_venda": 1170.145194,
+    "preco_promocional": 522597006,
+    "peso": 5,
+    "altura": 8,
+    "largura": 2,
+    "diametro": 11,
+    "comprimento": 19,
+    "titulo_seo": "sapiente",
+    "tags_seo": "in",
+    "descricao_seo": "ullam",
+    "ativo": true,
+    "destaque": true,
+    "variacao_preco_cor": false,
+    "variacao_preco_tamanho": true
 }
 
 fetch(url, {
@@ -2123,29 +2123,29 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' =&gt; 18,
-            'categoria_id' =&gt; 8,
-            'nome' =&gt; 'harum',
-            'imagens' =&gt; 'quasi',
-            'slug' =&gt; 'at',
-            'sku' =&gt; 'magni',
-            'descricao_curta' =&gt; 'velit',
-            'descricao_completa' =&gt; 'consectetur',
-            'preco_custo' =&gt; 1022050.46,
-            'preco_venda' =&gt; 4642.0,
-            'preco_promocional' =&gt; 41248758.42,
-            'peso' =&gt; 19,
-            'altura' =&gt; 14,
-            'largura' =&gt; 16,
-            'diametro' =&gt; 7,
-            'comprimento' =&gt; 1,
-            'titulo_seo' =&gt; 'tenetur',
-            'tags_seo' =&gt; 'repellat',
-            'descricao_seo' =&gt; 'nostrum',
-            'ativo' =&gt; false,
-            'destaque' =&gt; false,
-            'variacao_preco_cor' =&gt; true,
-            'variacao_preco_tamanho' =&gt; false,
+            'dominio' =&gt; 'culpa',
+            'categoria_id' =&gt; 12,
+            'nome' =&gt; 'aut',
+            'imagens' =&gt; 'vero',
+            'slug' =&gt; 'et',
+            'sku' =&gt; 'et',
+            'descricao_curta' =&gt; 'deleniti',
+            'descricao_completa' =&gt; 'ducimus',
+            'preco_custo' =&gt; 3305.2628,
+            'preco_venda' =&gt; 1170.145194,
+            'preco_promocional' =&gt; 522597006.0,
+            'peso' =&gt; 5,
+            'altura' =&gt; 8,
+            'largura' =&gt; 2,
+            'diametro' =&gt; 11,
+            'comprimento' =&gt; 19,
+            'titulo_seo' =&gt; 'sapiente',
+            'tags_seo' =&gt; 'in',
+            'descricao_seo' =&gt; 'ullam',
+            'ativo' =&gt; true,
+            'destaque' =&gt; true,
+            'variacao_preco_cor' =&gt; false,
+            'variacao_preco_tamanho' =&gt; true,
         ],
     ]
 );
@@ -2188,10 +2188,11 @@ print_r(json_decode((string) $body));</code></pre>
 <br>
 Authentication key.</p>
 <p>
-<b><code>empresa_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="empresa_id" data-endpoint="POSTv1-products" data-component="body" required  hidden>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="POSTv1-products" data-component="body" required  hidden>
 <br>
-ID da empresa proprietária do produto</p>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
 <b><code>categoria_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
 <input type="number" name="categoria_id" data-endpoint="POSTv1-products" data-component="body" required  hidden>
@@ -2315,13 +2316,13 @@ Se o valor do produto varia de acordo com o tamanho. Default 0</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/products/perferendis" \
+    "https://api.estoqueintegrado.com.br/v1/products/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","categoria_id":10,"nome":"molestiae","imagens":"porro","slug":"et","sku":"repellendus","descricao_curta":"doloribus","descricao_completa":"mollitia","preco_custo":0.33893,"preco_venda":51989478.2,"preco_promocional":28.2,"peso":15,"altura":15,"largura":7,"diametro":9,"comprimento":12,"titulo_seo":"consequuntur","tags_seo":"facere","descricao_seo":"et","ativo":true,"destaque":true,"variacao_preco_cor":false,"variacao_preco_tamanho":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"corrupti","categoria_id":1,"nome":"voluptatem","imagens":"enim","slug":"accusamus","sku":"eos","descricao_curta":"illo","descricao_completa":"omnis","preco_custo":1331917.9942,"preco_venda":2197.5666512,"preco_promocional":385654,"peso":13,"altura":11,"largura":7,"diametro":11,"comprimento":8,"titulo_seo":"repudiandae","tags_seo":"accusantium","descricao_seo":"et","ativo":true,"destaque":false,"variacao_preco_cor":false,"variacao_preco_tamanho":false}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/perferendis"
+    "https://api.estoqueintegrado.com.br/v1/products/ut"
 );
 
 let headers = {
@@ -2331,26 +2332,27 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "categoria_id": 10,
-    "nome": "molestiae",
-    "imagens": "porro",
-    "slug": "et",
-    "sku": "repellendus",
-    "descricao_curta": "doloribus",
-    "descricao_completa": "mollitia",
-    "preco_custo": 0.33893,
-    "preco_venda": 51989478.2,
-    "preco_promocional": 28.2,
-    "peso": 15,
-    "altura": 15,
+    "dominio": "corrupti",
+    "categoria_id": 1,
+    "nome": "voluptatem",
+    "imagens": "enim",
+    "slug": "accusamus",
+    "sku": "eos",
+    "descricao_curta": "illo",
+    "descricao_completa": "omnis",
+    "preco_custo": 1331917.9942,
+    "preco_venda": 2197.5666512,
+    "preco_promocional": 385654,
+    "peso": 13,
+    "altura": 11,
     "largura": 7,
-    "diametro": 9,
-    "comprimento": 12,
-    "titulo_seo": "consequuntur",
-    "tags_seo": "facere",
+    "diametro": 11,
+    "comprimento": 8,
+    "titulo_seo": "repudiandae",
+    "tags_seo": "accusantium",
     "descricao_seo": "et",
     "ativo": true,
-    "destaque": true,
+    "destaque": false,
     "variacao_preco_cor": false,
     "variacao_preco_tamanho": false
 }
@@ -2363,33 +2365,34 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://api.estoqueintegrado.com.br/v1/products/perferendis',
+    'https://api.estoqueintegrado.com.br/v1/products/ut',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'categoria_id' =&gt; 10,
-            'nome' =&gt; 'molestiae',
-            'imagens' =&gt; 'porro',
-            'slug' =&gt; 'et',
-            'sku' =&gt; 'repellendus',
-            'descricao_curta' =&gt; 'doloribus',
-            'descricao_completa' =&gt; 'mollitia',
-            'preco_custo' =&gt; 0.33893,
-            'preco_venda' =&gt; 51989478.2,
-            'preco_promocional' =&gt; 28.2,
-            'peso' =&gt; 15,
-            'altura' =&gt; 15,
+            'dominio' =&gt; 'corrupti',
+            'categoria_id' =&gt; 1,
+            'nome' =&gt; 'voluptatem',
+            'imagens' =&gt; 'enim',
+            'slug' =&gt; 'accusamus',
+            'sku' =&gt; 'eos',
+            'descricao_curta' =&gt; 'illo',
+            'descricao_completa' =&gt; 'omnis',
+            'preco_custo' =&gt; 1331917.9942,
+            'preco_venda' =&gt; 2197.5666512,
+            'preco_promocional' =&gt; 385654.0,
+            'peso' =&gt; 13,
+            'altura' =&gt; 11,
             'largura' =&gt; 7,
-            'diametro' =&gt; 9,
-            'comprimento' =&gt; 12,
-            'titulo_seo' =&gt; 'consequuntur',
-            'tags_seo' =&gt; 'facere',
+            'diametro' =&gt; 11,
+            'comprimento' =&gt; 8,
+            'titulo_seo' =&gt; 'repudiandae',
+            'tags_seo' =&gt; 'accusantium',
             'descricao_seo' =&gt; 'et',
             'ativo' =&gt; true,
-            'destaque' =&gt; true,
+            'destaque' =&gt; false,
             'variacao_preco_cor' =&gt; false,
             'variacao_preco_tamanho' =&gt; false,
         ],
@@ -2439,6 +2442,12 @@ print_r(json_decode((string) $body));</code></pre>
 <input type="text" name="api_token" data-endpoint="PUTv1-products--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="PUTv1-products--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
 <b><code>categoria_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
 <input type="number" name="categoria_id" data-endpoint="PUTv1-products--id-" data-component="body" required  hidden>
@@ -2561,11 +2570,13 @@ Se o valor do produto varia de acordo com o tamanho. Default 0</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/products/accusamus" \
+    -G "https://api.estoqueintegrado.com.br/v1/products/ut" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -d '{"dominio":"odit"}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/accusamus"
+    "https://api.estoqueintegrado.com.br/v1/products/ut"
 );
 
 let headers = {
@@ -2573,17 +2584,25 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "dominio": "odit"
+}
+
 fetch(url, {
     method: "GET",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre>
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://api.estoqueintegrado.com.br/v1/products/accusamus',
+    'https://api.estoqueintegrado.com.br/v1/products/ut',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'dominio' =&gt; 'odit',
         ],
     ]
 );
@@ -2593,7 +2612,7 @@ print_r(json_decode((string) $body));</code></pre>
 <p>Example response (404):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "É necessário informar o domínio!"
+    "message": "Empresa não encontrada!"
 }</code></pre>
 <div id="execution-results-GETv1-products--idOrSlug-" hidden>
     <blockquote>Received response<span id="execution-response-status-GETv1-products--idOrSlug-"></span>:</blockquote>
@@ -2620,6 +2639,14 @@ print_r(json_decode((string) $body));</code></pre>
 <input type="text" name="idOrSlug" data-endpoint="GETv1-products--idOrSlug-" data-component="url"  hidden>
 <br>
 integer|string required ID ou slug do produto</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="GETv1-products--idOrSlug-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
+
 </form>
 <h2>Deletar Produto</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
@@ -2628,13 +2655,13 @@ integer|string required ID ou slug do produto</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/products/9" \
+    "https://api.estoqueintegrado.com.br/v1/products/19" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"dolorem"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/9"
+    "https://api.estoqueintegrado.com.br/v1/products/19"
 );
 
 let headers = {
@@ -2643,7 +2670,8 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "dolorem"
 }
 
 fetch(url, {
@@ -2654,13 +2682,14 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://api.estoqueintegrado.com.br/v1/products/9',
+    'https://api.estoqueintegrado.com.br/v1/products/19',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' =&gt; 'dolorem',
         ],
     ]
 );
@@ -2697,6 +2726,12 @@ ID do produto</p>
 <input type="text" name="api_token" data-endpoint="DELETEv1-products--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="DELETEv1-products--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 
 </form><h1>Site</h1>
 <h2>Index da loja</h2>
@@ -2711,7 +2746,7 @@ Ex: minhaempresa.estoqueintegrado.com.br
     -G "https://api.estoqueintegrado.com.br/" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"consectetur"}'
+    -d '{"dominio":"praesentium"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/"
@@ -2723,7 +2758,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "consectetur"
+    "dominio": "praesentium"
 }
 
 fetch(url, {
@@ -2740,7 +2775,7 @@ $response = $client-&gt;get(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'dominio' =&gt; 'consectetur',
+            'dominio' =&gt; 'praesentium',
         ],
     ]
 );
@@ -2806,6 +2841,90 @@ print_r(json_decode((string) $body));</code></pre>
 Dominio da loja registrado no banco de dados. <br>
 <i><small>Ex: minhaloja.estoqueintegrado.com.br | minhaloja.com.br | minhaloja</small></p>
 
+</form>
+<h2>Detalhes do produto</h2>
+<p>Retorna os detalhes de um produto</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "https://api.estoqueintegrado.com.br/v1/product/aut" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"dominio":"odit"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://api.estoqueintegrado.com.br/v1/product/aut"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "dominio": "odit"
+}
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'https://api.estoqueintegrado.com.br/v1/product/aut',
+    [
+        'headers' =&gt; [
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'dominio' =&gt; 'odit',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (404):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Empresa não encontrada!"
+}</code></pre>
+<div id="execution-results-GETv1-product--idOrSlug-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETv1-product--idOrSlug-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETv1-product--idOrSlug-"></code></pre>
+</div>
+<div id="execution-error-GETv1-product--idOrSlug-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETv1-product--idOrSlug-"></code></pre>
+</div>
+<form id="form-GETv1-product--idOrSlug-" data-method="GET" data-path="v1/product/{idOrSlug}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETv1-product--idOrSlug-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETv1-product--idOrSlug-" onclick="tryItOut('GETv1-product--idOrSlug-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETv1-product--idOrSlug-" onclick="cancelTryOut('GETv1-product--idOrSlug-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETv1-product--idOrSlug-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>v1/product/{idOrSlug}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>idOrSlug</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="idOrSlug" data-endpoint="GETv1-product--idOrSlug-" data-component="url"  hidden>
+<br>
+integer|string required ID ou slug do produto</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="GETv1-product--idOrSlug-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
+
 </form><h1>Tamanhos</h1>
 <h2>Criar Tamanho</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
@@ -2817,7 +2936,7 @@ Dominio da loja registrado no banco de dados. <br>
     "https://api.estoqueintegrado.com.br/v1/sizes" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":18,"nome":"qui"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":18,"nome":"reiciendis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/v1/sizes"
@@ -2831,7 +2950,7 @@ let headers = {
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
     "empresa_id": 18,
-    "nome": "qui"
+    "nome": "reiciendis"
 }
 
 fetch(url, {
@@ -2850,7 +2969,7 @@ $response = $client-&gt;post(
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
             'empresa_id' =&gt; 18,
-            'nome' =&gt; 'qui',
+            'nome' =&gt; 'reiciendis',
         ],
     ]
 );
@@ -2909,13 +3028,13 @@ Nome do tamanho <small>Ex: 50ml|P|300g</small></p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/sizes/18" \
+    "https://api.estoqueintegrado.com.br/v1/sizes/20" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":8,"nome":"incidunt"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":16,"nome":"magni"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/18"
+    "https://api.estoqueintegrado.com.br/v1/sizes/20"
 );
 
 let headers = {
@@ -2925,8 +3044,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 8,
-    "nome": "incidunt"
+    "empresa_id": 16,
+    "nome": "magni"
 }
 
 fetch(url, {
@@ -2937,15 +3056,15 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://api.estoqueintegrado.com.br/v1/sizes/18',
+    'https://api.estoqueintegrado.com.br/v1/sizes/20',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' =&gt; 8,
-            'nome' =&gt; 'incidunt',
+            'empresa_id' =&gt; 16,
+            'nome' =&gt; 'magni',
         ],
     ]
 );
@@ -3010,13 +3129,13 @@ Nome do tamanho <small>Ex: 50ml|P|300g</small></p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/sizes/3" \
+    -G "https://api.estoqueintegrado.com.br/v1/sizes/14" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/3"
+    "https://api.estoqueintegrado.com.br/v1/sizes/14"
 );
 
 let headers = {
@@ -3036,7 +3155,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://api.estoqueintegrado.com.br/v1/sizes/3',
+    'https://api.estoqueintegrado.com.br/v1/sizes/14',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -3097,13 +3216,13 @@ Authentication key.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/sizes/11" \
+    "https://api.estoqueintegrado.com.br/v1/sizes/2" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/11"
+    "https://api.estoqueintegrado.com.br/v1/sizes/2"
 );
 
 let headers = {
@@ -3123,7 +3242,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://api.estoqueintegrado.com.br/v1/sizes/11',
+    'https://api.estoqueintegrado.com.br/v1/sizes/2',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -3185,7 +3304,7 @@ Authentication key.</p>
     "https://api.estoqueintegrado.com.br/v1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","name":"quibusdam","cpf":"assumenda","email":"eum","password":"eum","celular":"voluptatem"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","name":"sit","cpf":"aut","email":"at","password":"natus","celular":"occaecati"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/v1/users"
@@ -3198,11 +3317,11 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "name": "quibusdam",
-    "cpf": "assumenda",
-    "email": "eum",
-    "password": "eum",
-    "celular": "voluptatem"
+    "name": "sit",
+    "cpf": "aut",
+    "email": "at",
+    "password": "natus",
+    "celular": "occaecati"
 }
 
 fetch(url, {
@@ -3220,11 +3339,11 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'name' =&gt; 'quibusdam',
-            'cpf' =&gt; 'assumenda',
-            'email' =&gt; 'eum',
-            'password' =&gt; 'eum',
-            'celular' =&gt; 'voluptatem',
+            'name' =&gt; 'sit',
+            'cpf' =&gt; 'aut',
+            'email' =&gt; 'at',
+            'password' =&gt; 'natus',
+            'celular' =&gt; 'occaecati',
         ],
     ]
 );
@@ -3299,13 +3418,13 @@ Celular do usuário</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/users/16" \
+    "https://api.estoqueintegrado.com.br/v1/users/13" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/users/16"
+    "https://api.estoqueintegrado.com.br/v1/users/13"
 );
 
 let headers = {
@@ -3325,7 +3444,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://api.estoqueintegrado.com.br/v1/users/16',
+    'https://api.estoqueintegrado.com.br/v1/users/13',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -3393,13 +3512,13 @@ Authentication key.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/users/18" \
+    -G "https://api.estoqueintegrado.com.br/v1/users/2" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/users/18"
+    "https://api.estoqueintegrado.com.br/v1/users/2"
 );
 
 let headers = {
@@ -3419,7 +3538,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://api.estoqueintegrado.com.br/v1/users/18',
+    'https://api.estoqueintegrado.com.br/v1/users/2',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -3487,13 +3606,13 @@ Authentication key.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/users/fugit" \
+    "https://api.estoqueintegrado.com.br/v1/users/illo" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":13}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":11}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/users/fugit"
+    "https://api.estoqueintegrado.com.br/v1/users/illo"
 );
 
 let headers = {
@@ -3503,7 +3622,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "id": 13
+    "id": 11
 }
 
 fetch(url, {
@@ -3514,14 +3633,14 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://api.estoqueintegrado.com.br/v1/users/fugit',
+    'https://api.estoqueintegrado.com.br/v1/users/illo',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'id' =&gt; 13,
+            'id' =&gt; 11,
         ],
     ]
 );
@@ -3593,7 +3712,7 @@ e salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TO
     "https://api.estoqueintegrado.com.br/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","login":"velit","password":"nam"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","login":"libero","password":"incidunt"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://api.estoqueintegrado.com.br/v1/login"
@@ -3606,8 +3725,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "login": "velit",
-    "password": "nam"
+    "login": "libero",
+    "password": "incidunt"
 }
 
 fetch(url, {
@@ -3625,8 +3744,8 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'api_token' =&gt; 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'login' =&gt; 'velit',
-            'password' =&gt; 'nam',
+            'login' =&gt; 'libero',
+            'password' =&gt; 'incidunt',
         ],
     ]
 );

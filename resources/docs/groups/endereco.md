@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/address" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":10,"user_id":6,"rua":"ea","numero":6,"bairro":"fuga","complemento":"voluptatem","cidade":"magnam","uf":"quia","pais":"qui","cep":"molestias","padrao":false,"ativo":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":9,"user_id":11,"rua":"tempora","numero":18,"bairro":"ratione","complemento":"ut","cidade":"est","uf":"rerum","pais":"velit","cep":"sed","padrao":true,"ativo":false}'
 
 ```
 
@@ -30,18 +30,18 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 10,
-    "user_id": 6,
-    "rua": "ea",
-    "numero": 6,
-    "bairro": "fuga",
-    "complemento": "voluptatem",
-    "cidade": "magnam",
-    "uf": "quia",
-    "pais": "qui",
-    "cep": "molestias",
-    "padrao": false,
-    "ativo": true
+    "empresa_id": 9,
+    "user_id": 11,
+    "rua": "tempora",
+    "numero": 18,
+    "bairro": "ratione",
+    "complemento": "ut",
+    "cidade": "est",
+    "uf": "rerum",
+    "pais": "velit",
+    "cep": "sed",
+    "padrao": true,
+    "ativo": false
 }
 
 fetch(url, {
@@ -62,18 +62,18 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 10,
-            'user_id' => 6,
-            'rua' => 'ea',
-            'numero' => 6,
-            'bairro' => 'fuga',
-            'complemento' => 'voluptatem',
-            'cidade' => 'magnam',
-            'uf' => 'quia',
-            'pais' => 'qui',
-            'cep' => 'molestias',
-            'padrao' => false,
-            'ativo' => true,
+            'empresa_id' => 9,
+            'user_id' => 11,
+            'rua' => 'tempora',
+            'numero' => 18,
+            'bairro' => 'ratione',
+            'complemento' => 'ut',
+            'cidade' => 'est',
+            'uf' => 'rerum',
+            'pais' => 'velit',
+            'cep' => 'sed',
+            'padrao' => true,
+            'ativo' => false,
         ],
     ]
 );
@@ -195,16 +195,16 @@ Atualiza os dados do endereço
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/address/13" \
+    "https://api.estoqueintegrado.com.br/v1/address/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","rua":"inventore","numero":6,"bairro":"saepe","complemento":"laudantium","cidade":"dolorum","uf":"quasi","pais":"cum","cep":"culpa","padrao":true,"ativo":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","rua":"laudantium","numero":13,"bairro":"eum","complemento":"et","cidade":"voluptatibus","uf":"consequuntur","pais":"molestiae","cep":"architecto","padrao":true,"ativo":true}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/address/13"
+    "https://api.estoqueintegrado.com.br/v1/address/17"
 );
 
 let headers = {
@@ -214,16 +214,16 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "rua": "inventore",
-    "numero": 6,
-    "bairro": "saepe",
-    "complemento": "laudantium",
-    "cidade": "dolorum",
-    "uf": "quasi",
-    "pais": "cum",
-    "cep": "culpa",
+    "rua": "laudantium",
+    "numero": 13,
+    "bairro": "eum",
+    "complemento": "et",
+    "cidade": "voluptatibus",
+    "uf": "consequuntur",
+    "pais": "molestiae",
+    "cep": "architecto",
     "padrao": true,
-    "ativo": false
+    "ativo": true
 }
 
 fetch(url, {
@@ -237,23 +237,23 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/address/13',
+    'https://api.estoqueintegrado.com.br/v1/address/17',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'rua' => 'inventore',
-            'numero' => 6,
-            'bairro' => 'saepe',
-            'complemento' => 'laudantium',
-            'cidade' => 'dolorum',
-            'uf' => 'quasi',
-            'pais' => 'cum',
-            'cep' => 'culpa',
+            'rua' => 'laudantium',
+            'numero' => 13,
+            'bairro' => 'eum',
+            'complemento' => 'et',
+            'cidade' => 'voluptatibus',
+            'uf' => 'consequuntur',
+            'pais' => 'molestiae',
+            'cep' => 'architecto',
             'padrao' => true,
-            'ativo' => false,
+            'ativo' => true,
         ],
     ]
 );
@@ -371,7 +371,7 @@ Retorna os detalhes do endereço
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/address/18" \
+    -G "https://api.estoqueintegrado.com.br/v1/address/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -380,7 +380,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/address/18"
+    "https://api.estoqueintegrado.com.br/v1/address/17"
 );
 
 let headers = {
@@ -403,7 +403,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/address/18',
+    'https://api.estoqueintegrado.com.br/v1/address/17',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -475,7 +475,7 @@ Deleta o endereço
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/address/19" \
+    "https://api.estoqueintegrado.com.br/v1/address/14" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -484,7 +484,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/address/19"
+    "https://api.estoqueintegrado.com.br/v1/address/14"
 );
 
 let headers = {
@@ -507,7 +507,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/address/19',
+    'https://api.estoqueintegrado.com.br/v1/address/14',
     [
         'headers' => [
             'Accept' => 'application/json',
