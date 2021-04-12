@@ -68,7 +68,7 @@ $router->delete('/v1/categories/{id}', ['as' => 'deleteCategory', 'middleware' =
 $router->post('/v1/products', ['as' => 'createProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@create']);
 //$router->get('/v1/my-products', ['as' => 'myProducts', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@getMyProducts']);
 $router->put('/v1/products/{id}', ['as' => 'updateProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@update']);
-$router->get('/v1/products/{id}', ['as' => 'viewProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@view']);
+$router->get('/v1/products/{id}', ['as' => 'viewProduct', 'middleware' => ['SetCompany'], 'uses' => 'ProductController@view']);
 $router->delete('/v1/products/{id}', ['as' => 'deleteProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@delete']);
 
 /**

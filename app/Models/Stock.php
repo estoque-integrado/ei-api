@@ -9,6 +9,7 @@ class Stock extends Model
     protected $table = 'estoque';
 
     protected $fillable = [
+        'produto_id',
         'sku',
         'valor_venda',
         'valor_promocional',
@@ -18,7 +19,6 @@ class Stock extends Model
         'altura',
         'dt_inicio_promocao',
         'dt_fim_promocao',
-        'produto_id',
         'quantidade',
         'tamanho_id',
         'cor_id',
