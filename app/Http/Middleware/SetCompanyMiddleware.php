@@ -24,8 +24,8 @@ class SetCompanyMiddleware
         $company = Company::where('slug', $slug)->first();
 
         if (!$company) {
-            $website = preg_replace('/^http(s)?\:\/\/([a-zA-Z0-9\-\_\.]{1,})\/?(.*)?/', '$2', url());
-            $company = Company::where('website', $website)->first();
+//            $website = preg_replace('/^http(s)?\:\/\/([a-zA-Z0-9\-\_\.]{1,})\/?(.*)?/', '$2', url());
+            $company = Company::where('website', $dominio)->first();
         }
 
         if (!$company) return response(['message' => 'Empresa não encontrada!'], 404);

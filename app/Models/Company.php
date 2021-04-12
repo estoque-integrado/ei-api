@@ -66,7 +66,7 @@ class Company extends Model
 
         }
 
-        return $products->get();
+        return $products->get()->makeHidden('descricao_completa');
     }
 
     /**
