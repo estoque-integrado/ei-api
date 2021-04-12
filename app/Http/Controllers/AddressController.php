@@ -34,8 +34,8 @@ class AddressController extends Controller
      * @bodyParam uf string Sigla do estado <small>Ex: MG</small>
      * @bodyParam pais string País
      * @bodyParam cep string Cep da rua
-     * @bodyParam padrao booelan Se o endereço é o padrão
-     * @bodyParam ativo booelan Se o endereço está ativo ou não. <small>Default: 1</small>
+     * @bodyParam padrao boolean Se o endereço é o padrão
+     * @bodyParam ativo boolean Se o endereço está ativo ou não. <small>Default: 1</small>
      *
      * @group Endereço
      * @authenticated
@@ -115,8 +115,8 @@ class AddressController extends Controller
      * @bodyParam uf string Sigla do estado <small>Ex: MG</small>
      * @bodyParam pais string País
      * @bodyParam cep string Cep da rua
-     * @bodyParam padrao booelan Se o endereço é o padrão
-     * @bodyParam ativo booelan Se o endereço está ativo ou não. <small>Default: 1</small> * @param Request $request
+     * @bodyParam padrao boolean Se o endereço é o padrão
+     * @bodyParam ativo boolean Se o endereço está ativo ou não. <small>Default: 1</small> * @param Request $request
      *
      * @group Endereço
      * @authenticated
