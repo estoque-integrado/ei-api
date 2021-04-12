@@ -22,7 +22,8 @@ class ProductController extends Controller
      *
      * Cria um produto
      *
-     * @bodyParam empresa_id integer required ID da empresa proprietária do produto
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam categoria_id integer required ID da categoria cadastrada e ativa do produto
      * @bodyParam nome string required Nome do produto
      * @bodyParam imagens array Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small>
@@ -106,9 +107,12 @@ class ProductController extends Controller
      *
      * Retorna os detalhes de um produto
      *
+     * @urlParam idOrSlug integer|string required ID ou slug do produto
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
+     *
      * @group Produtos
      * @unauthenticated
-     * @urlParam idOrSlug integer|string required ID ou slug do produto
      * @param Request $request
      */
     public function view(Request $request, $idOrSlug)
@@ -122,10 +126,10 @@ class ProductController extends Controller
             $data = [
                 'empresa_id' => $request->company->id
             ];
-
             $data[$isId ? 'id' : 'slug'] = $idOrSlug;
 
             $product = Product::where($data)->first();
+            $product->company;
 
             if (!$product)
                 return response(['message' => 'Produto não encontrado!'], 404);
@@ -142,6 +146,8 @@ class ProductController extends Controller
      *
      * Atualiza os dados de um produto
      *
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam categoria_id integer required ID da categoria cadastrada e ativa do produto
      * @bodyParam nome string required Nome do produto
      * @bodyParam imagens array Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small>
@@ -216,9 +222,12 @@ class ProductController extends Controller
      *
      * Deleta um produto com softDeletes
      *
+     * @urlParam id integer required ID do produto
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
+     *
      * @group Produtos
      * @authenticated
-     * @urlParam id integer required ID do produto
      * @param Request $request
      */
     public function delete(Request $request, $id)
