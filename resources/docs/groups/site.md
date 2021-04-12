@@ -16,7 +16,7 @@ curl -X GET \
     -G "https://api.estoqueintegrado.com.br/" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"eaque"}'
+    -d '{"dominio":"consectetur"}'
 
 ```
 
@@ -31,7 +31,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "eaque"
+    "dominio": "consectetur"
 }
 
 fetch(url, {
@@ -51,7 +51,7 @@ $response = $client->get(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'eaque',
+            'dominio' => 'consectetur',
         ],
     ]
 );
@@ -119,7 +119,7 @@ print_r(json_decode((string) $body));
 <input type="text" name="dominio" data-endpoint="GET-" data-component="body" required  hidden>
 <br>
 Dominio da loja registrado no banco de dados. <br>
-<i><small>Ex: minhaloja.estoqueintegrado.com.br | minhaloja.com.br</small></p>
+<i><small>Ex: minhaloja.estoqueintegrado.com.br | minhaloja.com.br | minhaloja</small></p>
 
 </form>
 

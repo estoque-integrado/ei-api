@@ -62,7 +62,7 @@ print_r(json_decode((string) $body));
 
 ```json
 {
-    "message": "Empresa não encontrada!"
+    "message": "É necessário informar o domínio!"
 }
 ```
 <div id="execution-results-GETv1-users" hidden>

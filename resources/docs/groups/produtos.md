@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":6,"categoria_id":1,"nome":"et","imagens":"facere","slug":"quia","sku":"quo","descricao_curta":"perspiciatis","descricao_completa":"ipsa","preco_custo":21337,"preco_venda":49701.2,"preco_promocional":1248508.712759795,"peso":1,"altura":1,"largura":11,"diametro":5,"comprimento":3,"titulo_seo":"nobis","tags_seo":"iure","descricao_seo":"iusto","ativo":false,"destaque":true,"variacao_preco_cor":true,"variacao_preco_tamanho":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":18,"categoria_id":8,"nome":"harum","imagens":"quasi","slug":"at","sku":"magni","descricao_curta":"velit","descricao_completa":"consectetur","preco_custo":1022050.46,"preco_venda":4642,"preco_promocional":41248758.42,"peso":19,"altura":14,"largura":16,"diametro":7,"comprimento":1,"titulo_seo":"tenetur","tags_seo":"repellat","descricao_seo":"nostrum","ativo":false,"destaque":false,"variacao_preco_cor":true,"variacao_preco_tamanho":false}'
 
 ```
 
@@ -30,29 +30,29 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 6,
-    "categoria_id": 1,
-    "nome": "et",
-    "imagens": "facere",
-    "slug": "quia",
-    "sku": "quo",
-    "descricao_curta": "perspiciatis",
-    "descricao_completa": "ipsa",
-    "preco_custo": 21337,
-    "preco_venda": 49701.2,
-    "preco_promocional": 1248508.712759795,
-    "peso": 1,
-    "altura": 1,
-    "largura": 11,
-    "diametro": 5,
-    "comprimento": 3,
-    "titulo_seo": "nobis",
-    "tags_seo": "iure",
-    "descricao_seo": "iusto",
+    "empresa_id": 18,
+    "categoria_id": 8,
+    "nome": "harum",
+    "imagens": "quasi",
+    "slug": "at",
+    "sku": "magni",
+    "descricao_curta": "velit",
+    "descricao_completa": "consectetur",
+    "preco_custo": 1022050.46,
+    "preco_venda": 4642,
+    "preco_promocional": 41248758.42,
+    "peso": 19,
+    "altura": 14,
+    "largura": 16,
+    "diametro": 7,
+    "comprimento": 1,
+    "titulo_seo": "tenetur",
+    "tags_seo": "repellat",
+    "descricao_seo": "nostrum",
     "ativo": false,
-    "destaque": true,
+    "destaque": false,
     "variacao_preco_cor": true,
-    "variacao_preco_tamanho": true
+    "variacao_preco_tamanho": false
 }
 
 fetch(url, {
@@ -73,29 +73,29 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 6,
-            'categoria_id' => 1,
-            'nome' => 'et',
-            'imagens' => 'facere',
-            'slug' => 'quia',
-            'sku' => 'quo',
-            'descricao_curta' => 'perspiciatis',
-            'descricao_completa' => 'ipsa',
-            'preco_custo' => 21337.0,
-            'preco_venda' => 49701.2,
-            'preco_promocional' => 1248508.712759795,
-            'peso' => 1,
-            'altura' => 1,
-            'largura' => 11,
-            'diametro' => 5,
-            'comprimento' => 3,
-            'titulo_seo' => 'nobis',
-            'tags_seo' => 'iure',
-            'descricao_seo' => 'iusto',
+            'empresa_id' => 18,
+            'categoria_id' => 8,
+            'nome' => 'harum',
+            'imagens' => 'quasi',
+            'slug' => 'at',
+            'sku' => 'magni',
+            'descricao_curta' => 'velit',
+            'descricao_completa' => 'consectetur',
+            'preco_custo' => 1022050.46,
+            'preco_venda' => 4642.0,
+            'preco_promocional' => 41248758.42,
+            'peso' => 19,
+            'altura' => 14,
+            'largura' => 16,
+            'diametro' => 7,
+            'comprimento' => 1,
+            'titulo_seo' => 'tenetur',
+            'tags_seo' => 'repellat',
+            'descricao_seo' => 'nostrum',
             'ativo' => false,
-            'destaque' => true,
+            'destaque' => false,
             'variacao_preco_cor' => true,
-            'variacao_preco_tamanho' => true,
+            'variacao_preco_tamanho' => false,
         ],
     ]
 );
@@ -274,16 +274,16 @@ Atualiza os dados de um produto
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/products/quis" \
+    "https://api.estoqueintegrado.com.br/v1/products/perferendis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","categoria_id":18,"nome":"nisi","imagens":"repellendus","slug":"omnis","sku":"quo","descricao_curta":"aspernatur","descricao_completa":"asperiores","preco_custo":35824.8,"preco_venda":105304210.67,"preco_promocional":28143211.02251043,"peso":5,"altura":14,"largura":19,"diametro":19,"comprimento":18,"titulo_seo":"maiores","tags_seo":"dolorum","descricao_seo":"quia","ativo":false,"destaque":false,"variacao_preco_cor":false,"variacao_preco_tamanho":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","categoria_id":10,"nome":"molestiae","imagens":"porro","slug":"et","sku":"repellendus","descricao_curta":"doloribus","descricao_completa":"mollitia","preco_custo":0.33893,"preco_venda":51989478.2,"preco_promocional":28.2,"peso":15,"altura":15,"largura":7,"diametro":9,"comprimento":12,"titulo_seo":"consequuntur","tags_seo":"facere","descricao_seo":"et","ativo":true,"destaque":true,"variacao_preco_cor":false,"variacao_preco_tamanho":false}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/quis"
+    "https://api.estoqueintegrado.com.br/v1/products/perferendis"
 );
 
 let headers = {
@@ -293,26 +293,26 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "categoria_id": 18,
-    "nome": "nisi",
-    "imagens": "repellendus",
-    "slug": "omnis",
-    "sku": "quo",
-    "descricao_curta": "aspernatur",
-    "descricao_completa": "asperiores",
-    "preco_custo": 35824.8,
-    "preco_venda": 105304210.67,
-    "preco_promocional": 28143211.02251043,
-    "peso": 5,
-    "altura": 14,
-    "largura": 19,
-    "diametro": 19,
-    "comprimento": 18,
-    "titulo_seo": "maiores",
-    "tags_seo": "dolorum",
-    "descricao_seo": "quia",
-    "ativo": false,
-    "destaque": false,
+    "categoria_id": 10,
+    "nome": "molestiae",
+    "imagens": "porro",
+    "slug": "et",
+    "sku": "repellendus",
+    "descricao_curta": "doloribus",
+    "descricao_completa": "mollitia",
+    "preco_custo": 0.33893,
+    "preco_venda": 51989478.2,
+    "preco_promocional": 28.2,
+    "peso": 15,
+    "altura": 15,
+    "largura": 7,
+    "diametro": 9,
+    "comprimento": 12,
+    "titulo_seo": "consequuntur",
+    "tags_seo": "facere",
+    "descricao_seo": "et",
+    "ativo": true,
+    "destaque": true,
     "variacao_preco_cor": false,
     "variacao_preco_tamanho": false
 }
@@ -328,33 +328,33 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/products/quis',
+    'https://api.estoqueintegrado.com.br/v1/products/perferendis',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'categoria_id' => 18,
-            'nome' => 'nisi',
-            'imagens' => 'repellendus',
-            'slug' => 'omnis',
-            'sku' => 'quo',
-            'descricao_curta' => 'aspernatur',
-            'descricao_completa' => 'asperiores',
-            'preco_custo' => 35824.8,
-            'preco_venda' => 105304210.67,
-            'preco_promocional' => 28143211.02251043,
-            'peso' => 5,
-            'altura' => 14,
-            'largura' => 19,
-            'diametro' => 19,
-            'comprimento' => 18,
-            'titulo_seo' => 'maiores',
-            'tags_seo' => 'dolorum',
-            'descricao_seo' => 'quia',
-            'ativo' => false,
-            'destaque' => false,
+            'categoria_id' => 10,
+            'nome' => 'molestiae',
+            'imagens' => 'porro',
+            'slug' => 'et',
+            'sku' => 'repellendus',
+            'descricao_curta' => 'doloribus',
+            'descricao_completa' => 'mollitia',
+            'preco_custo' => 0.33893,
+            'preco_venda' => 51989478.2,
+            'preco_promocional' => 28.2,
+            'peso' => 15,
+            'altura' => 15,
+            'largura' => 7,
+            'diametro' => 9,
+            'comprimento' => 12,
+            'titulo_seo' => 'consequuntur',
+            'tags_seo' => 'facere',
+            'descricao_seo' => 'et',
+            'ativo' => true,
+            'destaque' => true,
             'variacao_preco_cor' => false,
             'variacao_preco_tamanho' => false,
         ],
@@ -535,14 +535,14 @@ Retorna os detalhes de um produto
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/products/7" \
+    -G "https://api.estoqueintegrado.com.br/v1/products/accusamus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/7"
+    "https://api.estoqueintegrado.com.br/v1/products/accusamus"
 );
 
 let headers = {
@@ -561,7 +561,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/products/7',
+    'https://api.estoqueintegrado.com.br/v1/products/accusamus',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -577,34 +577,34 @@ print_r(json_decode((string) $body));
 
 ```json
 {
-    "message": "Empresa não encontrada!"
+    "message": "É necessário informar o domínio!"
 }
 ```
-<div id="execution-results-GETv1-products--id-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETv1-products--id-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETv1-products--id-"></code></pre>
+<div id="execution-results-GETv1-products--idOrSlug-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETv1-products--idOrSlug-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETv1-products--idOrSlug-"></code></pre>
 </div>
-<div id="execution-error-GETv1-products--id-" hidden>
+<div id="execution-error-GETv1-products--idOrSlug-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETv1-products--id-"></code></pre>
+    <pre><code id="execution-error-message-GETv1-products--idOrSlug-"></code></pre>
 </div>
-<form id="form-GETv1-products--id-" data-method="GET" data-path="v1/products/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETv1-products--id-', this);">
+<form id="form-GETv1-products--idOrSlug-" data-method="GET" data-path="v1/products/{idOrSlug}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETv1-products--idOrSlug-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETv1-products--id-" onclick="tryItOut('GETv1-products--id-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETv1-products--id-" onclick="cancelTryOut('GETv1-products--id-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETv1-products--id-" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETv1-products--idOrSlug-" onclick="tryItOut('GETv1-products--idOrSlug-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETv1-products--idOrSlug-" onclick="cancelTryOut('GETv1-products--idOrSlug-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETv1-products--idOrSlug-" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>v1/products/{id}</code></b>
+ <b><code>v1/products/{idOrSlug}</code></b>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="id" data-endpoint="GETv1-products--id-" data-component="url" required  hidden>
+<b><code>idOrSlug</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="idOrSlug" data-endpoint="GETv1-products--idOrSlug-" data-component="url"  hidden>
 <br>
-ID do produto</p>
+integer|string required ID ou slug do produto</p>
 </form>
 
 
@@ -618,7 +618,7 @@ Deleta um produto com softDeletes
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/products/17" \
+    "https://api.estoqueintegrado.com.br/v1/products/9" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -627,7 +627,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/17"
+    "https://api.estoqueintegrado.com.br/v1/products/9"
 );
 
 let headers = {
@@ -650,7 +650,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/products/17',
+    'https://api.estoqueintegrado.com.br/v1/products/9',
     [
         'headers' => [
             'Accept' => 'application/json',

@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/colors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":13,"nome":"sapiente","hex":"omnis"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":5,"nome":"et","hex":"fugit"}'
 
 ```
 
@@ -30,9 +30,9 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 13,
-    "nome": "sapiente",
-    "hex": "omnis"
+    "empresa_id": 5,
+    "nome": "et",
+    "hex": "fugit"
 }
 
 fetch(url, {
@@ -53,9 +53,9 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 13,
-            'nome' => 'sapiente',
-            'hex' => 'omnis',
+            'empresa_id' => 5,
+            'nome' => 'et',
+            'hex' => 'fugit',
         ],
     ]
 );
@@ -128,16 +128,16 @@ Atualiza os dados da cor
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/colors/rerum" \
+    "https://api.estoqueintegrado.com.br/v1/colors/et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":10,"nome":"voluptatibus","hex":"rerum"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":1,"nome":"quibusdam","hex":"molestias"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/rerum"
+    "https://api.estoqueintegrado.com.br/v1/colors/et"
 );
 
 let headers = {
@@ -147,9 +147,9 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 10,
-    "nome": "voluptatibus",
-    "hex": "rerum"
+    "empresa_id": 1,
+    "nome": "quibusdam",
+    "hex": "molestias"
 }
 
 fetch(url, {
@@ -163,16 +163,16 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/colors/rerum',
+    'https://api.estoqueintegrado.com.br/v1/colors/et',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 10,
-            'nome' => 'voluptatibus',
-            'hex' => 'rerum',
+            'empresa_id' => 1,
+            'nome' => 'quibusdam',
+            'hex' => 'molestias',
         ],
     ]
 );
@@ -251,7 +251,7 @@ Retorna os detalhes da Cor
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/colors/8" \
+    -G "https://api.estoqueintegrado.com.br/v1/colors/6" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -260,7 +260,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/8"
+    "https://api.estoqueintegrado.com.br/v1/colors/6"
 );
 
 let headers = {
@@ -283,7 +283,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/colors/8',
+    'https://api.estoqueintegrado.com.br/v1/colors/6',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -353,7 +353,7 @@ Deleta uma cor
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/colors/17" \
+    "https://api.estoqueintegrado.com.br/v1/colors/7" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -362,7 +362,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/17"
+    "https://api.estoqueintegrado.com.br/v1/colors/7"
 );
 
 let headers = {
@@ -385,7 +385,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/colors/17',
+    'https://api.estoqueintegrado.com.br/v1/colors/7',
     [
         'headers' => [
             'Accept' => 'application/json',

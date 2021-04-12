@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","name":"libero","cpf":"repellat","email":"voluptates","password":"aut","celular":"quod"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","name":"quibusdam","cpf":"assumenda","email":"eum","password":"eum","celular":"voluptatem"}'
 
 ```
 
@@ -30,11 +30,11 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "name": "libero",
-    "cpf": "repellat",
-    "email": "voluptates",
-    "password": "aut",
-    "celular": "quod"
+    "name": "quibusdam",
+    "cpf": "assumenda",
+    "email": "eum",
+    "password": "eum",
+    "celular": "voluptatem"
 }
 
 fetch(url, {
@@ -55,11 +55,11 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'name' => 'libero',
-            'cpf' => 'repellat',
-            'email' => 'voluptates',
-            'password' => 'aut',
-            'celular' => 'quod',
+            'name' => 'quibusdam',
+            'cpf' => 'assumenda',
+            'email' => 'eum',
+            'password' => 'eum',
+            'celular' => 'voluptatem',
         ],
     ]
 );
@@ -143,7 +143,7 @@ Atualiza os dados de um usuário
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/users/12" \
+    "https://api.estoqueintegrado.com.br/v1/users/16" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -152,7 +152,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/users/12"
+    "https://api.estoqueintegrado.com.br/v1/users/16"
 );
 
 let headers = {
@@ -175,7 +175,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/users/12',
+    'https://api.estoqueintegrado.com.br/v1/users/16',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -253,7 +253,7 @@ Retorna os detalhes do Usuario.
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/users/8" \
+    -G "https://api.estoqueintegrado.com.br/v1/users/18" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
@@ -262,7 +262,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/users/8"
+    "https://api.estoqueintegrado.com.br/v1/users/18"
 );
 
 let headers = {
@@ -285,7 +285,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/users/8',
+    'https://api.estoqueintegrado.com.br/v1/users/18',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -363,16 +363,16 @@ Deletar um usuário
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/users/perspiciatis" \
+    "https://api.estoqueintegrado.com.br/v1/users/fugit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":3}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":13}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/users/perspiciatis"
+    "https://api.estoqueintegrado.com.br/v1/users/fugit"
 );
 
 let headers = {
@@ -382,7 +382,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "id": 3
+    "id": 13
 }
 
 fetch(url, {
@@ -396,14 +396,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/users/perspiciatis',
+    'https://api.estoqueintegrado.com.br/v1/users/fugit',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'id' => 3,
+            'id' => 13,
         ],
     ]
 );
@@ -485,7 +485,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","login":"ipsum","password":"ullam"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","login":"velit","password":"nam"}'
 
 ```
 
@@ -501,8 +501,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "login": "ipsum",
-    "password": "ullam"
+    "login": "velit",
+    "password": "nam"
 }
 
 fetch(url, {
@@ -523,8 +523,8 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'login' => 'ipsum',
-            'password' => 'ullam',
+            'login' => 'velit',
+            'password' => 'nam',
         ],
     ]
 );
