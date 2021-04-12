@@ -405,7 +405,7 @@ class Product extends Model
 
     public function images()
     {
-        return $this->hasMany('App\Models\Image');
+        return $this->hasMany('App\Models\Imagem', 'produto_id');
     }
 
     public function category()
@@ -420,12 +420,12 @@ class Product extends Model
 
     public function sizes()
     {
-        return $this->belongsToMany('App\Models\Tamanho', 'produto_tamanhos');
+        return $this->belongsToMany('App\Models\Size', 'produto_tamanhos', 'produto_id', 'tamanho_id');
     }
 
     public function colors()
     {
-        return $this->belongsToMany('App\Models\Cor', 'produto_cor');
+        return $this->belongsToMany('App\Models\Color', 'produto_cor', 'produto_id','cor_id');
     }
 
     public function stock($tamanhoID = null, $corID = null)
@@ -440,7 +440,7 @@ class Product extends Model
             $dados['cor_id'] = $corID;
         }
 
-        return $this->hasMany('App\Models\Estoque')->where($dados);
+        return $this->hasMany('App\Models\Stock')->where($dados);
     }
 
     // Variação preço

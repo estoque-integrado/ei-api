@@ -19,6 +19,8 @@ class SetCompanyMiddleware
     {
         $dominio = $request->dominio;
 
+        if (!$dominio) return response(['message' => 'É necessário informar o domínio!'], 404);
+
         $slug = preg_replace('/^(http(s)?)?\:?\/?\/?([a-zA-Z0-9\-\_]{1,})\.?(.*)?$/', '$3', $dominio);
 
         $company = Company::where('slug', $slug)->first();

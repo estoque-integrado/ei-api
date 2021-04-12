@@ -63,10 +63,10 @@ class Company extends Model
         if ($showDeletedProducts) $products->withTrashed();
 
         if ($stockBiggerZero) {
-
+            // Somente produtos com quantidade em estoque > 0
         }
-
-        return $products->get()->makeHidden('descricao_completa');
+        // Remove a descrição completa dps produtos, reduz 98% do tamanho da requisição
+        return $products->with('colors', 'sizes', 'images')->get()->makeHidden('descricao_completa');
     }
 
     /**

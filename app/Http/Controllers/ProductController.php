@@ -66,10 +66,10 @@ class ProductController extends Controller
         );
 
         try {
-            if (!$this->userCanEditCompany($request->empresa_id))
+            if (!$this->userCanEditCompany($request->company->id))
                 return response(['message' => 'Empresa não pertence ao usuário.'], 403);
 
-            $inputs = $request->except('imagens');
+            $inputs = $request->except('imagens', 'estoque');
             $inputs['preco_venda'] = isset($inputs['preco_venda']) ? $this->formatarValor($inputs['preco_venda'], false) : null;
             $inputs['preco_promocional'] = isset($inputs['preco_promocional']) ? $this->formatarValor($inputs['preco_promocional'], false) : null;
             $inputs['preco_custo'] = isset($inputs['preco_custo']) ? $this->formatarValor($inputs['preco_custo'], false) : null;
@@ -78,6 +78,11 @@ class ProductController extends Controller
             if ($request->input('slug_auto')) {
                 // Cria o slug
                 $inputs['slug'] = $this->slugify($request->input('nome'), '\App\Models\Product');
+            }
+
+            // Estoque
+            if ($inputs['estoque']) {
+
             }
 
             // imagens

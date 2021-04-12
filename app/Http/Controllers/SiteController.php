@@ -28,7 +28,7 @@ class SiteController extends Controller
      * </aside>
      *
      * @bodyParam dominio string required Dominio da loja registrado no banco de dados. <br>
-     * <i><small>Ex: minhaloja.estoqueintegrado.com.br | minhaloja.com.br</small>
+     * <i><small>Ex: minhaloja.estoqueintegrado.com.br | minhaloja.com.br | minhaloja</small>
      *
      * @group Site
      * @unauthenticated
