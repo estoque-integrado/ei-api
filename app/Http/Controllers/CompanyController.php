@@ -28,6 +28,8 @@ class CompanyController extends Controller
      *
      * Cria uma nova empresa.
      *
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam user_id integer required ID do usuario proprietario da empresa
      * @bodyParam nome string required Nome fantasia da empresa
      * @bodyParam website string URL customizada da empresa Ex: minhaloja.estoqueintegrado.com|minhaloja.com.br
@@ -62,13 +64,12 @@ class CompanyController extends Controller
 
         try {
             $inputs = $request->except('api_token');
-            $loggedUser = Auth::user();
-            $user = User::find($inputs['user_id']);
+            $inputs['user_id'] = Auth::user()->id;
 
             // Somente o admin pode cadastrar empresas
-            if ($loggedUser->id != $user->id && !$loggedUser->isAdmin()) {
-                return response(['message' => 'Acesso negado!'], 403);
-            }
+//            if ($loggedUser->id != $user->id && !$loggedUser->isAdmin()) {
+//                return response(['message' => 'Acesso negado!'], 403);
+//            }
 
             $inputs['cnpj'] = $this->formatarCnpj($inputs['cnpj'], true);
             $inputs['telefone'] = $this->formatarTelefone($inputs['telefone'] ?? null, true);
@@ -93,6 +94,8 @@ class CompanyController extends Controller
      * Retorna a lista de empresas que o usuário está associado.
      *
      * @bodyParam id integer required ID do usuario
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @group Empresas
      * @authenticated
@@ -124,6 +127,8 @@ class CompanyController extends Controller
      * Retorna os detalhes da empresa.
      *
      * @urlParam id integer required ID da empresa
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @group Empresas
      * @authenticated
@@ -162,6 +167,8 @@ class CompanyController extends Controller
      * Usa softDeletes()
      *
      * @urlParam id integer required ID do usuario proprietario da empresa
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @group Empresas
      * @authenticated
@@ -178,9 +185,9 @@ class CompanyController extends Controller
     {
         try {
             if (!$this->userCanEditCompany($id))
-                return response(['message' => 'Company não pertence ao usuário!'], 403);
+                return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
-            $inputs = $request->except('api_token', 'user_id');
+            $inputs = $request->except('api_token', 'user_id', 'dominio');
             $inputs['cnpj'] = $this->formatarCnpj($inputs['cnpj'], true);
             $inputs['telefone'] = $this->formatarTelefone($inputs['telefone'], true);
 
@@ -200,6 +207,8 @@ class CompanyController extends Controller
      * Usa softDeletes()
      *
      * @urlParam id integer required ID da empresa
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @group Empresas
      * @authenticated
@@ -211,12 +220,17 @@ class CompanyController extends Controller
     public function delete(Request $request, $id)
     {
         try {
-            if (!$this->userCanEditCompany($id))
-                return response(['message' => 'Company não pertence ao usuário!'], 403);
+            $company = Company::where('id', $id)->first();
 
-            $company = Company::find($id);
+            if (!$company)
+                return response(['message' => 'Empresa não encontrada!'], 404);
+
+            if (!$this->userCanEditCompany($id))
+                return response(['message' => 'Empresa não pertence ao usuário!'], 403);
+
             $company->delete();
 
+            return response(['message' => 'Empresa deletada!']);
         } catch (\Exception $e) {
             return response(['message' => $e->getMessage()], 422);
         }

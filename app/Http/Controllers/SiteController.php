@@ -91,18 +91,23 @@ class SiteController extends Controller
      *
      * @group Site
      * @unauthenticated
-     * @param Request $request
+     *
+     * @response {[
+     *      "id":1,
+     *      "nome":"Nome do produto",
+     *      "slug":"slug",
+     *      [...]
+     * ]}
      */
     public function viewProduct(Request $request, $idOrSlug)
     {
         try {
-            $isId = preg_match('/^(\d{1,})$/i', $idOrSlug) ? true : false;
+            $idOrSlugString = preg_match('/^(\d{1,})$/', $idOrSlug) ? 'id' : 'slug';
 
             $data = [
-                'empresa_id' => $request->company->id
+                'empresa_id' => $request->company->id,
+                $idOrSlugString => $idOrSlug
             ];
-            $data[$isId ? 'id' : 'slug'] = $idOrSlug;
-
             $product = Product::where($data)->with('colors', 'sizes', 'images')->first();
 
             if (!$product)

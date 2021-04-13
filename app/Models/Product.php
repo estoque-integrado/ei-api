@@ -21,27 +21,26 @@ class Product extends Model
         'categoria_id',
         'nome',
         'slug',
-        'sku',
+//        'sku',
         'descricao_curta',
         'descricao_completa',
         // 'estoque',
         //preços
-        'preco_custo',
-        'preco_venda',
-        'preco_promocional',
+//        'preco_custo',
+//        'preco_venda',
+//        'preco_promocional',
         //entrega
-        'peso',
-        'diametro',
-        'altura',
-        'largura',
-        'comprimento',
+//        'peso',
+//        'diametro',
+//        'altura',
+//        'largura',
+//        'comprimento',
         //seo
         'titulo_seo',
         'descricao_seo',
         'tags_seo',
         //produto destaque
         'destaque',
-        'status',
         'ativo',
         'variacao_preco_cor',
         'variacao_preco_tamanho',
@@ -58,15 +57,16 @@ class Product extends Model
     public static function getValidationRules($id = null)
     {
         return [
-            'empresa_id' => 'required|integer|min:1|exists:empresas,id',
-            'categoria_id' => 'required|integer|min:1|exists:categorias,id',
-            'nome' => 'required|string|max:191',
-            'slug' => array('required_if:slug_auto,false,id,null', "unique:produtos,slug,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
-            'sku' => array('required', "unique:produtos,sku,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
+//            'empresa_id' => 'required|integer|min:1|exists:empresas,id',
+            'categoria_id' => 'required_whithout:id|integer|min:1|exists:categorias,id',
+            'nome' => 'required_whithout:id|string|max:191',
+//            'slug' => array('required_if:slug_auto,false,id,null', "unique:produtos,slug,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
+            'slug' => array('required_whithout:id', "unique:produtos,slug,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
+//            'sku' => array('required', "unique:produtos,sku,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
             'descricao_curta' => 'string|max:255',
             'descricao_completa' => 'string',
             'preco_custo' => 'numeric',
-            'preco_venda' => 'required|numeric',
+//            'preco_venda' => 'required|numeric',
             'peso' => 'numeric',
             'altura' => 'numeric',
             'largura' => 'numeric',
@@ -78,6 +78,25 @@ class Product extends Model
             'destaque' => 'boolean',
             'status' => 'boolean',
             'ativo' => 'boolean',
+
+            // Imagens
+            'imagens' => 'file',
+
+            // Estoque
+            'estoque' => 'array',
+            'estoque.*.sku' => array("unique:estoque,sku,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
+            'estoque.*.valor_venda' => 'required_whithout:estoque.*.id|numeric',
+            'estoque.*.valor_custo' => 'numeric',
+            'estoque.*.valor_promocional' => 'numeric',
+//            'estoque.*.produto_id' => 'required|integer|exists:produtos,id',
+            'estoque.*.quantidade' => 'required|integer|min:0',
+            'estoque.*.cor_id' => 'integer|exists:cores,id',
+            'estoque.*.dt_inicio_promocao' => 'date_format:"d/m/Y H:i:s"',
+            'estoque.*.dt_fim_promocao' => 'date_format:"d/m/Y H:i:s"',
+            'estoque.*.peso' => 'numeric',
+            'estoque.*.altura' => 'numeric',
+            'estoque.*.largura' => 'numeric',
+            'estoque.*.comprimento' => 'numeric',
         ];
     }
 
@@ -99,6 +118,7 @@ class Product extends Model
             'categoria_id.exists' => 'A Categoria deve estar cadastrada e ativa no banco de dados!',
             'unique' => 'O campo :attribute ja existe no banco de dados!',
             'regex' => 'O :attribute não pode conter caracteres especiais, exceto "-" e "_"!',
+            'date_format' => 'A data inicio/fim deve ser no formato: DD/MM/AAAA HH:MM:SS',
         ];
     }
 
@@ -440,12 +460,17 @@ class Product extends Model
             $dados['cor_id'] = $corID;
         }
 
-        return $this->hasMany('App\Models\Stock')->where($dados);
+        return $this->hasMany('App\Models\Stock', 'produto_id')->where($dados);
+    }
+
+    public function estoque_old()
+    {
+        return $this->hasMany('App\Models\Estoque', 'produto_id');
     }
 
     // Variação preço
     public function variacao($var1 = '', $var2 = '')
     {
-        return $this->hasMany('App\Models\VariacaoPreco');
+        return $this->hasMany('App\Models\VariacaoPreco', 'produto_id');
     }
 }

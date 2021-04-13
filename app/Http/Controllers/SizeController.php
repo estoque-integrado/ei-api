@@ -23,7 +23,8 @@ class SizeController extends Controller
      *
      * Cria um tamanho
      *
-     * @bodyParam empresa_id integer required ID da empresa
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam nome string required Nome do tamanho <small>Ex: 50ml|P|300g</small>
      *
      * @group Tamanhos
@@ -44,14 +45,14 @@ class SizeController extends Controller
             Size::getValidationMessages()
         );
 
-        if(!$this->userCanEditCompany($request->input('empresa_id')))
+        if(!$this->userCanEditCompany($request->company->id))
             return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
         try {
             $inputs = $request->except('api_token');
 
             // Verifica se o tamanho ja existe
-            $exists = Size::where(['nome' => $inputs['nome'], 'empresa_id' => $inputs['empresa_id']])->first();
+            $exists = Size::where(['nome' => $inputs['nome'], 'empresa_id' => $request->company->id])->first();
 
             if($exists)
                 return response(['message' => 'Esse tamanho ja existe!'], 403);
@@ -68,9 +69,9 @@ class SizeController extends Controller
      *
      * Retorna os detalhes do Tamanho
      *
-     * @group Tamanhos
      * @urlParam id integer required ID do Tamanho
-     * @param Request $request
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @group Tamanhos
      * @authenticated
@@ -83,7 +84,7 @@ class SizeController extends Controller
     public function view(Request $request, $id)
     {
         try {
-            $size = Size::where('id', $id)->first();
+            $size = Size::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
 
             if(!$size)
                 return response(['message' => 'Tamanho não encontrado!'], 404);
@@ -101,7 +102,8 @@ class SizeController extends Controller
      * Atualiza os dados do tamanho
      *
      * @urlParam id integer required ID do tamanho
-     * @bodyParam empresa_id integer required ID do tamanho
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam nome string required Nome do tamanho <small>Ex: 50ml|P|300g</small>
      *
      * @group Tamanhos
@@ -121,12 +123,12 @@ class SizeController extends Controller
             Size::getValidationMessages()
         );
         try {
-            $size = Size::find($id);
+            $size = Size::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
 
             if(!$size)
                 return response(['message' => 'Tamanho não encontrado!'], 404);
 
-            if(!$this->userCanEditCompany($size->company->id))
+            if(!$this->userCanEditCompany($request->company->id))
                 return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
 
@@ -144,6 +146,8 @@ class SizeController extends Controller
      * Deleta um tamanho
      *
      * @urlParam id integer required ID do tamanho
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @group Tamanhos
      * @authenticated
@@ -154,12 +158,12 @@ class SizeController extends Controller
     public function delete(Request $request, $id)
     {
         try {
-            $size = Size::find($id);
+            $size = Size::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
 
             if(!$size)
                 return response(['message' => 'Tamanho não encontrado!'], 404);
 
-            if(!$this->userCanEditCompany($size->company->id))
+            if(!$this->userCanEditCompany($request->company->id))
                 return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
             $size->delete();

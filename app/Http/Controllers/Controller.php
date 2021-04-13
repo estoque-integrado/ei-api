@@ -44,6 +44,21 @@ class Controller extends BaseController
     }
 
     /**
+     * Formatar data
+     *
+     * @param  array  $attributes
+     * @return void
+     */
+    public function formatarData($string, $ptBR = true)
+    {
+        $isPtBR = preg_match('/^(\d{2})\/(\d{2})\/(\d{4})\s?(.*)?$/', $string);
+
+        if ($isPtBR) {
+            return preg_replace('/^(\d{2})\/(\d{2})\/(\d{4})\s?(\d{2})?\:?(\d{2})?\:?(\d{2})$/', '$3-$2-$1 $4:$5:$6', $string);
+        }
+    }
+
+    /**
      * @param $string
      * @param bool $somenteNumeros
      * @return string|string[]|null
@@ -67,6 +82,7 @@ class Controller extends BaseController
     public function userCanEditCompany($companyId)
     {
         $user = Auth::user();
+
         $idsCompanies = $user->getIdsMyCompanies();
 
         if (!in_array($companyId, $idsCompanies)) {

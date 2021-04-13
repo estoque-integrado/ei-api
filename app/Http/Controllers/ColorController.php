@@ -23,7 +23,8 @@ class ColorController extends Controller
      *
      * Cria uma cor
      *
-     * @bodyParam empresa_id integer required ID da empresa
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam nome string required Nome do tamanho <small>Ex: 50ml|P|300g</small>
      * @bodyParam hex string required Hexadecimal da cor Ex: #000000
      *
@@ -45,14 +46,15 @@ class ColorController extends Controller
             Color::getValidationMessages()
         );
 
-        if(!$this->userCanEditCompany($request->input('empresa_id')))
+        if(!$this->userCanEditCompany($request->company->id))
             return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
         try {
-            $inputs = $request->only('nome', 'hex', 'empresa_id');
+            $inputs = $request->only('nome', 'hex');
+            $inputs['empresa_id'] = $request->company->id;
 
-            // Verifica se o tamanho ja existe
-            $exists = Color::where(['nome' => $inputs['nome'], 'empresa_id' => $inputs['empresa_id']])->first();
+            // Verifica se a cor ja existe
+            $exists = Color::where(['nome' => $inputs['nome'], 'empresa_id' => $request->company->id])->first();
 
             if($exists)
                 return response(['message' => 'Essa Cor ja existe!'], 403);
@@ -69,8 +71,9 @@ class ColorController extends Controller
      *
      * Retorna os detalhes da Cor
      *
-     * @group Cores
      * @urlParam id integer required ID da cor
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @group Cores
      * @authenticated
@@ -83,7 +86,7 @@ class ColorController extends Controller
     public function view(Request $request, $id)
     {
         try {
-            $color = Color::where('id', $id)->first();
+            $color = Color::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
 
             if(!$color)
                 return response(['message' => 'Cor não encontrado!'], 404);
@@ -100,7 +103,8 @@ class ColorController extends Controller
      *
      * Atualiza os dados da cor
      *
-     * @bodyParam empresa_id integer required ID da empresa
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam nome string required Nome do tamanho <small>Ex: 50ml|P|300g</small>
      * @bodyParam hex string required Hexadecimal da cor Ex: #000000
      *
@@ -121,12 +125,12 @@ class ColorController extends Controller
             Color::getValidationMessages()
         );
         try {
-            $color = Color::find($id);
+            $color = Color::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
 
             if(!$color)
                 return response(['message' => 'Cor não encontrada!'], 404);
 
-            if(!$this->userCanEditCompany($request->input('empresa_id')))
+            if(!$this->userCanEditCompany($request->company->id))
                 return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
 
@@ -144,6 +148,8 @@ class ColorController extends Controller
      * Deleta uma cor
      *
      * @urlParam id integer required ID da Cor
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @group Cores
      * @authenticated
@@ -154,7 +160,7 @@ class ColorController extends Controller
     public function delete(Request $request, $id)
     {
         try {
-            $color = Color::find($id);
+            $color = Color::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
 
             if(!$color)
                 return response(['message' => 'Cor não encontrada!'], 404);

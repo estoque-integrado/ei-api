@@ -24,7 +24,8 @@ class CategoryController extends Controller
      *
      * Cria uma categoria
      *
-     * @bodyParam empresa_id integer required ID da empresa proprietária do produto
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam nome string required Nome da categoria
      * @bodyParam slug string required Slug do produto.
      * <br>Caracteres permitidos: número, texto, "-", "_" <br><i><small>Ex: casa-e-jardim | casa_e_jardim</small></i>
@@ -52,11 +53,12 @@ class CategoryController extends Controller
             Category::getValidationMessages()
         );
 
-        if(!$this->userCanEditCompany($request->input('empresa_id')))
+        if(!$this->userCanEditCompany($request->company->id))
             return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
         try {
             $inputs = $request->except('api_token', 'imagem');
+            $inputs['empresa_id'] = $request->company->id;
 
             if ($request->input('slug_auto')) {
                 // Cria o slug
@@ -81,8 +83,11 @@ class CategoryController extends Controller
      *
      * Retorna os detalhes da categoria
      *
-     * @group Categorias
      * @urlParam id integer required ID da categoria
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
+     *
+     * @group Categorias
      * @param Request $request
      *
      * @response {
@@ -116,8 +121,9 @@ class CategoryController extends Controller
      *
      * Atualiza os dados da categoria
      *
-     * @group Categorias
      * @urlParam id integer required ID da categoria
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam nome string required Nome da categoria
      * @bodyParam slug string Slug do produto <br><i><small>Ex: calca_preta_jean</i></small>
      * @bodyParam descricao string Descrição da categoria
@@ -126,6 +132,7 @@ class CategoryController extends Controller
      * @bodyParam ativo boolean Status da categoria <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>
      * @param Request $request
      *
+     * @group Categorias
      * @response {
      *      "id": 1,
      *      "nome": "Nome da categoria",
@@ -142,12 +149,12 @@ class CategoryController extends Controller
             Category::getValidationMessages()
         );
         try {
-            $category = Category::find($id);
+            $category = Category::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
 
             if(!$category)
                 return response(['message' => 'Categoria não encontrada!'], 404);
 
-            if(!$this->userCanEditCompany($category->empresa_id))
+            if(!$this->userCanEditCompany($request->company->id))
                 return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
             if ($request->file('imagem')) {
@@ -156,7 +163,7 @@ class CategoryController extends Controller
                  */
             }
 
-            Category::where('id', $id)->update($request->except('api_token', 'empresa_id'));
+            Category::where('id', $id)->update($request->except('api_token', 'dominio'));
 
             return Category::find($id);
         } catch (\Exception $e) {
@@ -171,6 +178,8 @@ class CategoryController extends Controller
      *
      * @group Categorias
      * @urlParam id integer required ID da categoria
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @response scenario=success {
      *      "message": "Categoria deletada!",

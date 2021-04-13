@@ -24,6 +24,8 @@ class AddressController extends Controller
      *
      * Cria uma Endereço
      *
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam empresa_id integer required ID da empresa
      * @bodyParam user_id integer required ID do usuário
      * @bodyParam rua string required Nome da rua
@@ -59,6 +61,10 @@ class AddressController extends Controller
         if($request->input('empresa_id') && !$this->userCanEditCompany($request->input('empresa_id')))
             return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
+        if($request->input('user_id') && Auth::user()->id != $request->input('user_id'))
+            return response(['message' => 'Acesso negado, usuário inválido!'], 403);
+
+
         try {
             $inputs = $request->except('api_token');
 
@@ -74,10 +80,11 @@ class AddressController extends Controller
      *
      * Retorna os detalhes do endereço
      *
-     * @group Endereço
      * @urlParam id integer required ID do endereço
-     * @param Request $request
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
+     * @group Endereço
      * @response {
      *      "id": 1,
      *      "rua": "Nome da rua",
@@ -89,7 +96,7 @@ class AddressController extends Controller
     public function view(Request $request, $id)
     {
         try {
-            $address = Address::where('id', $id)->first();
+            $address = Address::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
 
             if(!$address)
                 return response(['message' => 'Endereço não encontrado!'], 404);
@@ -107,6 +114,8 @@ class AddressController extends Controller
      * Atualiza os dados do endereço
      *
      * @urlParam id integer required ID da endereço
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam rua string required Nome da rua
      * @bodyParam numero integer required Numero do endereço
      * @bodyParam bairro string Nome do bairro
@@ -136,7 +145,7 @@ class AddressController extends Controller
             Address::getValidationMessages()
         );
         try {
-            $address = Address::find($id);
+            $address = Address::where(['id' => $id])->first();
             $loggedUser = Auth::user();
 
             if(!$address)
@@ -148,7 +157,7 @@ class AddressController extends Controller
             if($request->input('user_id') && $loggedUser->id != $request->input('user_id'))
                 return response(['message' => 'Endereço não pertence ao usuário!'], 403);
 
-            Address::where('id', $id)->update($request->except('api_token', 'empresa_id', 'user_id'));
+            Address::where('id', $id)->update($request->except('api_token', 'empresa_id', 'user_id', 'dominio'));
 
             return Address::find($id);
         } catch (\Exception $e) {
@@ -163,6 +172,8 @@ class AddressController extends Controller
      *
      * @group Endereço
      * @urlParam id integer required ID do endereço
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      *
      * @response scenario=success {
      *      "message": "Endereço deletado!",
@@ -171,15 +182,15 @@ class AddressController extends Controller
     public function delete(Request $request, $id)
     {
         try {
-            $address = Address::find($id);
+            $address = Address::where(['id' => $id, 'empresa_id' => $request->company->id])->first();
 
             if(!$address)
                 return response(['message' => 'Endereço não encontrado!'], 404);
 
-            if($address->empresa_id && !$this->userCanEditCompany($request->company->id))
+            if($request->input('empresa_id') && !$this->userCanEditCompany($request->input('empresa_id')))
                 return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
-            if($address->user_id && Auth::user()->id != $address->user_id)
+            if($request->input('user_id') && Auth::user()->id != $request->input('user_id'))
                 return response(['message' => 'Endereço não pertence ao usuário!'], 403);
 
             $address->delete();

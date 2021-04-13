@@ -23,7 +23,7 @@ class Color extends Model
     public static function getValidationRules()
     {
         return [
-            'empresa_id' => 'required|integer|exists:empresas,id',
+//            'empresa_id' => 'required|integer|exists:empresas,id',
             'nome' => 'required|string|max:150',
             'hex' => ['required','string','max:7', 'regex:/^#([a-zA-Z0-9]{6}$)/'],
         ];
@@ -41,7 +41,7 @@ class Color extends Model
             'integer' => 'O campo :attribute deve ser um numero!',
             'string' => 'O campo :attribute deve ser do tipo string!',
             'regex' => 'O hex da cor deve ser no seguinte formato: #0000AA',
-            'empresa_id.exists' => 'A Empresa deve estar cadastrada e ativa no banco de dados!',
+//            'empresa_id.exists' => 'A Empresa deve estar cadastrada e ativa no banco de dados!',
         ];
     }
 

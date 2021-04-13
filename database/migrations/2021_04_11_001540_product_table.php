@@ -26,27 +26,26 @@ class ProductTable extends Migration
 
             $table->string      ('nome');
             $table->string      ('slug');
-            $table->string      ('sku');
+//            $table->string      ('sku');
 
             $table->string      ('descricao_curta', 255)->nullable();
             $table->longText    ('descricao_completa')  ->nullable();
 
             // Preços
-            $table->float       ('preco_custo', 8, 2)   ->nullable();
-            $table->float       ('preco_venda', 8, 2);
-            $table->float       ('preco_promocional', 8, 2)->nullable();
+//            $table->float       ('preco_custo', 8, 2)   ->nullable();
+//            $table->float       ('preco_venda', 8, 2);
+//            $table->float       ('preco_promocional', 8, 2)->nullable();
 
             // Detalhes entrega
-            $table->float       ('peso')  ->nullable();
-            $table->float       ('altura')  ->nullable();
-            $table->float       ('largura')  ->nullable();
-            $table->float       ('diametro')  ->nullable();
-            $table->float       ('comprimento')  ->nullable();
+//            $table->float       ('peso')  ->nullable();
+//            $table->float       ('altura')  ->nullable();
+//            $table->float       ('largura')  ->nullable();
+//            $table->float       ('diametro')  ->nullable();
+//            $table->float       ('comprimento')  ->nullable();
 
             $table->string      ('titulo_seo')          ->nullable();
             $table->string      ('descricao_seo')       ->nullable();
             $table->string      ('tags_seo')            ->nullable();
-            $table->boolean     ('status')              ->nullable();
             $table->boolean     ('destaque')            ->default(false);
             $table->boolean     ('ativo')               ->default(true);
 

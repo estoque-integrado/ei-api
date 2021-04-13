@@ -26,13 +26,15 @@ class UserController extends Controller
      *
      * Cria um usuário.
      *
-     * @group Usuarios
+     * @bodyParam dominio string required Dominio da empresa <br>
+     * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam name string required Nome do usuário
      * @bodyParam cpf string required Cpf com ou sem formatação Ex: 111.111.111-11
      * @bodyParam email string required Email do usuário Ex: teste@estoqueintegrado.com
      * @bodyParam password string Senha do usuário
      * @bodyParam celular string Celular do usuário
      *
+     * @group Usuarios
      * @response scenario=success {
      *      "id":1,
      *      "name": "Nome usuario",
@@ -113,8 +115,8 @@ class UserController extends Controller
             if (!$user)
                 return response(['message' => 'Usuário não encontrado!'], 404);
 
-            if ($loggedUser->id != $user->id && !$loggedUser->isAdmin())
-                return response(['message' => 'Acesso negado!.'], 403);
+//            if ($loggedUser->id != $user->id && !$loggedUser->isAdmin())
+//                return response(['message' => 'Acesso negado!.'], 403);
 
             return $user;
         } catch (\Exception $e) {
@@ -143,16 +145,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate(
+            $request,
+            User::getValidationRules($id),
+            User::getValidationMessages()
+        );
+
         try {
-            $user = User::where(['id' => $id, 'api_token' => $request->input('api_token')])->first();
+            $user = User::where('id', $id)->first();
 
             if (!$user) return response(["message" => "Usuário não encontrado"], 404);
 
-            $this->validate(
-                $request,
-                User::getValidationRules($user->id),
-                User::getValidationMessages()
-            );
+            if (Auth::user()->id != $user->id) return response(["message" => "Acesso negado!"], 404);
 
             // Atualiza usuário
             User::where('id', $id)->update($request->except('id'));

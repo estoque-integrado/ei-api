@@ -13,8 +13,10 @@ class Stock extends Model
         'sku',
         'valor_venda',
         'valor_promocional',
+        'valor_custo',
         'peso',
         'comprimento',
+        'diametro',
         'largura',
         'altura',
         'dt_inicio_promocao',
@@ -24,6 +26,28 @@ class Stock extends Model
         'cor_id',
     ];
 
+    /**
+     * Regras de validação do estoque
+     */
+    public static function getValidationRules($id = null)
+    {
+        return [
+            'produto_id' => 'required|integer|exists:produtos,id',
+            'valor_promocional' => 'numeric',
+            'valor_venda' => 'required|numeric',
+            'valor_custo' => 'numeric',
+            'peso' => 'integer',
+            'comprimento' => 'integer',
+            'largura' => 'integer',
+            'altura' => 'integer',
+            // Estoqque
+            'dt_inicio_promocao' => 'date_format:d/m/Y',
+            'dt_fim_promocao' => 'date_format:d/m/Y',
+            'quantidade' => 'required|integer|min:0',
+            'cor_id' => 'integer|exists:cores,id',
+            'tamanho_id' => 'integer|exists:tamanhos,id',
+        ];
+    }
 
     /**
      * FUNÇÔES

@@ -22,6 +22,8 @@
  * sem esse middleware a empresa não será reconhecida
  */
 
+
+
 // Home da Loja
 $router->get('/', ['as' => 'index', 'middleware' => 'SetCompany', 'uses' => 'SiteController@index']);
 $router->get('/v1/product/{idOrSlug}', ['as' => 'index', 'middleware' => 'SetCompany', 'uses' => 'SiteController@viewProduct']);
@@ -68,7 +70,7 @@ $router->delete('/v1/categories/{id}', ['as' => 'deleteCategory', 'middleware' =
  */
 $router->post('/v1/products', ['as' => 'createProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@create']);
 //$router->get('/v1/my-products', ['as' => 'myProducts', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@getMyProducts']);
-$router->put('/v1/products/{id}', ['as' => 'updateProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@update']);
+$router->put('/v1/products/{id}', ['as' => 'updateProduct', 'uses' => 'ProductController@update']);
 $router->get('/v1/products/{idOrSlug}', ['as' => 'viewProduct', 'middleware' => ['SetCompany'], 'uses' => 'ProductController@view']);
 $router->delete('/v1/products/{id}', ['as' => 'deleteProduct', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'ProductController@delete']);
 
@@ -102,3 +104,59 @@ $router->put('/v1/sizes/{id}', ['as' => 'updateSize', 'middleware' => ['auth', '
 $router->get('/v1/sizes/{id}', ['as' => 'viewSize', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SizeController@view']);
 $router->delete('/v1/sizes/{id}', ['as' => 'deleteSize', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SizeController@delete']);
 
+
+$router->get('/migrar-estoque', function() {
+    $products = \App\Models\Product::all();
+
+    foreach ($products as $product) {
+
+        if (count($product->estoque_old) > 0) {
+
+            foreach ($product->estoque_old as $estoqueOld) {
+//                return $estoqueOld;
+                $stock = new \App\Models\Stock();
+                $stock->quantidade = $estoqueOld->quantidade;
+                $stock->produto_id = $estoqueOld->produto_id;
+                $stock->cor_id = $estoqueOld->cor_id;
+                $stock->tamanho_id = $estoqueOld->tamanho_id;
+                $stock->tamanho_id = $estoqueOld->tamanho_id;
+                $stock->sku = $product->sku;
+                $stock->peso = $product->peso;
+                $stock->altura = $product->altura;
+                $stock->largura = $product->largura;
+                $stock->comprimento = $product->comprimento;
+                $stock->diametro = $product->diametro;
+                $stock->valor_venda = $estoqueOld->valor_venda == null ? $product->preco_venda : $estoqueOld->valor_venda;
+
+                if (count($product->variacao) > 0) {
+                    $stock->sku = '';
+//                    return $estoqueOld;
+//                    return $product->variacao;
+                    foreach ($product->variacao as $variacao) {
+
+                        if ($variacao->sizes && count($variacao->sizes) > 0) {
+                            foreach ($variacao->sizes as $size) {
+                                $stockSize = clone $stock;
+                                $stockSize->tamanho_id = $size->id;
+                                $stockSize->sku = $variacao->sku;
+                                $stockSize->valor_venda = $variacao->valor_venda;
+                                $stockSize->valor_custo = $variacao->valor_custo;
+                                $stockSize->valor_promocional = $variacao->valor_promocional;
+                                $stockSize->quantidade = $estoqueOld->quantidade;
+                                $stockSize->altura = $variacao->altura;
+                                $stockSize->largura = $variacao->largura;
+                                $stockSize->comprimento = $variacao->comprimento;
+                                $stockSize->peso = $variacao->peso;
+                                $stockSize->save();
+                            }
+                        }
+                    }
+                } else {
+                    $stock->save();
+                }
+            }
+        }
+    }
+    return 'dados migrados!!';
+//    $estoque = \App\Models\Estoque;
+});
