@@ -18,6 +18,15 @@ class ProductController extends Controller
         //
     }
 
+//     * @bodyParam sku string required Sku do produto <br><i><small>Ex: CAMPM20211013</i></small>
+//     * @bodyParam preco_custo float Preço de custo do produto <br><i><small>Ex: 80.00</i></small>
+//     * @bodyParam preco_venda float required Preço de venda do produto <br><i><small>Ex: 120.00</i></small>
+//     * @bodyParam preco_promocional float Preço promocional do produto <br><i><small>Ex: 99.90</i></small>
+//     * @bodyParam peso integer Peso do produto em Gramas <br><i><small>Ex: 100</i></small>
+//     * @bodyParam altura integer Altura do produto em Cm <br><i><small>Ex: 80</i></small>
+//     * @bodyParam largura integer Largura do produto em Cm <br><i><small>Ex: 50</i></small>
+//     * @bodyParam diametro integer Diametro do produto
+//     * @bodyParam comprimento integer Comprimento do produto
     /**
      * Criar produto
      *
@@ -25,21 +34,25 @@ class ProductController extends Controller
      *
      * @bodyParam dominio string required Dominio da empresa <br>
      * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
+     * @bodyParam estoque array Array de estoque <br><i><small>
+     * [{ <br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5,<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "25/10/2021 15:00:00"<br>
+     * },<br>
+     * {<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;[...] <br>
+     * }]
+     * </small></i>
      * @bodyParam categoria_id integer required ID da categoria cadastrada e ativa do produto
      * @bodyParam nome string required Nome do produto
      * @bodyParam imagens array Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small>
      * @bodyParam slug string required Slug do produto <br><i><small>Ex: calca_preta_jeans</i></small>
-     * @bodyParam sku string required Sku do produto <br><i><small>Ex: CAMPM20211013</i></small>
      * @bodyParam descricao_curta string Descrição simples do produto
      * @bodyParam descricao_completa string Descrição detalhada do produto
-     * @bodyParam preco_custo float Preço de custo do produto <br><i><small>Ex: 80.00</i></small>
-     * @bodyParam preco_venda float required Preço de venda do produto <br><i><small>Ex: 120.00</i></small>
-     * @bodyParam preco_promocional float Preço promocional do produto <br><i><small>Ex: 99.90</i></small>
-     * @bodyParam peso integer Peso do produto em Gramas <br><i><small>Ex: 100</i></small>
-     * @bodyParam altura integer Altura do produto em Cm <br><i><small>Ex: 80</i></small>
-     * @bodyParam largura integer Largura do produto em Cm <br><i><small>Ex: 50</i></small>
-     * @bodyParam diametro integer Diametro do produto
-     * @bodyParam comprimento integer Comprimento do produto
      * @bodyParam titulo_seo string Titiulo SEO do produto
      * @bodyParam tags_seo string Tags SEO do produto
      * @bodyParam descricao_seo string Descrição SEO do produto
@@ -167,13 +180,19 @@ class ProductController extends Controller
      * @bodyParam dominio string required Dominio da empresa <br>
      * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam estoque array Array de estoque <br><i><small>
-     * { <br>
-     *      "sku":"sku-produto",<br>
-     *      "quantidade":5,<br>
-     *      "valor_venda":1899.90<br>
-     *      "dt_inicio_promocao": "25/10/2021 15:00:00"<br>
-     *      "dt_fim_promocao": "25/10/2021 15:00:00"<br>
-     * }
+     * [{ <br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"id":11,<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5,<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "25/10/2021 15:00:00"<br>
+     * },<br>
+     * {<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"id":11,<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;[...] <br>
+     * }]
      * </small></i>
      * @bodyParam categoria_id integer required ID da categoria cadastrada e ativa do produto
      * @bodyParam nome string required Nome do produto

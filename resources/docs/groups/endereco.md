@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/address" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":9,"user_id":11,"rua":"tempora","numero":18,"bairro":"ratione","complemento":"ut","cidade":"est","uf":"rerum","pais":"velit","cep":"sed","padrao":true,"ativo":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"harum","empresa_id":12,"user_id":8,"rua":"facilis","numero":14,"bairro":"cupiditate","complemento":"veniam","cidade":"ipsam","uf":"incidunt","pais":"maiores","cep":"aut","padrao":false,"ativo":true}'
 
 ```
 
@@ -30,18 +30,19 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 9,
-    "user_id": 11,
-    "rua": "tempora",
-    "numero": 18,
-    "bairro": "ratione",
-    "complemento": "ut",
-    "cidade": "est",
-    "uf": "rerum",
-    "pais": "velit",
-    "cep": "sed",
-    "padrao": true,
-    "ativo": false
+    "dominio": "harum",
+    "empresa_id": 12,
+    "user_id": 8,
+    "rua": "facilis",
+    "numero": 14,
+    "bairro": "cupiditate",
+    "complemento": "veniam",
+    "cidade": "ipsam",
+    "uf": "incidunt",
+    "pais": "maiores",
+    "cep": "aut",
+    "padrao": false,
+    "ativo": true
 }
 
 fetch(url, {
@@ -62,18 +63,19 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 9,
-            'user_id' => 11,
-            'rua' => 'tempora',
-            'numero' => 18,
-            'bairro' => 'ratione',
-            'complemento' => 'ut',
-            'cidade' => 'est',
-            'uf' => 'rerum',
-            'pais' => 'velit',
-            'cep' => 'sed',
-            'padrao' => true,
-            'ativo' => false,
+            'dominio' => 'harum',
+            'empresa_id' => 12,
+            'user_id' => 8,
+            'rua' => 'facilis',
+            'numero' => 14,
+            'bairro' => 'cupiditate',
+            'complemento' => 'veniam',
+            'cidade' => 'ipsam',
+            'uf' => 'incidunt',
+            'pais' => 'maiores',
+            'cep' => 'aut',
+            'padrao' => false,
+            'ativo' => true,
         ],
     ]
 );
@@ -119,6 +121,12 @@ print_r(json_decode((string) $body));
 <input type="text" name="api_token" data-endpoint="POSTv1-address" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="POSTv1-address" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
 <b><code>empresa_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
 <input type="number" name="empresa_id" data-endpoint="POSTv1-address" data-component="body" required  hidden>
@@ -195,16 +203,16 @@ Atualiza os dados do endereço
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/address/17" \
+    "https://api.estoqueintegrado.com.br/v1/address/6" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","rua":"laudantium","numero":13,"bairro":"eum","complemento":"et","cidade":"voluptatibus","uf":"consequuntur","pais":"molestiae","cep":"architecto","padrao":true,"ativo":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"nemo","rua":"ea","numero":8,"bairro":"quos","complemento":"earum","cidade":"ab","uf":"nihil","pais":"est","cep":"aspernatur","padrao":false,"ativo":false}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/address/17"
+    "https://api.estoqueintegrado.com.br/v1/address/6"
 );
 
 let headers = {
@@ -214,16 +222,17 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "rua": "laudantium",
-    "numero": 13,
-    "bairro": "eum",
-    "complemento": "et",
-    "cidade": "voluptatibus",
-    "uf": "consequuntur",
-    "pais": "molestiae",
-    "cep": "architecto",
-    "padrao": true,
-    "ativo": true
+    "dominio": "nemo",
+    "rua": "ea",
+    "numero": 8,
+    "bairro": "quos",
+    "complemento": "earum",
+    "cidade": "ab",
+    "uf": "nihil",
+    "pais": "est",
+    "cep": "aspernatur",
+    "padrao": false,
+    "ativo": false
 }
 
 fetch(url, {
@@ -237,23 +246,24 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/address/17',
+    'https://api.estoqueintegrado.com.br/v1/address/6',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'rua' => 'laudantium',
-            'numero' => 13,
-            'bairro' => 'eum',
-            'complemento' => 'et',
-            'cidade' => 'voluptatibus',
-            'uf' => 'consequuntur',
-            'pais' => 'molestiae',
-            'cep' => 'architecto',
-            'padrao' => true,
-            'ativo' => true,
+            'dominio' => 'nemo',
+            'rua' => 'ea',
+            'numero' => 8,
+            'bairro' => 'quos',
+            'complemento' => 'earum',
+            'cidade' => 'ab',
+            'uf' => 'nihil',
+            'pais' => 'est',
+            'cep' => 'aspernatur',
+            'padrao' => false,
+            'ativo' => false,
         ],
     ]
 );
@@ -305,6 +315,12 @@ ID da endereço</p>
 <input type="text" name="api_token" data-endpoint="PUTv1-address--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="PUTv1-address--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
 <b><code>rua</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="rua" data-endpoint="PUTv1-address--id-" data-component="body" required  hidden>
@@ -371,16 +387,16 @@ Retorna os detalhes do endereço
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/address/17" \
+    -G "https://api.estoqueintegrado.com.br/v1/address/5" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"dignissimos"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/address/17"
+    "https://api.estoqueintegrado.com.br/v1/address/5"
 );
 
 let headers = {
@@ -389,7 +405,8 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "dignissimos"
 }
 
 fetch(url, {
@@ -403,13 +420,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/address/17',
+    'https://api.estoqueintegrado.com.br/v1/address/5',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' => 'dignissimos',
         ],
     ]
 );
@@ -461,6 +479,12 @@ ID do endereço</p>
 <input type="text" name="api_token" data-endpoint="GETv1-address--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="GETv1-address--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 
 </form>
 
@@ -475,16 +499,16 @@ Deleta o endereço
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/address/14" \
+    "https://api.estoqueintegrado.com.br/v1/address/15" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"commodi"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/address/14"
+    "https://api.estoqueintegrado.com.br/v1/address/15"
 );
 
 let headers = {
@@ -493,7 +517,8 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "commodi"
 }
 
 fetch(url, {
@@ -507,13 +532,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/address/14',
+    'https://api.estoqueintegrado.com.br/v1/address/15',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' => 'commodi',
         ],
     ]
 );
@@ -561,6 +587,12 @@ ID do endereço</p>
 <input type="text" name="api_token" data-endpoint="DELETEv1-address--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="DELETEv1-address--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 
 </form>
 

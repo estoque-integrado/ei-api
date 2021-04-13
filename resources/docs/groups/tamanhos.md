@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/sizes" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":18,"nome":"reiciendis"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"et","nome":"nobis"}'
 
 ```
 
@@ -30,8 +30,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 18,
-    "nome": "reiciendis"
+    "dominio": "et",
+    "nome": "nobis"
 }
 
 fetch(url, {
@@ -52,8 +52,8 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 18,
-            'nome' => 'reiciendis',
+            'dominio' => 'et',
+            'nome' => 'nobis',
         ],
     ]
 );
@@ -98,10 +98,11 @@ print_r(json_decode((string) $body));
 <br>
 Authentication key.</p>
 <p>
-<b><code>empresa_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="empresa_id" data-endpoint="POSTv1-sizes" data-component="body" required  hidden>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="POSTv1-sizes" data-component="body" required  hidden>
 <br>
-ID da empresa</p>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
 <b><code>nome</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="nome" data-endpoint="POSTv1-sizes" data-component="body" required  hidden>
@@ -121,16 +122,16 @@ Atualiza os dados do tamanho
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/sizes/20" \
+    "https://api.estoqueintegrado.com.br/v1/sizes/2" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":16,"nome":"magni"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"officia","nome":"sint"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/20"
+    "https://api.estoqueintegrado.com.br/v1/sizes/2"
 );
 
 let headers = {
@@ -140,8 +141,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 16,
-    "nome": "magni"
+    "dominio": "officia",
+    "nome": "sint"
 }
 
 fetch(url, {
@@ -155,15 +156,15 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/sizes/20',
+    'https://api.estoqueintegrado.com.br/v1/sizes/2',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 16,
-            'nome' => 'magni',
+            'dominio' => 'officia',
+            'nome' => 'sint',
         ],
     ]
 );
@@ -214,10 +215,11 @@ ID do tamanho</p>
 <br>
 Authentication key.</p>
 <p>
-<b><code>empresa_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="empresa_id" data-endpoint="PUTv1-sizes--id-" data-component="body" required  hidden>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="PUTv1-sizes--id-" data-component="body" required  hidden>
 <br>
-ID do tamanho</p>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
 <b><code>nome</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="nome" data-endpoint="PUTv1-sizes--id-" data-component="body" required  hidden>
@@ -237,16 +239,16 @@ Retorna os detalhes do Tamanho
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/sizes/14" \
+    -G "https://api.estoqueintegrado.com.br/v1/sizes/18" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"iusto"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/14"
+    "https://api.estoqueintegrado.com.br/v1/sizes/18"
 );
 
 let headers = {
@@ -255,7 +257,8 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "iusto"
 }
 
 fetch(url, {
@@ -269,13 +272,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/sizes/14',
+    'https://api.estoqueintegrado.com.br/v1/sizes/18',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' => 'iusto',
         ],
     ]
 );
@@ -325,6 +329,12 @@ ID do Tamanho</p>
 <input type="text" name="api_token" data-endpoint="GETv1-sizes--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="GETv1-sizes--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 
 </form>
 
@@ -339,16 +349,16 @@ Deleta um tamanho
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/sizes/2" \
+    "https://api.estoqueintegrado.com.br/v1/sizes/5" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"est"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/2"
+    "https://api.estoqueintegrado.com.br/v1/sizes/5"
 );
 
 let headers = {
@@ -357,7 +367,8 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "est"
 }
 
 fetch(url, {
@@ -371,13 +382,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/sizes/2',
+    'https://api.estoqueintegrado.com.br/v1/sizes/5',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' => 'est',
         ],
     ]
 );
@@ -425,6 +437,12 @@ ID do tamanho</p>
 <input type="text" name="api_token" data-endpoint="DELETEv1-sizes--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="DELETEv1-sizes--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 
 </form>
 

@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/colors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":5,"nome":"minus","hex":"consequatur"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"ut","nome":"neque","hex":"minus"}'
 
 ```
 
@@ -30,9 +30,9 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 5,
-    "nome": "minus",
-    "hex": "consequatur"
+    "dominio": "ut",
+    "nome": "neque",
+    "hex": "minus"
 }
 
 fetch(url, {
@@ -53,9 +53,9 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 5,
-            'nome' => 'minus',
-            'hex' => 'consequatur',
+            'dominio' => 'ut',
+            'nome' => 'neque',
+            'hex' => 'minus',
         ],
     ]
 );
@@ -100,10 +100,11 @@ print_r(json_decode((string) $body));
 <br>
 Authentication key.</p>
 <p>
-<b><code>empresa_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="empresa_id" data-endpoint="POSTv1-colors" data-component="body" required  hidden>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="POSTv1-colors" data-component="body" required  hidden>
 <br>
-ID da empresa</p>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
 <b><code>nome</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="nome" data-endpoint="POSTv1-colors" data-component="body" required  hidden>
@@ -128,16 +129,16 @@ Atualiza os dados da cor
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/colors/dolores" \
+    "https://api.estoqueintegrado.com.br/v1/colors/vel" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","empresa_id":12,"nome":"itaque","hex":"est"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"aut","nome":"sed","hex":"consectetur"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/dolores"
+    "https://api.estoqueintegrado.com.br/v1/colors/vel"
 );
 
 let headers = {
@@ -147,9 +148,9 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "empresa_id": 12,
-    "nome": "itaque",
-    "hex": "est"
+    "dominio": "aut",
+    "nome": "sed",
+    "hex": "consectetur"
 }
 
 fetch(url, {
@@ -163,16 +164,16 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/colors/dolores',
+    'https://api.estoqueintegrado.com.br/v1/colors/vel',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'empresa_id' => 12,
-            'nome' => 'itaque',
-            'hex' => 'est',
+            'dominio' => 'aut',
+            'nome' => 'sed',
+            'hex' => 'consectetur',
         ],
     ]
 );
@@ -223,10 +224,11 @@ print_r(json_decode((string) $body));
 <br>
 Authentication key.</p>
 <p>
-<b><code>empresa_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="empresa_id" data-endpoint="PUTv1-colors--id-" data-component="body" required  hidden>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="PUTv1-colors--id-" data-component="body" required  hidden>
 <br>
-ID da empresa</p>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
 <b><code>nome</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="nome" data-endpoint="PUTv1-colors--id-" data-component="body" required  hidden>
@@ -251,16 +253,16 @@ Retorna os detalhes da Cor
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/colors/15" \
+    -G "https://api.estoqueintegrado.com.br/v1/colors/12" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"non"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/15"
+    "https://api.estoqueintegrado.com.br/v1/colors/12"
 );
 
 let headers = {
@@ -269,7 +271,8 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "non"
 }
 
 fetch(url, {
@@ -283,13 +286,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/colors/15',
+    'https://api.estoqueintegrado.com.br/v1/colors/12',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' => 'non',
         ],
     ]
 );
@@ -339,6 +343,12 @@ ID da cor</p>
 <input type="text" name="api_token" data-endpoint="GETv1-colors--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="GETv1-colors--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 
 </form>
 
@@ -353,16 +363,16 @@ Deleta uma cor
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/colors/17" \
+    "https://api.estoqueintegrado.com.br/v1/colors/16" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"fugit"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/17"
+    "https://api.estoqueintegrado.com.br/v1/colors/16"
 );
 
 let headers = {
@@ -371,7 +381,8 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "fugit"
 }
 
 fetch(url, {
@@ -385,13 +396,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/colors/17',
+    'https://api.estoqueintegrado.com.br/v1/colors/16',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' => 'fugit',
         ],
     ]
 );
@@ -439,6 +451,12 @@ ID da Cor</p>
 <input type="text" name="api_token" data-endpoint="DELETEv1-colors--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="DELETEv1-colors--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 
 </form>
 

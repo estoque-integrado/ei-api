@@ -16,7 +16,7 @@ curl -X GET \
     -G "https://api.estoqueintegrado.com.br/" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"praesentium"}'
+    -d '{"dominio":"et"}'
 
 ```
 
@@ -31,7 +31,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "praesentium"
+    "dominio": "et"
 }
 
 fetch(url, {
@@ -51,7 +51,7 @@ $response = $client->get(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'praesentium',
+            'dominio' => 'et',
         ],
     ]
 );
@@ -127,22 +127,22 @@ Dominio da loja registrado no banco de dados. <br>
 ## Detalhes do produto
 
 
-Retorna os detalhes de um produto
+Retorna um array com 1 único produto
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/product/aut" \
+    -G "https://api.estoqueintegrado.com.br/v1/product/voluptas" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"odit"}'
+    -d '{"dominio":"vel"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/product/aut"
+    "https://api.estoqueintegrado.com.br/v1/product/voluptas"
 );
 
 let headers = {
@@ -151,7 +151,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "odit"
+    "dominio": "vel"
 }
 
 fetch(url, {
@@ -165,13 +165,13 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/product/aut',
+    'https://api.estoqueintegrado.com.br/v1/product/voluptas',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'odit',
+            'dominio' => 'vel',
         ],
     ]
 );
@@ -180,12 +180,16 @@ print_r(json_decode((string) $body));
 ```
 
 
-> Example response (404):
+> Example response (200):
 
 ```json
-{
-    "message": "Empresa não encontrada!"
-}
+
+{[
+     "id":1,
+     "nome":"Nome do produto",
+     "slug":"slug",
+     [...]
+]}
 ```
 <div id="execution-results-GETv1-product--idOrSlug-" hidden>
     <blockquote>Received response<span id="execution-response-status-GETv1-product--idOrSlug-"></span>:</blockquote>

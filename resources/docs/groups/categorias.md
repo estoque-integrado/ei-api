@@ -15,13 +15,13 @@ curl -X POST \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
     -F "api_token=b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3" \
-    -F "empresa_id=15" \
-    -F "nome=rerum" \
-    -F "slug=nihil" \
-    -F "descricao=labore" \
-    -F "ativo=" \
+    -F "dominio=sed" \
+    -F "nome=occaecati" \
+    -F "slug=et" \
+    -F "descricao=adipisci" \
+    -F "ativo=1" \
     -F "slug_auto=" \
-    -F "imagem=@/tmp/phpoJ3NzU"     -F "miniatura=@/tmp/phpiLPCN0" 
+    -F "imagem=@/tmp/phptyQZ9q"     -F "miniatura=@/tmp/phpRo9tAC" 
 ```
 
 ```javascript
@@ -36,11 +36,11 @@ let headers = {
 
 const body = new FormData();
 body.append('api_token', 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3');
-body.append('empresa_id', '15');
-body.append('nome', 'rerum');
-body.append('slug', 'nihil');
-body.append('descricao', 'labore');
-body.append('ativo', '');
+body.append('dominio', 'sed');
+body.append('nome', 'occaecati');
+body.append('slug', 'et');
+body.append('descricao', 'adipisci');
+body.append('ativo', '1');
 body.append('slug_auto', '');
 body.append('imagem', document.querySelector('input[name="imagem"]').files[0]);
 body.append('miniatura', document.querySelector('input[name="miniatura"]').files[0]);
@@ -67,24 +67,24 @@ $response = $client->post(
                 'contents' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3'
             ],
             [
-                'name' => 'empresa_id',
-                'contents' => '15'
+                'name' => 'dominio',
+                'contents' => 'sed'
             ],
             [
                 'name' => 'nome',
-                'contents' => 'rerum'
+                'contents' => 'occaecati'
             ],
             [
                 'name' => 'slug',
-                'contents' => 'nihil'
+                'contents' => 'et'
             ],
             [
                 'name' => 'descricao',
-                'contents' => 'labore'
+                'contents' => 'adipisci'
             ],
             [
                 'name' => 'ativo',
-                'contents' => ''
+                'contents' => '1'
             ],
             [
                 'name' => 'slug_auto',
@@ -92,11 +92,11 @@ $response = $client->post(
             ],
             [
                 'name' => 'imagem',
-                'contents' => fopen('/tmp/phpoJ3NzU', 'r')
+                'contents' => fopen('/tmp/phptyQZ9q', 'r')
             ],
             [
                 'name' => 'miniatura',
-                'contents' => fopen('/tmp/phpiLPCN0', 'r')
+                'contents' => fopen('/tmp/phpRo9tAC', 'r')
             ],
         ],
     ]
@@ -144,10 +144,11 @@ print_r(json_decode((string) $body));
 <br>
 Authentication key.</p>
 <p>
-<b><code>empresa_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="empresa_id" data-endpoint="POSTv1-categories" data-component="body" required  hidden>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="POSTv1-categories" data-component="body" required  hidden>
 <br>
-ID da empresa proprietária do produto</p>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
 <b><code>nome</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="nome" data-endpoint="POSTv1-categories" data-component="body" required  hidden>
@@ -200,20 +201,21 @@ Atualiza os dados da categoria
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/categories/2" \
+    "https://api.estoqueintegrado.com.br/v1/categories/14" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
     -F "api_token=b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3" \
-    -F "nome=eos" \
-    -F "slug=iste" \
-    -F "descricao=laboriosam" \
+    -F "dominio=soluta" \
+    -F "nome=aut" \
+    -F "slug=et" \
+    -F "descricao=mollitia" \
     -F "ativo=" \
-    -F "imagem=@/tmp/phpCzcK16"     -F "miniatura=@/tmp/phpiULSfd" 
+    -F "imagem=@/tmp/php0Xfo1N"     -F "miniatura=@/tmp/php7M5jsZ" 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/categories/2"
+    "https://api.estoqueintegrado.com.br/v1/categories/14"
 );
 
 let headers = {
@@ -223,9 +225,10 @@ let headers = {
 
 const body = new FormData();
 body.append('api_token', 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3');
-body.append('nome', 'eos');
-body.append('slug', 'iste');
-body.append('descricao', 'laboriosam');
+body.append('dominio', 'soluta');
+body.append('nome', 'aut');
+body.append('slug', 'et');
+body.append('descricao', 'mollitia');
 body.append('ativo', '');
 body.append('imagem', document.querySelector('input[name="imagem"]').files[0]);
 body.append('miniatura', document.querySelector('input[name="miniatura"]').files[0]);
@@ -241,7 +244,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/categories/2',
+    'https://api.estoqueintegrado.com.br/v1/categories/14',
     [
         'headers' => [
             'Accept' => 'application/json',
@@ -252,16 +255,20 @@ $response = $client->put(
                 'contents' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3'
             ],
             [
+                'name' => 'dominio',
+                'contents' => 'soluta'
+            ],
+            [
                 'name' => 'nome',
-                'contents' => 'eos'
+                'contents' => 'aut'
             ],
             [
                 'name' => 'slug',
-                'contents' => 'iste'
+                'contents' => 'et'
             ],
             [
                 'name' => 'descricao',
-                'contents' => 'laboriosam'
+                'contents' => 'mollitia'
             ],
             [
                 'name' => 'ativo',
@@ -269,11 +276,11 @@ $response = $client->put(
             ],
             [
                 'name' => 'imagem',
-                'contents' => fopen('/tmp/phpCzcK16', 'r')
+                'contents' => fopen('/tmp/php0Xfo1N', 'r')
             ],
             [
                 'name' => 'miniatura',
-                'contents' => fopen('/tmp/phpiULSfd', 'r')
+                'contents' => fopen('/tmp/php7M5jsZ', 'r')
             ],
         ],
     ]
@@ -327,6 +334,12 @@ ID da categoria</p>
 <br>
 Authentication key.</p>
 <p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="PUTv1-categories--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
+<p>
 <b><code>nome</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="nome" data-endpoint="PUTv1-categories--id-" data-component="body" required  hidden>
 <br>
@@ -371,16 +384,16 @@ Retorna os detalhes da categoria
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/categories/16" \
+    -G "https://api.estoqueintegrado.com.br/v1/categories/13" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"iste"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/categories/16"
+    "https://api.estoqueintegrado.com.br/v1/categories/13"
 );
 
 let headers = {
@@ -389,7 +402,8 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "iste"
 }
 
 fetch(url, {
@@ -403,13 +417,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/categories/16',
+    'https://api.estoqueintegrado.com.br/v1/categories/13',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' => 'iste',
         ],
     ]
 );
@@ -461,6 +476,12 @@ ID da categoria</p>
 <input type="text" name="api_token" data-endpoint="GETv1-categories--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="GETv1-categories--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 
 </form>
 
@@ -475,16 +496,16 @@ Deleta a categoria
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/categories/17" \
+    "https://api.estoqueintegrado.com.br/v1/categories/8" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"autem"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/categories/17"
+    "https://api.estoqueintegrado.com.br/v1/categories/8"
 );
 
 let headers = {
@@ -493,7 +514,8 @@ let headers = {
 };
 
 let body = {
-    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3"
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "autem"
 }
 
 fetch(url, {
@@ -507,13 +529,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/categories/17',
+    'https://api.estoqueintegrado.com.br/v1/categories/8',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' => 'autem',
         ],
     ]
 );
@@ -561,6 +584,12 @@ ID da categoria</p>
 <input type="text" name="api_token" data-endpoint="DELETEv1-categories--id-" data-component="body" required  hidden>
 <br>
 Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="DELETEv1-categories--id-" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 
 </form>
 

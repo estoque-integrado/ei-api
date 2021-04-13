@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"culpa","categoria_id":12,"nome":"aut","imagens":"vero","slug":"et","sku":"et","descricao_curta":"deleniti","descricao_completa":"ducimus","preco_custo":3305.2628,"preco_venda":1170.145194,"preco_promocional":522597006,"peso":5,"altura":8,"largura":2,"diametro":11,"comprimento":19,"titulo_seo":"sapiente","tags_seo":"in","descricao_seo":"ullam","ativo":true,"destaque":true,"variacao_preco_cor":false,"variacao_preco_tamanho":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"ratione","estoque":"quidem","categoria_id":5,"nome":"dolorem","imagens":"nesciunt","slug":"quia","descricao_curta":"voluptatibus","descricao_completa":"sed","titulo_seo":"ad","tags_seo":"similique","descricao_seo":"eos","ativo":true,"destaque":true,"variacao_preco_cor":true,"variacao_preco_tamanho":true}'
 
 ```
 
@@ -30,28 +30,20 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "culpa",
-    "categoria_id": 12,
-    "nome": "aut",
-    "imagens": "vero",
-    "slug": "et",
-    "sku": "et",
-    "descricao_curta": "deleniti",
-    "descricao_completa": "ducimus",
-    "preco_custo": 3305.2628,
-    "preco_venda": 1170.145194,
-    "preco_promocional": 522597006,
-    "peso": 5,
-    "altura": 8,
-    "largura": 2,
-    "diametro": 11,
-    "comprimento": 19,
-    "titulo_seo": "sapiente",
-    "tags_seo": "in",
-    "descricao_seo": "ullam",
+    "dominio": "ratione",
+    "estoque": "quidem",
+    "categoria_id": 5,
+    "nome": "dolorem",
+    "imagens": "nesciunt",
+    "slug": "quia",
+    "descricao_curta": "voluptatibus",
+    "descricao_completa": "sed",
+    "titulo_seo": "ad",
+    "tags_seo": "similique",
+    "descricao_seo": "eos",
     "ativo": true,
     "destaque": true,
-    "variacao_preco_cor": false,
+    "variacao_preco_cor": true,
     "variacao_preco_tamanho": true
 }
 
@@ -73,28 +65,20 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'culpa',
-            'categoria_id' => 12,
-            'nome' => 'aut',
-            'imagens' => 'vero',
-            'slug' => 'et',
-            'sku' => 'et',
-            'descricao_curta' => 'deleniti',
-            'descricao_completa' => 'ducimus',
-            'preco_custo' => 3305.2628,
-            'preco_venda' => 1170.145194,
-            'preco_promocional' => 522597006.0,
-            'peso' => 5,
-            'altura' => 8,
-            'largura' => 2,
-            'diametro' => 11,
-            'comprimento' => 19,
-            'titulo_seo' => 'sapiente',
-            'tags_seo' => 'in',
-            'descricao_seo' => 'ullam',
+            'dominio' => 'ratione',
+            'estoque' => 'quidem',
+            'categoria_id' => 5,
+            'nome' => 'dolorem',
+            'imagens' => 'nesciunt',
+            'slug' => 'quia',
+            'descricao_curta' => 'voluptatibus',
+            'descricao_completa' => 'sed',
+            'titulo_seo' => 'ad',
+            'tags_seo' => 'similique',
+            'descricao_seo' => 'eos',
             'ativo' => true,
             'destaque' => true,
-            'variacao_preco_cor' => false,
+            'variacao_preco_cor' => true,
             'variacao_preco_tamanho' => true,
         ],
     ]
@@ -148,6 +132,23 @@ Authentication key.</p>
 Dominio da empresa <br>
 <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
+<b><code>estoque</code></b>&nbsp;&nbsp;<small>array</small>     <i>optional</i> &nbsp;
+<input type="text" name="estoque" data-endpoint="POSTv1-products" data-component="body"  hidden>
+<br>
+Array de estoque <br><i><small>
+[{ <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5,<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "25/10/2021 15:00:00"<br>
+},<br>
+{<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;[...] <br>
+}]
+</small></i></p>
+<p>
 <b><code>categoria_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
 <input type="number" name="categoria_id" data-endpoint="POSTv1-products" data-component="body" required  hidden>
 <br>
@@ -168,11 +169,6 @@ Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small></p>
 <br>
 Slug do produto <br><i><small>Ex: calca_preta_jeans</i></small></p>
 <p>
-<b><code>sku</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="sku" data-endpoint="POSTv1-products" data-component="body" required  hidden>
-<br>
-Sku do produto <br><i><small>Ex: CAMPM20211013</i></small></p>
-<p>
 <b><code>descricao_curta</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
 <input type="text" name="descricao_curta" data-endpoint="POSTv1-products" data-component="body"  hidden>
 <br>
@@ -182,46 +178,6 @@ Descrição simples do produto</p>
 <input type="text" name="descricao_completa" data-endpoint="POSTv1-products" data-component="body"  hidden>
 <br>
 Descrição detalhada do produto</p>
-<p>
-<b><code>preco_custo</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
-<input type="number" name="preco_custo" data-endpoint="POSTv1-products" data-component="body"  hidden>
-<br>
-Preço de custo do produto <br><i><small>Ex: 80.00</i></small></p>
-<p>
-<b><code>preco_venda</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
-<input type="number" name="preco_venda" data-endpoint="POSTv1-products" data-component="body" required  hidden>
-<br>
-Preço de venda do produto <br><i><small>Ex: 120.00</i></small></p>
-<p>
-<b><code>preco_promocional</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
-<input type="number" name="preco_promocional" data-endpoint="POSTv1-products" data-component="body"  hidden>
-<br>
-Preço promocional do produto <br><i><small>Ex: 99.90</i></small></p>
-<p>
-<b><code>peso</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="peso" data-endpoint="POSTv1-products" data-component="body"  hidden>
-<br>
-Peso do produto em Gramas <br><i><small>Ex: 100</i></small></p>
-<p>
-<b><code>altura</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="altura" data-endpoint="POSTv1-products" data-component="body"  hidden>
-<br>
-Altura do produto em Cm <br><i><small>Ex: 80</i></small></p>
-<p>
-<b><code>largura</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="largura" data-endpoint="POSTv1-products" data-component="body"  hidden>
-<br>
-Largura do produto em Cm <br><i><small>Ex: 50</i></small></p>
-<p>
-<b><code>diametro</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="diametro" data-endpoint="POSTv1-products" data-component="body"  hidden>
-<br>
-Diametro do produto</p>
-<p>
-<b><code>comprimento</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="comprimento" data-endpoint="POSTv1-products" data-component="body"  hidden>
-<br>
-Comprimento do produto</p>
 <p>
 <b><code>titulo_seo</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
 <input type="text" name="titulo_seo" data-endpoint="POSTv1-products" data-component="body"  hidden>
@@ -275,16 +231,16 @@ Atualiza os dados de um produto
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/products/ut" \
+    "https://api.estoqueintegrado.com.br/v1/products/fugiat" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"corrupti","categoria_id":1,"nome":"voluptatem","imagens":"enim","slug":"accusamus","sku":"eos","descricao_curta":"illo","descricao_completa":"omnis","preco_custo":1331917.9942,"preco_venda":2197.5666512,"preco_promocional":385654,"peso":13,"altura":11,"largura":7,"diametro":11,"comprimento":8,"titulo_seo":"repudiandae","tags_seo":"accusantium","descricao_seo":"et","ativo":true,"destaque":false,"variacao_preco_cor":false,"variacao_preco_tamanho":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"similique","estoque":"vel","categoria_id":18,"nome":"tempora","imagens":"sint","slug":"illum","descricao_curta":"doloribus","descricao_completa":"veniam","titulo_seo":"porro","tags_seo":"sint","descricao_seo":"deleniti","ativo":false,"destaque":true,"variacao_preco_cor":false,"variacao_preco_tamanho":false}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/ut"
+    "https://api.estoqueintegrado.com.br/v1/products/fugiat"
 );
 
 let headers = {
@@ -294,27 +250,19 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "corrupti",
-    "categoria_id": 1,
-    "nome": "voluptatem",
-    "imagens": "enim",
-    "slug": "accusamus",
-    "sku": "eos",
-    "descricao_curta": "illo",
-    "descricao_completa": "omnis",
-    "preco_custo": 1331917.9942,
-    "preco_venda": 2197.5666512,
-    "preco_promocional": 385654,
-    "peso": 13,
-    "altura": 11,
-    "largura": 7,
-    "diametro": 11,
-    "comprimento": 8,
-    "titulo_seo": "repudiandae",
-    "tags_seo": "accusantium",
-    "descricao_seo": "et",
-    "ativo": true,
-    "destaque": false,
+    "dominio": "similique",
+    "estoque": "vel",
+    "categoria_id": 18,
+    "nome": "tempora",
+    "imagens": "sint",
+    "slug": "illum",
+    "descricao_curta": "doloribus",
+    "descricao_completa": "veniam",
+    "titulo_seo": "porro",
+    "tags_seo": "sint",
+    "descricao_seo": "deleniti",
+    "ativo": false,
+    "destaque": true,
     "variacao_preco_cor": false,
     "variacao_preco_tamanho": false
 }
@@ -330,34 +278,26 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/products/ut',
+    'https://api.estoqueintegrado.com.br/v1/products/fugiat',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'corrupti',
-            'categoria_id' => 1,
-            'nome' => 'voluptatem',
-            'imagens' => 'enim',
-            'slug' => 'accusamus',
-            'sku' => 'eos',
-            'descricao_curta' => 'illo',
-            'descricao_completa' => 'omnis',
-            'preco_custo' => 1331917.9942,
-            'preco_venda' => 2197.5666512,
-            'preco_promocional' => 385654.0,
-            'peso' => 13,
-            'altura' => 11,
-            'largura' => 7,
-            'diametro' => 11,
-            'comprimento' => 8,
-            'titulo_seo' => 'repudiandae',
-            'tags_seo' => 'accusantium',
-            'descricao_seo' => 'et',
-            'ativo' => true,
-            'destaque' => false,
+            'dominio' => 'similique',
+            'estoque' => 'vel',
+            'categoria_id' => 18,
+            'nome' => 'tempora',
+            'imagens' => 'sint',
+            'slug' => 'illum',
+            'descricao_curta' => 'doloribus',
+            'descricao_completa' => 'veniam',
+            'titulo_seo' => 'porro',
+            'tags_seo' => 'sint',
+            'descricao_seo' => 'deleniti',
+            'ativo' => false,
+            'destaque' => true,
             'variacao_preco_cor' => false,
             'variacao_preco_tamanho' => false,
         ],
@@ -418,6 +358,25 @@ Authentication key.</p>
 Dominio da empresa <br>
 <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
 <p>
+<b><code>estoque</code></b>&nbsp;&nbsp;<small>array</small>     <i>optional</i> &nbsp;
+<input type="text" name="estoque" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
+<br>
+Array de estoque <br><i><small>
+[{ <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"id":11,<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5,<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "25/10/2021 15:00:00"<br>
+},<br>
+{<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"id":11,<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;[...] <br>
+}]
+</small></i></p>
+<p>
 <b><code>categoria_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
 <input type="number" name="categoria_id" data-endpoint="PUTv1-products--id-" data-component="body" required  hidden>
 <br>
@@ -438,11 +397,6 @@ Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small></p>
 <br>
 Slug do produto <br><i><small>Ex: calca_preta_jeans</i></small></p>
 <p>
-<b><code>sku</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="sku" data-endpoint="PUTv1-products--id-" data-component="body" required  hidden>
-<br>
-Sku do produto <br><i><small>Ex: CAMPM20211013</i></small></p>
-<p>
 <b><code>descricao_curta</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
 <input type="text" name="descricao_curta" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
 <br>
@@ -452,46 +406,6 @@ Descrição simples do produto</p>
 <input type="text" name="descricao_completa" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
 <br>
 Descrição detalhada do produto</p>
-<p>
-<b><code>preco_custo</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
-<input type="number" name="preco_custo" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
-<br>
-Preço de custo do produto <br><i><small>Ex: 80.00</i></small></p>
-<p>
-<b><code>preco_venda</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
-<input type="number" name="preco_venda" data-endpoint="PUTv1-products--id-" data-component="body" required  hidden>
-<br>
-Preço de venda do produto <br><i><small>Ex: 120.00</i></small></p>
-<p>
-<b><code>preco_promocional</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
-<input type="number" name="preco_promocional" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
-<br>
-Preço promocional do produto <br><i><small>Ex: 99.90</i></small></p>
-<p>
-<b><code>peso</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="peso" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
-<br>
-Peso do produto em Gramas <br><i><small>Ex: 100</i></small></p>
-<p>
-<b><code>altura</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="altura" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
-<br>
-Altura do produto em Cm <br><i><small>Ex: 80</i></small></p>
-<p>
-<b><code>largura</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="largura" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
-<br>
-Largura do produto em Cm <br><i><small>Ex: 50</i></small></p>
-<p>
-<b><code>diametro</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="diametro" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
-<br>
-Diametro do produto</p>
-<p>
-<b><code>comprimento</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="comprimento" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
-<br>
-Comprimento do produto</p>
 <p>
 <b><code>titulo_seo</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
 <input type="text" name="titulo_seo" data-endpoint="PUTv1-products--id-" data-component="body"  hidden>
@@ -544,16 +458,16 @@ Retorna os detalhes de um produto
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/products/ut" \
+    -G "https://api.estoqueintegrado.com.br/v1/products/aspernatur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"odit"}'
+    -d '{"dominio":"porro"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/ut"
+    "https://api.estoqueintegrado.com.br/v1/products/aspernatur"
 );
 
 let headers = {
@@ -562,7 +476,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "odit"
+    "dominio": "porro"
 }
 
 fetch(url, {
@@ -576,13 +490,13 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/products/ut',
+    'https://api.estoqueintegrado.com.br/v1/products/aspernatur',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'odit',
+            'dominio' => 'porro',
         ],
     ]
 );
@@ -644,16 +558,16 @@ Deleta um produto com softDeletes
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/products/19" \
+    "https://api.estoqueintegrado.com.br/v1/products/17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"dolorem"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"quam"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/19"
+    "https://api.estoqueintegrado.com.br/v1/products/17"
 );
 
 let headers = {
@@ -663,7 +577,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "dolorem"
+    "dominio": "quam"
 }
 
 fetch(url, {
@@ -677,14 +591,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/products/19',
+    'https://api.estoqueintegrado.com.br/v1/products/17',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'dolorem',
+            'dominio' => 'quam',
         ],
     ]
 );
