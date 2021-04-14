@@ -52,16 +52,42 @@ class Product extends Model
 
 
     /**
+     * Retorna o valor de venda do produto
+     * se houver um valor_promocional e esse valor
+     * estiver dentro da data de validade, retorna valor_promocional
+     * se não, retorna valor de venda
+     *
+     * outros descontos futuros devem ser aplicados nessa função
+     */
+    public function getSaleValue($sizeID = null, $colorID = null, $returnWithDiscount = true)
+    {
+        $stock = $this->stock($sizeID, $colorID)->first();
+
+        if (!$stock) return response(['message' => 'Estoque não encontrado.'], 404);
+
+        if (
+            $stock->valor_promocional &&
+            $stock->dt_inicio_promocao <= Carbon::now() &&
+            $stock->dt_fim_promocao >= Carbon::now()
+        ) {
+            return $stock->valor_promocional;
+        }
+
+        return $stock->valor_venda;
+    }
+
+
+    /**
      * Regras de validação do produto
      */
     public static function getValidationRules($id = null)
     {
         return [
 //            'empresa_id' => 'required|integer|min:1|exists:empresas,id',
-            'categoria_id' => 'required_whithout:id|integer|min:1|exists:categorias,id',
-            'nome' => 'required_whithout:id|string|max:191',
+            'categoria_id' => 'required_without:id|integer|min:1|exists:categorias,id',
+            'nome' => 'required_without:id|string|max:191',
 //            'slug' => array('required_if:slug_auto,false,id,null', "unique:produtos,slug,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
-            'slug' => array('required_whithout:id', "unique:produtos,slug,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
+            'slug' => array('required_without:id', "unique:produtos,slug,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
 //            'sku' => array('required', "unique:produtos,sku,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
             'descricao_curta' => 'string|max:255',
             'descricao_completa' => 'string',
@@ -85,7 +111,7 @@ class Product extends Model
             // Estoque
             'estoque' => 'array',
             'estoque.*.sku' => array("unique:estoque,sku,{$id},id", 'regex:/^[a-zA-Z0-9_-]*$/'),
-            'estoque.*.valor_venda' => 'required_whithout:estoque.*.id|numeric',
+            'estoque.*.valor_venda' => 'required_without:estoque.*.id|numeric',
             'estoque.*.valor_custo' => 'numeric',
             'estoque.*.valor_promocional' => 'numeric',
 //            'estoque.*.produto_id' => 'required|integer|exists:produtos,id',
@@ -118,7 +144,11 @@ class Product extends Model
             'categoria_id.exists' => 'A Categoria deve estar cadastrada e ativa no banco de dados!',
             'unique' => 'O campo :attribute ja existe no banco de dados!',
             'regex' => 'O :attribute não pode conter caracteres especiais, exceto "-" e "_"!',
-            'date_format' => 'A data inicio/fim deve ser no formato: DD/MM/AAAA HH:MM:SS',
+            'date_format' => 'A data inicio/fim do valor promocional deve ser no formato: DD/MM/AAAA HH:MM:SS',
+            'estoque.*.valor_venda.required_without' => 'O valor de venda é obrigatorio quando cadastrando um novo estoque.',
+            'nome.required_without' => 'O nome do produto é obrigatório se não houver um ID de produto.',
+            'slug.required_without' => 'O slug é obrigatório se não houver um ID de produto.',
+            'categoria_id.required_without' => 'A categoria é obrigatória se não houver um ID de produto.',
         ];
     }
 

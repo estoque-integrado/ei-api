@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/sizes" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"et","nome":"nobis"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"atque","nome":"perferendis"}'
 
 ```
 
@@ -30,8 +30,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "et",
-    "nome": "nobis"
+    "dominio": "atque",
+    "nome": "perferendis"
 }
 
 fetch(url, {
@@ -52,8 +52,8 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'et',
-            'nome' => 'nobis',
+            'dominio' => 'atque',
+            'nome' => 'perferendis',
         ],
     ]
 );
@@ -122,16 +122,16 @@ Atualiza os dados do tamanho
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/sizes/2" \
+    "https://api.estoqueintegrado.com.br/v1/sizes/13" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"officia","nome":"sint"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"illo","nome":"aut"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/2"
+    "https://api.estoqueintegrado.com.br/v1/sizes/13"
 );
 
 let headers = {
@@ -141,8 +141,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "officia",
-    "nome": "sint"
+    "dominio": "illo",
+    "nome": "aut"
 }
 
 fetch(url, {
@@ -156,15 +156,15 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/sizes/2',
+    'https://api.estoqueintegrado.com.br/v1/sizes/13',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'officia',
-            'nome' => 'sint',
+            'dominio' => 'illo',
+            'nome' => 'aut',
         ],
     ]
 );
@@ -239,16 +239,16 @@ Retorna os detalhes do Tamanho
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/sizes/18" \
+    -G "https://api.estoqueintegrado.com.br/v1/sizes/3" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"iusto"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"dolorem"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/18"
+    "https://api.estoqueintegrado.com.br/v1/sizes/3"
 );
 
 let headers = {
@@ -258,7 +258,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "iusto"
+    "dominio": "dolorem"
 }
 
 fetch(url, {
@@ -272,14 +272,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/sizes/18',
+    'https://api.estoqueintegrado.com.br/v1/sizes/3',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'iusto',
+            'dominio' => 'dolorem',
         ],
     ]
 );
@@ -349,16 +349,16 @@ Deleta um tamanho
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/sizes/5" \
+    "https://api.estoqueintegrado.com.br/v1/sizes/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"est"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"sit"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/sizes/5"
+    "https://api.estoqueintegrado.com.br/v1/sizes/1"
 );
 
 let headers = {
@@ -368,7 +368,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "est"
+    "dominio": "sit"
 }
 
 fetch(url, {
@@ -382,14 +382,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/sizes/5',
+    'https://api.estoqueintegrado.com.br/v1/sizes/1',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'est',
+            'dominio' => 'sit',
         ],
     ]
 );

@@ -39,6 +39,8 @@ class ProductController extends Controller
      *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5,<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"cor_id":356<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"tamanho_id":199<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "25/10/2021 15:00:00"<br>
      * },<br>
@@ -66,8 +68,14 @@ class ProductController extends Controller
      * @response {
      *      "id": 1,
      *      "nome": "Nome produto",
-     *      "preco_venda": "",
-     *      "preco_promocional": ""
+     *      "slug": "slug-do-produto",
+     *      "estoque": [
+     *          "id":1,
+     *          "sku":"sku-produto",
+     *          "quantidade":10,
+     *          "tamanho_id":15,
+     *          "cor_id":11,
+     *      ]
      *      [...]
      * }
      * @param Request $request
@@ -86,9 +94,6 @@ class ProductController extends Controller
 
             $inputs = $request->except('imagens', 'estoque');
             $inputs['empresa_id'] = $request->company->id;
-            $inputs['preco_venda'] = isset($inputs['preco_venda']) ? $this->formatarValor($inputs['preco_venda'], false) : null;
-            $inputs['preco_promocional'] = isset($inputs['preco_promocional']) ? $this->formatarValor($inputs['preco_promocional'], false) : null;
-            $inputs['preco_custo'] = isset($inputs['preco_custo']) ? $this->formatarValor($inputs['preco_custo'], false) : null;
 
             // Slug
             if ($request->input('slug_auto')) {
@@ -99,12 +104,15 @@ class ProductController extends Controller
             // Cria o produto
             $product = Product::create($inputs);
 
-            // Estoque
+            // Salva o estoque
             if ($request->input('estoque')) {
                 foreach ($request->input('estoque') as $stock) {
-                    $stock['dt_inicio_promocao'] = $this->formatarData($stock['dt_inicio_promocao']);
-                    $stock['dt_fim_promocao'] = $this->formatarData($stock['dt_fim_promocao']);
                     $stock['produto_id'] = $product->id;
+                    $stock['valor_venda'] = $this->formatarValor($stock['valor_venda']);
+                    $stock['valor_custo'] = $this->formatarValor($stock['valor_custo'] ?? null);
+                    $stock['valor_promocional'] = $this->formatarValor($stock['valor_promocional'] ?? null);
+                    $stock['dt_inicio_promocao'] = $this->formatarData($stock['dt_inicio_promocao'] ?? null);
+                    $stock['dt_fim_promocao'] = $this->formatarData($stock['dt_fim_promocao'] ?? null);
                     Stock::create($stock);
                 }
             }
@@ -185,6 +193,8 @@ class ProductController extends Controller
      *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5,<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"cor_id":356<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"tamanho_id":199<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "25/10/2021 15:00:00"<br>
      * },<br>
@@ -213,14 +223,22 @@ class ProductController extends Controller
      * @response {
      *      "id": 1,
      *      "nome": "Nome produto",
-     *      "preco_venda": "",
-     *      "preco_promocional": ""
+     *      "slug": "slug-do-produto",
+     *      "estoque": [
+     *          "id":1,
+     *          "sku":"sku-produto",
+     *          "quantidade":10,
+     *          "tamanho_id":15,
+     *          "cor_id":11,
+     *      ]
      *      [...]
      * }
      * @param Request $request
      */
     public function update(Request $request, $id)
     {
+        $request['id'] = $request->route('id');
+
         $this->validate(
             $request,
             Product::getValidationRules($id),
@@ -233,25 +251,19 @@ class ProductController extends Controller
         if (!$this->userCanEditCompany($request->company->id))
             return response(['message' => 'Empresa não pertence ao usuário!'], 403);
 
-        $inputs = $request->except('imagens', 'empresa_id', 'api_token', 'dominio', 'estoque');
-
-        $inputs['preco_venda'] = isset($inputs['preco_venda']) ?
-            $this->formatarValor($inputs['preco_venda'], false) : null;
-        $inputs['preco_promocional'] = isset($inputs['preco_promocional']) ?
-            $this->formatarValor($inputs['preco_promocional'], false) : null;
-        $inputs['preco_custo'] = isset($inputs['preco_custo']) ?
-            $this->formatarValor($inputs['preco_custo'], false) : null;
+        $inputs = $request->except('imagens', 'api_token', 'dominio', 'estoque');
 
 
         // Estoque
         if ($request->input('estoque')) {
             foreach ($request->input('estoque') as $stock) {
-                $stock['dt_inicio_promocao'] = isset($stock['dt_inicio_promocao']) ? $this->formatarData($stock['dt_inicio_promocao']) : null;
-                $stock['dt_fim_promocao'] = isset($stock['dt_fim_promocao']) ? $this->formatarData($stock['dt_fim_promocao']) : null;
                 $stock['produto_id'] = $id;
-//                $stock['id'] = $stock['id'];
-//                return $stock;
-                Stock::updateOrCreate(['id' => $stock['id']], $stock);
+                $stock['valor_venda'] = $this->formatarValor($stock['valor_venda']);
+                $stock['valor_custo'] = $this->formatarValor($stock['valor_custo'] ?? null);
+                $stock['valor_promocional'] = $this->formatarValor($stock['valor_promocional'] ?? null);
+                $stock['dt_inicio_promocao'] = $this->formatarData($stock['dt_inicio_promocao'] ?? null);
+                $stock['dt_fim_promocao'] = $this->formatarData($stock['dt_fim_promocao'] ?? null);
+                Stock::updateOrCreate(['id' => $stock['id'] ?? null], $stock);
             }
         }
 
@@ -264,7 +276,7 @@ class ProductController extends Controller
 
         Product::where('id', $id)->update($inputs);
 
-        return Product::find($id);
+        return Product::where('id', $id)->with('stock')->first();
     }
 
     /**

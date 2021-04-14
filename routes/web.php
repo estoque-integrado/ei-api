@@ -28,6 +28,11 @@
 $router->get('/', ['as' => 'index', 'middleware' => 'SetCompany', 'uses' => 'SiteController@index']);
 $router->get('/v1/product/{idOrSlug}', ['as' => 'index', 'middleware' => 'SetCompany', 'uses' => 'SiteController@viewProduct']);
 
+// Adicionar produto ao carrinho
+$router->post('/v1/cart', ['as' => 'addCartItem', 'middleware' => ['auth', 'SetCompany'], 'uses' =>'CartController@addCartItem']);
+$router->post('/v1/cart/sum', ['as' => 'sumCartItem', 'middleware' => ['auth', 'SetCompany'], 'uses' =>'CartController@sumCartItem']);
+$router->post('/v1/cart/reduce', ['as' => 'reduceCartItem', 'middleware' => ['auth', 'SetCompany'], 'uses' =>'CartController@reduceCartItem']);
+$router->delete('/v1/cart/{id}', ['as' => 'deleteCartItem', 'middleware' => ['auth', 'SetCompany'], 'uses' =>'CartController@deleteCartItem']);
 
 /**
  * Routers de users
