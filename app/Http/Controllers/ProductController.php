@@ -36,13 +36,15 @@ class ProductController extends Controller
      * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam estoque array Array de estoque <br><i><small>
      * [{ <br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5,<br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto", <small>// obrigatório, exceto para atualizar</small><br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5, <small>// obrigatório</small><br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90, <small>// obrigatório</small><br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_custo":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_promocional":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "26/10/2021 15:00:00"<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"cor_id":356<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"tamanho_id":199<br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "25/10/2021 15:00:00"<br>
      * },<br>
      * {<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>

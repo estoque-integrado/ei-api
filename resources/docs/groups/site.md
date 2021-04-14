@@ -16,7 +16,7 @@ curl -X GET \
     -G "https://api.estoqueintegrado.com.br/" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"ea"}'
+    -d '{"dominio":"molestiae"}'
 
 ```
 
@@ -31,7 +31,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "ea"
+    "dominio": "molestiae"
 }
 
 fetch(url, {
@@ -51,7 +51,7 @@ $response = $client->get(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'ea',
+            'dominio' => 'molestiae',
         ],
     ]
 );
@@ -133,16 +133,16 @@ Retorna um array com 1 único produto
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/product/voluptatibus" \
+    -G "https://api.estoqueintegrado.com.br/v1/product/consequatur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"consequuntur"}'
+    -d '{"dominio":"et"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/product/voluptatibus"
+    "https://api.estoqueintegrado.com.br/v1/product/consequatur"
 );
 
 let headers = {
@@ -151,7 +151,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "consequuntur"
+    "dominio": "et"
 }
 
 fetch(url, {
@@ -165,13 +165,13 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/product/voluptatibus',
+    'https://api.estoqueintegrado.com.br/v1/product/consequatur',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'consequuntur',
+            'dominio' => 'et',
         ],
     ]
 );
