@@ -27,9 +27,9 @@ class CartController extends Controller
      * @bodyParam dominio string required Dominio da empresa <br>
      * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam produto_id integer required ID do produto
+     * @bodyParam quantidade integer required Quantidade de produtos
      * @bodyParam cor_id integer ID da cor
      * @bodyParam tamanho_id integer ID da tamanho
-     * @bodyParam quantidade integer required Quantidade de produtos
      *
      * @group Carrinho
      * @athenticated

@@ -45,6 +45,11 @@ class ProductController extends Controller
      *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "26/10/2021 15:00:00"<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"cor_id":356<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"tamanho_id":199<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"peso":199<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"largura":199<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"altura":199<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"comprimento":199<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"diametro":199<br>
      * },<br>
      * {<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
