@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"amet","estoque":"quaerat","categoria_id":11,"nome":"totam","imagens":"et","slug":"ad","descricao_curta":"harum","descricao_completa":"et","titulo_seo":"dolores","tags_seo":"voluptatem","descricao_seo":"earum","ativo":true,"destaque":false,"variacao_preco_cor":true,"variacao_preco_tamanho":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"enim","estoque":"laudantium","categoria_id":14,"nome":"consequatur","imagens":"dolores","slug":"consequatur","descricao_curta":"a","descricao_completa":"perferendis","titulo_seo":"libero","tags_seo":"architecto","descricao_seo":"quia","ativo":true,"destaque":false,"variacao_preco_cor":true,"variacao_preco_tamanho":false}'
 
 ```
 
@@ -30,17 +30,17 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "amet",
-    "estoque": "quaerat",
-    "categoria_id": 11,
-    "nome": "totam",
-    "imagens": "et",
-    "slug": "ad",
-    "descricao_curta": "harum",
-    "descricao_completa": "et",
-    "titulo_seo": "dolores",
-    "tags_seo": "voluptatem",
-    "descricao_seo": "earum",
+    "dominio": "enim",
+    "estoque": "laudantium",
+    "categoria_id": 14,
+    "nome": "consequatur",
+    "imagens": "dolores",
+    "slug": "consequatur",
+    "descricao_curta": "a",
+    "descricao_completa": "perferendis",
+    "titulo_seo": "libero",
+    "tags_seo": "architecto",
+    "descricao_seo": "quia",
     "ativo": true,
     "destaque": false,
     "variacao_preco_cor": true,
@@ -65,17 +65,17 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'amet',
-            'estoque' => 'quaerat',
-            'categoria_id' => 11,
-            'nome' => 'totam',
-            'imagens' => 'et',
-            'slug' => 'ad',
-            'descricao_curta' => 'harum',
-            'descricao_completa' => 'et',
-            'titulo_seo' => 'dolores',
-            'tags_seo' => 'voluptatem',
-            'descricao_seo' => 'earum',
+            'dominio' => 'enim',
+            'estoque' => 'laudantium',
+            'categoria_id' => 14,
+            'nome' => 'consequatur',
+            'imagens' => 'dolores',
+            'slug' => 'consequatur',
+            'descricao_curta' => 'a',
+            'descricao_completa' => 'perferendis',
+            'titulo_seo' => 'libero',
+            'tags_seo' => 'architecto',
+            'descricao_seo' => 'quia',
             'ativo' => true,
             'destaque' => false,
             'variacao_preco_cor' => true,
@@ -241,16 +241,16 @@ Atualiza os dados de um produto
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/products/ipsam" \
+    "https://api.estoqueintegrado.com.br/v1/products/quo" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"corrupti","estoque":"cupiditate","categoria_id":12,"nome":"aut","imagens":"numquam","slug":"eius","descricao_curta":"ut","descricao_completa":"eum","titulo_seo":"expedita","tags_seo":"qui","descricao_seo":"nulla","ativo":true,"destaque":false,"variacao_preco_cor":false,"variacao_preco_tamanho":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"et","estoque":"repudiandae","categoria_id":11,"nome":"incidunt","imagens":"quidem","slug":"aut","descricao_curta":"autem","descricao_completa":"et","titulo_seo":"qui","tags_seo":"repellat","descricao_seo":"odit","ativo":false,"destaque":false,"variacao_preco_cor":false,"variacao_preco_tamanho":true}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/ipsam"
+    "https://api.estoqueintegrado.com.br/v1/products/quo"
 );
 
 let headers = {
@@ -260,18 +260,18 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "corrupti",
-    "estoque": "cupiditate",
-    "categoria_id": 12,
-    "nome": "aut",
-    "imagens": "numquam",
-    "slug": "eius",
-    "descricao_curta": "ut",
-    "descricao_completa": "eum",
-    "titulo_seo": "expedita",
-    "tags_seo": "qui",
-    "descricao_seo": "nulla",
-    "ativo": true,
+    "dominio": "et",
+    "estoque": "repudiandae",
+    "categoria_id": 11,
+    "nome": "incidunt",
+    "imagens": "quidem",
+    "slug": "aut",
+    "descricao_curta": "autem",
+    "descricao_completa": "et",
+    "titulo_seo": "qui",
+    "tags_seo": "repellat",
+    "descricao_seo": "odit",
+    "ativo": false,
     "destaque": false,
     "variacao_preco_cor": false,
     "variacao_preco_tamanho": true
@@ -288,25 +288,25 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/products/ipsam',
+    'https://api.estoqueintegrado.com.br/v1/products/quo',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'corrupti',
-            'estoque' => 'cupiditate',
-            'categoria_id' => 12,
-            'nome' => 'aut',
-            'imagens' => 'numquam',
-            'slug' => 'eius',
-            'descricao_curta' => 'ut',
-            'descricao_completa' => 'eum',
-            'titulo_seo' => 'expedita',
-            'tags_seo' => 'qui',
-            'descricao_seo' => 'nulla',
-            'ativo' => true,
+            'dominio' => 'et',
+            'estoque' => 'repudiandae',
+            'categoria_id' => 11,
+            'nome' => 'incidunt',
+            'imagens' => 'quidem',
+            'slug' => 'aut',
+            'descricao_curta' => 'autem',
+            'descricao_completa' => 'et',
+            'titulo_seo' => 'qui',
+            'tags_seo' => 'repellat',
+            'descricao_seo' => 'odit',
+            'ativo' => false,
             'destaque' => false,
             'variacao_preco_cor' => false,
             'variacao_preco_tamanho' => true,
@@ -476,16 +476,16 @@ Retorna os detalhes de um produto
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/products/beatae" \
+    -G "https://api.estoqueintegrado.com.br/v1/products/fugiat" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"debitis"}'
+    -d '{"dominio":"qui"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/beatae"
+    "https://api.estoqueintegrado.com.br/v1/products/fugiat"
 );
 
 let headers = {
@@ -494,7 +494,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "debitis"
+    "dominio": "qui"
 }
 
 fetch(url, {
@@ -508,13 +508,13 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/products/beatae',
+    'https://api.estoqueintegrado.com.br/v1/products/fugiat',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'debitis',
+            'dominio' => 'qui',
         ],
     ]
 );
@@ -576,16 +576,16 @@ Deleta um produto com softDeletes
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/products/5" \
+    "https://api.estoqueintegrado.com.br/v1/products/11" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"magnam"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"repellat"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/products/5"
+    "https://api.estoqueintegrado.com.br/v1/products/11"
 );
 
 let headers = {
@@ -595,7 +595,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "magnam"
+    "dominio": "repellat"
 }
 
 fetch(url, {
@@ -609,14 +609,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/products/5',
+    'https://api.estoqueintegrado.com.br/v1/products/11',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'magnam',
+            'dominio' => 'repellat',
         ],
     ]
 );
