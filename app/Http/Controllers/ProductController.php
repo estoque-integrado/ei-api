@@ -166,11 +166,12 @@ class ProductController extends Controller
             ];
 
             $product = Product::where($data)->with('colors', 'sizes', 'images')->first();
-            $product->company;
 
             if (!$product)
                 return response(['message' => 'Produto não encontrado!'], 404);
 
+            $product->company;
+            $product->stock;
             return $product;
         } catch (\Exception $e) {
             return response(['message' => $e->getMessage()], 422);
@@ -196,14 +197,20 @@ class ProductController extends Controller
      * <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>
      * @bodyParam estoque array Array de estoque <br><i><small>
      * [{ <br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"id":11,<br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto",<br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5,<br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"sku":"sku-produto", <small>// obrigatório, exceto para atualizar</small><br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"quantidade":5, <small>// obrigatório</small><br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_venda":1899.90, <small>// obrigatório</small><br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_custo":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"valor_promocional":1899.90<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "26/10/2021 15:00:00"<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"cor_id":356<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"tamanho_id":199<br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_inicio_promocao": "25/10/2021 15:00:00"<br>
-     *      &nbsp;&nbsp;&nbsp;&nbsp;"dt_fim_promocao": "25/10/2021 15:00:00"<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"peso":199<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"largura":199<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"altura":199<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"comprimento":199<br>
+     *      &nbsp;&nbsp;&nbsp;&nbsp;"diametro":199<br>
      * },<br>
      * {<br>
      *      &nbsp;&nbsp;&nbsp;&nbsp;"id":11,<br>
@@ -260,12 +267,11 @@ class ProductController extends Controller
 
         $inputs = $request->except('imagens', 'api_token', 'dominio', 'estoque');
 
-
         // Estoque
         if ($request->input('estoque')) {
             foreach ($request->input('estoque') as $stock) {
                 $stock['produto_id'] = $id;
-                $stock['valor_venda'] = $this->formatarValor($stock['valor_venda']);
+                $stock['valor_venda'] = $this->formatarValor($stock['valor_venda'] ?? null);
                 $stock['valor_custo'] = $this->formatarValor($stock['valor_custo'] ?? null);
                 $stock['valor_promocional'] = $this->formatarValor($stock['valor_promocional'] ?? null);
                 $stock['dt_inicio_promocao'] = $this->formatarData($stock['dt_inicio_promocao'] ?? null);

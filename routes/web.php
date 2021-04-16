@@ -34,6 +34,11 @@ $router->post('/v1/cart/sum', ['as' => 'sumCartItem', 'middleware' => ['auth', '
 $router->post('/v1/cart/reduce', ['as' => 'reduceCartItem', 'middleware' => ['auth', 'SetCompany'], 'uses' =>'CartController@reduceCartItem']);
 $router->delete('/v1/cart/{id}', ['as' => 'deleteCartItem', 'middleware' => ['auth', 'SetCompany'], 'uses' =>'CartController@deleteCartItem']);
 
+
+// Pedidos
+$router->post('/v1/checkout', ['as' => 'checkout', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'OrderController@checkout']);
+
+
 /**
  * Routers de users
  *

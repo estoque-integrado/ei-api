@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/companies" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"et","user_id":8,"nome":"eum","website":"minima","razao_social":"porro","cnpj":"voluptate","telefone":"velit","celular":"officia","email":"quis","logo":"recusandae","icone":"error","matriz":true,"modo_catalogo":true}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"velit","user_id":19,"nome":"facilis","website":"ut","razao_social":"harum","cnpj":"cumque","telefone":"deserunt","celular":"aut","email":"quis","logo":"illo","icone":"rem","matriz":false,"modo_catalogo":true}'
 
 ```
 
@@ -30,18 +30,18 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "et",
-    "user_id": 8,
-    "nome": "eum",
-    "website": "minima",
-    "razao_social": "porro",
-    "cnpj": "voluptate",
-    "telefone": "velit",
-    "celular": "officia",
+    "dominio": "velit",
+    "user_id": 19,
+    "nome": "facilis",
+    "website": "ut",
+    "razao_social": "harum",
+    "cnpj": "cumque",
+    "telefone": "deserunt",
+    "celular": "aut",
     "email": "quis",
-    "logo": "recusandae",
-    "icone": "error",
-    "matriz": true,
+    "logo": "illo",
+    "icone": "rem",
+    "matriz": false,
     "modo_catalogo": true
 }
 
@@ -63,18 +63,18 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'et',
-            'user_id' => 8,
-            'nome' => 'eum',
-            'website' => 'minima',
-            'razao_social' => 'porro',
-            'cnpj' => 'voluptate',
-            'telefone' => 'velit',
-            'celular' => 'officia',
+            'dominio' => 'velit',
+            'user_id' => 19,
+            'nome' => 'facilis',
+            'website' => 'ut',
+            'razao_social' => 'harum',
+            'cnpj' => 'cumque',
+            'telefone' => 'deserunt',
+            'celular' => 'aut',
             'email' => 'quis',
-            'logo' => 'recusandae',
-            'icone' => 'error',
-            'matriz' => true,
+            'logo' => 'illo',
+            'icone' => 'rem',
+            'matriz' => false,
             'modo_catalogo' => true,
         ],
     ]
@@ -205,7 +205,7 @@ curl -X GET \
     -G "https://api.estoqueintegrado.com.br/v1/my-companies" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":4,"dominio":"aspernatur"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","id":16,"dominio":"est"}'
 
 ```
 
@@ -221,8 +221,8 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "id": 4,
-    "dominio": "aspernatur"
+    "id": 16,
+    "dominio": "est"
 }
 
 fetch(url, {
@@ -243,8 +243,8 @@ $response = $client->get(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'id' => 4,
-            'dominio' => 'aspernatur',
+            'id' => 16,
+            'dominio' => 'est',
         ],
     ]
 );
@@ -324,7 +324,7 @@ curl -X PUT \
     "https://api.estoqueintegrado.com.br/v1/companies/2" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"qui"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"nobis"}'
 
 ```
 
@@ -340,7 +340,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "qui"
+    "dominio": "nobis"
 }
 
 fetch(url, {
@@ -361,7 +361,7 @@ $response = $client->put(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'qui',
+            'dominio' => 'nobis',
         ],
     ]
 );
@@ -433,16 +433,16 @@ Retorna os detalhes da empresa.
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/companies/3" \
+    -G "https://api.estoqueintegrado.com.br/v1/companies/8" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"numquam"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"nulla"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/companies/3"
+    "https://api.estoqueintegrado.com.br/v1/companies/8"
 );
 
 let headers = {
@@ -452,7 +452,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "numquam"
+    "dominio": "nulla"
 }
 
 fetch(url, {
@@ -466,14 +466,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/companies/3',
+    'https://api.estoqueintegrado.com.br/v1/companies/8',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'numquam',
+            'dominio' => 'nulla',
         ],
     ]
 );
@@ -546,16 +546,16 @@ Usa softDeletes()
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/companies/1" \
+    "https://api.estoqueintegrado.com.br/v1/companies/5" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"est"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"officiis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/companies/1"
+    "https://api.estoqueintegrado.com.br/v1/companies/5"
 );
 
 let headers = {
@@ -565,7 +565,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "est"
+    "dominio": "officiis"
 }
 
 fetch(url, {
@@ -579,14 +579,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/companies/1',
+    'https://api.estoqueintegrado.com.br/v1/companies/5',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'est',
+            'dominio' => 'officiis',
         ],
     ]
 );

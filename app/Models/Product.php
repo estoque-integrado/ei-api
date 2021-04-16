@@ -46,10 +46,16 @@ class Product extends Model
         'variacao_preco_tamanho',
     ];
 
+    protected $appends = ['valor_minimo'];
 //    protected $appends = ['valor', 'imagemDestaque', 'store'];
 
 //    protected $with = ['imagens', 'cores', 'tamanhos'];
 
+
+    public function getValorMinimoAttribute()
+    {
+        return $this->stock->min('valor_venda');
+    }
 
     /**
      * Retorna o valor de venda do produto
@@ -283,7 +289,7 @@ class Product extends Model
      */
     public function company()
     {
-        return $this->belongsTo('App\Models\Company');
+        return $this->belongsTo('App\Models\Company', 'empresa_id');
     }
 
     public function images()

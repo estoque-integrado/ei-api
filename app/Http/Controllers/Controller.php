@@ -19,10 +19,10 @@ class Controller extends BaseController
      * @param string $viewTemplate
      * @param int $delay
      */
-    public function createJobSendMail(User $user, Company $empresa, $viewTemplate = '', $delay = 10)
+    public function createJobSendMail($viewTemplate = '', $args = [], $assunto = null, $delay = 10)
     {
         // Cria o JOB para enviar o email posteriormente
-        $job = (new MailJob($empresa->user, $empresa, $viewTemplate))
+        $job = (new MailJob($viewTemplate, $args, $assunto))
             ->delay(Carbon::now()->addSeconds($delay));
         $this->dispatch($job);
     }
@@ -146,13 +146,15 @@ class Controller extends BaseController
     /**
      * Formatar valor
      */
-    public function formatarValor($valor, $ptBR = true)
+    public function formatarValor($valor, $ptBR = false)
     {
+        if (!$valor || $valor == '') return null;
+
         $valor = preg_replace('/\D/', '', $valor);
         $formatoEn = preg_replace('/(\d{1,})(\d{2})/', '$1.$2', $valor);
 
         return $ptBR ?
-            number_format($valor, 2, ',', '.') :
+            number_format((float) $valor, 2, ',', '.') :
             $formatoEn;
     }
 }

@@ -113,6 +113,7 @@ class SiteController extends Controller
             if (!$product)
                 return response(['message' => 'Produto não encontrado!'], 404);
 
+            $product->stock;
             $request->company->products = [$product];
 
 

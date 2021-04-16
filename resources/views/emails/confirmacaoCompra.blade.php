@@ -272,8 +272,8 @@
                             "
                           >
                             <p style="font-size: 14px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 17px; margin: 0">
-                              Você comprou {{ $pedido->produtos->count() }}
-                              {{ $pedido->produtos->count() === 1 ? 'produto' : 'produtos' }}
+                              Você comprou {{ $pedido->products->count() }}
+                              {{ $pedido->products->count() === 1 ? 'produto' : 'produtos' }}
                             </p>
                           </div>
                         </div>
@@ -419,11 +419,11 @@
                               <strong>Entrega no seu endereço</strong>
                             </p>
                             <p style="font-size: 14px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 17px; margin: 0">
-                              {{ $user->getEnderecoString() }}<br />{{ $user->nome }} - {{ $user->celular }}
+                              {{ $user->getAddressString() }}<br />{{ $user->nome }} - {{ $user->celular }}
                             </p>
                             <p style="font-size: 14px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 17px; margin: 0"> </p>
                             <p style="font-size: 14px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 17px; margin: 0">
-                              <strong>Você pagou R$ {{ $pedido->getCartTotal() }}</strong>
+                              <strong>Você pagou R$ {{ $pedido->valor }}</strong>
                             </p>
                             <p style="font-size: 14px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 17px; margin: 0">
                               Com {{ $pedido->forma_pagamento === 'cartao' ? 'Cartão de crédito' : 'Boleto' }}
@@ -434,7 +434,7 @@
                             </p>
                             <p style="font-size: 14px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 17px; margin: 0">
                               <a
-                                href="{{ $empresa->urlPadrao }}/troca-e-devolucao"
+                                href="#/troca-e-devolucao"
                                 rel="noopener"
                                 style="color: #0068a5"
                                 target="_blank"
@@ -451,7 +451,7 @@
                         >
                           <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 30px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:31.5pt; width:202.5pt; v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#273275"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px"><![endif]-->
                           <a
-                            href="{{ $empresa->urlPadrao }}/minha-conta/pedido/{{ $pedido->numero }}"
+                            href="#/minha-conta/pedido/{{ $pedido->numero }}"
                             style="
                               text-decoration: none;
                               display: inline-block;

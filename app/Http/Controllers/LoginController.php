@@ -41,8 +41,10 @@ class LoginController extends Controller
             [
                 'email' => 'required|email',
                 'password' => 'required|string',
-            ],
-            []
+            ],[
+                'required' => 'O campo :attribute é obrigatorio!',
+                'email' => 'O campo :attribute deve ser um email válido!',
+            ]
         );
 
         try {

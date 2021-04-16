@@ -119,20 +119,20 @@ class Company extends Model
      */
     public function getLogo($cor = 'padrao')
     {
-        $path = storage_path('app/public/' . $this->logo);
-
-        // return storage_path('app/public/' . $this->logo);
-
-        if (file_exists($path)) {
-            // usando apenas para a Fortune, por enquanto
-            if ($cor === 'branca') {
-                return asset('storage/' . $this->logo_branca);
-            } else {
-                return asset('storage/' . $this->logo);
-            }
-        }
-
-        return asset('images/logo-estoque-integrado@4x.png');
+//        $path = storage_path('app/public/' . $this->logo);
+//
+//        // return storage_path('app/public/' . $this->logo);
+//
+//        if (file_exists($path)) {
+//            // usando apenas para a Fortune, por enquanto
+//            if ($cor === 'branca') {
+//                return asset('storage/' . $this->logo_branca);
+//            } else {
+//                return asset('storage/' . $this->logo);
+//            }
+//        }
+//
+//        return asset('images/logo-estoque-integrado@4x.png');
     }
 
     /**

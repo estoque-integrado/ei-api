@@ -121,4 +121,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
             'regex' => 'O campo :attribute está em um formato inválido!',
         ];
     }
+
+    public function getAddressString()
+    {
+        return $this->rua . ', ' . $this->numero . ' - ' . $this->bairro . ' ' . $this->cidade . '/' . $this->uf;
+    }
 }

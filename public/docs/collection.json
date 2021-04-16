@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "API estoqueintegrado.com",
-        "_postman_id": "8e5a6cb1-2e0a-41c6-91cd-b7efdb1c3715",
+        "_postman_id": "4e8fbc58-d888-4f1e-aa72-86567b7ba7f8",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -42,7 +42,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"aliquid\",\n    \"produto_id\": 19,\n    \"cor_id\": 17,\n    \"tamanho_id\": 9,\n    \"quantidade\": 19\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"maxime\",\n    \"produto_id\": 9,\n    \"quantidade\": 4,\n    \"cor_id\": 18,\n    \"tamanho_id\": 9\n}"
                         },
                         "description": "Cria um item no carrinho"
                     },
@@ -71,7 +71,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"qui\",\n    \"product_id\": 5,\n    \"cor_id\": 3,\n    \"tamanho_id\": 19\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"exercitationem\",\n    \"product_id\": 7,\n    \"cor_id\": 1,\n    \"tamanho_id\": 18\n}"
                         },
                         "description": "Soma 1 ao valor da quantidade do item do carrinho"
                     },
@@ -100,7 +100,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"harum\",\n    \"product_id\": 1,\n    \"cor_id\": 18,\n    \"tamanho_id\": 11\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"nulla\",\n    \"product_id\": 18,\n    \"cor_id\": 10,\n    \"tamanho_id\": 15\n}"
                         },
                         "description": "reduz 1 do valor da quantidade do item do carrinho"
                     },
@@ -119,7 +119,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "10",
                                     "description": "ID do carrinho"
                                 }
                             ]
@@ -137,7 +137,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"minus\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"dolores\"\n}"
                         },
                         "description": "Deleta um item do carrinho"
                     },
@@ -180,22 +180,22 @@
                                 },
                                 {
                                     "key": "dominio",
-                                    "value": "unde",
+                                    "value": "aut",
                                     "type": "text"
                                 },
                                 {
                                     "key": "nome",
-                                    "value": "porro",
+                                    "value": "nemo",
                                     "type": "text"
                                 },
                                 {
                                     "key": "slug",
-                                    "value": "magnam",
+                                    "value": "sed",
                                     "type": "text"
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "culpa",
+                                    "value": "molestiae",
                                     "type": "text"
                                 },
                                 {
@@ -237,7 +237,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "6",
                                     "description": "ID da categoria"
                                 }
                             ]
@@ -268,22 +268,22 @@
                                 },
                                 {
                                     "key": "nome",
-                                    "value": "et",
+                                    "value": "quo",
                                     "type": "text"
                                 },
                                 {
                                     "key": "slug",
-                                    "value": "id",
+                                    "value": "consequatur",
                                     "type": "text"
                                 },
                                 {
                                     "key": "descricao",
-                                    "value": "corrupti",
+                                    "value": "suscipit",
                                     "type": "text"
                                 },
                                 {
                                     "key": "ativo",
-                                    "value": true,
+                                    "value": false,
                                     "type": "text"
                                 },
                                 {
@@ -315,7 +315,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "20",
                                     "description": "ID da categoria"
                                 }
                             ]
@@ -333,7 +333,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"doloribus\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"sapiente\"\n}"
                         },
                         "description": "Retorna os detalhes da categoria"
                     },
@@ -352,7 +352,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "6",
                                     "description": "ID da categoria"
                                 }
                             ]
@@ -370,7 +370,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"omnis\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"sint\"\n}"
                         },
                         "description": "Deleta a categoria"
                     },
@@ -405,7 +405,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"autem\",\n    \"nome\": \"adipisci\",\n    \"hex\": \"qui\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"esse\",\n    \"nome\": \"sequi\",\n    \"hex\": \"vitae\"\n}"
                         },
                         "description": "Cria uma cor"
                     },
@@ -424,7 +424,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "qui",
+                                    "value": "voluptatibus",
                                     "description": ""
                                 }
                             ]
@@ -442,7 +442,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"repellat\",\n    \"nome\": \"natus\",\n    \"hex\": \"voluptas\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"eligendi\",\n    \"nome\": \"ut\",\n    \"hex\": \"dolores\"\n}"
                         },
                         "description": "Atualiza os dados da cor"
                     },
@@ -461,7 +461,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "9",
                                     "description": "ID da cor"
                                 }
                             ]
@@ -479,7 +479,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"voluptate\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"placeat\"\n}"
                         },
                         "description": "Retorna os detalhes da Cor"
                     },
@@ -498,7 +498,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "7",
                                     "description": "ID da Cor"
                                 }
                             ]
@@ -516,7 +516,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"ex\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"praesentium\"\n}"
                         },
                         "description": "Deleta uma cor"
                     },
@@ -551,7 +551,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"et\",\n    \"user_id\": 8,\n    \"nome\": \"eum\",\n    \"website\": \"minima\",\n    \"razao_social\": \"porro\",\n    \"cnpj\": \"voluptate\",\n    \"telefone\": \"velit\",\n    \"celular\": \"officia\",\n    \"email\": \"quis\",\n    \"logo\": \"recusandae\",\n    \"icone\": \"error\",\n    \"matriz\": true,\n    \"modo_catalogo\": true\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"velit\",\n    \"user_id\": 19,\n    \"nome\": \"facilis\",\n    \"website\": \"ut\",\n    \"razao_social\": \"harum\",\n    \"cnpj\": \"cumque\",\n    \"telefone\": \"deserunt\",\n    \"celular\": \"aut\",\n    \"email\": \"quis\",\n    \"logo\": \"illo\",\n    \"icone\": \"rem\",\n    \"matriz\": false,\n    \"modo_catalogo\": true\n}"
                         },
                         "description": "Cria uma nova empresa."
                     },
@@ -580,7 +580,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 4,\n    \"dominio\": \"aspernatur\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 16,\n    \"dominio\": \"est\"\n}"
                         },
                         "description": "Retorna a lista de empresas que o usu\u00e1rio est\u00e1 associado."
                     },
@@ -617,7 +617,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"qui\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"nobis\"\n}"
                         },
                         "description": "Atualiza dados da empresa.\nUsa softDeletes()"
                     },
@@ -636,7 +636,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "8",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -654,7 +654,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"numquam\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"nulla\"\n}"
                         },
                         "description": "Retorna os detalhes da empresa."
                     },
@@ -673,7 +673,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "5",
                                     "description": "ID da empresa"
                                 }
                             ]
@@ -691,7 +691,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"est\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"officiis\"\n}"
                         },
                         "description": "Deleta a empresa.\nUsa softDeletes()"
                     },
@@ -726,7 +726,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"quis\",\n    \"empresa_id\": 5,\n    \"user_id\": 9,\n    \"rua\": \"vitae\",\n    \"numero\": 6,\n    \"bairro\": \"sed\",\n    \"complemento\": \"nobis\",\n    \"cidade\": \"praesentium\",\n    \"uf\": \"vel\",\n    \"pais\": \"tenetur\",\n    \"cep\": \"velit\",\n    \"padrao\": false,\n    \"ativo\": true\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"quis\",\n    \"empresa_id\": 7,\n    \"user_id\": 18,\n    \"rua\": \"autem\",\n    \"numero\": 20,\n    \"bairro\": \"iste\",\n    \"complemento\": \"est\",\n    \"cidade\": \"non\",\n    \"uf\": \"maxime\",\n    \"pais\": \"harum\",\n    \"cep\": \"est\",\n    \"padrao\": false,\n    \"ativo\": false\n}"
                         },
                         "description": "Cria uma Endere\u00e7o"
                     },
@@ -745,7 +745,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "8",
                                     "description": "ID da endere\u00e7o"
                                 }
                             ]
@@ -763,7 +763,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"ea\",\n    \"rua\": \"possimus\",\n    \"numero\": 7,\n    \"bairro\": \"a\",\n    \"complemento\": \"facilis\",\n    \"cidade\": \"nostrum\",\n    \"uf\": \"animi\",\n    \"pais\": \"facere\",\n    \"cep\": \"quam\",\n    \"padrao\": true,\n    \"ativo\": true\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"est\",\n    \"rua\": \"occaecati\",\n    \"numero\": 14,\n    \"bairro\": \"magni\",\n    \"complemento\": \"et\",\n    \"cidade\": \"earum\",\n    \"uf\": \"ut\",\n    \"pais\": \"velit\",\n    \"cep\": \"vero\",\n    \"padrao\": true,\n    \"ativo\": true\n}"
                         },
                         "description": "Atualiza os dados do endere\u00e7o"
                     },
@@ -782,7 +782,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "6",
+                                    "value": "18",
                                     "description": "ID do endere\u00e7o"
                                 }
                             ]
@@ -800,7 +800,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"tempore\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"doloremque\"\n}"
                         },
                         "description": "Retorna os detalhes do endere\u00e7o"
                     },
@@ -819,7 +819,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "2",
                                     "description": "ID do endere\u00e7o"
                                 }
                             ]
@@ -837,7 +837,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"delectus\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"voluptatem\"\n}"
                         },
                         "description": "Deleta o endere\u00e7o"
                     },
@@ -936,7 +936,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"enim\",\n    \"estoque\": \"laudantium\",\n    \"categoria_id\": 14,\n    \"nome\": \"consequatur\",\n    \"imagens\": \"dolores\",\n    \"slug\": \"consequatur\",\n    \"descricao_curta\": \"a\",\n    \"descricao_completa\": \"perferendis\",\n    \"titulo_seo\": \"libero\",\n    \"tags_seo\": \"architecto\",\n    \"descricao_seo\": \"quia\",\n    \"ativo\": true,\n    \"destaque\": false,\n    \"variacao_preco_cor\": true,\n    \"variacao_preco_tamanho\": false\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"aut\",\n    \"estoque\": \"rem\",\n    \"categoria_id\": 4,\n    \"nome\": \"totam\",\n    \"imagens\": \"ut\",\n    \"slug\": \"laborum\",\n    \"descricao_curta\": \"consectetur\",\n    \"descricao_completa\": \"rerum\",\n    \"titulo_seo\": \"sit\",\n    \"tags_seo\": \"sed\",\n    \"descricao_seo\": \"nihil\",\n    \"ativo\": false,\n    \"destaque\": false,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": true\n}"
                         },
                         "description": "Cria um produto"
                     },
@@ -955,7 +955,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quo",
+                                    "value": "similique",
                                     "description": ""
                                 }
                             ]
@@ -973,7 +973,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"et\",\n    \"estoque\": \"repudiandae\",\n    \"categoria_id\": 11,\n    \"nome\": \"incidunt\",\n    \"imagens\": \"quidem\",\n    \"slug\": \"aut\",\n    \"descricao_curta\": \"autem\",\n    \"descricao_completa\": \"et\",\n    \"titulo_seo\": \"qui\",\n    \"tags_seo\": \"repellat\",\n    \"descricao_seo\": \"odit\",\n    \"ativo\": false,\n    \"destaque\": false,\n    \"variacao_preco_cor\": false,\n    \"variacao_preco_tamanho\": true\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"in\",\n    \"estoque\": \"qui\",\n    \"categoria_id\": 12,\n    \"nome\": \"repudiandae\",\n    \"imagens\": \"tenetur\",\n    \"slug\": \"iste\",\n    \"descricao_curta\": \"illo\",\n    \"descricao_completa\": \"vitae\",\n    \"titulo_seo\": \"repellat\",\n    \"tags_seo\": \"ipsum\",\n    \"descricao_seo\": \"eveniet\",\n    \"ativo\": true,\n    \"destaque\": true,\n    \"variacao_preco_cor\": true,\n    \"variacao_preco_tamanho\": false\n}"
                         },
                         "description": "Atualiza os dados de um produto"
                     },
@@ -992,7 +992,7 @@
                                 {
                                     "id": "idOrSlug",
                                     "key": "idOrSlug",
-                                    "value": "fugiat",
+                                    "value": "vero",
                                     "description": "integer|string required ID ou slug do produto"
                                 }
                             ]
@@ -1010,7 +1010,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"dominio\": \"qui\"\n}"
+                            "raw": "{\n    \"dominio\": \"consequatur\"\n}"
                         },
                         "description": "Retorna os detalhes de um produto",
                         "auth": {
@@ -1032,7 +1032,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "20",
                                     "description": "ID do produto"
                                 }
                             ]
@@ -1050,7 +1050,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"repellat\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"vitae\"\n}"
                         },
                         "description": "Deleta um produto com softDeletes"
                     },
@@ -1085,7 +1085,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"dominio\": \"non\"\n}"
+                            "raw": "{\n    \"dominio\": \"dolorum\"\n}"
                         },
                         "description": "<aside>Retorna a loja de acordo com o dom\u00ednio ou subdominio. <br>\nRetorna dados, produtos, carrinho (se houver usuario logado) <br>\nEx: minhaempresa.estoqueintegrado.com.br\n<\/aside>",
                         "auth": {
@@ -1107,7 +1107,7 @@
                                 {
                                     "id": "idOrSlug",
                                     "key": "idOrSlug",
-                                    "value": "dolorum",
+                                    "value": "quos",
                                     "description": "integer|string required ID ou slug do produto"
                                 }
                             ]
@@ -1125,12 +1125,41 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"dominio\": \"enim\"\n}"
+                            "raw": "{\n    \"dominio\": \"quos\"\n}"
                         },
                         "description": "Retorna um array com 1 \u00fanico produto",
                         "auth": {
                             "type": "noauth"
                         }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Cadastrar pedido",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/checkout",
+                            "query": [],
+                            "raw": "https:\/\/{{baseUrl}}\/v1\/checkout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"illum\",\n    \"valor_frete\": 0.5064,\n    \"tipo_entrega\": \"assumenda\",\n    \"prazo_entrega\": \"eum\",\n    \"endereco_entrega_id\": 15,\n    \"desconto_codigo\": \"qui\",\n    \"desconto_valor\": 2.5177749,\n    \"desconto_percentual\": false\n}"
+                        },
+                        "description": "Salvar um novo pedido"
                     },
                     "response": []
                 }
@@ -1163,7 +1192,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"voluptas\",\n    \"nome\": \"explicabo\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"enim\",\n    \"nome\": \"rerum\"\n}"
                         },
                         "description": "Cria um tamanho"
                     },
@@ -1182,7 +1211,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "6",
                                     "description": "ID do tamanho"
                                 }
                             ]
@@ -1200,7 +1229,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"impedit\",\n    \"nome\": \"corporis\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"repudiandae\",\n    \"nome\": \"iste\"\n}"
                         },
                         "description": "Atualiza os dados do tamanho"
                     },
@@ -1219,7 +1248,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "11",
                                     "description": "ID do Tamanho"
                                 }
                             ]
@@ -1237,7 +1266,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"in\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"facilis\"\n}"
                         },
                         "description": "Retorna os detalhes do Tamanho"
                     },
@@ -1256,7 +1285,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "2",
                                     "description": "ID do tamanho"
                                 }
                             ]
@@ -1274,7 +1303,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"accusantium\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"sint\"\n}"
                         },
                         "description": "Deleta um tamanho"
                     },
@@ -1309,7 +1338,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"consequatur\",\n    \"name\": \"explicabo\",\n    \"cpf\": \"reiciendis\",\n    \"email\": \"consequatur\",\n    \"password\": \"aliquid\",\n    \"celular\": \"ipsa\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"dominio\": \"qui\",\n    \"name\": \"deserunt\",\n    \"cpf\": \"non\",\n    \"email\": \"debitis\",\n    \"password\": \"aspernatur\",\n    \"celular\": \"incidunt\"\n}"
                         },
                         "description": "Cria um usu\u00e1rio."
                     },
@@ -1365,7 +1394,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "9",
                                     "description": "ID da Usuario"
                                 }
                             ]
@@ -1402,7 +1431,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aut",
+                                    "value": "ullam",
                                     "description": ""
                                 }
                             ]
@@ -1420,7 +1449,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 14\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"id\": 6\n}"
                         },
                         "description": "Deletar um usu\u00e1rio"
                     },
@@ -1449,7 +1478,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"login\": \"optio\",\n    \"password\": \"tempore\"\n}"
+                            "raw": "{\n    \"api_token\": \"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3\",\n    \"login\": \"incidunt\",\n    \"password\": \"molestiae\"\n}"
                         },
                         "description": "Faz o login do usuario\nSe email e senha coincidirem, gera um md5 da data concatenando com o ID do usu\u00e1rio\ne salva no campo api_token com o tempo definido no arquivo .env TIME_TO_RESET_TOKEN"
                     },

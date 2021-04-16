@@ -15,7 +15,7 @@
                     <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                         <td class="content-wrap" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 20px;" valign="top">
                             <p>Oba! Sua empresa acabou de fazer uma venda, clique no link abaixo para conferir.</p>
-                            <p><a href="{{ $link }}">Conferir nova venda</a></p>
+                            <p><a href="https://app.estoqueintegrado.com.br">Conferir nova venda</a></p>
                         </td>
                     </tr>
                 </table>

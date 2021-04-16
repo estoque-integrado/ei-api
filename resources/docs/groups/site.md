@@ -16,7 +16,7 @@ curl -X GET \
     -G "https://api.estoqueintegrado.com.br/" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"non"}'
+    -d '{"dominio":"dolorum"}'
 
 ```
 
@@ -31,7 +31,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "non"
+    "dominio": "dolorum"
 }
 
 fetch(url, {
@@ -51,7 +51,7 @@ $response = $client->get(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'non',
+            'dominio' => 'dolorum',
         ],
     ]
 );
@@ -133,16 +133,16 @@ Retorna um array com 1 único produto
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/product/dolorum" \
+    -G "https://api.estoqueintegrado.com.br/v1/product/quos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"enim"}'
+    -d '{"dominio":"quos"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/product/dolorum"
+    "https://api.estoqueintegrado.com.br/v1/product/quos"
 );
 
 let headers = {
@@ -151,7 +151,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "enim"
+    "dominio": "quos"
 }
 
 fetch(url, {
@@ -165,13 +165,13 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/product/dolorum',
+    'https://api.estoqueintegrado.com.br/v1/product/quos',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'enim',
+            'dominio' => 'quos',
         ],
     ]
 );
@@ -223,6 +223,163 @@ integer|string required ID ou slug do produto</p>
 <br>
 Dominio da empresa <br>
 <i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
+
+</form>
+
+
+## Cadastrar pedido
+
+<small class="badge badge-darkred">requires authentication</small>
+
+Salvar um novo pedido
+
+> Example request:
+
+```bash
+curl -X POST \
+    "https://api.estoqueintegrado.com.br/v1/checkout" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"illum","valor_frete":0.5064,"tipo_entrega":"assumenda","prazo_entrega":"eum","endereco_entrega_id":15,"desconto_codigo":"qui","desconto_valor":2.5177749,"desconto_percentual":false}'
+
+```
+
+```javascript
+const url = new URL(
+    "https://api.estoqueintegrado.com.br/v1/checkout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
+    "dominio": "illum",
+    "valor_frete": 0.5064,
+    "tipo_entrega": "assumenda",
+    "prazo_entrega": "eum",
+    "endereco_entrega_id": 15,
+    "desconto_codigo": "qui",
+    "desconto_valor": 2.5177749,
+    "desconto_percentual": false
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response => response.json());
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->post(
+    'https://api.estoqueintegrado.com.br/v1/checkout',
+    [
+        'headers' => [
+            'Accept' => 'application/json',
+        ],
+        'json' => [
+            'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
+            'dominio' => 'illum',
+            'valor_frete' => 0.5064,
+            'tipo_entrega' => 'assumenda',
+            'prazo_entrega' => 'eum',
+            'endereco_entrega_id' => 15,
+            'desconto_codigo' => 'qui',
+            'desconto_valor' => 2.5177749,
+            'desconto_percentual' => false,
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (200, success):
+
+```json
+
+{
+     "id":1,
+     "user_id":1,
+     "numero": 100256,
+     "valor": 1849.90
+     [...]
+}
+```
+<div id="execution-results-POSTv1-checkout" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTv1-checkout"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTv1-checkout"></code></pre>
+</div>
+<div id="execution-error-POSTv1-checkout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTv1-checkout"></code></pre>
+</div>
+<form id="form-POSTv1-checkout" data-method="POST" data-path="v1/checkout" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTv1-checkout', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTv1-checkout" onclick="tryItOut('POSTv1-checkout');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTv1-checkout" onclick="cancelTryOut('POSTv1-checkout');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTv1-checkout" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>v1/checkout</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>api_token</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="api_token" data-endpoint="POSTv1-checkout" data-component="body" required  hidden>
+<br>
+Authentication key.</p>
+<p>
+<b><code>dominio</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dominio" data-endpoint="POSTv1-checkout" data-component="body" required  hidden>
+<br>
+Dominio da empresa <br>
+<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small></p>
+<p>
+<b><code>valor_frete</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+<input type="number" name="valor_frete" data-endpoint="POSTv1-checkout" data-component="body" required  hidden>
+<br>
+Valor do frete</p>
+<p>
+<b><code>tipo_entrega</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="tipo_entrega" data-endpoint="POSTv1-checkout" data-component="body" required  hidden>
+<br>
+Tipo de entrega: retirada|entrega</p>
+<p>
+<b><code>prazo_entrega</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="prazo_entrega" data-endpoint="POSTv1-checkout" data-component="body" required  hidden>
+<br>
+Prazo de entrega</p>
+<p>
+<b><code>endereco_entrega_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="endereco_entrega_id" data-endpoint="POSTv1-checkout" data-component="body" required  hidden>
+<br>
+ID do endereço de entrega. Required se for entregar</p>
+<p>
+<b><code>desconto_codigo</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="desconto_codigo" data-endpoint="POSTv1-checkout" data-component="body"  hidden>
+<br>
+Codigo do cupom de desconto</p>
+<p>
+<b><code>desconto_valor</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+<input type="number" name="desconto_valor" data-endpoint="POSTv1-checkout" data-component="body"  hidden>
+<br>
+Valor do desconto</p>
+<p>
+<b><code>desconto_percentual</code></b>&nbsp;&nbsp;<small>boolean</small>     <i>optional</i> &nbsp;
+<label data-endpoint="POSTv1-checkout" hidden><input type="radio" name="desconto_percentual" value="true" data-endpoint="POSTv1-checkout" data-component="body" ><code>true</code></label>
+<label data-endpoint="POSTv1-checkout" hidden><input type="radio" name="desconto_percentual" value="false" data-endpoint="POSTv1-checkout" data-component="body" ><code>false</code></label>
+<br>
+Se o desconto aplicado é em percentual(%) ou valor(R$)
+<br><i><small>1 = desconto aplicado em percentual (%) | 2 = desconto aplicado em valor (R$)</i></small></p>
 
 </form>
 

@@ -23,6 +23,14 @@ class MailJob extends Job
      * @var null
      */
     private $viewTemplate;
+    /**
+     * @var null
+     */
+    private $assunto;
+    /**
+     * @var null
+     */
+    private $dados;
 
     /**
      * MailJob constructor.
@@ -30,13 +38,14 @@ class MailJob extends Job
      * @param Company $empresa
      * @param STRING $viewTemplate
      */
-    public function __construct(User $user, Company $empresa, $viewTemplate = null)
+    public function __construct($viewTemplate = null, $args = [], $assunto = null)
     {
-        Log::debug("Adicionando Job");
-
-        $this->user = $user;
-        $this->empresa = $empresa;
         $this->viewTemplate = $viewTemplate;
+        $this->assunto = $assunto;
+
+        foreach ($args as $key => $value) {
+            $this->dados[$key] = $value;
+        }
     }
 
     /**
@@ -48,13 +57,15 @@ class MailJob extends Job
     {
         $empresa = $this->empresa;
         $user = $this->user;
+        $dados = $this->dados;
+        $assunto = $this->assunto ?: 'Contato Estoqueintegrado.com';
 
-        Log::debug("Executando Job");
+        Log::debug("Enviando email para ". json_encode($this->dados['user']->email));
 
-        Mail::send($this->viewTemplate, ['user' => $this->user, 'empresa' => $this->empresa],
-            function ($mail) use ($empresa, $user) {
-                $mail->from('no-reply@estoqueintegrado.com.br', $empresa->nome);
-                $mail->to($user->email, $user->name)->subject('Obrigado por se cadastrar em nosso site! 😎');
+        Mail::send($this->viewTemplate, $this->dados,
+            function ($mail) use ($dados, $assunto) {
+                $mail->from('no-reply@estoqueintegrado.com.br', $dados['empresa']->nome);
+                $mail->to($dados['user']->email, $dados['user']->name)->subject($assunto . ' 😎');
             }
         );
     }

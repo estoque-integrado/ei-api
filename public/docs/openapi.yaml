@@ -69,23 +69,23 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: aliquid
+                                    example: maxime
                                 produto_id:
                                     type: integer
                                     description: 'ID do produto'
-                                    example: 19
-                                cor_id:
-                                    type: integer
-                                    description: 'ID da cor'
-                                    example: 17
-                                tamanho_id:
-                                    type: integer
-                                    description: 'ID da tamanho'
                                     example: 9
                                 quantidade:
                                     type: integer
                                     description: 'Quantidade de produtos'
-                                    example: 19
+                                    example: 4
+                                cor_id:
+                                    type: integer
+                                    description: 'ID da cor'
+                                    example: 18
+                                tamanho_id:
+                                    type: integer
+                                    description: 'ID da tamanho'
+                                    example: 9
                             required:
                                 - api_token
                                 - dominio
@@ -153,19 +153,19 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: qui
+                                    example: exercitationem
                                 product_id:
                                     type: integer
                                     description: 'ID do produto'
-                                    example: 5
+                                    example: 7
                                 cor_id:
                                     type: integer
                                     description: 'ID da cor'
-                                    example: 3
+                                    example: 1
                                 tamanho_id:
                                     type: integer
                                     description: 'ID da tamanho'
-                                    example: 19
+                                    example: 18
                             required:
                                 - api_token
                                 - dominio
@@ -232,19 +232,19 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: harum
+                                    example: nulla
                                 product_id:
                                     type: integer
                                     description: 'ID do produto'
-                                    example: 1
+                                    example: 18
                                 cor_id:
                                     type: integer
                                     description: 'ID da cor'
-                                    example: 18
+                                    example: 10
                                 tamanho_id:
                                     type: integer
                                     description: 'ID da tamanho'
-                                    example: 11
+                                    example: 15
                             required:
                                 - api_token
                                 - dominio
@@ -292,7 +292,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: minus
+                                    example: dolores
                             required:
                                 - api_token
                                 - dominio
@@ -301,7 +301,7 @@ paths:
                 in: path
                 name: id
                 description: 'ID do carrinho'
-                example: 3
+                example: 10
                 required: true
                 schema:
                     type: integer
@@ -348,19 +348,19 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: unde
+                                    example: aut
                                 nome:
                                     type: string
                                     description: 'Nome da categoria'
-                                    example: porro
+                                    example: nemo
                                 slug:
                                     type: string
                                     description: "Slug do produto.\n<br>Caracteres permitidos: número, texto, \"-\", \"_\" <br><i><small>Ex: casa-e-jardim | casa_e_jardim</small></i>"
-                                    example: magnam
+                                    example: sed
                                 descricao:
                                     type: string
                                     description: 'Descrição da categoria'
-                                    example: culpa
+                                    example: molestiae
                                 imagem:
                                     type: string
                                     format: binary
@@ -429,15 +429,15 @@ paths:
                                 nome:
                                     type: string
                                     description: 'Nome da categoria'
-                                    example: et
+                                    example: quo
                                 slug:
                                     type: string
                                     description: 'Slug do produto <br><i><small>Ex: calca_preta_jean</i></small>'
-                                    example: id
+                                    example: consequatur
                                 descricao:
                                     type: string
                                     description: 'Descrição da categoria'
-                                    example: corrupti
+                                    example: suscipit
                                 imagem:
                                     type: string
                                     format: binary
@@ -449,7 +449,7 @@ paths:
                                 ativo:
                                     type: boolean
                                     description: 'Status da categoria <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>'
-                                    example: true
+                                    example: false
                             required:
                                 - api_token
                                 - dominio
@@ -496,7 +496,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: doloribus
+                                    example: sapiente
                             required:
                                 - api_token
                                 - dominio
@@ -542,7 +542,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: omnis
+                                    example: sint
                             required:
                                 - api_token
                                 - dominio
@@ -551,7 +551,7 @@ paths:
                 in: path
                 name: id
                 description: 'ID da categoria'
-                example: 16
+                example: 6
                 required: true
                 schema:
                     type: integer
@@ -598,15 +598,15 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: autem
+                                    example: esse
                                 nome:
                                     type: string
                                     description: 'Nome do tamanho <small>Ex: 50ml|P|300g</small>'
-                                    example: adipisci
+                                    example: sequi
                                 hex:
                                     type: string
                                     description: 'Hexadecimal da cor Ex: #000000'
-                                    example: qui
+                                    example: vitae
                             required:
                                 - api_token
                                 - dominio
@@ -655,15 +655,15 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: repellat
+                                    example: eligendi
                                 nome:
                                     type: string
                                     description: 'Nome do tamanho <small>Ex: 50ml|P|300g</small>'
-                                    example: natus
+                                    example: ut
                                 hex:
                                     type: string
                                     description: 'Hexadecimal da cor Ex: #000000'
-                                    example: voluptas
+                                    example: dolores
                             required:
                                 - api_token
                                 - dominio
@@ -711,7 +711,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: voluptate
+                                    example: placeat
                             required:
                                 - api_token
                                 - dominio
@@ -757,7 +757,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: ex
+                                    example: praesentium
                             required:
                                 - api_token
                                 - dominio
@@ -766,7 +766,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: qui
+                example: voluptatibus
                 required: true
                 schema:
                     type: string
@@ -813,35 +813,35 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: et
+                                    example: velit
                                 user_id:
                                     type: integer
                                     description: 'ID do usuario proprietario da empresa'
-                                    example: 8
+                                    example: 19
                                 nome:
                                     type: string
                                     description: 'Nome fantasia da empresa'
-                                    example: eum
+                                    example: facilis
                                 website:
                                     type: string
                                     description: 'URL customizada da empresa Ex: minhaloja.estoqueintegrado.com|minhaloja.com.br'
-                                    example: minima
+                                    example: ut
                                 razao_social:
                                     type: string
                                     description: 'Razão social da empresa'
-                                    example: porro
+                                    example: harum
                                 cnpj:
                                     type: string
                                     description: 'CNPJ da empresa com ou sem formatação'
-                                    example: voluptate
+                                    example: cumque
                                 telefone:
                                     type: string
                                     description: 'Telefone da empresa'
-                                    example: velit
+                                    example: deserunt
                                 celular:
                                     type: string
                                     description: 'Celular da empresa'
-                                    example: officia
+                                    example: aut
                                 email:
                                     type: string
                                     description: 'Email da empresa'
@@ -849,15 +849,15 @@ paths:
                                 logo:
                                     type: string
                                     description: 'Path do caminho da logo salva'
-                                    example: recusandae
+                                    example: illo
                                 icone:
                                     type: string
                                     description: 'Path do ícone da empresa'
-                                    example: error
+                                    example: rem
                                 matriz:
                                     type: boolean
                                     description: 'Se essa empresa é matriz(1) ou filial (0)'
-                                    example: true
+                                    example: false
                                 modo_catalogo:
                                     type: boolean
                                     description: 'Exibir banners na loja. 1 = sim, 0 = não. Default 0'
@@ -911,11 +911,11 @@ paths:
                                 id:
                                     type: integer
                                     description: 'ID do usuario'
-                                    example: 4
+                                    example: 16
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: aspernatur
+                                    example: est
                             required:
                                 - api_token
                                 - id
@@ -963,7 +963,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: qui
+                                    example: nobis
                             required:
                                 - api_token
                                 - dominio
@@ -1009,7 +1009,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: numquam
+                                    example: nulla
                             required:
                                 - api_token
                                 - dominio
@@ -1058,7 +1058,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: est
+                                    example: officiis
                             required:
                                 - api_token
                                 - dominio
@@ -1118,43 +1118,43 @@ paths:
                                 empresa_id:
                                     type: integer
                                     description: 'ID da empresa'
-                                    example: 5
+                                    example: 7
                                 user_id:
                                     type: integer
                                     description: 'ID do usuário'
-                                    example: 9
+                                    example: 18
                                 rua:
                                     type: string
                                     description: 'Nome da rua'
-                                    example: vitae
+                                    example: autem
                                 numero:
                                     type: integer
                                     description: 'Numero do endereço'
-                                    example: 6
+                                    example: 20
                                 bairro:
                                     type: string
                                     description: 'Nome do bairro'
-                                    example: sed
+                                    example: iste
                                 complemento:
                                     type: string
                                     description: Complemento
-                                    example: nobis
+                                    example: est
                                 cidade:
                                     type: string
                                     description: 'Nome da cidade'
-                                    example: praesentium
+                                    example: non
                                 uf:
                                     type: string
                                     description: 'Sigla do estado <small>Ex: MG</small>'
-                                    example: vel
+                                    example: maxime
                                 pais:
                                     type: string
                                     description: País
-                                    example: tenetur
+                                    example: harum
                                 cep:
                                     type: string
                                     description: 'Cep da rua'
-                                    example: velit
+                                    example: est
                                 padrao:
                                     type: boolean
                                     description: 'Se o endereço é o padrão'
@@ -1162,7 +1162,7 @@ paths:
                                 ativo:
                                     type: boolean
                                     description: 'Se o endereço está ativo ou não. <small>Default: 1</small>'
-                                    example: true
+                                    example: false
                             required:
                                 - api_token
                                 - dominio
@@ -1213,39 +1213,39 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: ea
+                                    example: est
                                 rua:
                                     type: string
                                     description: 'Nome da rua'
-                                    example: possimus
+                                    example: occaecati
                                 numero:
                                     type: integer
                                     description: 'Numero do endereço'
-                                    example: 7
+                                    example: 14
                                 bairro:
                                     type: string
                                     description: 'Nome do bairro'
-                                    example: a
+                                    example: magni
                                 complemento:
                                     type: string
                                     description: Complemento
-                                    example: facilis
+                                    example: et
                                 cidade:
                                     type: string
                                     description: 'Nome da cidade'
-                                    example: nostrum
+                                    example: earum
                                 uf:
                                     type: string
                                     description: 'Sigla do estado <small>Ex: MG</small>'
-                                    example: animi
+                                    example: ut
                                 pais:
                                     type: string
                                     description: País
-                                    example: facere
+                                    example: velit
                                 cep:
                                     type: string
                                     description: 'Cep da rua'
-                                    example: quam
+                                    example: vero
                                 padrao:
                                     type: boolean
                                     description: 'Se o endereço é o padrão'
@@ -1301,7 +1301,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: tempore
+                                    example: doloremque
                             required:
                                 - api_token
                                 - dominio
@@ -1347,7 +1347,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: delectus
+                                    example: voluptatem
                             required:
                                 - api_token
                                 - dominio
@@ -1356,7 +1356,7 @@ paths:
                 in: path
                 name: id
                 description: 'ID da endereço'
-                example: 16
+                example: 8
                 required: true
                 schema:
                     type: integer
@@ -1447,27 +1447,27 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: consequatur
+                                    example: qui
                                 name:
                                     type: string
                                     description: 'Nome do usuário'
-                                    example: explicabo
+                                    example: deserunt
                                 cpf:
                                     type: string
                                     description: 'Cpf com ou sem formatação Ex: 111.111.111-11'
-                                    example: reiciendis
+                                    example: non
                                 email:
                                     type: string
                                     description: 'Email do usuário Ex: teste@estoqueintegrado.com'
-                                    example: consequatur
+                                    example: debitis
                                 password:
                                     type: string
                                     description: 'Senha do usuário'
-                                    example: aliquid
+                                    example: aspernatur
                                 celular:
                                     type: string
                                     description: 'Celular do usuário'
-                                    example: ipsa
+                                    example: incidunt
                             required:
                                 - api_token
                                 - dominio
@@ -1562,51 +1562,51 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: enim
+                                    example: aut
                                 estoque:
                                     type: array
-                                    description: "Array de estoque <br><i><small>\n[{ <br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"sku\":\"sku-produto\", <small>// obrigatório, exceto para atualizar</small><br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"quantidade\":5, <small>// obrigatório</small><br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_venda\":1899.90, <small>// obrigatório</small><br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_custo\":1899.90<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_promocional\":1899.90<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"dt_inicio_promocao\": \"25/10/2021 15:00:00\"<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"dt_fim_promocao\": \"26/10/2021 15:00:00\"<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"cor_id\":356<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"tamanho_id\":199<br>\n},<br>\n{<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"sku\":\"sku-produto\",<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;[...] <br>\n}]\n</small></i>"
-                                    example: laudantium
+                                    description: "Array de estoque <br><i><small>\n[{ <br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"sku\":\"sku-produto\", <small>// obrigatório, exceto para atualizar</small><br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"quantidade\":5, <small>// obrigatório</small><br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_venda\":1899.90, <small>// obrigatório</small><br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_custo\":1899.90<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_promocional\":1899.90<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"dt_inicio_promocao\": \"25/10/2021 15:00:00\"<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"dt_fim_promocao\": \"26/10/2021 15:00:00\"<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"cor_id\":356<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"tamanho_id\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"peso\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"largura\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"altura\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"comprimento\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"diametro\":199<br>\n},<br>\n{<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"sku\":\"sku-produto\",<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;[...] <br>\n}]\n</small></i>"
+                                    example: rem
                                 categoria_id:
                                     type: integer
                                     description: 'ID da categoria cadastrada e ativa do produto'
-                                    example: 14
+                                    example: 4
                                 nome:
                                     type: string
                                     description: 'Nome do produto'
-                                    example: consequatur
+                                    example: totam
                                 imagens:
                                     type: array
                                     description: 'Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small>'
-                                    example: dolores
+                                    example: ut
                                 slug:
                                     type: string
                                     description: 'Slug do produto <br><i><small>Ex: calca_preta_jeans</i></small>'
-                                    example: consequatur
+                                    example: laborum
                                 descricao_curta:
                                     type: string
                                     description: 'Descrição simples do produto'
-                                    example: a
+                                    example: consectetur
                                 descricao_completa:
                                     type: string
                                     description: 'Descrição detalhada do produto'
-                                    example: perferendis
+                                    example: rerum
                                 titulo_seo:
                                     type: string
                                     description: 'Titiulo SEO do produto'
-                                    example: libero
+                                    example: sit
                                 tags_seo:
                                     type: string
                                     description: 'Tags SEO do produto'
-                                    example: architecto
+                                    example: sed
                                 descricao_seo:
                                     type: string
                                     description: 'Descrição SEO do produto'
-                                    example: quia
+                                    example: nihil
                                 ativo:
                                     type: boolean
                                     description: 'Status do produto <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>'
-                                    example: true
+                                    example: false
                                 destaque:
                                     type: boolean
                                     description: 'Se o produto é destaque. <i><small>Default 0</i></small>'
@@ -1614,11 +1614,11 @@ paths:
                                 variacao_preco_cor:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com a cor. Default 0'
-                                    example: true
+                                    example: false
                                 variacao_preco_tamanho:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com o tamanho. Default 0'
-                                    example: false
+                                    example: true
                             required:
                                 - api_token
                                 - dominio
@@ -1668,63 +1668,63 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: et
+                                    example: in
                                 estoque:
                                     type: array
-                                    description: "Array de estoque <br><i><small>\n[{ <br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"id\":11,<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"sku\":\"sku-produto\",<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"quantidade\":5,<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_venda\":1899.90<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"cor_id\":356<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"tamanho_id\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"dt_inicio_promocao\": \"25/10/2021 15:00:00\"<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"dt_fim_promocao\": \"25/10/2021 15:00:00\"<br>\n},<br>\n{<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"id\":11,<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"sku\":\"sku-produto\",<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;[...] <br>\n}]\n</small></i>"
-                                    example: repudiandae
+                                    description: "Array de estoque <br><i><small>\n[{ <br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"sku\":\"sku-produto\", <small>// obrigatório, exceto para atualizar</small><br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"quantidade\":5, <small>// obrigatório</small><br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_venda\":1899.90, <small>// obrigatório</small><br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_custo\":1899.90<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"valor_promocional\":1899.90<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"dt_inicio_promocao\": \"25/10/2021 15:00:00\"<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"dt_fim_promocao\": \"26/10/2021 15:00:00\"<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"cor_id\":356<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"tamanho_id\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"peso\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"largura\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"altura\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"comprimento\":199<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"diametro\":199<br>\n},<br>\n{<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"id\":11,<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;\"sku\":\"sku-produto\",<br>\n     &nbsp;&nbsp;&nbsp;&nbsp;[...] <br>\n}]\n</small></i>"
+                                    example: qui
                                 categoria_id:
                                     type: integer
                                     description: 'ID da categoria cadastrada e ativa do produto'
-                                    example: 11
+                                    example: 12
                                 nome:
                                     type: string
                                     description: 'Nome do produto'
-                                    example: incidunt
+                                    example: repudiandae
                                 imagens:
                                     type: array
                                     description: 'Array de fotos do produto. <i><small>Maximo: 5 fotos</i></small>'
-                                    example: quidem
+                                    example: tenetur
                                 slug:
                                     type: string
                                     description: 'Slug do produto <br><i><small>Ex: calca_preta_jeans</i></small>'
-                                    example: aut
+                                    example: iste
                                 descricao_curta:
                                     type: string
                                     description: 'Descrição simples do produto'
-                                    example: autem
+                                    example: illo
                                 descricao_completa:
                                     type: string
                                     description: 'Descrição detalhada do produto'
-                                    example: et
+                                    example: vitae
                                 titulo_seo:
                                     type: string
                                     description: 'Titiulo SEO do produto'
-                                    example: qui
+                                    example: repellat
                                 tags_seo:
                                     type: string
                                     description: 'Tags SEO do produto'
-                                    example: repellat
+                                    example: ipsum
                                 descricao_seo:
                                     type: string
                                     description: 'Descrição SEO do produto'
-                                    example: odit
+                                    example: eveniet
                                 ativo:
                                     type: boolean
                                     description: 'Status do produto <br><i><small>Ativo = 1, Desativado = 0. Default 1</i></small>'
-                                    example: false
+                                    example: true
                                 destaque:
                                     type: boolean
                                     description: 'Se o produto é destaque. <i><small>Default 0</i></small>'
-                                    example: false
+                                    example: true
                                 variacao_preco_cor:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com a cor. Default 0'
-                                    example: false
+                                    example: true
                                 variacao_preco_tamanho:
                                     type: boolean
                                     description: 'Se o valor do produto varia de acordo com o tamanho. Default 0'
-                                    example: true
+                                    example: false
                             required:
                                 - api_token
                                 - dominio
@@ -1766,7 +1766,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: repellat
+                                    example: vitae
                             required:
                                 - api_token
                                 - dominio
@@ -1775,7 +1775,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quo
+                example: similique
                 required: true
                 schema:
                     type: string
@@ -1821,7 +1821,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: qui
+                                    example: consequatur
                             required:
                                 - dominio
             security: []
@@ -1839,7 +1839,7 @@ paths:
                         value: ''
                     present:
                         summary: 'When the value is present'
-                        value: fugiat
+                        value: vero
     /:
         get:
             summary: 'Index da loja'
@@ -1879,7 +1879,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da loja registrado no banco de dados. <br>\n<i><small>Ex: minhaloja.estoqueintegrado.com.br | minhaloja.com.br | minhaloja</small>"
-                                    example: non
+                                    example: dolorum
                             required:
                                 - dominio
             security: []
@@ -1922,7 +1922,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: enim
+                                    example: quos
                             required:
                                 - dominio
             security: []
@@ -1940,7 +1940,86 @@ paths:
                         value: ''
                     present:
                         summary: 'When the value is present'
-                        value: dolorum
+                        value: quos
+    /v1/checkout:
+        post:
+            summary: 'Cadastrar pedido'
+            description: 'Salvar um novo pedido'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     \"id\":1,\n     \"user_id\":1,\n     \"numero\": 100256,\n     \"valor\": 1849.90\n     [...]\n}"
+            tags:
+                - Site
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                api_token:
+                                    type: string
+                                    description: 'Authentication key.'
+                                    example: b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3
+                                dominio:
+                                    type: string
+                                    description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
+                                    example: illum
+                                valor_frete:
+                                    type: number
+                                    description: 'Valor do frete'
+                                    example: 0.5064
+                                tipo_entrega:
+                                    type: string
+                                    description: 'Tipo de entrega: retirada|entrega'
+                                    example: assumenda
+                                prazo_entrega:
+                                    type: string
+                                    description: 'Prazo de entrega'
+                                    example: eum
+                                endereco_entrega_id:
+                                    type: integer
+                                    description: 'ID do endereço de entrega. Required se for entregar'
+                                    example: 15
+                                desconto_codigo:
+                                    type: string
+                                    description: 'Codigo do cupom de desconto'
+                                    example: qui
+                                desconto_valor:
+                                    type: number
+                                    description: 'Valor do desconto'
+                                    example: 2.5177749
+                                desconto_percentual:
+                                    type: boolean
+                                    description: "Se o desconto aplicado é em percentual(%) ou valor(R$)\n<br><i><small>1 = desconto aplicado em percentual (%) | 2 = desconto aplicado em valor (R$)</i></small>"
+                                    example: false
+                            required:
+                                - api_token
+                                - dominio
+                                - valor_frete
+                                - tipo_entrega
+                                - prazo_entrega
+                                - endereco_entrega_id
     /v1/sizes:
         post:
             summary: 'Criar Tamanho'
@@ -1984,11 +2063,11 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: voluptas
+                                    example: enim
                                 nome:
                                     type: string
                                     description: 'Nome do tamanho <small>Ex: 50ml|P|300g</small>'
-                                    example: explicabo
+                                    example: rerum
                             required:
                                 - api_token
                                 - dominio
@@ -2036,11 +2115,11 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: impedit
+                                    example: repudiandae
                                 nome:
                                     type: string
                                     description: 'Nome do tamanho <small>Ex: 50ml|P|300g</small>'
-                                    example: corporis
+                                    example: iste
                             required:
                                 - api_token
                                 - dominio
@@ -2087,7 +2166,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: in
+                                    example: facilis
                             required:
                                 - api_token
                                 - dominio
@@ -2133,7 +2212,7 @@ paths:
                                 dominio:
                                     type: string
                                     description: "Dominio da empresa <br>\n<i><small>Ex: minhaempresa | minhaempresa.estoqueintegrado.com.br | minhaempresa.com.br</i></small>"
-                                    example: accusantium
+                                    example: sint
                             required:
                                 - api_token
                                 - dominio
@@ -2142,7 +2221,7 @@ paths:
                 in: path
                 name: id
                 description: 'ID do tamanho'
-                example: 18
+                example: 6
                 required: true
                 schema:
                     type: integer
@@ -2301,7 +2380,7 @@ paths:
                                 id:
                                     type: integer
                                     description: 'ID do usuário'
-                                    example: 14
+                                    example: 6
                             required:
                                 - api_token
                                 - id
@@ -2357,11 +2436,11 @@ paths:
                                 login:
                                     type: string
                                     description: 'Email do usuário'
-                                    example: optio
+                                    example: incidunt
                                 password:
                                     type: string
                                     description: 'Senha do usuário'
-                                    example: tempore
+                                    example: molestiae
                             required:
                                 - api_token
                                 - login

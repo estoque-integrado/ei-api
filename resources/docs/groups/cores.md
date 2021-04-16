@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/colors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"autem","nome":"adipisci","hex":"qui"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"esse","nome":"sequi","hex":"vitae"}'
 
 ```
 
@@ -30,9 +30,9 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "autem",
-    "nome": "adipisci",
-    "hex": "qui"
+    "dominio": "esse",
+    "nome": "sequi",
+    "hex": "vitae"
 }
 
 fetch(url, {
@@ -53,9 +53,9 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'autem',
-            'nome' => 'adipisci',
-            'hex' => 'qui',
+            'dominio' => 'esse',
+            'nome' => 'sequi',
+            'hex' => 'vitae',
         ],
     ]
 );
@@ -129,16 +129,16 @@ Atualiza os dados da cor
 
 ```bash
 curl -X PUT \
-    "https://api.estoqueintegrado.com.br/v1/colors/qui" \
+    "https://api.estoqueintegrado.com.br/v1/colors/voluptatibus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"repellat","nome":"natus","hex":"voluptas"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"eligendi","nome":"ut","hex":"dolores"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/qui"
+    "https://api.estoqueintegrado.com.br/v1/colors/voluptatibus"
 );
 
 let headers = {
@@ -148,9 +148,9 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "repellat",
-    "nome": "natus",
-    "hex": "voluptas"
+    "dominio": "eligendi",
+    "nome": "ut",
+    "hex": "dolores"
 }
 
 fetch(url, {
@@ -164,16 +164,16 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'https://api.estoqueintegrado.com.br/v1/colors/qui',
+    'https://api.estoqueintegrado.com.br/v1/colors/voluptatibus',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'repellat',
-            'nome' => 'natus',
-            'hex' => 'voluptas',
+            'dominio' => 'eligendi',
+            'nome' => 'ut',
+            'hex' => 'dolores',
         ],
     ]
 );
@@ -253,16 +253,16 @@ Retorna os detalhes da Cor
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/colors/18" \
+    -G "https://api.estoqueintegrado.com.br/v1/colors/9" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"voluptate"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"placeat"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/18"
+    "https://api.estoqueintegrado.com.br/v1/colors/9"
 );
 
 let headers = {
@@ -272,7 +272,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "voluptate"
+    "dominio": "placeat"
 }
 
 fetch(url, {
@@ -286,14 +286,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/colors/18',
+    'https://api.estoqueintegrado.com.br/v1/colors/9',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'voluptate',
+            'dominio' => 'placeat',
         ],
     ]
 );
@@ -363,16 +363,16 @@ Deleta uma cor
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/colors/17" \
+    "https://api.estoqueintegrado.com.br/v1/colors/7" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"ex"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"praesentium"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/colors/17"
+    "https://api.estoqueintegrado.com.br/v1/colors/7"
 );
 
 let headers = {
@@ -382,7 +382,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "ex"
+    "dominio": "praesentium"
 }
 
 fetch(url, {
@@ -396,14 +396,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/colors/17',
+    'https://api.estoqueintegrado.com.br/v1/colors/7',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'ex',
+            'dominio' => 'praesentium',
         ],
     ]
 );
