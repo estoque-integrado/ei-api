@@ -14,7 +14,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/cart" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"maxime","produto_id":9,"quantidade":4,"cor_id":18,"tamanho_id":9}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"nisi","produto_id":15,"quantidade":4,"cor_id":14,"tamanho_id":3}'
 
 ```
 
@@ -30,11 +30,11 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "maxime",
-    "produto_id": 9,
+    "dominio": "nisi",
+    "produto_id": 15,
     "quantidade": 4,
-    "cor_id": 18,
-    "tamanho_id": 9
+    "cor_id": 14,
+    "tamanho_id": 3
 }
 
 fetch(url, {
@@ -55,11 +55,11 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'maxime',
-            'produto_id' => 9,
+            'dominio' => 'nisi',
+            'produto_id' => 15,
             'quantidade' => 4,
-            'cor_id' => 18,
-            'tamanho_id' => 9,
+            'cor_id' => 14,
+            'tamanho_id' => 3,
         ],
     ]
 );
@@ -151,7 +151,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/cart/sum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"exercitationem","product_id":7,"cor_id":1,"tamanho_id":18}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"ut","product_id":16,"cor_id":5,"tamanho_id":1}'
 
 ```
 
@@ -167,10 +167,10 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "exercitationem",
-    "product_id": 7,
-    "cor_id": 1,
-    "tamanho_id": 18
+    "dominio": "ut",
+    "product_id": 16,
+    "cor_id": 5,
+    "tamanho_id": 1
 }
 
 fetch(url, {
@@ -191,10 +191,10 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'exercitationem',
-            'product_id' => 7,
-            'cor_id' => 1,
-            'tamanho_id' => 18,
+            'dominio' => 'ut',
+            'product_id' => 16,
+            'cor_id' => 5,
+            'tamanho_id' => 1,
         ],
     ]
 );
@@ -281,7 +281,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/cart/reduce" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"nulla","product_id":18,"cor_id":10,"tamanho_id":15}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"modi","product_id":6,"cor_id":12,"tamanho_id":12}'
 
 ```
 
@@ -297,10 +297,10 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "nulla",
-    "product_id": 18,
-    "cor_id": 10,
-    "tamanho_id": 15
+    "dominio": "modi",
+    "product_id": 6,
+    "cor_id": 12,
+    "tamanho_id": 12
 }
 
 fetch(url, {
@@ -321,10 +321,10 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'nulla',
-            'product_id' => 18,
-            'cor_id' => 10,
-            'tamanho_id' => 15,
+            'dominio' => 'modi',
+            'product_id' => 6,
+            'cor_id' => 12,
+            'tamanho_id' => 12,
         ],
     ]
 );
@@ -408,16 +408,16 @@ Deleta um item do carrinho
 
 ```bash
 curl -X DELETE \
-    "https://api.estoqueintegrado.com.br/v1/cart/10" \
+    "https://api.estoqueintegrado.com.br/v1/cart/15" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"dolores"}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"est"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/cart/10"
+    "https://api.estoqueintegrado.com.br/v1/cart/15"
 );
 
 let headers = {
@@ -427,7 +427,7 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "dolores"
+    "dominio": "est"
 }
 
 fetch(url, {
@@ -441,14 +441,14 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'https://api.estoqueintegrado.com.br/v1/cart/10',
+    'https://api.estoqueintegrado.com.br/v1/cart/15',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'dolores',
+            'dominio' => 'est',
         ],
     ]
 );

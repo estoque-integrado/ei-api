@@ -16,7 +16,7 @@ curl -X GET \
     -G "https://api.estoqueintegrado.com.br/" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"dolorum"}'
+    -d '{"dominio":"est"}'
 
 ```
 
@@ -31,7 +31,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "dolorum"
+    "dominio": "est"
 }
 
 fetch(url, {
@@ -51,7 +51,7 @@ $response = $client->get(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'dolorum',
+            'dominio' => 'est',
         ],
     ]
 );
@@ -119,7 +119,7 @@ print_r(json_decode((string) $body));
 <input type="text" name="dominio" data-endpoint="GET-" data-component="body" required  hidden>
 <br>
 Dominio da loja registrado no banco de dados. <br>
-<i><small>Ex: minhaloja.estoqueintegrado.com.br | minhaloja.com.br | minhaloja</small></p>
+<i><small>Ex: minhaloja.estoqueintegrado.com.br | minhaloja.com.br | minhaloja</small></i></p>
 
 </form>
 
@@ -133,16 +133,16 @@ Retorna um array com 1 único produto
 
 ```bash
 curl -X GET \
-    -G "https://api.estoqueintegrado.com.br/v1/product/quos" \
+    -G "https://api.estoqueintegrado.com.br/v1/product/repellat" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"dominio":"quos"}'
+    -d '{"dominio":"quia"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://api.estoqueintegrado.com.br/v1/product/quos"
+    "https://api.estoqueintegrado.com.br/v1/product/repellat"
 );
 
 let headers = {
@@ -151,7 +151,7 @@ let headers = {
 };
 
 let body = {
-    "dominio": "quos"
+    "dominio": "quia"
 }
 
 fetch(url, {
@@ -165,13 +165,13 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'https://api.estoqueintegrado.com.br/v1/product/quos',
+    'https://api.estoqueintegrado.com.br/v1/product/repellat',
     [
         'headers' => [
             'Accept' => 'application/json',
         ],
         'json' => [
-            'dominio' => 'quos',
+            'dominio' => 'quia',
         ],
     ]
 );
@@ -240,7 +240,7 @@ curl -X POST \
     "https://api.estoqueintegrado.com.br/v1/checkout" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"illum","valor_frete":0.5064,"tipo_entrega":"assumenda","prazo_entrega":"eum","endereco_entrega_id":15,"desconto_codigo":"qui","desconto_valor":2.5177749,"desconto_percentual":false}'
+    -d '{"api_token":"b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3","dominio":"non","valor_frete":23266855.333,"tipo_entrega":"minima","prazo_entrega":"velit","endereco_entrega_id":1,"desconto_codigo":"placeat","desconto_valor":705755,"desconto_percentual":true}'
 
 ```
 
@@ -256,14 +256,14 @@ let headers = {
 
 let body = {
     "api_token": "b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3",
-    "dominio": "illum",
-    "valor_frete": 0.5064,
-    "tipo_entrega": "assumenda",
-    "prazo_entrega": "eum",
-    "endereco_entrega_id": 15,
-    "desconto_codigo": "qui",
-    "desconto_valor": 2.5177749,
-    "desconto_percentual": false
+    "dominio": "non",
+    "valor_frete": 23266855.333,
+    "tipo_entrega": "minima",
+    "prazo_entrega": "velit",
+    "endereco_entrega_id": 1,
+    "desconto_codigo": "placeat",
+    "desconto_valor": 705755,
+    "desconto_percentual": true
 }
 
 fetch(url, {
@@ -284,14 +284,14 @@ $response = $client->post(
         ],
         'json' => [
             'api_token' => 'b1e04a93c85e3711b2d4972b4d81796c-eccbc87e4b5ce2fe28308fd9f2a7baf3',
-            'dominio' => 'illum',
-            'valor_frete' => 0.5064,
-            'tipo_entrega' => 'assumenda',
-            'prazo_entrega' => 'eum',
-            'endereco_entrega_id' => 15,
-            'desconto_codigo' => 'qui',
-            'desconto_valor' => 2.5177749,
-            'desconto_percentual' => false,
+            'dominio' => 'non',
+            'valor_frete' => 23266855.333,
+            'tipo_entrega' => 'minima',
+            'prazo_entrega' => 'velit',
+            'endereco_entrega_id' => 1,
+            'desconto_codigo' => 'placeat',
+            'desconto_valor' => 705755.0,
+            'desconto_percentual' => true,
         ],
     ]
 );

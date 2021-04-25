@@ -31,4 +31,12 @@ rodar endpoint v1/migrar-estoque
 
 --- estoque migrado ---
 
-ver campos removidos da tabela produtos
+- ver campos removidos da tabela produtos
+    - remover tabelas variacao*
+
+- Renomear campo valor para subtotal, tabela vendas
+- Renomear campo valor_total para total, tabela vendas
+- Renomear campo nome para cliente, tabela vendas
+- Renomear campo valor_desconto para desconto_juros_valor, tabela vendas
+
+- adicionar coluna valor_pago, tabela vendas_extrato

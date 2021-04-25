@@ -19,10 +19,10 @@ class Controller extends BaseController
      * @param string $viewTemplate
      * @param int $delay
      */
-    public function createJobSendMail($viewTemplate = '', $args = [], $assunto = null, $delay = 10)
+    public function createJobSendMail($viewTemplate = '', $arrayVariables = [], $assunto = null, $delay = 10)
     {
         // Cria o JOB para enviar o email posteriormente
-        $job = (new MailJob($viewTemplate, $args, $assunto))
+        $job = (new MailJob($viewTemplate, $arrayVariables, $assunto))
             ->delay(Carbon::now()->addSeconds($delay));
         $this->dispatch($job);
     }
@@ -83,9 +83,7 @@ class Controller extends BaseController
     {
         $user = Auth::user();
 
-        $idsCompanies = $user->getIdsMyCompanies();
-
-        if (!in_array($companyId, $idsCompanies)) {
+        if (!in_array($companyId, $user->getIdsMyCompanies())) {
             return false;
         }
 

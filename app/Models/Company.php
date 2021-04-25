@@ -47,8 +47,9 @@ class Company extends Model
     /**
      * Retorna todos os produtos válidos da empresa
      *
-     * @param bool $active
-     * @param bool $showDeletedProducts
+     * @param bool $active Somente produtos ativos ?
+     * @param bool $showDeletedProducts Exibir produtos deletados ?
+     * @param bool $stockBiggerZero Exibir produtos com estoque maior que 0
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function getValidProducts($active = true, $showDeletedProducts = false, $stockBiggerZero = true)
@@ -60,12 +61,16 @@ class Company extends Model
 
         $products = Product::where($data);
 
+        // Somente produtos com quantidade em estoque > 0
+        if ($stockBiggerZero) {
+            $products->with(['stock' => function ($query) {
+                $query->where('quantidade', '>', 0);
+            }]);
+        }
+
         if ($showDeletedProducts) $products->withTrashed();
 
-        if ($stockBiggerZero) {
-            // Somente produtos com quantidade em estoque > 0
-        }
-        // Remove a descrição completa dps produtos, reduz 98% do tamanho da requisição
+        // Remove a descrição completa dos produtos, reduz 99% do tamanho da requisição
         return $products->with('colors', 'sizes', 'images')->get()->makeHidden('descricao_completa');
     }
 
@@ -177,7 +182,7 @@ class Company extends Model
 //    }
 
     // ===== RELAÇÔES
-    public function proprietario()
+    public function owner()
     {
         return $this->belongsTo('App\Models\User', 'user_id');
     }
@@ -195,7 +200,7 @@ class Company extends Model
     // Produtos
     public function products()
     {
-        return $this->hasMany('App\Models\Product')->where('ativo', true)->orderBy('nome');
+        return $this->hasMany('App\Models\Product', 'produto_id')->where('ativo', true)->orderBy('nome');
     }
 
     // Produtos incluindo produtos removidos
@@ -208,7 +213,7 @@ class Company extends Model
     // Categorias
     public function categories()
     {
-        return $this->hasMany('App\Models\Categoria')
+        return $this->hasMany('App\Models\Category')
             ->where('ativo', true)
             ->whereHas('produtos')
             ->orderBy('nome');
@@ -221,22 +226,22 @@ class Company extends Model
 //    }
 
     // Tamanhos
-    public function tamanhos()
+    public function sizes()
     {
-        return $this->hasMany('App\Models\Tamanho');
+        return $this->hasMany('App\Models\Size', 'empresa_id');
     }
 
     // Cores
-    public function cores()
+    public function colors()
     {
-        return $this->hasMany('App\Models\Cor');
+        return $this->hasMany('App\Models\Color', 'empresa_id');
     }
 
     // Redes sociais
-    public function redesSociais()
-    {
-        return $this->hasOne('App\Models\RedeSocial');
-    }
+//    public function redesSociais()
+//    {
+//        return $this->hasOne('App\Models\RedeSocial');
+//    }
 
     // Configurações
     public function configuracoes()

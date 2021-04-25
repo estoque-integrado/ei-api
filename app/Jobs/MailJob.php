@@ -55,8 +55,6 @@ class MailJob extends Job
      */
     public function handle()
     {
-        $empresa = $this->empresa;
-        $user = $this->user;
         $dados = $this->dados;
         $assunto = $this->assunto ?: 'Contato Estoqueintegrado.com';
 

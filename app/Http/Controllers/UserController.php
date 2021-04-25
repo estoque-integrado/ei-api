@@ -56,7 +56,7 @@ class UserController extends Controller
             $inputs['password'] = app('hash')->make($inputs['password']);
 
             if ($inputs['tipo_usuario_id'] != 4) {
-                $user = User::where('api_token', $request->input('api_token'))->first();
+                $user = Auth::user();
 
                 if (!$user) return response(["message" => "Usuário não encontrado"], 404);
 

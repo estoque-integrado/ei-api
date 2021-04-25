@@ -70,6 +70,7 @@ class OrderController extends Controller
             if (!$cart) return response(['message' => 'Carrinho não encontrado'], 404);
 
             $cartTotal = $cart->sum('subtotal');
+            // @TODO Calcular frete no backend
             $request['valor'] = $cartTotal + $request['valor_frete'];
 
             // Verifica se tem desconto
@@ -92,6 +93,11 @@ class OrderController extends Controller
                         'tamanho_id' => $cartItem->tamanho_id,
                         'cor_id' => $cartItem->cor_id
                     ]);
+
+                    // Reduz o estoque
+                    $stock = $cartItem->product->stock($cartItem->tamanho_id, $cartItem->cor_id)->first();
+                    $stock->quantidade -= $cartItem->quantidade;
+                    $stock->save();
                 }
 
                 // Email loja

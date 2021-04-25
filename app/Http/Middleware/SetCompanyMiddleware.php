@@ -33,6 +33,7 @@ class SetCompanyMiddleware
         if (!$company) return response(['message' => 'Empresa não encontrada!'], 404);
 
         $request->company = $company;
+//        unset($request['dominio']);
 
         return $next($request);
     }

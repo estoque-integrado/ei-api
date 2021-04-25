@@ -114,6 +114,13 @@ $router->put('/v1/sizes/{id}', ['as' => 'updateSize', 'middleware' => ['auth', '
 $router->get('/v1/sizes/{id}', ['as' => 'viewSize', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SizeController@view']);
 $router->delete('/v1/sizes/{id}', ['as' => 'deleteSize', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SizeController@delete']);
 
+/**
+ * Rotas para venda presencial
+ */
+$router->post('/v1/sales', ['as' => 'createSale', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SaleController@create']);
+$router->get('/v1/sales/{id}', ['as' => 'viewSale', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SaleController@view']);
+$router->post('/v1/sales/report', ['as' => 'reportSale', 'middleware' => ['auth', 'SetCompany'], 'uses' => 'SaleController@report']);
+
 
 $router->get('/migrar-estoque', function() {
     $products = \App\Models\Product::all();

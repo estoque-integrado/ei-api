@@ -34,8 +34,6 @@ class SizeController extends Controller
      *      "nome": "P",
      *      "empresa_id": 322,
      * }
-     * @param Request $request
-     * @throws \Illuminate\Validation\ValidationException
      */
     public function create(Request $request)
     {

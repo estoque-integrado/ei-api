@@ -277,6 +277,11 @@ class ProductController extends Controller
                 $stock['dt_inicio_promocao'] = $this->formatarData($stock['dt_inicio_promocao'] ?? null);
                 $stock['dt_fim_promocao'] = $this->formatarData($stock['dt_fim_promocao'] ?? null);
                 Stock::updateOrCreate(['id' => $stock['id'] ?? null], $stock);
+//                Stock::updateOrCreate([
+//                    'tamanho_id' => $stock->tamanho_id,
+//                    'cor_id' => $stock->cor_id,
+//                    'produto_id' => $product->id,
+//                ], $stock);
             }
         }
 

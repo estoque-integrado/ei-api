@@ -328,8 +328,13 @@ class Product extends Model
         if ($corID) {
             $dados['cor_id'] = $corID;
         }
-
-        return $this->hasMany('App\Models\Stock', 'produto_id')->where($dados);
+//return $corID;
+        return $this->hasMany('App\Models\Stock', 'produto_id')->where(
+            [
+                'tamanho_id' => $tamanhoID,
+                'cor_id' => $corID,
+            ]
+        );
     }
 
     public function estoque_old()
